@@ -1,3 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700&family=Poppins:wght@100&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .card {
+        background-color: theme("colors.white");
+        border-radius: theme("borderRadius.lg");
+        /* border-color: theme("borderColor."); */
+        padding: theme("spacing.6");
+        box-shadow: theme("boxShadow.xl");
+    }
+}
+
+h1 {
+    font-family: "Montserrat", "sans-serif";
+}
