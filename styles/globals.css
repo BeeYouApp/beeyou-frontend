@@ -8,7 +8,7 @@
     .card {
         background-color: theme("colors.white");
         border-radius: theme("borderRadius.lg");
-        /* border-color: theme("borderColor."); */
+        /* border: theme("colors.red.800"); */
         padding: theme("spacing.6");
         box-shadow: theme("boxShadow.xl");
     }
