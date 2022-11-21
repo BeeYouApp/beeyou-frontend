@@ -98,14 +98,20 @@ export default function LandingPlan() {
                 abrazan la diversidad.
               </p>
               </div>
-              <Image className={clsx("inline mr-4")} src={images.check} alt="Check icon" />
-              <h4 className={clsx("inline font-montserrat font-medium text-base text-blue-gray-700 leading-5")}>
-                Conviértete en un negocio en racha
-              </h4>
-              <p className={clsx("font-poppins font-light text-sm mb-3 leading-6")}>
-                Incrementa tu alcance, tus impresiones y llega a más personas.
-                ¿Todavía no estás en racha?
-              </p>
+              <ul>
+                <li className="flex">
+                <Image className={clsx("w-5 h-5 mr-4")} src={images.check} alt="Check icon" />
+                <div>
+                  <h4 className={clsx("inline font-montserrat font-medium text-base text-blue-gray-700 leading-5")}>
+                  Conviértete en un negocio en racha
+                  </h4>
+                  <p className={clsx("font-poppins font-light text-sm mb-3 leading-6")}>
+                    Incrementa tu alcance, tus impresiones y llega a más personas.
+                    ¿Todavía no estás en racha?
+                  </p>
+                </div>
+                </li>
+              </ul>
               <Image className={clsx("inline mr-4")} src={images.check} alt="Check icon" />
               <h4 className={clsx("inline font-montserrat font-medium text-base text-blue-gray-700 leading-5")}>
                 Publica eventos de forma ilimitada
