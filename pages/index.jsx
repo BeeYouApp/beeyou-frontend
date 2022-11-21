@@ -1,7 +1,10 @@
 import clsx from "clsx"
+import Navbar from "../components/Navbar"
 
 export default function Home() {
   return (
+    <>
+    <Navbar/>
       <main className={clsx(
         'bg-gradient-to-r from-indigo-500',
         "bg-[url('https://img.freepik.com/fotos-premium/bandera-lgbt-arcoiris-tela-gay-bandera-lesbiana-como-fondo-o-textura_117930-628.jpg?w=2000')]",
@@ -34,5 +37,6 @@ export default function Home() {
           </p>
         </div>
       </main>
+      </>
   )
 }
