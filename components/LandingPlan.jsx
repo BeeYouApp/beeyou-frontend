@@ -142,7 +142,7 @@ export default function LandingPlan() {
                         </h4>
                         <p
                           className={clsx(
-                            "font-poppins font-light text-sm leading-6"
+                            "font-poppins font-light text-sm leading-6 mb-1"
                           )}
                         >
                           Publica hata 5 descuentos de productos o servicios que
@@ -151,10 +151,9 @@ export default function LandingPlan() {
                       </div>
                     </li>
                   </ul>
-
                   <button
                     className={clsx(
-                      "bg-gradient-to-r from-red-gradient/95 via-orange-gradient/80, via-yellow-gradient/70, via-green-gradient/70, via-purple-gradient/70 to-pink-gradient/80 hover:blue-gray-100 font-monsterrat text-white text-sm mt-8 py-3 px-16 rounded"
+                      "w-full bg-gradient-to-r from-red-gradient/95 via-orange-gradient/80, via-yellow-gradient/70, via-green-gradient/70, via-purple-gradient/70 to-pink-gradient/80 hover:blue-gray-100 font-monsterrat text-white text-sm mt-52 py-3 px-16 rounded"
                     )}
                   >
                     ¡REGÍSTRATE AHORA!
@@ -309,7 +308,7 @@ export default function LandingPlan() {
 
                   <button
                     className={clsx(
-                      "bg-gradient-to-r from-red-gradient/95 via-orange-gradient/80, via-yellow-gradient/70, via-green-gradient/70, via-purple-gradient/70 to-pink-gradient/80 hover:blue-gray-100 font-monsterrat text-white text-sm mt-8 py-3 px-16 rounded"
+                      "w-full bg-gradient-to-r from-red-gradient/95 via-orange-gradient/80, via-yellow-gradient/70, via-green-gradient/70, via-purple-gradient/70 to-pink-gradient/80 hover:blue-gray-100 font-monsterrat text-white text-sm mt-8 py-3 px-16 rounded"
                     )}
                   >
                     ¡REGÍSTRATE AHORA!
