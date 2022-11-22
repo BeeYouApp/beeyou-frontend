@@ -3,7 +3,6 @@ import Image from "next/image";
 import { images } from "../lib/images";
 
 export default function LandingPlan() {
-  console.log(images);
   return (
     <>
       <section className={clsx("p-4")}>
