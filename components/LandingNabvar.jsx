@@ -8,14 +8,16 @@ export default function LandingNav(){
       <section className={clsx(
         'mt-16 p-10'
       )}>
-        <article className={clsx(
-        )}>
-          <h2 className="text-2xl font-montserrat text-blue-gray-900">Encuentra tu lugar favorito</h2>
-          <h1 className="text-5xl font-montserrat text-blue-gray-900 font-bold mt-2">Únete a los</h1>
-        </article>
-        <article>
-          <img src="./figure-hero-lines.webp" alt="" />
-        </article>
+        <section className="flex">
+          <article>
+            <h2 className="text-2xl font-montserrat text-blue-gray-900">Encuentra tu lugar favorito</h2>
+            <h1 className="text-5xl font-montserrat text-blue-gray-900 font-bold mt-6">Únete a los</h1>
+            </article>
+            <article className="pl-10">
+            <img src="./figure-hero-lines.webp" alt="" />
+          </article>
+        </section>
+
         <article>
             <h1 className="text-6xl font-montserrat font-bold mt-2">negocios en racha</h1>
         </article>
@@ -24,7 +26,7 @@ export default function LandingNav(){
           <p>comunidad LGTBIQ+. ¡Encuentra tus lugares favoritos, eventos de</p>
           <p>interés y recibe varias recompensas!!!</p>
           <Button
-            label='Entrar'
+            label='Encuentra tu espacio'
             isSubmit
             style="mt-8">
          </Button>

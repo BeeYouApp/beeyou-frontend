@@ -7,7 +7,11 @@ const MobileSidebar = ({ closeSidebar }) => {
     <section className="'bg-[#ffffff]/40' h-screen w-screen fixed top-0 left-0">
       <section className="bg-white max-w-[50%] p-4 h-full border-2">
         <section className="flex justify-between">
-          <h1 className="font-bold text-lg mb-4">Bee you!!</h1>
+          <div className={clsx('flex items-center mb-8 ')}>
+           <Link href=''>
+              <img src="/logo-beeyou.svg" alt="Logo" />
+          </Link>
+          </div>
           <button onClick={() => closeSidebar()}>
            <img src="./x-mark.svg" />
           </button>
@@ -16,6 +20,7 @@ const MobileSidebar = ({ closeSidebar }) => {
             <li><Link href="">Inicio</Link></li>
             <li><Link href="">Beneficios</Link> </li>
             <li><Link href="" >Iniciar sesion</Link> </li>
+            <button className="mt-5 p-1 rounded-lg border-4 border-rose-500 ">Unete a Bee you+!</button>  
         </ul>
       </section>
     </section>

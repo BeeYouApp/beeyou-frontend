@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'lgtb': "url('https://as1.ftcdn.net/v2/jpg/03/82/84/80/1000_F_382848035_DJrwRnkhrzyGYQQC1ybzJUMoxiGuKexO.jpg')",
+      },
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],
         poppins: ["Poppins", "sans-serif"]

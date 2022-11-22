@@ -5,9 +5,9 @@ import LandingNav from "../components/LandingNabvar";
 export default function LandingPage() {
   return(
     <>
-    <Navbar/>
-    <LandingNav/>
-    <LandingPlan/>
+      <Navbar/>
+      <LandingNav/>
+      <LandingPlan/>
     </>
 
 

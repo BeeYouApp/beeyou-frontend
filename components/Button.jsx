@@ -22,12 +22,12 @@ export default function Button({ label, style, onClick, isSubmit=false }) {
         </a>}
       {
         isSubmit && <input className={clsx(
-          'bg-sky-600', // pendiente tranformarlo a props
+          'bg-lgtb bg-cover', // pendiente tranformarlo a props
           'py-2 px-4',
-          'rounded',
+          'rounded-lg',
           'text-white text-center font-bold',
-          'w-40',
-          'hover:bg-sky-900',
+          'w-[300px] h-[50px]',
+          'hover:bg-gradient-to-r from-teal-400 to-[#249F95]/80',
           'focus:outline-none focus:shadow-outline',
           style
         )}
