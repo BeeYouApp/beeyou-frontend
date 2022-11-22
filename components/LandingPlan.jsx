@@ -2,8 +2,16 @@ import clsx from "clsx"; // Organize CSS code into the archives
 import Image from "next/image";
 import { images } from "../lib/images";
 import styles from "../components/LandingPlan.module.scss";
+// import Swiper from "swiper/bundle";
+// import "../styles/swiper.css";
 
 export default function LandingPlan() {
+  // const swiper = new Swiper(".swiper", {
+  //   // modules: [Navigation, Pagination, Auatoplay, Scrollbar],
+  //   // direction: 'vertical',
+  //   // loop: true,
+  // });
+
   return (
     <section className={clsx(styles["cards-section"])}>
       <section>

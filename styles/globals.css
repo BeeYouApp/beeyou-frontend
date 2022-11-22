@@ -39,10 +39,5 @@ h1 {
     background-color: blue;
     width: 100%;
     height: 50px;    
-    
-    /* 
-    "w-full bg-gradient-to-r from-red-gradient/95 via-orange-gradient/80, via-yellow-gradient/70, via-green-gradient/70, via-purple-gradient/70 to-pink-gradient/80 hover:blue-gray-100 font-monsterrat text-white text-sm mt-14 py-3 px-16 rounded"
- 
-    */
 }
 
