@@ -4,7 +4,8 @@ import Button from "./Button";
 export default function LandingNav() {
   return (
     <>
-      <section className={clsx("mt-16 p-10")}>
+    <main className="lg:flex lg:flex-nowrap">
+      <section className={clsx("mt-32 p-10 w-1/2 ")}>
         <section className="flex">
           <article>
             <h2 className="text-2xl font-montserrat text-blue-gray-900">
@@ -15,10 +16,9 @@ export default function LandingNav() {
             </h1>
           </article>
           <article className="pl-10">
-            <img src="./figure-hero-lines.webp" alt="" />
+            <img src="./figure-hero-lines.webp w-1/2" alt="" />
           </article>
         </section>
-
         <article>
           <h1 className="text-6xl text-blue-gray-900 font-montserrat font-bold mt-2">
             negocios en racha
@@ -34,6 +34,7 @@ export default function LandingNav() {
       <section className="text-center p-10 w-6/6">
         <img src="./figure-hero-cards@2x.webp" alt="" />
       </section>
+      </main>
     </>
   );
 }
