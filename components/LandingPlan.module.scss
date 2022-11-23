@@ -1,0 +1,21 @@
+.parragrah-landing {
+    text-align: center;
+    margin-bottom: 24px;
+    @media screen and (min-width: 768px){
+        width: 524px;
+        text-align: start;
+      }
+}
+
+.medal-icon {
+    margin-top: -50px;
+}
+
+.cards-section {
+    padding: 16px;
+    @media screen and (min-width: 768px){
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-top: 54px;
+      }
+}
