@@ -23,8 +23,11 @@ h1 {
     /* background-color: "linear-gradient(90.41deg, #FF4C35 7.46%, #FE9B05 22.91%, #FBC600 38.35%, #72C63D 57.77%, #665DFB 73.66%, #C92CE5 92.2%)"; */
     /* background-color: "bg-gradient-to-r from-[#FF4C35]/7.46, via-[#FE9B05]/22.91 via-[#FBC600]/38.35 via-[#72C63D]/57.377 via-[#665DFB]/73.66 to-[#C92CE5/92.2]", */
     background-image: linear-gradient(to right, #FF4C35 7.46%, #FE9B05 22.91%, #FBC600 38.35%,#72C63D 57.77%, #665DFB 73.66%, #C92CE5 92.2%);
-    ;
 }
+
+    /* background: linear-gradient(to right, #FF4C35 7.46%, #FE9B05 22.91%, #FBC600 38.35%,#72C63D 57.77%, #665DFB 73.66%, #C92CE5 92.2%);
+    background-clip: text;
+    color: transparent; */
 
 .lgbtiq-button {
     font-family: "Montserrat", "sans-serif";
