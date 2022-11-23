@@ -20,7 +20,7 @@ export default function LandingNav() {
         </section>
 
         <article>
-          <h1 className="text-6xl font-montserrat font-bold mt-2">
+          <h1 className="text-6xl text-blue-gray-900 font-montserrat font-bold mt-2">
             negocios en racha
           </h1>
         </article>
