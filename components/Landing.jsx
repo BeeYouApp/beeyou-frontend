@@ -37,7 +37,7 @@ export default function Landing() {
         <article className="mt-5 font-montserrat text-blue-gray-700">
           <p>Únete a Bee You, una plataforma orientada a personas de la</p>
           <p>comunidad LGTBIQ+. ¡Encuentra tus lugares favoritos, eventos de</p>
-          <p>interés y recibe varias recompensas!</p>
+          <p>interés y recibe grandes recompensas!</p>
           <Button label="Encuentra tu espacio" isSubmit style="mt-8 lgbtiq-button-two lgbtiq-grad-bg"></Button>
         </article>
       </section>
@@ -49,7 +49,7 @@ export default function Landing() {
         <section className="flex lg:content-center md:w-full">
           <article>
             <h1 className="text-5xl font-montserrat text-blue-gray-900 font-bold mt-6">Disfruta de los</h1>
-            <h1 className="text-5xl font-montserrat text-purple-800 font-bold mt-6">Beneficios friendly</h1>
+            <h1 className="text-5xl font-montserrat text-purple-800 font-bold mt-6">beneficios friendly</h1>
             </article>
             <article className="pl-10">
             <img src="./figure-benefits.svg" alt="" />
@@ -70,14 +70,14 @@ export default function Landing() {
             <div className="text-center">
               <img className="ml-20" src="./figure-lealtad.svg" alt="" />
               <h2 className="text-[25px] font-bold font-montserrat text-blue-gray-900">Premiamos tu lealtad</h2>
-              <p>Obten magnificos descuentos en</p>
+              <p>Obtén magníficos descuentos en</p>
               <p>nuestra app</p>
             </div>
             <div className="text-center">
               <img className="ml-12" src="./figure-calendar.svg" alt="" />
               <h2 className="text-[25px] font-bold font-montserrat text-blue-gray-900">Eventos para ti</h2>
               <p>Los mejores eventos en tu</p>
-              <p>ciudad estan aqui</p>
+              <p>ciudad estan aquí</p>
             </div>
           </section>
 
@@ -453,8 +453,7 @@ export default function Landing() {
                   <div>
                     <h4
                       className={clsx(
-                        "inline font-montserrat font-medium text-base text-blue-gray-700 leading-5"
-                      )}
+                        "inline font-montserrat font-medium text-base text-blue-gray-700 leading-5")}
                     >
                       Publica descuentos de forma ilimitada
                     </h4>

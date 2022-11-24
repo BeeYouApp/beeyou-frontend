@@ -1,13 +1,13 @@
-import medalIcon from "../public/assets/landing/icon-medal.webp";
-import checkIcon from "../public/assets/landing/icon-check.webp";
-import proIcon from "../public/assets/landing/icon-pro.webp";
-import freeIcon from "../public/assets/landing/icon-free.webp";
-import twitterIcon from "../public/assets/landing/icon-twitter.webp";
-import facebookIcon from "../public/assets/landing/icon-facebook.webp";
-import instagramIcon from "../public/assets/landing/icon-instagram.webp";
-import telephoneIcon from "../public/assets/landing/icon-telephone.webp";
-import emailIcon from "../public/assets/landing/icon-email.webp";
-import beeyouLogo from "../public/assets/landing/logo-beeyou.webp";
+import medalIcon from "../public/assets/landing/figure-medal.svg";
+import checkIcon from "../public/assets/landing/icon-check.svg";
+import proIcon from "../public/assets/landing/figure-pro.svg";
+import freeIcon from "../public/assets/landing/figure-free.svg";
+import twitterIcon from "../public/assets/landing/icon-twitter.svg";
+import facebookIcon from "../public/assets/landing/icon-facebook.svg";
+import instagramIcon from "../public/assets/landing/icon-instagram.svg";
+import telephoneIcon from "../public/assets/landing/icon-telephone.svg";
+import emailIcon from "../public/assets/landing/icon-email.svg";
+import beeyouLogo from "../public/logo-beeyou.svg";
 
 export const images = {
   medal: medalIcon,
