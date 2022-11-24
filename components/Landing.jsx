@@ -38,7 +38,7 @@ export default function Landing() {
           <p>Únete a Bee You, una plataforma orientada a personas de la</p>
           <p>comunidad LGTBIQ+. ¡Encuentra tus lugares favoritos, eventos de</p>
           <p>interés y recibe grandes recompensas!</p>
-          <Button label="Encuentra tu espacio" isSubmit style="mt-8 lgbtiq-button-two lgbtiq-grad-bg"></Button>
+          <Button label="ENCUENTRA TU ESPACIO" isSubmit style="mt-8 lgbtiq-button-two lgbtiq-grad-bg"></Button>
         </article>
       </section>
       <section className="text-center p-10 w-6/6">
@@ -83,7 +83,7 @@ export default function Landing() {
 
           <section className="w-full flex justify-items-center">
             <Button
-              label='UNETE A BEE YOU+!'
+              label='¡ÚNETE A BEE YOU+!'
               isSubmit
               style="mt-8 lgbtiq-button-two lgbtiq-grad-bg">
             </Button>
@@ -125,13 +125,13 @@ export default function Landing() {
         <Swiper
           modules={[Pagination, A11y]}
           spaceBetween={10}
-          slidesPerView={2}
+          slidesPerView={1}
           pagination={{ clickable: true }}
           onSwiper={(swiper) => console.log(swiper)}
           onSlideChange={() => console.log('slide change')}
         >
-          <SwiperSlide>
-            <article className={clsx("card border-40 max-lg:hidden max-w-sm p-4 xl:ml-16")}>{" "}
+          <SwiperSlide className="mb-14">
+            <article className={clsx("md:m-auto card border-40 max-w-sm p-4 xl:ml-16")}>
               <div className="flex mb-7 items-end w-full">
                 <Image
                   className={clsx("mr-3.5")}
@@ -231,109 +231,8 @@ export default function Landing() {
             </article>
           </SwiperSlide>
 
-          <SwiperSlide>
-            <article style={{margin: '0 auto'}} className={clsx("card border-40 max-lg:hidden max-w-sm p-4 xl:ml-16")}>{" "}
-              <div className="flex mb-7 items-end w-full">
-                <Image
-                  className={clsx("mr-3.5")}
-                  src={images.free}
-                  alt="Free Plan Icon"
-                />
-                <div>
-                  <h3 className={clsx("inline font-montserrat font-bold text-xl")}>
-                    Free
-                  </h3>
-                  <p className={clsx("font-poppins font-nomral text-sm")}>
-                    Funcionalidades básicas
-                  </p>
-                </div>
-              </div>
-
-              <ul>
-                <li className="flex">
-                  <Image
-                    className={clsx("w-4 h-4 mr-3.5 mt-1")}
-                    src={images.check}
-                    alt="Check icon"
-                  />
-                  <div>
-                    <h4
-                      className={clsx(
-                        "inline font-montserrat font-medium text-base text-blue-gray-700 leading-5"
-                      )}
-                    >
-                      Forma parte de la comunidad LGBTIQ+
-                    </h4>
-                    <p
-                      className={clsx(
-                        "font-poppins font-light text-sm mb-3 leading-6"
-                      )}
-                    >
-                      Forma parte de esta increíble comunidad y de los negocios
-                      que abrazan la diversidad.
-                    </p>
-                  </div>
-                </li>
-
-                <li className="flex">
-                  <Image
-                    className={clsx("w-4 h-4 mr-3.5 mt-1")}
-                    src={images.check}
-                    alt="Check icon"
-                  />
-                  <div>
-                    <h4
-                      className={clsx(
-                        "inline font-montserrat font-medium text-base text-blue-gray-700 leading-5"
-                      )}
-                    >
-                      Publica hasta 5 eventos
-                    </h4>
-                    <p
-                      className={clsx(
-                        "font-poppins font-light text-sm mb-3 leading-6"
-                      )}
-                    >
-                      ¡Crea hasta 5 eventos! Por temática, estación o festividad.
-                      ¡Incentiva el interés de tu negocio!
-                    </p>
-                  </div>
-                </li>
-              
-                <li className="flex">
-                  <Image
-                    className={clsx("w-4 h-4 mr-3.5 mt-1")}
-                    src={images.check}
-                    alt="Check icon"
-                  />
-                  <div>
-                    <h4
-                      className={clsx(
-                        "inline font-montserrat font-medium text-base text-blue-gray-700 leading-5"
-                      )}
-                    >
-                      Publica hasta 5 descuentos
-                    </h4>
-                    <p
-                      className={clsx(
-                        "font-poppins font-light text-sm leading-6 mb-1 md:mb-44"
-                      )}
-                    >
-                      Publica hata 5 descuentos de productos o servicios que tu
-                      negocio ofrece. ¡Incentiva el consumo!
-                    </p>
-                  </div>
-                </li>
-              </ul>
-
-              <button className={clsx("lgbtiq-button lgbtiq-grad-bg")}>
-                ¡REGÍSTRATE AHORA!
-              </button>
-            </article>
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <article className={clsx("card max-w-sm p-4 xl:mr-16")}>
+          <SwiperSlide className="mb-14">
+            <article className={clsx("md:m-auto card max-w-sm p-4 xl:mr-16")}>
               <div className="flex mb-7 items-end w-full">
                 <Image
                   className={clsx("mr-3.5")}
