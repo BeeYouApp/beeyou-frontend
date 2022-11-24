@@ -7,7 +7,7 @@ export default function Button({ label, style, onClick, isSubmit=false }) {
       {
         !isSubmit &&
         <a className={clsx(
-          'bg-sky-600', // pendiente tranformarlo a props
+          // 'bg-sky-600', // Pending to transform to 'props'
           'py-2 px-4',
           'rounded',
           'text-white text-center font-bold',
@@ -22,7 +22,7 @@ export default function Button({ label, style, onClick, isSubmit=false }) {
         </a>}
       {
         isSubmit && <input className={clsx(
-          'bg-lgtb bg-cover', // pendiente tranformarlo a props
+          // 'bg-lgtb bg-cover', // pendiente tranformarlo a props
           'py-2 px-4',
           'rounded-lg',
           'text-white text-center font-bold',

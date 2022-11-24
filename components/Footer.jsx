@@ -75,7 +75,7 @@ export default function Footer() {
               <h4 className="poppins text-blue-gray-700 text-base font-medium leading-6">
                 ¡Únete a Bee you!
               </h4>
-              <button className="lgbtiq-button-two lgbtiq-gradient mb-10">
+              <button className="lgbtiq-button-two lgbtiq-grad-bg mb-10">
                 ¡REGÍSTRATE!
               </button>
             </section>
