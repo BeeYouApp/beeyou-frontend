@@ -1,9 +1,10 @@
-import Mapbox from "../components/Mapbox";
+import React from "react"
+import Map from "../components/Map"
 
-export default function Map (){
+export default function Mapbox (){
     return(
         <>
-            <Mapbox></Mapbox>
+            <Map/>
         </>
     )
 }
