@@ -10,11 +10,11 @@ import "swiper/css/scrollbar";
 
 export default function LandingPlan() {
   return (
-    <section className="">
+    <section className="mx-4 md:pl-10 lg:pl-14">
       <section>
         <h2
           className={clsx(
-            "text-left text-3xl text-blue-gray-900 font-montserrat font-bold mt-6 mb-2"
+            "text-left text-3xl text-blue-gray-900 font-montserrat font-bold mt-6 mb-2 pt-10"
           )}
         >
           ¡Únete ahora! y...
@@ -30,7 +30,7 @@ export default function LandingPlan() {
           <div className="flex">
             <Image
               className={clsx("ml-7 w-16 h-16")}
-              src={images.medal}
+              src={images.medalIcon}
               alt="Medal Icon"
             />
           </div>
@@ -38,7 +38,7 @@ export default function LandingPlan() {
         <div className="">
           <p
             className={clsx(
-              "text-base text-blue-gray-700 font-poppins font-light mt-6"
+              "text-center text-base text-blue-gray-700 font-poppins font-light mt-2"
             )}
           >
             Los usuarios de Bee you están en busca de comercios incluyentes y
