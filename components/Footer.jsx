@@ -13,14 +13,26 @@ export default function Footer() {
             <h3 className="poppins text-blue-gray-800 text-base font-medium leading-6 mr-6 md:ml-2 lg:ml-8">
               Síguenos
             </h3>
-            <Image className="mr-6" src={images.twitter} alt="Twitter Icon" />
-            <Image className="mr-6" src={images.facebook} alt="Facebook Icon" />
-            <Image src={images.instagram} alt="Instagram Icon" />
+            <Image
+              className="mr-6"
+              src={images.twitterIcon}
+              alt="Twitter Icon"
+            />
+            <Image
+              className="mr-6"
+              src={images.facebookIcon}
+              alt="Facebook Icon"
+            />
+            <Image src={images.instagramIcon} alt="Instagram Icon" />
           </section>
           <hr class="mx-auto w-full h-px bg-blue-gray-100" />
           <section className="grid md:grid-cols-3 lg:grid-cols-4 px-4 mt-10">
             <section className="mr-6 md:ml-2 lg:ml-8">
-              <Image className="mb-8" src={images.logo} alt="Bee You Logo" />
+              <Image
+                className="mb-8"
+                src={images.beeyouLogo}
+                alt="Bee You Logo"
+              />
             </section>
             <section>
               <h4 className="poppins text-blue-gray-700 text-base font-medium leading-6 mb-6">
@@ -30,7 +42,7 @@ export default function Footer() {
                 <ul className="flex">
                   <Image
                     className="w-5 h-5 mr-2"
-                    src={images.telephone}
+                    src={images.telephoneIcon}
                     alt="Telephone Icon"
                   />
                   <li className="text-blue-gray-600 text-sm mb-4">
@@ -40,8 +52,8 @@ export default function Footer() {
                 <ul className="flex">
                   <Image
                     className="w-5 h-5 mr-2"
-                    src={images.email}
-                    alt="Telephone Icon"
+                    src={images.emailIcon}
+                    alt="Email Icon"
                   />
                   <li className="text-blue-gray-600 text-sm mb-8">
                     info@beeyou.com

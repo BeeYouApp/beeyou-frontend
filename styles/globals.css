@@ -57,3 +57,8 @@ h1 {
     height: 50px;    
 }
 
+.swiper-pagination-bullet {
+    background: #B0BEC5 !important;
+    width: 16px !important;
+    height: 16px !important;
+}
