@@ -1,23 +1,41 @@
-import medalIcon from "../public/assets/landing/icon-medal.webp";
-import checkIcon from "../public/assets/landing/icon-check.webp";
-import proIcon from "../public/assets/landing/icon-pro.webp";
-import freeIcon from "../public/assets/landing/icon-free.webp";
-import twitterIcon from "../public/assets/landing/icon-twitter.webp";
-import facebookIcon from "../public/assets/landing/icon-facebook.webp";
-import instagramIcon from "../public/assets/landing/icon-instagram.webp";
-import telephoneIcon from "../public/assets/landing/icon-telephone.webp";
-import emailIcon from "../public/assets/landing/icon-email.webp";
-import beeyouLogo from "../public/assets/landing/logo-beeyou.webp";
+import beeyouLogo from "../public/assets/logo-beeyou.svg";
+import joinIcon from "../public/assets/icon-join.svg";
+import mobileIcon from "../public/assets/icon-menu-mobile.svg";
+import xMarkIcon from "../public/assets/icon-x-mark.svg";
+import heroIcon from "../public/assets/landing/figure-hero-lines.svg";
+import heroCards from "../public/assets/landing/figure-hero-cards@2x.png";
+import benefitsIcon from "../public/assets/landing/figure-benefits.svg";
+import businessIcon from "../public/assets/landing/figure-business.svg";
+import loyaltyIcon from "../public/assets/landing/figure-loyalty.svg";
+import calendarIcon from "../public/assets/landing/figure-calendar.svg";
+import medalIcon from "../public/assets/landing/figure-medal.svg";
+import freePlanIcon from "../public/assets/landing/figure-free.svg";
+import proPlanIcon from "../public/assets/landing/figure-pro.svg";
+import checkIcon from "../public/assets/landing/icon-check.svg";
+import twitterIcon from "../public/assets/landing/icon-twitter.svg";
+import facebookIcon from "../public/assets/landing/icon-facebook.svg";
+import instagramIcon from "../public/assets/landing/icon-instagram.svg";
+import telephoneIcon from "../public/assets/landing/icon-telephone.svg";
+import emailIcon from "../public/assets/landing/icon-email.svg";
 
 export const images = {
-  medal: medalIcon,
-  check: checkIcon,
-  pro: proIcon,
-  free: freeIcon,
-  twitter: twitterIcon,
-  facebook: facebookIcon,
-  instagram: instagramIcon,
-  telephone: telephoneIcon,
-  email: emailIcon,
-  logo: beeyouLogo,
+  beeyouLogo,
+  joinIcon,
+  mobileIcon,
+  xMarkIcon,
+  heroIcon,
+  heroCards,
+  benefitsIcon,
+  businessIcon,
+  loyaltyIcon,
+  calendarIcon,
+  medalIcon,
+  freePlanIcon,
+  proPlanIcon,
+  checkIcon,
+  twitterIcon,
+  facebookIcon,
+  instagramIcon,
+  telephoneIcon,
+  emailIcon,
 };
