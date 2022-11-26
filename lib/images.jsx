@@ -1,5 +1,6 @@
 import beeyouLogo from "../public/assets/logo-beeyou.svg";
 import joinIcon from "../public/assets/icon-join.svg";
+import mobileIcon from "../public/assets/icon-menu-mobile.svg";
 import xMarkIcon from "../public/assets/icon-x-mark.svg";
 import heroIcon from "../public/assets/landing/figure-hero-lines.svg";
 import heroCards from "../public/assets/landing/figure-hero-cards@2x.png";
@@ -20,6 +21,7 @@ import emailIcon from "../public/assets/landing/icon-email.svg";
 export const images = {
   beeyouLogo,
   joinIcon,
+  mobileIcon,
   xMarkIcon,
   heroIcon,
   heroCards,

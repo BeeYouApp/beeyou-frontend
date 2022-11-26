@@ -38,7 +38,7 @@ export default function LandingPlan() {
         <div className="">
           <p
             className={clsx(
-              "text-center text-base text-blue-gray-700 font-poppins font-light mt-2"
+              "text-center text-base text-blue-gray-700 font-poppins font-light mt-2 md:mb-10 md:text-start lg:mb-12 max-w-lg"
             )}
           >
             Los usuarios de Bee you están en busca de comercios incluyentes y

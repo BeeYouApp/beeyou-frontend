@@ -6,10 +6,12 @@ import { images } from "../lib/images";
 
 const MobileSidebar = ({ closeSidebar }) => {
   return (
-    <section className="bg-[#000000]/40 h-screen w-screen fixed top-0 left-0">
-      <section className="bg-white max-w-[50%] p-4 h-full border-2">
-        <section className="flex justify-between">
-          <div className={clsx("flex items-center mb-8 ")}>
+    <section
+      className={clsx("bg-[#000000]/40 h-screen w-screen fixed top-0 left-0")}
+    >
+      <section className={clsx("bg-white max-w-[70%] p-4 h-full border-2")}>
+        <section className={clsx("flex justify-between")}>
+          <div className={clsx("flex items-center mb-8")}>
             <Link href="">
               <Image src={images.beeyouLogo} alt="Bee You Logo" />
             </Link>
@@ -18,18 +20,30 @@ const MobileSidebar = ({ closeSidebar }) => {
             <Image src={images.xMarkIcon} alt="X Mark Icon" />
           </button>
         </section>
-        <ul className="blue-gray-700">
+        <ul className="text-blue-gray-700">
           <li>
             <Link href="">Inicio</Link>
           </li>
-          <li>
+          <li className="mt-4">
             <Link href="">Beneficios</Link>{" "}
           </li>
-          <li>
+          <li className="mt-4">
             <Link href="">Iniciar sesión</Link>{" "}
           </li>
-          <button className="mt-5 p-1 rounded-lg border-4 border-rose-500 ">
-            Unete a Bee you+!
+          <button
+            className={clsx(
+              "mt-5 w-56 p-1 rounded-lg border-4 border-rose-500"
+            )}
+          >
+            {" "}
+            <Link href="">
+              <Image
+                className="inline-block mr-4"
+                src={images.joinIcon}
+                alt="Join Icon"
+              />
+            </Link>
+            Únete a Bee you+!
           </button>
         </ul>
       </section>
@@ -48,7 +62,7 @@ export default function Navbar() {
       <nav
         className={clsx(
           "bg-[#ffffff]",
-          "shadow-xl",
+          "shadow-lg",
           "h-[60px]",
           "flex justify-between fixed top-0",
           "z-40",
@@ -62,7 +76,7 @@ export default function Navbar() {
             <Image src={images.beeyouLogo} alt="Bee You Logo" />
           </Link>
         </div>
-        <div className="flex items-center text-blue-gray-900 font-bold max-lg:hidden">
+        <div className="flex items-center font-montserrat text-sm text-blue-gray-700 max-lg:hidden">
           <a className="m-6" href="">
             Inicio
           </a>
@@ -70,13 +84,17 @@ export default function Navbar() {
             Beneficios
           </a>
           <a className="m-6" href="">
-            Iniciar sesion
+            Iniciar sesión
           </a>
-          <button className="m-6 p-2 rounded-lg border-4 border-rose-500 ">
-            {/* <Link href="">
-              <Image src={images.joinIcon} alt="Join Icon" />
-            </Link> */}
-            Unete a Bee you+!
+          <button className="m-6 p-2 w-56 rounded-lg border-4 border-rose-500">
+            <Link href="">
+              <Image
+                className="inline-block mr-4"
+                src={images.joinIcon}
+                alt="Join Icon"
+              />
+            </Link>
+            Únete a Bee you+!
           </button>
         </div>
         <div
@@ -93,8 +111,7 @@ export default function Navbar() {
           }}
         >
           <Link href="">
-            {/* <img src="/icon-menu-mobile.svg" alt="menu" /> */}
-            <Image src={images.joinIcon} alt="Join Icon" />
+            <Image src={images.mobileIcon} alt="Mobile Menu Icon" />
           </Link>
         </div>
       </nav>

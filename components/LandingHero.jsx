@@ -9,25 +9,25 @@ export default function LandingHero() {
       <section className="flex flex-col lg:flex-row mx-4">
         <section
           className={clsx(
-            "text-center md:text-start mt-10 md:mt-32 md:w-1/2 md:pl-8 lg:pl-14"
+            "text-center md:text-start mt-10 md:mt-36 md:pl-8 lg:pl-14"
           )}
         >
-          <section className={clsx("flex")}>
+          <section>
             <article>
               <h2
                 className={clsx(
-                  "text-lg font-normal md:text-3xl font-montserrat text-blue-gray-900 mt-12"
+                  "text-center md:text-start text-lg font-normal md:text-2xl font-montserrat text-blue-gray-900 mt-14 md:mt-0"
                 )}
               >
                 Encuentra tu lugar favorito
               </h2>
-              <h1 className="text-4xl md:text-5xl font-bold	font-montserrat text-blue-gray-900 mt-5 md:mt-2">
+              <h1 className="text-4xl md:text-5xl font-bold	font-montserrat text-blue-gray-900 mt-4 md:mt-2">
                 Únete a los
               </h1>
             </article>
             <article>
               <Image
-                className="invisible md:visible"
+                className={clsx("hidden md:block")}
                 src={images.heroIcon}
                 alt="Figure Hero Lines"
               />
@@ -38,7 +38,7 @@ export default function LandingHero() {
               negocios en racha
             </h1>
           </section>
-          <article className="mt-5 font-montserrat text-blue-gray-700">
+          <article className="mt-5 font-montserrat text-blue-gray-700 md:max-w-lg">
             <p>
               Únete a Bee You, una plataforma orientada a personas de la
               comunidad LGTBIQ+. ¡Encuentra tus lugares favoritos, eventos de
@@ -51,7 +51,7 @@ export default function LandingHero() {
             ></Button>
           </article>
         </section>
-        <section className="flex items-end p-8 md:w-6/6 lg:w-4/6 lg:mb-20">
+        <section className="flex items-end p-8 md:w-6/6 lg:w-3/6 lg:mt-20 lg:ml-32">
           <Image src={images.heroCards} alt="Figure Hero Cards" />
         </section>
       </section>

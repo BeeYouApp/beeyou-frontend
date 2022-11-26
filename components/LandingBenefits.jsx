@@ -11,16 +11,16 @@ export default function LandingBenefits() {
           <h1 className="text-3xl md:text-5xl font-montserrat text-blue-gray-900 font-bold mt-0.5">
             Disfruta de los
           </h1>
-          <h1 className="text-4xl md:text-5xl font-montserrat text-purple-800 font-bold mt-0.5">
+          <h1 className="text-4xl md:text-5xl font-montserrat text-purple-800 font-bold mt-0.5 leading-tight">
             beneficios friendly
           </h1>
         </article>
-        <article className="pl-10">
+        <article className="pl-10 w-36 mt-16 md:mt-6">
           <Image src={images.benefitsIcon} alt="Figure Benefits" />
         </article>
       </section>
       <article className="text-center md:text-start mt-5 font-montserrat text-blue-gray-700">
-        <p className="mb-10 md:mb-14 lg:mb-16">
+        <p className="mb-10 md:mb-14 md:max-w-lg lg:mb-16">
           ¡Únete a los negocios en Bee You! Forma parte de los negocios y
           organizaciones que apoyan abierta, libre y activamente a la comunidad
           LGBTIQ+.
