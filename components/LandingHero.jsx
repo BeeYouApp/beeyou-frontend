@@ -40,7 +40,7 @@ export default function LandingHero() {
           <section>
             <h1
               className={clsx(
-                "text-[40px] md:text-[55.5px] font-montserrat font-bold lgbtiq-grad-color leading-tight"
+                "text-[40px] md:text-[54px] font-montserrat font-bold lgbtiq-grad-color leading-tight"
               )}
             >
               negocios en racha

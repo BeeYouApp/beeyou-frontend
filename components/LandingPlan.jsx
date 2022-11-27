@@ -70,7 +70,7 @@ export default function LandingPlan() {
           <SwiperSlide className="mb-14">
             <article
               className={clsx(
-                "md:m-auto xl:m-auto card border-40 max-w-sm p-4 {/*xl:ml-16*/}"
+                "md:m-auto xl:m-auto card border-40 max-w-sm p-4"
               )}
             >
               <div className="flex mb-7 items-end w-full">
