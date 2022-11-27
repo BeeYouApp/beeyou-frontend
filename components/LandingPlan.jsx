@@ -60,9 +60,9 @@ export default function LandingPlan() {
               slidesPerView: 2,
             },
           }}
-          className="md:max-w-mb-[30px]"
+          className={clsx("md:max-w-mb-[30px]")}
         >
-          <SwiperSlide className="lg:mb-[50px]">
+          <SwiperSlide className={clsx("lg:mb-[50px]")}>
             <article
               className={clsx(
                 "card md:m-auto xl:m-auto mb-[60px] border-40 max-w-sm p-4"

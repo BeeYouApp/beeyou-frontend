@@ -16,7 +16,7 @@ const MobileSidebar = ({ closeSidebar }) => {
               <Image src={images.beeyouLogo} alt="Bee You Logo" />
             </Link>
           </div>
-          <button onClick={() => closeSidebar()}>
+          <button className={clsx("mb-10")} onClick={() => closeSidebar()}>
             <Image src={images.xMarkIcon} alt="X Mark Icon" />
           </button>
         </section>
