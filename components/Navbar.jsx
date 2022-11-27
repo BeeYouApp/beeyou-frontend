@@ -7,9 +7,15 @@ import { images } from "../lib/images";
 const MobileSidebar = ({ closeSidebar }) => {
   return (
     <section
-      className={clsx("bg-[#000000]/40 h-screen w-screen fixed top-0 left-0")}
+      className={clsx(
+        "bg-[#000000]/40 h-screen w-screen fixed top-0 left-0 lg:hidden"
+      )}
     >
-      <section className={clsx("bg-white max-w-[70%] p-4 h-full border-2")}>
+      <section
+        className={clsx(
+          "bg-white max-w-[70%] md:max-w-[35%] p-4 h-full border-2"
+        )}
+      >
         <section className={clsx("flex justify-between")}>
           <div className={clsx("flex items-center mb-8")}>
             <Link href="">
