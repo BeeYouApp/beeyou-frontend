@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'lgtb': "url('https://as1.ftcdn.net/v2/jpg/03/82/84/80/1000_F_382848035_DJrwRnkhrzyGYQQC1ybzJUMoxiGuKexO.jpg')",
+        lgtb: "url('https://as1.ftcdn.net/v2/jpg/03/82/84/80/1000_F_382848035_DJrwRnkhrzyGYQQC1ybzJUMoxiGuKexO.jpg')",
       },
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],
@@ -52,7 +52,3 @@ module.exports = {
   },
   plugins: [],
 };
-
-// "gradient-lgbt":
-// "bg-gradient-to-r from-[#FF4C35]/7.46, via-[#FE9B05]/22.91 via-[#FBC600]/38.35 via-[#72C63D]/57.377 via-[#665DFB]/73.66 to-[#C92CE5/92.2]",
-// "linear-gradient(90.41deg, #FF4C35 7.46%, #FE9B05 22.91%, #FBC600 38.35%, #72C63D 57.77%, #665DFB 73.66%, #C92CE5 92.2%);",

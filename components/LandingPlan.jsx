@@ -10,26 +10,26 @@ import "swiper/css/scrollbar";
 
 export default function LandingPlan() {
   return (
-    <section className="mx-4 md:pl-10 lg:pl-14">
+    <section className={clsx("mx-4 md:pl-10 lg:pl-14")}>
       <section>
         <h2
           className={clsx(
-            "text-left text-3xl text-blue-gray-900 font-montserrat font-bold mt-6 mb-2 pt-10"
+            "text-left text-[32px] text-blue-gray-900 font-montserrat font-bold mt-6 mb-2 pt-10 leading-none"
           )}
         >
           ¡Únete ahora! y...
         </h2>
-        <div className="flex">
+        <div className={clsx("flex")}>
           <h2
             className={clsx(
-              "text-left text-4xl text-green-900 font-montserrat font-semibold mb-2"
+              "text-left text-[38px] text-green-900 font-montserrat font-semibold mb-2 leading-none"
             )}
           >
-            elige el <span className="max-md:block">mejor plan</span>
+            elige el <span className={clsx("max-md:block")}>mejor plan</span>
           </h2>
-          <div className="flex">
+          <div className={clsx("flex")}>
             <Image
-              className={clsx("ml-7 w-16 h-16")}
+              className={clsx("ml-14 mt-5 md:mt-0 w-16 h-16")}
               src={images.medalIcon}
               alt="Medal Icon"
             />
@@ -38,7 +38,7 @@ export default function LandingPlan() {
         <div className="">
           <p
             className={clsx(
-              "text-center text-base text-blue-gray-700 font-poppins font-light mt-2 md:mb-10 md:text-start lg:mb-12 max-w-lg"
+              "text-center text-base text-blue-gray-700 font-poppins font-light mt-6 md:mt-0 mb-6 md:mb-10 md:text-start lg:mb-12 max-w-[328px] md:max-w-lg"
             )}
           >
             Los usuarios de Bee you están en busca de comercios incluyentes y
@@ -47,7 +47,7 @@ export default function LandingPlan() {
           </p>
         </div>
       </section>
-      <section className="flex justify-evenly">
+      <section className={clsx("flex justify-evenly")}>
         <Swiper
           modules={[Pagination, A11y]}
           spaceBetween={10}
@@ -56,24 +56,19 @@ export default function LandingPlan() {
           onSwiper={(swiper) => console.log(swiper)}
           onSlideChange={() => console.log("slide change")}
           breakpoints={{
-            // when window width is >= 640px
             1024: {
               slidesPerView: 2,
             },
-            // when window width is >= 768px
-            // 768: {
-            //   width: 768,
-            //   slidesPerView: 2,
-            // },
           }}
+          className={clsx("md:max-w-mb-[30px]")}
         >
-          <SwiperSlide className="mb-14">
+          <SwiperSlide className={clsx("lg:mb-[50px]")}>
             <article
               className={clsx(
-                "md:m-auto xl:m-auto card border-40 max-w-sm p-4 {/*xl:ml-16*/}"
+                "card md:m-auto xl:m-auto mb-[60px] border-40 max-w-sm p-4"
               )}
             >
-              <div className="flex mb-7 items-end w-full">
+              <div className={clsx("flex mb-20 md:mb-7 items-end w-full")}>
                 <Image
                   className={clsx("mr-3.5")}
                   src={images.freePlanIcon}
@@ -90,9 +85,8 @@ export default function LandingPlan() {
                   </p>
                 </div>
               </div>
-
               <ul>
-                <li className="flex">
+                <li className={clsx("flex")}>
                   <Image
                     className={clsx("w-4 h-4 mr-3.5 mt-1")}
                     src={images.checkIcon}
@@ -116,8 +110,7 @@ export default function LandingPlan() {
                     </p>
                   </div>
                 </li>
-
-                <li className="flex">
+                <li className={clsx("flex")}>
                   <Image
                     className={clsx("w-4 h-4 mr-3.5 mt-1")}
                     src={images.checkIcon}
@@ -142,7 +135,7 @@ export default function LandingPlan() {
                   </div>
                 </li>
 
-                <li className="flex">
+                <li className={clsx("flex")}>
                   <Image
                     className={clsx("w-4 h-4 mr-3.5 mt-1")}
                     src={images.checkIcon}
@@ -173,19 +166,19 @@ export default function LandingPlan() {
               </button>
             </article>
           </SwiperSlide>
-          <SwiperSlide className="mb-14">
+          <SwiperSlide>
             <article
               className={clsx(
-                "md:m-auto xl:m-auto card max-w-sm p-4 {/*xl:mr-16*/}"
+                "card md:m-auto xl:m-auto md:mb-[60px] lg:mb-[50px] max-w-sm p-4"
               )}
             >
-              <div className="flex mb-7 items-end w-full">
+              <div className={clsx("flex mb-7 items-end w-full")}>
                 <Image
                   className={clsx("mr-3.5")}
                   src={images.proPlanIcon}
                   alt="Pro Plan Icon"
                 />
-                <section className="flex justify-between">
+                <section className={clsx("flex justify-between")}>
                   <div>
                     <h3
                       className={clsx(
@@ -202,7 +195,7 @@ export default function LandingPlan() {
                       MX$ 1599.99/año
                     </p>
                   </div>
-                  <div className="flex items-center text-center">
+                  <div className={clsx("flex items-center text-center")}>
                     <p
                       className={clsx(
                         "font-montserrat font-semibold text-blue-gray-700 text-xs bg-madang-50 rounded mb-6 px-1 py-0.5"
