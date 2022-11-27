@@ -12,7 +12,7 @@ export default function Dashboard () {
       <div className="grid grid-flow-col grid-cols-6 h-screen">
         <div className="bg-pink-100 row-span-6">Aqui va el aside</div>
         <div className="col-span-5 row-span-3 ">
-          <h1 className="ml-16 mb-5 mt-5 bg">Friendly espacios</h1>
+          <h1 className="ml-20 mb-5 mt-5 text-4xl font-montserrat">Friendly espacios</h1>
           <div className=" w-11/12 bg h-5/6 radaial-2 m-auto rounded-2xl">
           <Map/>
           </div>

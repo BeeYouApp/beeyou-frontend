@@ -21,7 +21,7 @@ export default function Map() {
     });
     return (
         <div>
-            <div style={{height: '500px', width: '100%'}} ref={mapContainer} className="map-container" />
+            <div style={{height: '500px', width: '100%',}} ref={mapContainer} className="map-container" />
         </div>
     );
 }
