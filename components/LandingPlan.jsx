@@ -29,7 +29,7 @@ export default function LandingPlan() {
           </h2>
           <div className={clsx("flex")}>
             <Image
-              className={clsx("ml-14 mt-5 w-16 h-16")}
+              className={clsx("ml-14 mt-5 md:mt-0 w-16 h-16")}
               src={images.medalIcon}
               alt="Medal Icon"
             />
@@ -38,7 +38,7 @@ export default function LandingPlan() {
         <div className="">
           <p
             className={clsx(
-              "text-center text-base text-blue-gray-700 font-poppins font-light mt-6 mb-6 md:mb-10 md:text-start lg:mb-12 max-w-[328px] md:max-w-lg"
+              "text-center text-base text-blue-gray-700 font-poppins font-light mt-6 md:mt-0 mb-6 md:mb-10 md:text-start lg:mb-12 max-w-[328px] md:max-w-lg"
             )}
           >
             Los usuarios de Bee you están en busca de comercios incluyentes y
@@ -60,14 +60,15 @@ export default function LandingPlan() {
               slidesPerView: 2,
             },
           }}
+          className="md:max-w-mb-[30px]"
         >
-          <SwiperSlide>
+          <SwiperSlide className="lg:mb-[50px]">
             <article
               className={clsx(
-                "card md:m-auto xl:m-auto mb-[70px] md:mb-[80px] lg:mb-[50px] border-40 max-w-sm p-4"
+                "card md:m-auto xl:m-auto mb-[60px] border-40 max-w-sm p-4"
               )}
             >
-              <div className={clsx("flex mb-7 items-end w-full")}>
+              <div className={clsx("flex mb-20 md:mb-7 items-end w-full")}>
                 <Image
                   className={clsx("mr-3.5")}
                   src={images.freePlanIcon}
@@ -165,7 +166,7 @@ export default function LandingPlan() {
               </button>
             </article>
           </SwiperSlide>
-          <SwiperSlide className={clsx("")}>
+          <SwiperSlide>
             <article
               className={clsx(
                 "card md:m-auto xl:m-auto md:mb-[60px] lg:mb-[50px] max-w-sm p-4"

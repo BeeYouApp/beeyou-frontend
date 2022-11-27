@@ -58,7 +58,7 @@ export default function LandingBenefits() {
             onSlideChange={() => console.log("slide change")}
             breakpoints={{
               1024: {
-                slidesPerView: 1,
+                slidesPerView: 3,
               },
             }}
           >
