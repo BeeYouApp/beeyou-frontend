@@ -147,6 +147,23 @@ export default function Navbar() {
             setIsMobileSidebarOpen(true);
           }}
         >
+          <div className="hidden md:mr-4 md:mb-5 md:block">
+            <button
+              className={clsx(
+                "font-montserrat text-sm font-semibold mt-5 w-56 p-1 rounded-lg border-x border-y lgbtiq-grad-color"
+              )}
+            >
+              {" "}
+              <Link href="">
+                <Image
+                  className={clsx("inline-block mr-4")}
+                  src={images.joinIcon}
+                  alt="Join Icon"
+                />
+              </Link>
+              Únete a Bee you+!
+            </button>
+          </div>
           <Link href="">
             <Image src={images.mobileIcon} alt="Mobile Menu Icon" />
           </Link>
