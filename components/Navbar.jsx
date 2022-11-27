@@ -21,15 +21,27 @@ const MobileSidebar = ({ closeSidebar }) => {
           </button>
         </section>
         <ul className={clsx("font-montserrat text-sm text-blue-gray-700")}>
-          <li className="pl-6 overflow-hidden hover:opacity-90 hover:rounded hover:w-56 hover:h-7 transition duration-300 ease-in-out hover:bg-blue-gray-50">
-            <Link className="align-middle" href="">
+          <li
+            className={clsx(
+              "pl-6 overflow-hidden hover:opacity-90 hover:rounded hover:w-56 hover:h-7 transition duration-300 ease-in-out hover:bg-blue-gray-50"
+            )}
+          >
+            <Link className={clsx("align-middle")} href="">
               Inicio
             </Link>
           </li>
-          <li className="pl-6 overflow-hidden hover:opacity-90 hover:rounded hover:w-56 hover:h-7 transition duration-300 ease-in-out hover:bg-blue-gray-50 mt-4">
+          <li
+            className={clsx(
+              "pl-6 overflow-hidden hover:opacity-90 hover:rounded hover:w-56 hover:h-7 transition duration-300 ease-in-out hover:bg-blue-gray-50 mt-4"
+            )}
+          >
             <Link href="">Beneficios</Link>{" "}
           </li>
-          <li className="pl-6 overflow-hidden hover:opacity-90 hover:rounded hover:w-56 hover:h-7 transition duration-300 ease-in-out hover:bg-blue-gray-50 mt-4">
+          <li
+            className={clsx(
+              "pl-6 overflow-hidden hover:opacity-90 hover:rounded hover:w-56 hover:h-7 transition duration-300 ease-in-out hover:bg-blue-gray-50 mt-4"
+            )}
+          >
             <Link href="">Iniciar sesión</Link>{" "}
           </li>
           <button
@@ -40,7 +52,7 @@ const MobileSidebar = ({ closeSidebar }) => {
             {" "}
             <Link href="">
               <Image
-                className="inline-block mr-4"
+                className={clsx("inline-block mr-4")}
                 src={images.joinIcon}
                 alt="Join Icon"
               />
@@ -78,29 +90,43 @@ export default function Navbar() {
             <Image src={images.beeyouLogo} alt="Bee You Logo" />
           </Link>
         </div>
-        <div className="flex items-center font-montserrat text-sm text-blue-gray-700 max-lg:hidden">
+        <div
+          className={clsx(
+            "flex items-center font-montserrat text-sm text-blue-gray-700 max-lg:hidden"
+          )}
+        >
           <a
-            className="overflow-hidden hover:opacity-90 hover:rounded px-6 py-2 transition duration-300 ease-in-out hover:bg-blue-gray-50"
+            className={clsx(
+              "overflow-hidden hover:opacity-90 hover:rounded px-6 py-2 transition duration-300 ease-in-out hover:bg-blue-gray-50"
+            )}
             href=""
           >
             Inicio
           </a>
           <a
-            className="overflow-hidden hover:opacity-90 hover:rounded px-6 py-2 transition duration-300 ease-in-out hover:bg-blue-gray-50"
+            className={clsx(
+              "overflow-hidden hover:opacity-90 hover:rounded px-6 py-2 transition duration-300 ease-in-out hover:bg-blue-gray-50"
+            )}
             href=""
           >
             Beneficios
           </a>
           <a
-            className="overflow-hidden hover:opacity-90 hover:rounded px-8 py-2 transition duration-300 ease-in-out hover:bg-blue-gray-50"
+            className={clsx(
+              "overflow-hidden hover:opacity-90 hover:rounded px-8 py-2 transition duration-300 ease-in-out hover:bg-blue-gray-50"
+            )}
             href=""
           >
             Iniciar sesión
           </a>
-          <button className="font-montserrat text-sm font-semibold m-6 w-56 p-2 rounded-lg border-x border-y lgbtiq-grad-color">
+          <button
+            className={clsx(
+              "font-montserrat text-sm font-semibold m-6 w-56 p-2 rounded-lg border-x border-y lgbtiq-grad-color"
+            )}
+          >
             <Link href="">
               <Image
-                className="inline-block mr-4"
+                className={clsx("inline-block mr-4")}
                 src={images.joinIcon}
                 alt="Join Icon"
               />
