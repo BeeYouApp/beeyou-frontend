@@ -119,11 +119,15 @@ export default function LandingBenefits() {
           </Swiper>
         </section>
 
-        <section className="w-full flex flex-nowrap justify-evenly content-center">
+        <section
+          className={clsx(
+            "w-full flex flex-nowrap justify-evenly content-center"
+          )}
+        >
           <Button
             label="¡ÚNETE A BEE YOU+!"
             isSubmit
-            style="mb-10 md:mt-8 lgbtiq-button-two lgbtiq-grad-bg"
+            style={clsx("mb-10 md:mt-8 lgbtiq-button-two lgbtiq-grad-bg")}
           ></Button>
         </section>
       </article>
