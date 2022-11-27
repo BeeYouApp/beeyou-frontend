@@ -20,19 +20,21 @@ const MobileSidebar = ({ closeSidebar }) => {
             <Image src={images.xMarkIcon} alt="X Mark Icon" />
           </button>
         </section>
-        <ul className="text-blue-gray-700">
-          <li>
-            <Link href="">Inicio</Link>
+        <ul className={clsx("font-montserrat text-sm text-blue-gray-700")}>
+          <li className="pl-6 overflow-hidden hover:opacity-90 hover:rounded hover:w-56 hover:h-7 transition duration-300 ease-in-out hover:bg-blue-gray-50">
+            <Link className="align-middle" href="">
+              Inicio
+            </Link>
           </li>
-          <li className="mt-4">
+          <li className="pl-6 overflow-hidden hover:opacity-90 hover:rounded hover:w-56 hover:h-7 transition duration-300 ease-in-out hover:bg-blue-gray-50 mt-4">
             <Link href="">Beneficios</Link>{" "}
           </li>
-          <li className="mt-4">
+          <li className="pl-6 overflow-hidden hover:opacity-90 hover:rounded hover:w-56 hover:h-7 transition duration-300 ease-in-out hover:bg-blue-gray-50 mt-4">
             <Link href="">Iniciar sesión</Link>{" "}
           </li>
           <button
             className={clsx(
-              "mt-5 w-56 p-1 rounded-lg border-4 border-rose-500"
+              "font-montserrat text-sm font-semibold mt-5 w-56 p-1 rounded-lg border-x border-y lgbtiq-grad-color"
             )}
           >
             {" "}
@@ -71,22 +73,31 @@ export default function Navbar() {
         )}
       >
         {isMobileSidebarOpen && <MobileSidebar closeSidebar={closeSidebar} />}
-        <div className={clsx("flex items-center pl-6 ")}>
+        <div className={clsx("flex items-center pl-6")}>
           <Link href="">
             <Image src={images.beeyouLogo} alt="Bee You Logo" />
           </Link>
         </div>
         <div className="flex items-center font-montserrat text-sm text-blue-gray-700 max-lg:hidden">
-          <a className="m-6" href="">
+          <a
+            className="overflow-hidden hover:opacity-90 hover:rounded px-6 py-2 transition duration-300 ease-in-out hover:bg-blue-gray-50"
+            href=""
+          >
             Inicio
           </a>
-          <a className="m-6" href="">
+          <a
+            className="overflow-hidden hover:opacity-90 hover:rounded px-6 py-2 transition duration-300 ease-in-out hover:bg-blue-gray-50"
+            href=""
+          >
             Beneficios
           </a>
-          <a className="m-6" href="">
+          <a
+            className="overflow-hidden hover:opacity-90 hover:rounded px-8 py-2 transition duration-300 ease-in-out hover:bg-blue-gray-50"
+            href=""
+          >
             Iniciar sesión
           </a>
-          <button className="m-6 p-2 w-56 rounded-lg border-4 border-rose-500">
+          <button className="font-montserrat text-sm font-semibold m-6 w-56 p-2 rounded-lg border-x border-y lgbtiq-grad-color">
             <Link href="">
               <Image
                 className="inline-block mr-4"
