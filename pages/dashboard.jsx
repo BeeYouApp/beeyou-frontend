@@ -10,7 +10,58 @@ export default function Dashboard () {
         <Navbar/>
       </nav>
       <div className="grid grid-flow-col grid-cols-6 h-screen">
-        <div className="bg-pink-100 row-span-6">Aqui va el aside</div>
+        <div className="bg-pink-100 row-span-6"Aqui va el aside>
+          
+          {/* <nav className={styles["navbar"]}>
+            <ul className={styles["navbar__list"]}>
+              <li className={styles["navbar__list-item"]}>
+                <div className={styles["navbar__navigation-item"]}>
+                  {/* <HomeIcon /> */}
+                  {/* Home
+                </div>
+              </li>
+              <li className={styles["navbar__list-item"]}>
+                <div className={styles["navbar__navigation-item"]}> */}
+                  {/* <General /> */}
+                  {/* GENERAL
+                </div>
+              </li>
+              <li className={styles["navbar__list-item"]}>
+                <div className={styles["navbar__navigation-item"]}> */}
+                  {/* <Inicio /> */}
+                  {/* Inicio
+                </div>
+              </li>
+              <li className={styles["navbar__list-item"]}>
+                <div className={styles["navbar__navigation-item"]}> */}
+                  {/* <Events /> */}
+                  {/* Eventos
+                </div>
+              </li>
+              <li className={styles["navbar__list-item"]}>
+                <div className={styles["navbar__navigation-item"]}> */}
+                  {/* <Biz /> */}
+                  {/* Establecimientos
+                </div>
+              </li>
+              <li className={styles["navbar__list-item"]}>
+                <div className={styles["navbar__navigation-item"]}> */}
+                  {/* <Discounts /> */}
+                  {/* Descuentos
+                </div>
+              </li>
+              <li className={styles["navbar__list-item"]}>
+                <div className={styles["navbar__navigation-item"]}> */}
+                  {/* <FAQ /> */}
+                  {/* Mis favoritos
+                </div>
+              </li>
+              {props.user === "admin" ? <li> hola </li> : ''} 
+            </ul>
+          </nav> 
+        // </div> */} */}
+
+
         <div className="col-span-5 row-span-3 ">
           <h1 className="ml-20 mb-5 mt-5 text-4xl font-montserrat">Friendly espacios</h1>
           <div className=" w-11/12 bg h-5/6 radaial-2 m-auto rounded-2xl">
