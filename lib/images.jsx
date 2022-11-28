@@ -17,6 +17,12 @@ import facebookIcon from "../public/assets/landing/icon-facebook.svg";
 import instagramIcon from "../public/assets/landing/icon-instagram.svg";
 import telephoneIcon from "../public/assets/landing/icon-telephone.svg";
 import emailIcon from "../public/assets/landing/icon-email.svg";
+import nearEventIcon from "../public/assets/dashboard/icon-event-near.svg";
+import paradeFlag from "../public/assets/dashboard/figure-flag-parade.png";
+import allEventsIcon from "../public/assets/dashboard/icon-all-events.svg";
+import beeYouEvent from "../public/assets/dashboard/logo-byou-event.svg";
+import leftArrow from "../public/assets/dashboard/arrow-left.svg";
+import rightArrow from "../public/assets/dashboard/arrow-right.svg";
 
 export const images = {
   beeyouLogo,
@@ -38,4 +44,10 @@ export const images = {
   instagramIcon,
   telephoneIcon,
   emailIcon,
+  paradeFlag,
+  nearEventIcon,
+  allEventsIcon,
+  beeYouEvent,
+  leftArrow,
+  rightArrow,
 };
