@@ -1,11 +1,13 @@
 import clsx from "clsx";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import CardBusiness from "../components/CardBusiness";
 
 export default function Home() {
   return (
     <>
       <Navbar />
+      <CardBusiness/>
       <main
         className={clsx(
           "bg-gradient-to-r from-indigo-500",
