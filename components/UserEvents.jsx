@@ -9,7 +9,7 @@ export default function UserEvents() {
   return (
     <section>
       <Navbar />
-      <article className="px-4 mt-24">
+      <article className="px-4 md:px-8 mt-24">
         <h3
           className={clsx(
             "font-montserrat font-bold text-blue-gray-900 text-[24px] leading-[30px]"
@@ -31,30 +31,87 @@ export default function UserEvents() {
             Tus eventos cercanos
           </h4>
         </section>
-        <section>
+        <section className="md:flex md:justify-evenly">
           <div className="flex justify-center">
-            <div className="shadow-lg max-w-sm">
+            <section className="hidden md:flex md:items-center md:mr-[65px]">
+              <Image
+                className={clsx("")}
+                src={images.leftArrow}
+                alt="Left Arrow Icon"
+              />
+            </section>
+            <div className="shadow-lg max-w-sm md:mr-5">
               <a href="#!">
                 <Image
-                  className={clsx("rounded-lg")}
+                  className={clsx(
+                    "rounded-lg w-[328px] md:w-[215px] h-[257px] object-none"
+                  )}
                   src={images.paradeFlag}
                   alt="Parade Flag Image"
                 />
               </a>
             </div>
           </div>
+          <div className="hidden md:block">
+            <div className="shadow-lg max-w-sm md:ml-5">
+              <a href="#!">
+                <Image
+                  className={clsx(
+                    "rounded-lg w-[328px] md:w-[215px] h-[257px] object-none"
+                  )}
+                  src={images.paradeFlag}
+                  alt="Parade Flag Image"
+                />
+              </a>
+            </div>
+          </div>
+          <div className="hidden lg:block">
+            <div className="shadow-lg max-w-sm md:ml-5">
+              <a href="#!">
+                <Image
+                  className={clsx(
+                    "rounded-lg w-[328px] md:w-[215px] h-[257px] object-none"
+                  )}
+                  src={images.paradeFlag}
+                  alt="Parade Flag Image"
+                />
+              </a>
+            </div>
+          </div>
+          <div className="hidden lg:block">
+            <div className="shadow-lg max-w-sm md:ml-5">
+              <a href="#!">
+                <Image
+                  className={clsx(
+                    "rounded-lg w-[328px] md:w-[215px] h-[257px] object-none"
+                  )}
+                  src={images.paradeFlag}
+                  alt="Parade Flag Image"
+                />
+              </a>
+            </div>
+          </div>
+          <section className="hidden md:flex md:items-center md:ml-[65px]">
+            <Image
+              className={clsx("")}
+              src={images.rightArrow}
+              alt="Right Arrow Icon"
+            />
+          </section>
         </section>
-        <section className="flex justify-end mt-6">
-          <Image
-            className={clsx("")}
-            src={images.leftArrow}
-            alt="Left Arrow Icon"
-          />
-          <Image
-            className={clsx("ml-10")}
-            src={images.rightArrow}
-            alt="Right Arrow Icon"
-          />
+        <section className="md:hidden">
+          <section className="flex justify-end mt-6">
+            <Image
+              className={clsx("")}
+              src={images.leftArrow}
+              alt="Left Arrow Icon"
+            />
+            <Image
+              className={clsx("ml-10")}
+              src={images.rightArrow}
+              alt="Right Arrow Icon"
+            />
+          </section>
         </section>
         <section>
           <section className="flex items-center mt-10 mb-6">
@@ -69,7 +126,7 @@ export default function UserEvents() {
           </section>
           <div className="flex flex-col">
             <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
-              <div className="py-4 inline-block min-w-full sm:px-6 lg:px-8">
+              <div className="py-4 md:mb-[75px] inline-block min-w-full sm:px-6 lg:px-8">
                 <div className="overflow-hidden">
                   <table className="min-w-full text-center">
                     <thead className="border-b bg-gray-50">
