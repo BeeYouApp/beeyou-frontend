@@ -127,7 +127,7 @@ export default function UserEvents() {
           <div className="flex flex-col">
             <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
               <div className="py-4 md:mb-[75px] inline-block min-w-full sm:px-6 lg:px-8">
-                <div className="overflow-hidden">
+                <div className="overflow-y-auto">
                   <table className="min-w-full text-center">
                     <thead className="border-b bg-gray-50">
                       <tr>
@@ -149,6 +149,12 @@ export default function UserEvents() {
                         >
                           FECHA
                         </th>
+                        <th
+                          scope="col"
+                          className="hidden lg:block text-[14px] font-medium text-blue-gray-600 px-6 py-4"
+                        >
+                          HORA
+                        </th>
                       </tr>
                     </thead>
                     <tbody>
@@ -167,21 +173,8 @@ export default function UserEvents() {
                         <td className="text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap">
                           16/12/2022
                         </td>
-                      </tr>
-                      <tr className="bg-white border-b">
-                        <td className="flex items-center text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap">
-                          <Image
-                            className={clsx("w-16 h-12 mr-3")}
-                            src={images.beeYouEvent}
-                            alt="Near Event Icon"
-                          />
-                          BEE YOU APP
-                        </td>
-                        <td className="text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap">
-                          Orgullo 2023
-                        </td>
-                        <td className="text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap">
-                          16/12/2022
+                        <td className="hidden lg:table-cell text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap">
+                          07:00 pm
                         </td>
                       </tr>
                       <tr className="bg-white border-b">
@@ -199,6 +192,9 @@ export default function UserEvents() {
                         <td className="text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap">
                           16/12/2022
                         </td>
+                        <td className="hidden lg:table-cell text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap">
+                          07:00 pm
+                        </td>
                       </tr>
                       <tr className="bg-white border-b">
                         <td className="flex items-center text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap">
@@ -214,6 +210,28 @@ export default function UserEvents() {
                         </td>
                         <td className="text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap">
                           16/12/2022
+                        </td>
+                        <td className="hidden lg:table-cell text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap">
+                          07:00 pm
+                        </td>
+                      </tr>
+                      <tr className="bg-white border-b">
+                        <td className="flex items-center text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap">
+                          <Image
+                            className={clsx("w-16 h-12 mr-3")}
+                            src={images.beeYouEvent}
+                            alt="Near Event Icon"
+                          />
+                          BEE YOU APP
+                        </td>
+                        <td className="text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap">
+                          Orgullo 2023
+                        </td>
+                        <td className="text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap">
+                          16/12/2022
+                        </td>
+                        <td className="hidden lg:table-cell text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap">
+                          07:00 pm
                         </td>
                       </tr>
                     </tbody>
