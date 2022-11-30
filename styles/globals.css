@@ -66,3 +66,10 @@ h1 {
 #__next {
     overflow: hidden;
 }
+
+.font-search {
+    font-family: montserrat !important;
+}
+::placeholder {
+    font-family: montserrat !important;
+}
