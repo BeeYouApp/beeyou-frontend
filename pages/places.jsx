@@ -33,16 +33,18 @@ export default function PlacesPage() {
             Espacios en racha
           </h4>
         </section>
-        <section className="md:flex md:justify-evenly">
-          <div className="flex justify-center">
-            <section className="hidden md:flex md:items-center md:mr-[65px]">
+        <section className={clsx("md:flex md:justify-evenly")}>
+          <div className={clsx("flex justify-center")}>
+            <section
+              className={clsx("hidden md:flex md:items-center md:mr-[65px]")}
+            >
               <Image
                 className={clsx("")}
                 src={images.leftArrow}
                 alt="Left Arrow Icon"
               />
             </section>
-            <div className="shadow-lg max-w-sm md:mr-5">
+            <div className={clsx("shadow-lg max-w-sm md:mr-5")}>
               <a href="#!">
                 <Image
                   className={clsx(
@@ -54,8 +56,8 @@ export default function PlacesPage() {
               </a>
             </div>
           </div>
-          <div className="hidden md:block">
-            <div className="shadow-lg max-w-sm md:ml-5">
+          <div className={clsx("hidden md:block")}>
+            <div className={clsx("shadow-lg max-w-sm md:ml-5")}>
               <a href="#!">
                 <Image
                   className={clsx(
@@ -67,8 +69,8 @@ export default function PlacesPage() {
               </a>
             </div>
           </div>
-          <div className="hidden lg:block">
-            <div className="shadow-lg max-w-sm md:ml-5">
+          <div className={clsx("hidden lg:block")}>
+            <div className={clsx("shadow-lg max-w-sm md:ml-5")}>
               <a href="#!">
                 <Image
                   className={clsx(
@@ -80,8 +82,8 @@ export default function PlacesPage() {
               </a>
             </div>
           </div>
-          <div className="hidden lg:block">
-            <div className="shadow-lg max-w-sm md:ml-5">
+          <div className={clsx("hidden lg:block")}>
+            <div className={clsx("shadow-lg max-w-sm md:ml-5")}>
               <a href="#!">
                 <Image
                   className={clsx(
@@ -93,7 +95,9 @@ export default function PlacesPage() {
               </a>
             </div>
           </div>
-          <section className="hidden md:flex md:items-center md:ml-[65px]">
+          <section
+            className={clsx("hidden md:flex md:items-center md:ml-[65px]")}
+          >
             <Image
               className={clsx("")}
               src={images.rightArrow}
@@ -101,8 +105,8 @@ export default function PlacesPage() {
             />
           </section>
         </section>
-        <section className="md:hidden">
-          <section className="flex justify-end mt-6">
+        <section className={clsx("md:hidden")}>
+          <section className={clsx("flex justify-end mt-6")}>
             <Image
               className={clsx("")}
               src={images.leftArrow}
@@ -115,7 +119,7 @@ export default function PlacesPage() {
             />
           </section>
         </section>
-        <section className="flex items-center mt-10 mb-5">
+        <section className={clsx("flex items-center mt-10 mb-5")}>
           <Image src={images.placesIcon} alt="Friendly Places Icon" />
           <h4
             className={clsx(
@@ -134,10 +138,16 @@ export default function PlacesPage() {
             </p>
           </div>
         </section>
-        <label className="relative text-gray-400 focus-within:text-gray-600 block">
+        <label
+          className={clsx(
+            "relative text-gray-400 focus-within:text-gray-600 block"
+          )}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="pointer-events-none w-8 h-8 absolute top-1/2 transform -translate-y-1/2 left-3"
+            className={clsx(
+              "pointer-events-none w-8 h-8 absolute top-1/2 transform -translate-y-1/2 left-3"
+            )}
             viewBox="-10 -10 85 85"
             fill="currentColor"
           >
@@ -153,45 +163,63 @@ export default function PlacesPage() {
             name="search"
             id="search"
             placeholder="Busca tu espacio..."
-            className="font-search form-input rounded-lg border border-gray-200 py-3 bg-white font-light placeholder-blue-gray-500 text-blue-gray-500 appearance-none w-full block pl-16 focus:outline-none"
+            className={clsx(
+              "font-search form-input rounded-lg border border-gray-200 py-3 bg-white font-light placeholder-blue-gray-500 text-blue-gray-500 appearance-none w-full block pl-16 focus:outline-none"
+            )}
           />
         </label>
-        <div className="flex flex-col">
-          <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
-            <div className="py-4 md:mb-[75px] inline-block min-w-full sm:px-6 lg:px-8">
-              <div className="overflow-y-auto">
-                <table className="min-w-full text-center">
-                  <thead className="border-b bg-gray-50">
+        <div className={clsx("flex flex-col")}>
+          <div className={clsx("overflow-x-auto sm:-mx-6 lg:-mx-8")}>
+            <div
+              className={clsx(
+                "py-4 md:mb-[75px] inline-block min-w-full sm:px-6 lg:px-8"
+              )}
+            >
+              <div className={clsx("overflow-y-auto")}>
+                <table className={clsx("min-w-full text-center")}>
+                  <thead className={clsx("border-b bg-gray-50")}>
                     <tr>
                       <th
                         scope="col"
-                        className="text-[14px] font-medium text-blue-gray-600 pl-6 pr-32 py-4"
+                        className={clsx(
+                          "text-[14px] font-medium text-blue-gray-600 pl-6 pr-32 py-4"
+                        )}
                       >
                         ORGANIZADOR
                       </th>
                       <th
                         scope="col"
-                        className="text-[14px] font-medium text-blue-gray-600 px-6 py-4"
+                        className={clsx(
+                          "text-[14px] font-medium text-blue-gray-600 px-6 py-4"
+                        )}
                       >
                         EVENTO
                       </th>
                       <th
                         scope="col"
-                        className="text-[14px] font-medium text-blue-gray-600 px-6 py-4"
+                        className={clsx(
+                          "text-[14px] font-medium text-blue-gray-600 px-6 py-4"
+                        )}
                       >
                         FECHA
                       </th>
                       <th
                         scope="col"
-                        className="hidden lg:block text-[14px] font-medium text-blue-gray-600 px-6 py-4"
+                        className={clsx(
+                          "hidden lg:block text-[14px] font-medium text-blue-gray-600 px-6 py-4"
+                        )}
                       >
                         HORA
                       </th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="bg-white border-b">
-                      <td className="flex items-center text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap">
+                    <tr className={clsx("bg-white border-b")}>
+                      <td
+                        className={clsx(
+                          "flex items-center text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap"
+                        )}
+                      >
                         <Image
                           className={clsx("w-16 h-12 mr-3")}
                           src={images.beeYouEvent}
@@ -199,18 +227,34 @@ export default function PlacesPage() {
                         />
                         BEE YOU APP
                       </td>
-                      <td className="text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap">
+                      <td
+                        className={clsx(
+                          "text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap"
+                        )}
+                      >
                         Orgullo 2023
                       </td>
-                      <td className="text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap">
+                      <td
+                        className={clsx(
+                          "text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap"
+                        )}
+                      >
                         16/12/2022
                       </td>
-                      <td className="hidden lg:table-cell text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap">
+                      <td
+                        className={clsx(
+                          "hidden lg:table-cell text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap"
+                        )}
+                      >
                         07:00 pm
                       </td>
                     </tr>
-                    <tr className="bg-white border-b">
-                      <td className="flex items-center text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap">
+                    <tr className={clsx("bg-white border-b")}>
+                      <td
+                        className={clsx(
+                          "flex items-center text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap"
+                        )}
+                      >
                         <Image
                           className={clsx("w-16 h-12 mr-3")}
                           src={images.beeYouEvent}
@@ -218,18 +262,34 @@ export default function PlacesPage() {
                         />
                         BEE YOU APP
                       </td>
-                      <td className="text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap">
+                      <td
+                        className={clsx(
+                          "text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap"
+                        )}
+                      >
                         Orgullo 2023
                       </td>
-                      <td className="text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap">
+                      <td
+                        className={clsx(
+                          "text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap"
+                        )}
+                      >
                         16/12/2022
                       </td>
-                      <td className="hidden lg:table-cell text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap">
+                      <td
+                        className={clsx(
+                          "hidden lg:table-cell text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap"
+                        )}
+                      >
                         07:00 pm
                       </td>
                     </tr>
-                    <tr className="bg-white border-b">
-                      <td className="flex items-center text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap">
+                    <tr className={clsx("bg-white border-b")}>
+                      <td
+                        className={clsx(
+                          "flex items-center text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap"
+                        )}
+                      >
                         <Image
                           className={clsx("w-16 h-12 mr-3")}
                           src={images.beeYouEvent}
@@ -237,17 +297,29 @@ export default function PlacesPage() {
                         />
                         BEE YOU APP
                       </td>
-                      <td className="text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap">
+                      <td
+                        className={clsx(
+                          "text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap"
+                        )}
+                      >
                         Orgullo 2023
                       </td>
-                      <td className="text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap">
+                      <td
+                        className={clsx(
+                          "text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap"
+                        )}
+                      >
                         16/12/2022
                       </td>
-                      <td className="hidden lg:table-cell text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap">
+                      <td
+                        className={clsx(
+                          "hidden lg:table-cell text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap"
+                        )}
+                      >
                         07:00 pm
                       </td>
                     </tr>
-                    <tr className="bg-white border-b">
+                    <tr className={clsx("bg-white border-b")}>
                       <td className="flex items-center text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap">
                         <Image
                           className={clsx("w-16 h-12 mr-3")}
@@ -256,13 +328,25 @@ export default function PlacesPage() {
                         />
                         BEE YOU APP
                       </td>
-                      <td className="text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap">
+                      <td
+                        className={clsx(
+                          "text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap"
+                        )}
+                      >
                         Orgullo 2023
                       </td>
-                      <td className="text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap">
+                      <td
+                        className={clsx(
+                          "text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap"
+                        )}
+                      >
                         16/12/2022
                       </td>
-                      <td className="hidden lg:table-cell text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap">
+                      <td
+                        className={clsx(
+                          "hidden lg:table-cell text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap"
+                        )}
+                      >
                         07:00 pm
                       </td>
                     </tr>
