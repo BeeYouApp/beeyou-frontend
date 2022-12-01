@@ -27,6 +27,7 @@ import favPlaceIcon from "../public/assets/dashboard/icon-favorite-places.svg";
 import placesIcon from "../public/assets/dashboard/icon-friendly-places.svg";
 import placeImage from "../public/assets/dashboard/figure-place.png";
 import verifiedIcon from "../public/assets/dashboard/icon-verified.svg";
+import mapsImg from "../public/assets/dashboard/maps-img.png";
 
 export const images = {
   beeyouLogo,
@@ -58,4 +59,5 @@ export const images = {
   favPlaceIcon,
   placeImage,
   verifiedIcon,
+  mapsImg,
 };

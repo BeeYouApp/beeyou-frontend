@@ -6,7 +6,7 @@ import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-import CardPlaces from "./cards";
+import CardPlacesSm from "./cards";
 
 export default function PlacesPage() {
   return (
@@ -47,26 +47,26 @@ export default function PlacesPage() {
             </section>
             <div className={clsx("max-w-sm mr-4 md:mr-5")}>
               <a href="#!">
-                <CardPlaces />
+                <CardPlacesSm />
               </a>
             </div>
             <div className={clsx("max-w-sm md:mr-5")}>
               <a href="#!">
-                <CardPlaces />
+                <CardPlacesSm />
               </a>
             </div>
           </div>
           <div className={clsx("hidden md:block")}>
             <div className={clsx("max-w-sm md:mr-5")}>
               <a href="#!">
-                <CardPlaces />
+                <CardPlacesSm />
               </a>
             </div>
           </div>
           <div className={clsx("hidden lg:block")}>
             <div className={clsx("max-w-sm md:mr-5")}>
               <a href="#!">
-                <CardPlaces />
+                <CardPlacesSm />
               </a>
             </div>
           </div>
@@ -150,187 +150,84 @@ export default function PlacesPage() {
                 "py-4 md:mb-[75px] inline-block min-w-full sm:px-6 lg:px-8"
               )}
             >
-              <div className={clsx("overflow-y-auto")}>
-                <table className={clsx("min-w-full text-center")}>
-                  <thead className={clsx("border-b bg-gray-50")}>
-                    <tr>
-                      <th
-                        scope="col"
-                        className={clsx(
-                          "text-[14px] font-medium text-blue-gray-600 pl-6 pr-32 py-4"
-                        )}
-                      >
-                        ORGANIZADOR
-                      </th>
-                      <th
-                        scope="col"
-                        className={clsx(
-                          "text-[14px] font-medium text-blue-gray-600 px-6 py-4"
-                        )}
-                      >
-                        EVENTO
-                      </th>
-                      <th
-                        scope="col"
-                        className={clsx(
-                          "text-[14px] font-medium text-blue-gray-600 px-6 py-4"
-                        )}
-                      >
-                        FECHA
-                      </th>
-                      <th
-                        scope="col"
-                        className={clsx(
-                          "hidden lg:block text-[14px] font-medium text-blue-gray-600 px-6 py-4"
-                        )}
-                      >
-                        HORA
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr className={clsx("bg-white border-b")}>
-                      <td
-                        className={clsx(
-                          "flex items-center text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap"
-                        )}
-                      >
-                        <Image
-                          className={clsx("w-16 h-12 mr-3")}
-                          src={images.beeYouEvent}
-                          alt="Near Event Icon"
-                        />
-                        BEE YOU APP
-                      </td>
-                      <td
-                        className={clsx(
-                          "text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap"
-                        )}
-                      >
-                        Orgullo 2023
-                      </td>
-                      <td
-                        className={clsx(
-                          "text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap"
-                        )}
-                      >
-                        16/12/2022
-                      </td>
-                      <td
-                        className={clsx(
-                          "hidden lg:table-cell text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap"
-                        )}
-                      >
-                        07:00 pm
-                      </td>
-                    </tr>
-                    <tr className={clsx("bg-white border-b")}>
-                      <td
-                        className={clsx(
-                          "flex items-center text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap"
-                        )}
-                      >
-                        <Image
-                          className={clsx("w-16 h-12 mr-3")}
-                          src={images.beeYouEvent}
-                          alt="Near Event Icon"
-                        />
-                        BEE YOU APP
-                      </td>
-                      <td
-                        className={clsx(
-                          "text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap"
-                        )}
-                      >
-                        Orgullo 2023
-                      </td>
-                      <td
-                        className={clsx(
-                          "text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap"
-                        )}
-                      >
-                        16/12/2022
-                      </td>
-                      <td
-                        className={clsx(
-                          "hidden lg:table-cell text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap"
-                        )}
-                      >
-                        07:00 pm
-                      </td>
-                    </tr>
-                    <tr className={clsx("bg-white border-b")}>
-                      <td
-                        className={clsx(
-                          "flex items-center text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap"
-                        )}
-                      >
-                        <Image
-                          className={clsx("w-16 h-12 mr-3")}
-                          src={images.beeYouEvent}
-                          alt="Near Event Icon"
-                        />
-                        BEE YOU APP
-                      </td>
-                      <td
-                        className={clsx(
-                          "text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap"
-                        )}
-                      >
-                        Orgullo 2023
-                      </td>
-                      <td
-                        className={clsx(
-                          "text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap"
-                        )}
-                      >
-                        16/12/2022
-                      </td>
-                      <td
-                        className={clsx(
-                          "hidden lg:table-cell text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap"
-                        )}
-                      >
-                        07:00 pm
-                      </td>
-                    </tr>
-                    <tr className={clsx("bg-white border-b")}>
-                      <td className="flex items-center text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap">
-                        <Image
-                          className={clsx("w-16 h-12 mr-3")}
-                          src={images.beeYouEvent}
-                          alt="Near Event Icon"
-                        />
-                        BEE YOU APP
-                      </td>
-                      <td
-                        className={clsx(
-                          "text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap"
-                        )}
-                      >
-                        Orgullo 2023
-                      </td>
-                      <td
-                        className={clsx(
-                          "text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap"
-                        )}
-                      >
-                        16/12/2022
-                      </td>
-                      <td
-                        className={clsx(
-                          "hidden lg:table-cell text-[14px] text-blue-gray-600 font-normal px-6 py-4 whitespace-nowrap"
-                        )}
-                      >
-                        07:00 pm
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+              <Image
+                className="rounded-md"
+                src={images.mapsImg}
+                alt="Maps Image Example"
+              />
             </div>
           </div>
         </div>
+        {/* Card Large */}
+        <article className={clsx("")}>
+          <div class="flex justify-center">
+            <div class="rounded-lg shadow-lg bg-white w-[328px] h-[1089px] mb-[46px]">
+              <a href="#!">
+                <Image
+                  class="rounded-t-lg w-[328px] h-[116px] object-none"
+                  src={images.placeImage}
+                  alt=""
+                />
+              </a>
+              <div class="p-6">
+                <section>
+                  <h5
+                    className={clsx(
+                      "text-blue-gray-900 text-[24px] font-bold leading-[30px] mb-2"
+                    )}
+                  >
+                    Cielito Querido
+                  </h5>
+                  <span className={clsx("mt-1.5")}>☆☆☆☆☆</span>
+                  <p
+                    className={clsx(
+                      "flex text-[10px] font-light leading-[12px] aling-items self-end"
+                    )}
+                  >
+                    <span className="self-center text-blue-gray-500 text-[10px] leading-[12px] mr-1">
+                      100% FRIENDLY
+                    </span>
+                    <Image
+                      src={images.verifiedIcon}
+                      alt="Verified Place Icon"
+                    />
+                  </p>
+                  <p class="text-blue-gray-700 text-[14px] font-light leading-[21px] mb-4">
+                    CIELITO ® es un refugio único que inspirado en nuestra
+                    historia y calidez latina, reinventa la experiencia de
+                    “tomar café".
+                  </p>
+                </section>
+                <section>
+                  <p></p>
+                </section>
+                <section>
+                  <button>Decuentos en todas</button>
+                  <button>Juárez Ciudad de México</button>
+                </section>
+
+                <section className="md:flex md:justify-between">
+                  <div>
+                    <Image
+                      src={images.verifiedIcon}
+                      alt="Verified Place Icon"
+                    />
+                    <h5>Reviews (10)</h5>
+                  </div>
+                  <div>
+                    <button
+                      className={clsx(
+                        "purple-button border-2 bg-purple-900 border-purple-900 text-[#FFFFFF] mt-4 md:mt-6 md:w-[194px]"
+                      )}
+                    >
+                      DEJAR UN COMENTARIO
+                    </button>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </article>
       </article>
     </>
   );
