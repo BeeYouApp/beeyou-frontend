@@ -25,6 +25,8 @@ import leftArrow from "../public/assets/dashboard/arrow-left.svg";
 import rightArrow from "../public/assets/dashboard/arrow-right.svg";
 import favPlaceIcon from "../public/assets/dashboard/icon-favorite-places.svg";
 import placesIcon from "../public/assets/dashboard/icon-friendly-places.svg";
+import placeImage from "../public/assets/dashboard/figure-place.png";
+import verifiedIcon from "../public/assets/dashboard/icon-verified.svg";
 
 export const images = {
   beeyouLogo,
@@ -54,4 +56,6 @@ export const images = {
   rightArrow,
   placesIcon,
   favPlaceIcon,
+  placeImage,
+  verifiedIcon,
 };

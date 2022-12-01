@@ -73,3 +73,12 @@ h1 {
 ::placeholder {
     font-family: montserrat !important;
 }
+
+/* .bg-gray-grad {
+    width: 215px;
+    height: 150px;
+    border-bottom: 100%;
+    background: linear-gradient(180deg, rgba(38, 50, 56, 0) 0%, #263238 70%);
+
+    CardPlaces
+} */
