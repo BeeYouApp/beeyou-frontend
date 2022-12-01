@@ -6,6 +6,7 @@ import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
+import CardPlaces from "./cards";
 
 export default function PlacesPage() {
   return (
@@ -44,59 +45,33 @@ export default function PlacesPage() {
                 alt="Left Arrow Icon"
               />
             </section>
-            <div className={clsx("shadow-lg max-w-sm md:mr-5")}>
+            <div className={clsx("max-w-sm mr-4 md:mr-5")}>
               <a href="#!">
-                <Image
-                  className={clsx(
-                    "rounded-lg w-[328px] md:w-[215px] h-[257px] object-none"
-                  )}
-                  src={images.paradeFlag}
-                  alt="Parade Flag Image"
-                />
+                <CardPlaces />
+              </a>
+            </div>
+            <div className={clsx("max-w-sm md:mr-5")}>
+              <a href="#!">
+                <CardPlaces />
               </a>
             </div>
           </div>
           <div className={clsx("hidden md:block")}>
-            <div className={clsx("shadow-lg max-w-sm md:ml-5")}>
+            <div className={clsx("max-w-sm md:mr-5")}>
               <a href="#!">
-                <Image
-                  className={clsx(
-                    "rounded-lg w-[328px] md:w-[215px] h-[257px] object-none"
-                  )}
-                  src={images.paradeFlag}
-                  alt="Parade Flag Image"
-                />
+                <CardPlaces />
               </a>
             </div>
           </div>
           <div className={clsx("hidden lg:block")}>
-            <div className={clsx("shadow-lg max-w-sm md:ml-5")}>
+            <div className={clsx("max-w-sm md:mr-5")}>
               <a href="#!">
-                <Image
-                  className={clsx(
-                    "rounded-lg w-[328px] md:w-[215px] h-[257px] object-none"
-                  )}
-                  src={images.paradeFlag}
-                  alt="Parade Flag Image"
-                />
-              </a>
-            </div>
-          </div>
-          <div className={clsx("hidden lg:block")}>
-            <div className={clsx("shadow-lg max-w-sm md:ml-5")}>
-              <a href="#!">
-                <Image
-                  className={clsx(
-                    "rounded-lg w-[328px] md:w-[215px] h-[257px] object-none"
-                  )}
-                  src={images.paradeFlag}
-                  alt="Parade Flag Image"
-                />
+                <CardPlaces />
               </a>
             </div>
           </div>
           <section
-            className={clsx("hidden md:flex md:items-center md:ml-[65px]")}
+            className={clsx("hidden md:flex md:items-center md:ml-[45px]")}
           >
             <Image
               className={clsx("")}
