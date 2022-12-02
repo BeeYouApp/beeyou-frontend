@@ -28,6 +28,14 @@ import placesIcon from "../public/assets/dashboard/icon-friendly-places.svg";
 import placeImage from "../public/assets/dashboard/figure-place.png";
 import verifiedIcon from "../public/assets/dashboard/icon-verified.svg";
 import mapsImg from "../public/assets/dashboard/maps-img.png";
+import reviewsIcon from "../public/assets/dashboard/icon-reviews.svg";
+import tagIcon from "../public/assets/dashboard/icon-tag.svg";
+import dateIcon from "../public/assets/dashboard/icon-date-gray-dark.svg";
+import closeClockIcon from "../public/assets/dashboard/icon-clock-close-gray-dark.svg";
+import openClockIcon from "../public/assets/dashboard/icon-clock-open-gray-dark.svg";
+import offerIcon from "../public/assets/dashboard/icon-offer-yellow-dark.svg";
+import pinIcon from "../public/assets/dashboard/icon-pin-yellow-dark.svg";
+import profilePicture from "../public/assets/dashboard/profilePicture.png";
 
 export const images = {
   beeyouLogo,
@@ -60,4 +68,12 @@ export const images = {
   placeImage,
   verifiedIcon,
   mapsImg,
+  reviewsIcon,
+  tagIcon,
+  dateIcon,
+  closeClockIcon,
+  openClockIcon,
+  offerIcon,
+  pinIcon,
+  profilePicture,
 };

@@ -6,7 +6,8 @@ import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-import CardPlacesSm from "./cards";
+import CardPlacesSm from "../components/CardPlacesSm";
+import CardPlacesLg from "../components/CardPlacesLg";
 
 export default function PlacesPage() {
   return (
@@ -146,9 +147,7 @@ export default function PlacesPage() {
         <div className={clsx("flex flex-col")}>
           <div className={clsx("overflow-x-auto sm:-mx-6 lg:-mx-8")}>
             <div
-              className={clsx(
-                "py-4 md:mb-[75px] inline-block min-w-full sm:px-6 lg:px-8"
-              )}
+              className={clsx("py-4 inline-block min-w-full sm:px-6 lg:px-8")}
             >
               <Image
                 className="rounded-md"
@@ -158,76 +157,7 @@ export default function PlacesPage() {
             </div>
           </div>
         </div>
-        {/* Card Large */}
-        <article className={clsx("")}>
-          <div class="flex justify-center">
-            <div class="rounded-lg shadow-lg bg-white w-[328px] h-[1089px] mb-[46px]">
-              <a href="#!">
-                <Image
-                  class="rounded-t-lg w-[328px] h-[116px] object-none"
-                  src={images.placeImage}
-                  alt=""
-                />
-              </a>
-              <div class="p-6">
-                <section>
-                  <h5
-                    className={clsx(
-                      "text-blue-gray-900 text-[24px] font-bold leading-[30px] mb-2"
-                    )}
-                  >
-                    Cielito Querido
-                  </h5>
-                  <span className={clsx("mt-1.5")}>☆☆☆☆☆</span>
-                  <p
-                    className={clsx(
-                      "flex text-[10px] font-light leading-[12px] aling-items self-end"
-                    )}
-                  >
-                    <span className="self-center text-blue-gray-500 text-[10px] leading-[12px] mr-1">
-                      100% FRIENDLY
-                    </span>
-                    <Image
-                      src={images.verifiedIcon}
-                      alt="Verified Place Icon"
-                    />
-                  </p>
-                  <p class="text-blue-gray-700 text-[14px] font-light leading-[21px] mb-4">
-                    CIELITO ® es un refugio único que inspirado en nuestra
-                    historia y calidez latina, reinventa la experiencia de
-                    “tomar café".
-                  </p>
-                </section>
-                <section>
-                  <p></p>
-                </section>
-                <section>
-                  <button>Decuentos en todas</button>
-                  <button>Juárez Ciudad de México</button>
-                </section>
-
-                <section className="md:flex md:justify-between">
-                  <div>
-                    <Image
-                      src={images.verifiedIcon}
-                      alt="Verified Place Icon"
-                    />
-                    <h5>Reviews (10)</h5>
-                  </div>
-                  <div>
-                    <button
-                      className={clsx(
-                        "purple-button border-2 bg-purple-900 border-purple-900 text-[#FFFFFF] mt-4 md:mt-6 md:w-[194px]"
-                      )}
-                    >
-                      DEJAR UN COMENTARIO
-                    </button>
-                  </div>
-                </section>
-              </div>
-            </div>
-          </div>
-        </article>
+        <CardPlacesLg></CardPlacesLg>
       </article>
     </>
   );
