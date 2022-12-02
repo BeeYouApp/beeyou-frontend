@@ -25,8 +25,12 @@ export default function CardPlacesLg() {
           </a>
           <div class={clsx("px-7 pt-5 pb-4")}>
             <section>
-              <section className="md:flex md:flex-row">
-                <section className="grid place-content-between md:grid-cols-1">
+              <section className="md:grid-cols-1 md:grid-cols-">
+                {" "}
+                {/* md:flex md:flex-row */}
+                <section className="grid">
+                  {" "}
+                  {/* md:grid-cols-1 */}
                   <h5
                     className={clsx(
                       "text-blue-gray-900 text-[24px] font-bold leading-[30px] mb-2"
@@ -67,7 +71,7 @@ export default function CardPlacesLg() {
                     "flex flex-row font-montserrat font-medium text-blue-gray-500 text-[10px] leading-[12px] gap-x-[47px]"
                   )}
                 >
-                  <h6 className={clsx("grid grid-cols-1 md:grid-cols-3")}>
+                  <h6 className={clsx("grid grid-cols-1 md:grid-rows-1")}>
                     TAGS RELACIONADOS
                     <ul className={clsx("mt-3")}>
                       <li className="flex mb-3">
@@ -96,7 +100,7 @@ export default function CardPlacesLg() {
                       </li>
                     </ul>
                   </h6>
-                  <h6 className={clsx("grid grid-cols-1 md:grid-cols-3")}>
+                  <h6 className={clsx("grid grid-cols-1 md:grid-rows-1")}>
                     HORARIOS
                     <ul className={clsx("mt-3")}>
                       <li className={clsx("flex mb-3")}>
@@ -135,7 +139,6 @@ export default function CardPlacesLg() {
               <Dropdown />
               <Dropdown />
             </section>
-
             <section
               className={clsx("flex flex-col md:flex md:justify-between mt-7")}
             >
