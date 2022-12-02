@@ -1,7 +1,8 @@
 import clsx from "clsx";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import CardBusiness from "../components/CardBusiness";
+import SideBar from "../components/SideBar";
+
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
           "w-full"
         )}
       >
+        <SideBar user="admin"/>
         <div
           className={clsx(
             "bg-white/20",
