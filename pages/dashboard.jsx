@@ -6,9 +6,6 @@ import Layaut from "../components/LayoutDashboard";
 export default function Dashboard () {
   return(
     <>
-      <nav className="h-[60px] w-full gap-4">
-        <Navbar/>
-      </nav>
       <Layaut
         children={
           <>
