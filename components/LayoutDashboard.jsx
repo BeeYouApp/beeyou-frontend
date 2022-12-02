@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import Sidebar from "./SideBar";
+import SearchMap from "./SearchMap";
 
 export default function LayautDashboard({children, style}){
   return(
