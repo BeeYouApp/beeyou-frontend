@@ -26,7 +26,7 @@ export default function CardPlacesLg() {
           <div className={clsx("px-7 pt-5 pb-4")}>
             <section>
               <section className="md:flex md:flex-row">
-                <section className="md:basis-3/5">
+                <section className="md:basis-3/5 lg:basis-5/9">
                   <h5
                     className={clsx(
                       "text-blue-gray-900 text-[24px] font-bold leading-[30px] mb-2"
@@ -67,7 +67,7 @@ export default function CardPlacesLg() {
                     "flex flex-row font-montserrat font-medium text-blue-gray-500 text-[10px] leading-[12px] gap-x-[47px]"
                   )}
                 >
-                  <h6 className={clsx("basis-1/2 md:basis-1/5")}>
+                  <h6 className={clsx("basis-1/2 md:basis-1/5 lg:basis-2/9")}>
                     TAGS RELACIONADOS
                     <ul className={clsx("mt-3")}>
                       <li className="flex mb-3">
@@ -96,7 +96,7 @@ export default function CardPlacesLg() {
                       </li>
                     </ul>
                   </h6>
-                  <h6 className={clsx("basis-1/2 md:basis-1/2")}>
+                  <h6 className={clsx("basis-1/2 md:basis-1/2 lg:basis-2/9")}>
                     HORARIOS
                     <ul className={clsx("mt-3")}>
                       <li className={clsx("flex mb-3")}>
