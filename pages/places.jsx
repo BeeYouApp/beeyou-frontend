@@ -150,7 +150,7 @@ export default function PlacesPage() {
               className={clsx("py-4 inline-block min-w-full sm:px-6 lg:px-8")}
             >
               <Image
-                className="rounded-md"
+                className="rounded-md lg:w-screen"
                 src={images.mapsImg}
                 alt="Maps Image Example"
               />
