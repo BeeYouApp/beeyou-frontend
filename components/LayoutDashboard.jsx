@@ -14,7 +14,7 @@ export default function LayautDashboard({children, style}){
         "inline-block min-lg-inline-flex min-lg-m-auto", 
         "h-screen",
         "w-5/6 min-xl:w-6/6",
-        "absolute",
+
         {style}
         )}>
         {children}
