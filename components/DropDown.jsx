@@ -37,13 +37,7 @@ export default function Dropdown(props) {
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              {" "}
-              <Image
-                className={clsx("mr-2")}
-                src={images.pinIcon}
-                alt="Pin Icon"
-              />
-              Juárez, 06600 Ciudad de Mé...
+              {props.children}
               <svg
                 aria-hidden="true"
                 focusable="false"

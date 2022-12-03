@@ -8,29 +8,25 @@ import Dropdown from "../components/DropDown";
 export default function CardPlacesLg() {
   return (
     <>
-      <article class={clsx("flex justify-center mt-3 md:mt-0")}>
+      <article className={clsx("flex justify-center mt-3 md:mt-0")}>
         <div
-          class={clsx(
+          className={clsx(
             "rounded-lg shadow-lg bg-white w-[100%] h-[100%] md:w-[100%] md:h-[100%] mb-[46px]"
           )}
         >
           <a href="#!">
             <Image
-              class={clsx(
+              className={clsx(
                 "rounded-t-lg w-[100%] h-[116px] md:w-[100%] md:h-[250px] object-cover"
               )}
               src={images.placeImage}
               alt="Place Image"
             />
           </a>
-          <div class={clsx("px-7 pt-5 pb-4")}>
+          <div className={clsx("px-7 pt-5 pb-4")}>
             <section>
-              <section className="md:grid-cols-1 md:grid-cols-">
-                {" "}
-                {/* md:flex md:flex-row */}
-                <section className="grid">
-                  {" "}
-                  {/* md:grid-cols-1 */}
+              <section className="md:flex md:flex-row">
+                <section className="md:basis-3/5">
                   <h5
                     className={clsx(
                       "text-blue-gray-900 text-[24px] font-bold leading-[30px] mb-2"
@@ -57,7 +53,7 @@ export default function CardPlacesLg() {
                     />
                   </p>
                   <p
-                    class={clsx(
+                    className={clsx(
                       "text-blue-gray-700 text-[14px] font-light leading-[21px] max-w-[255px] mb-4"
                     )}
                   >
@@ -71,7 +67,7 @@ export default function CardPlacesLg() {
                     "flex flex-row font-montserrat font-medium text-blue-gray-500 text-[10px] leading-[12px] gap-x-[47px]"
                   )}
                 >
-                  <h6 className={clsx("grid grid-cols-1 md:grid-rows-1")}>
+                  <h6 className={clsx("basis-1/2 md:basis-1/5")}>
                     TAGS RELACIONADOS
                     <ul className={clsx("mt-3")}>
                       <li className="flex mb-3">
@@ -100,7 +96,7 @@ export default function CardPlacesLg() {
                       </li>
                     </ul>
                   </h6>
-                  <h6 className={clsx("grid grid-cols-1 md:grid-rows-1")}>
+                  <h6 className={clsx("basis-1/2 md:basis-1/2")}>
                     HORARIOS
                     <ul className={clsx("mt-3")}>
                       <li className={clsx("flex mb-3")}>
@@ -133,32 +129,49 @@ export default function CardPlacesLg() {
               </section>
               <section
                 className={clsx(
-                  "font-montserrat font-normal text-blue-gray-600 text-[12px] leading-[15px]"
+                  "md:flex md:justify-between font-montserrat font-normal text-blue-gray-600 text-[12px] leading-[15px]"
                 )}
-              ></section>
-              <Dropdown />
-              <Dropdown />
+              >
+                <Dropdown>
+                  <Image
+                    className={clsx("mr-2")}
+                    src={images.offerIcon}
+                    alt="Offer Icon"
+                  />
+                  10% de descuento en todas...
+                </Dropdown>
+                <Dropdown>
+                  <Image
+                    className={clsx("mr-2")}
+                    src={images.pinIcon}
+                    alt="Pin Icon"
+                  />
+                  Juárez, 06600 Ciudad de Mé...
+                </Dropdown>
+              </section>
+              <section className="md:flex md:justify-between">
+                <div
+                  className={clsx(
+                    "flex justify-center bg-blue-gray-50 py-1 px-4 rounded-full mb-3 w-[163px]"
+                  )}
+                >
+                  <Image src={images.reviewsIcon} alt="Reviews Place Icon" />
+                  <h5
+                    className={clsx(
+                      "font-montserrat font-medium text-blue-gray-800 text-[16px] leading-[19.5px] ml-3"
+                    )}
+                  >
+                    Reviews (10)
+                  </h5>
+                </div>
+                <div className={clsx("mb-4")}>
+                  <ButtonPurple>DEJAR UN COMENTARIO</ButtonPurple>
+                </div>
+              </section>
             </section>
             <section
               className={clsx("flex flex-col md:flex md:justify-between mt-7")}
             >
-              <div
-                className={clsx(
-                  "flex bg-blue-gray-50 py-1 px-4 rounded-full mb-3"
-                )}
-              >
-                <Image src={images.reviewsIcon} alt="Reviews Place Icon" />
-                <h5
-                  className={clsx(
-                    "font-montserrat font-medium text-blue-gray-800 text-[16px] leading-[19.5px] ml-3"
-                  )}
-                >
-                  Reviews (10)
-                </h5>
-              </div>
-              <div className={clsx("mb-4")}>
-                <ButtonPurple>DEJAR COMENTARIO</ButtonPurple>
-              </div>
               <section className="mb-3">
                 <CardComment />
               </section>
