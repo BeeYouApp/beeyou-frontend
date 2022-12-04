@@ -7,7 +7,7 @@ export default function Dropdown(props) {
     <>
       <div className={clsx("block")}>
         <div>
-          <div className={clsx("dropdown relative mb-3")}>
+          <div className={clsx("dropdown relative mb-3 md:mb-0")}>
             <button
               className={clsx("w-full dropdown-toggle pl-2 pr-6 py-2.5 font-normal text-blue-gray-600 text-[12px] leading-[15px] bg-blue-gray-50 rounded shadow-md hover:bg-blue-gray-200 hover:shadow-lg focus:bg-blue-gray-200 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-gray-200 active:shadow-lg active:text-white transition duration-150 ease-in-out flex items-center whitespace-nowrap")}
               type="button"

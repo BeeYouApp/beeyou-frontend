@@ -8,9 +8,9 @@ import Dropdown from "../components/DropDown";
 export default function CardPlacesLg() {
   return (
     <>
-      <article className={clsx("mt-3 md:mt-0 lg:flex rounded-lg shadow-lg bg-white w-[100%] h-[100%] md:h-[100%] mb-[46px]")}>
-        <div className="w-[100%] lg:w-[300px]">
-          <Image className={clsx("rounded-t-lg w-[100%] h-[116px] md:w-[100%] md:h-[250px] lg:w-[100%] lg:h-[540px] object-cover")}
+      <article className={clsx("md:mt-0 lg:flex rounded-lg shadow-lg bg-white w-[100%] h-[1060px] md:h-[830px] lg:h-[550px] mb-[46px]")}>
+        <div className="w-[100%] lg:w-[402px]">
+          <Image className={clsx("rounded-t-lg w-[100%] h-[116px] md:w-[100%] md:h-[250px] lg:w-[100%] lg:h-[100%] object-cover")}
             src={images.placeImage}
             alt="Place Image"/>
         </div>
@@ -26,12 +26,12 @@ export default function CardPlacesLg() {
                   </h5>
                   <span className={clsx("mt-1.5 md:mt-1")}>☆☆☆☆☆</span>
                 </div>
-                <div>
+                <div className="md:flex md:flex-col md:self-end lg:ml-14">
                   <h6 className={clsx("text-[10px] font-light leading-[12px] aling-items self-end")}>
                   <span className={clsx("inline-block self-center text-blue-gray-500 text-[10px] leading-[12px] mr-1")}>
                     100% FRIENDLY
                   </span>
-                  <Image className="inline-block " src={images.verifiedIcon} alt="Verified Place Icon" />
+                  <Image className={clsx("inline-block")} src={images.verifiedIcon} alt="Verified Place Icon" />
                   </h6>
                   <h6 className={clsx("hidden md:block text-[10px] font-light leading-[12px] aling-items self-end")}>
                   <span className={clsx("md:inline-block  self-center text-blue-gray-500 text-[10px] leading-[12px] mr-1")}>
@@ -42,7 +42,7 @@ export default function CardPlacesLg() {
                 </div>
               </div>
               <p
-                className={clsx("text-blue-gray-700 text-[14px] font-light leading-[21px] max-w-[255px] lg:max-w-[328px] mb-4 lg:m-0")}>
+                className={clsx("text-blue-gray-700 text-[14px] font-light leading-[21px] max-w-[255px] lg:max-w-[328px] mb-4 lg:mb-4 mt-4 lg:mt-4")}>
                 CIELITO ® es un refugio único que inspirado en nuestra historia
                 y calidez latina, reinventa la experiencia de “tomar café"...
               </p>
@@ -99,19 +99,19 @@ export default function CardPlacesLg() {
             </Dropdown>
           </section>
           {/* 3RD SECTION */}
-          <section className={clsx("md:flex md:justify-between")}>
-            <div className={clsx("flex justify-center bg-blue-gray-50 py-1 px-4 rounded-full mb-3 w-[163px]")}>
+          <section className={clsx("md:flex md:justify-between mt-7 md:mt-6")}>
+            <div className={clsx("flex justify-center bg-blue-gray-50 py-1 px-4 rounded-full mb-3 md:mb-0 w-[163px]")}>
               <Image src={images.reviewsIcon} alt="Reviews Place Icon" />
               <h5 className={clsx("font-montserrat font-medium text-blue-gray-800 text-[16px] leading-[19.5px] ml-3")}>
                 Reviews (10)
               </h5>
             </div>
-            <div className={clsx("mb-4 max-w-[292px]")}>
+            <div className={clsx("max-w-[292px]")}>
               <ButtonPurple>DEJAR UN COMENTARIO</ButtonPurple>
             </div>
           </section>
           {/* 4TH SECTION */}
-          <section className={clsx("flex flex-col md:flex md:justify-between mt-7")}>
+          <section className={clsx("flex flex-col md:flex md:justify-between mt-4")}>
             <section className={clsx("mb-3")}>
               <CardComment />
             </section>
