@@ -30,7 +30,7 @@ export default function Events() {
             </h4>
           </section>
           <section className={clsx("md:flex md:justify-evenly")}>
-            <div className={clsx("flex justify-center")}>
+            <div className={clsx("md:flex justify-center")}>
               <section className={clsx("hidden md:flex md:items-center md:mr-[65px]")}>
                 <Image
                   className={clsx("")}
@@ -43,10 +43,10 @@ export default function Events() {
             <div className={clsx("hidden md:block")}>
               <CardEventsSm />
             </div>
-            <div className={clsx("hidden lg:block")}>
+            <div className={clsx("hidden xl:block")}>
               <CardEventsSm />
             </div>
-            <div className={clsx("hidden lg:block")}>
+            <div className={clsx("hidden xl:block")}>
               <CardEventsSm />
             </div>
             <section className={clsx("hidden md:flex md:items-center md:ml-[65px]")}>
@@ -57,8 +57,9 @@ export default function Events() {
               />
             </section>
           </section>
+
           <section className={clsx("md:hidden")}>
-            <section className={clsx("flex justify-end mt-6")}>
+            <section className={clsx("flex ml-52 mt-6")}>
               <Image
                 className={clsx("")}
                 src={images.leftArrow}
