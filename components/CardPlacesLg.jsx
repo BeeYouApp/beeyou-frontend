@@ -15,7 +15,7 @@ export default function CardPlacesLg() {
             alt="Place Image"/>
         </div>
         {/* GREEN */}
-        <div className={clsx("px-7 pt-5 pb-4")}>
+        <div className={clsx("px-6 pt-5 pb-4")}>
           {/* 1ST SECTION */}
           <section className={clsx("md:flex md:justify-between")}>
             <section className="md:basis-1/2 lg:basis-7/12">

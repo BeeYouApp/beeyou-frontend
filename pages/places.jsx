@@ -13,11 +13,25 @@ import Sidebar from "../components/Sidebar";
 export default function PlacesPage() {
   return (
     <>
+    <div className="block lg:hidden">
       <Navbar />
-      <article className={clsx("px-4 md:px-8 mt-24")}>
-        <h3 className={clsx("font-montserrat font-bold text-blue-gray-900 text-[24px] leading-[30px]")}>
-          Tus espacios
-        </h3>
+    </div>
+      <div className="flex">
+      <article>
+        <div className="w-[247px] h-[745px] bg-blue-gray-100 hidden lg:block"></div>
+      </article>
+      <article className={clsx("px-4 md:px-8 mt-24 lg:mt-14")}>
+        <div className="flex">
+          <h3 className={clsx("font-montserrat font-bold text-blue-gray-900 text-[24px] leading-[30px] mr-[79px]")}>
+            Tus espacios
+          </h3>
+          <div className={clsx("hidden lg:flex justify-center items-center bg-blue-gray-50 rounded-full w-[129px]")}>
+            <h5 className={clsx("font-montserrat font-medium text-blue-gray-800 text-[10px] leading-[12px] mr-1")}>
+              100% FRIENDLY
+            </h5>
+            <Image className="w-[20px] h-[20px]" src={images.verifiedIcon} alt="Verified Icon" />
+          </div>
+        </div>
         <section className={clsx("flex items-center mt-4 mb-5")}>
           <Image src={images.favPlaceIcon} alt="Favourite Place Icon" />
           <h4 className={clsx("font-montserrat font-normal text-blue-gray-700 text-[20px] leading-[28px] ml-6")}>
@@ -107,6 +121,7 @@ export default function PlacesPage() {
         </div>
         <CardPlacesLg></CardPlacesLg>
       </article>
+      </div>
     </>
   );
 }
