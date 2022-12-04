@@ -2,6 +2,7 @@ import clsx from "clsx";
 import Image from "next/image";
 import { images } from "../lib/images";
 import Navbar from "../components/Navbar";
+import CardEventsSm from "../components/CardEventsSm";
 
 export default function Events() {
   return (
@@ -30,48 +31,16 @@ export default function Events() {
                 alt="Left Arrow Icon"
               />
             </section>
-            <div className={clsx("shadow-lg max-w-sm md:mr-5")}>
-              <a href="#!">
-                <Image
-                  className={clsx("rounded-lg w-[328px] md:w-[215px] h-[257px] object-none")}
-                  src={images.paradeFlag}
-                  alt="Parade Flag Image"
-                />
-              </a>
-            </div>
+            <CardEventsSm />
           </div>
           <div className={clsx("hidden md:block")}>
-            <div className={clsx("shadow-lg max-w-sm md:ml-5")}>
-              <a href="#!">
-                <Image
-                  className={clsx("rounded-lg w-[328px] md:w-[215px] h-[257px] object-none")}
-                  src={images.paradeFlag}
-                  alt="Parade Flag Image"
-                />
-              </a>
-            </div>
+            <CardEventsSm />
           </div>
           <div className={clsx("hidden lg:block")}>
-            <div className={clsx("shadow-lg max-w-sm md:ml-5")}>
-              <a href="#!">
-                <Image 
-                  className={clsx("rounded-lg w-[328px] md:w-[215px] h-[257px] object-none")}
-                  src={images.paradeFlag}
-                  alt="Parade Flag Image"
-                />
-              </a>
-            </div>
+            <CardEventsSm />
           </div>
           <div className={clsx("hidden lg:block")}>
-            <div className={clsx("shadow-lg max-w-sm md:ml-5")}>
-              <a href="#!">
-                <Image
-                  className={clsx("rounded-lg w-[328px] md:w-[215px] h-[257px] object-none")}
-                  src={images.paradeFlag}
-                  alt="Parade Flag Image"
-                />
-              </a>
-            </div>
+            <CardEventsSm />
           </div>
           <section className={clsx("hidden md:flex md:items-center md:ml-[65px]")}>
             <Image
