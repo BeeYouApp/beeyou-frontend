@@ -74,10 +74,7 @@ export default function Events() {
             </h4>
           </section>
           <div className={clsx("flex flex-col")}>
-
-          <TableEvents />  
-          {/* TableEvents */}
-          
+          <TableEvents />            
           </div>
         </section>
       </article>
