@@ -18,7 +18,6 @@ const MobileSidebar = ({ closeSidebar }) => {
             <Image src={images.xMarkIcon} alt="Close Mark Icon" />
             </button>
           </section>
-
           <section>
             <ul className={clsx("text-slate-500 w-128 p-2 ")}>
               <Link href="">
@@ -71,7 +70,6 @@ export default function Sidebar() {
     <>
       <nav className={clsx("w-full p-4 max-xl:hidden")}>
         {isMobileSidebarOpen && <MobileSidebar closeSidebar={closeSidebar} />}
-
         <section className={clsx("h-20 w-10/12 bg-neutral-300 text-center rounded-lg flex m-auto")}>
           <div className={clsx("w-1/4 ml-5 m-auto")}>
             <Link href="">
@@ -144,7 +142,6 @@ export default function Sidebar() {
             </Link>
           </ul>
         </section>
-
         <section className={clsx("bg-yellow-100 h-auto mt-10 text-center rounded-lg flex m-auto w-10/12")}>
           <div className={clsx("m-auto")}>
             <p className={clsx("text-blue-gray-800 ml-3 font-semibold")}>¡Bienvenido</p>
@@ -160,28 +157,14 @@ export default function Sidebar() {
           </div>
         </section>
       </nav>
-
-      <nav
-        className={clsx(
-          "bg-[#ffffff]",
-          "shadow-lg",
-          "h-[60px]",
-          "flex justify-between fixed top-0",
-          "w-full",
-          "space-x-10 sppace-y-4 ",
-          "xl:hidden",
-          "justify-between"
-        )}
-      >
+      <nav className={clsx("bg-[#ffffff] shadow-lg h-[60px] flex justify-between fixed top-0 w-full space-x-10 sppace-y-4 xl:hidden")}>
         {isMobileSidebarOpen && <MobileSidebar closeSidebar={closeSidebar} />}
-
-        <div className={clsx("flex items-center pl-6 ")}>
+        <div className={clsx("flex items-center pl-6")}>
           <Link href="">
             <Image src={images.beeyouLogo} alt="Bee You Logo" />
           </Link>
         </div>
-        <div
-          className={clsx("px-4", "cursor-pointer", "flex", "items-center")}
+        <div className={clsx("px-4 cursor-pointer flex items-center")}
           onClick={() => {
             setIsMobileSidebarOpen(true);
           }}
