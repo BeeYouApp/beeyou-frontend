@@ -36,6 +36,7 @@ import openClockIcon from "../public/assets/dashboard/icon-clock-open-gray-dark.
 import offerIcon from "../public/assets/dashboard/icon-offer-yellow-dark.svg";
 import pinIcon from "../public/assets/dashboard/icon-pin-yellow-dark.svg";
 import profilePicture from "../public/assets/dashboard/profilePicture.png";
+import streakIcon from "../public/assets/dashboard/icon-streak.svg";
 
 export const images = {
   beeyouLogo,
@@ -76,4 +77,5 @@ export const images = {
   offerIcon,
   pinIcon,
   profilePicture,
+  streakIcon,
 };
