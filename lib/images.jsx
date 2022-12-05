@@ -38,6 +38,7 @@ import pinIcon from "../public/assets/dashboard/icon-pin-yellow-dark.svg";
 import profilePicture from "../public/assets/dashboard/profilePicture.png";
 import streakIcon from "../public/assets/dashboard/icon-streak.svg";
 import favNotFilledIcon from "../public/assets/dashboard/icon-favorite-not-filled.svg";
+import savePlacesIcon from "../public/assets/dashboard/icon-save-places.svg";
 
 export const images = {
   beeyouLogo,
@@ -80,4 +81,5 @@ export const images = {
   profilePicture,
   streakIcon,
   favNotFilledIcon,
+  savePlacesIcon,
 };
