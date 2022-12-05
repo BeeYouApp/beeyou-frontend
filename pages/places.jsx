@@ -1,14 +1,15 @@
 import clsx from "clsx";
-import Navbar from "../components/Navbar";
+import Link from "next/link";
 import Image from "next/image";
 import { images } from "../lib/images";
 import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
+import Navbar from "../components/Navbar";
+import Sidebar from "../components/Sidebar";
 import CardPlacesSm from "../components/CardPlacesSm";
 import CardPlacesLg from "../components/CardPlacesLg";
-import Sidebar from "../components/Sidebar";
 
 export default function PlacesPage() {
   return (
