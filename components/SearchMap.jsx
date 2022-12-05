@@ -1,17 +1,17 @@
-/* import "mapbox-gl/dist/mapbox-gl.css";
-import "react-map-gl-geocoder/dist/mapbox-gl-geocoder.css";
-import React, { useState, useRef, useCallback } from "react";
-import { render } from "react-dom";
-import MapGL from "react-map-gl";
-import Geocoder from "react-map-gl-geocoder";
+/* import "mapbox-gl/dist/mapbox-gl.css"
+import 'react-map-gl-geocoder/dist/mapbox-gl-geocoder.css'
+import React, { useState, useRef, useCallback } from "react"
+import MapGL from "react-map-gl"
+import Geocoder from "react-map-gl-geocoder"
 
 // Please be a decent human and don't abuse my Mapbox API token.
 // If you fork this sandbox, replace my API token with your own.
 // Ways to set Mapbox token: https://uber.github.io/react-map-gl/#/Documentation/getting-started/about-mapbox-tokens
-const MAPBOX_TOKEN =
-  "pk.eyJ1Ijoic21peWFrYXdhIiwiYSI6ImNqcGM0d3U4bTB6dWwzcW04ZHRsbHl0ZWoifQ.X9cvdajtPbs9JDMG-CMDsA";
+const MAPBOX_TOKEN ='pk.eyJ1IjoiYWJ5YmxhY2ttb3V0aCIsImEiOiJjbGFodTBobmowODIwM3hvYmxva20zYWQ4In0.GWgmsYW9P5xUKzxDGliiVg';
 
-const App = () => {
+
+export default function SearchMap(){
+
   const [viewport, setViewport] = useState({
     latitude: 37.7577,
     longitude: -122.4376,
@@ -21,9 +21,10 @@ const App = () => {
   const handleViewportChange = useCallback(
     (newViewport) => setViewport(newViewport),
     []
-  );
+  )
+  
+  // si está satisfecho con la configuración predeterminada de Geocoder, puede usar handleViewportChange directamente
 
-  // if you are happy with Geocoder default settings, you can just use handleViewportChange directly
   const handleGeocoderViewportChange = useCallback(
     (newViewport) => {
       const geocoderDefaultOverrides = { transitionDuration: 1000 };
@@ -56,5 +57,7 @@ const App = () => {
     </div>
   );
 };
+ */
 
-render(<App />, document.getElementById("root")); */
+/* render(<App />, document.getElementById("root")); */
+
