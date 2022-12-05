@@ -44,66 +44,83 @@ export default function Register(props) {
   return (
     <>
       <Navbar />
-      <h1 className={styles["register--title"]}>
-        {" "}
-        <strong>¡Bienvenid@ a </strong>bee you!
-      </h1>
-      {registerError && (
-        <h2 className={styles["register--title"]}>
-          Ha ocurrido un error, verifique los campos
-        </h2>
-      )}
-      <form
-        className={styles["form-register"]}
-        onSubmit={(event) => submitRegister(event)}
+      <main
+        className={clsx("flex flex-col h-screen justify-center items-center")}
       >
-        <input
-          className={styles["form-register"]}
-          name="name"
-          type="text"
-          placeholder="Enter your name"
-        />
-        <input
-          className={styles["form-register"]}
-          name="lastName"
-          type="text"
-          placeholder="Enter your last name"
-        />
-        <input
-          className={styles["form-register"]}
-          name="biography"
-          type="text"
-          placeholder="Write a short description of yourself"
-        />
+        <h1
+          className={
+            "text-center font-montserrat font-bold lgbtiq-grad-color text-[32px]"
+          }
+        >
+          <strong className={clsx("text-blue-gray-900")}>¡Bienvenid@ a </strong>
+          bee you!
+        </h1>
+        <p className={clsx("text-blue-gray-900 text-[14px]")}>
+          Encuenta tu espacio en Ciudad de México
+        </p>
+        <article
+          className={clsx(
+            "flex flex-col justify-center items-center w-[328px] h-[392px] rounded-[16px] shadow-xl"
+          )}
+        >
+          {registerError && (
+            <h2 className={styles["register--title"]}>
+              Ha ocurrido un error, verifique los campos
+            </h2>
+          )}
+          <form
+            className={clsx("")}
+            onSubmit={(event) => submitRegister(event)}
+          >
+            <input
+              className={styles["form-register"]}
+              name="name"
+              type="text"
+              placeholder="Enter your name"
+            />
+            <input
+              className={styles["form-register"]}
+              name="lastName"
+              type="text"
+              placeholder="Enter your last name"
+            />
+            <input
+              className={styles["form-register"]}
+              name="biography"
+              type="text"
+              placeholder="Write a short description of yourself"
+            />
 
-        <input
-          className={styles["form-register"]}
-          name="citizenship"
-          type="text"
-          placeholder="Enter your nationality"
-        />
-        <input
-          className={styles["form-register"]}
-          name="email"
-          type="email"
-          placeholder="Enter your email"
-        />
-        <input
-          className={styles["form-register"]}
-          name="password"
-          type="password"
-          placeholder="Enter your password"
-        />
-        <input name="myFile" type="file" />
-        <input
-          className={styles["form-register__button"]}
-          type="submit"
-          value="Register"
-        />
-      </form>
-      {/* <p className={styles["form-register__login"]}>
+            <input
+              className={styles["form-register"]}
+              name="citizenship"
+              type="text"
+              placeholder="Enter your nationality"
+            />
+            <input
+              className={styles["form-register"]}
+              name="email"
+              type="email"
+              placeholder="Enter your email"
+            />
+            <input
+              className={styles["form-register"]}
+              name="password"
+              type="password"
+              placeholder="Enter your password"
+            />
+            <input name="myFile" type="file" />
+            <input
+              className={styles["form-register__button"]}
+              type="submit"
+              value="Register"
+            />
+          </form>
+          {/* <p className={styles["form-register__login"]}>
         Ya tienes cuenta, <Link to="/login">inicia sesión</Link>
       </p> */}
+        </article>
+      </main>
     </>
   );
 }
