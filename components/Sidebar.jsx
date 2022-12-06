@@ -145,19 +145,19 @@ export default function Sidebar() {
             </Link>
           </ul>
         </section>
-        <section className={clsx("flex justify-center")}>
-        <section className={clsx("bg-yellow-100 mt-10 text-center rounded-lg flex items-end w-[215px] h-[106px]")}>
-          <div className={clsx("m-auto")}>
-            <p className={clsx("font-poppins font-medium text-[16px] leading-[17px] text-blue-gray-800 ml-3")}>¡Bienvenido</p>
-            <p className={clsx("font-montserrat font-normal text-[14px] leading-[17px] text-blue-gray-600 max-w-[90px] ml-3 text-start")}>a tu espacio seguro!</p>
-          </div>
-          <div>
-            <Image
-              src={images.friendsFigure}
-              alt="Friends Figure"
-            />
-          </div>
-        </section>
+        <section className={clsx("block justify-center lgbtiq-grad-bg w-[217px] h-[108px] rounded-lg pl-[1px] pt-[1px] mt-11")}>
+          <section className={clsx("bg-yellow-100 text-center rounded-lg flex items-end w-[215px] h-[106px]")}>
+            <div className={clsx("m-auto")}>
+              <p className={clsx("font-poppins font-medium text-[16px] leading-[17px] text-blue-gray-800 ml-3")}>¡Bienvenido</p>
+              <p className={clsx("font-montserrat font-normal text-[14px] leading-[17px] text-blue-gray-600 max-w-[90px] ml-3 text-start")}>a tu espacio seguro!</p>
+            </div>
+            <div>
+              <Image
+                src={images.friendsFigure}
+                alt="Friends Figure"
+              />
+            </div>
+          </section>
         </section>
       </nav>
       <nav className={clsx("bg-[#ffffff] shadow-lg h-[60px] flex justify-between fixed top-0 w-full space-x-10 sppace-y-4 xl:hidden")}>
