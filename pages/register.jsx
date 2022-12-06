@@ -60,7 +60,8 @@ export default function Register(props) {
         </p>
         <article
           className={clsx(
-            "flex flex-col justify-center items-center w-[328px] h-[392px] rounded-[16px] shadow-xl"
+            "flex flex-col justify-center items-center mt-8",
+            "w-[328px] border-1 border-blue-gray-100 rounded-[16px] shadow-md"
           )}
         >
           {registerError && (
@@ -68,57 +69,60 @@ export default function Register(props) {
               Ha ocurrido un error, verifique los campos
             </h2>
           )}
+          <div
+            className={clsx(
+              "border-b-2 border-blue-gray-100 font-montserrat font-bold",
+              "text-[16px] text-blue-gray-900 text-center leading-[20px] w-[100%]"
+            )}
+          >
+            <h2 className={clsx("font-montserrat font-bold text-[16px] my-6")}>
+              Regístrate
+            </h2>
+          </div>
           <form
-            className={clsx("")}
+            className={clsx("flex flex-col items-center")}
             onSubmit={(event) => submitRegister(event)}
           >
+            <section
+              className={clsx("flex justify-between mx-8 my-6 w-[100%]")}
+            >
+              <button className={clsx("text-center")}>Soy Usuario</button>
+              <button className={clsx("text-center")}>Soy Negocio</button>
+            </section>
             <input
-              className={styles["form-register"]}
-              name="name"
-              type="text"
-              placeholder="Enter your name"
-            />
-            <input
-              className={styles["form-register"]}
-              name="lastName"
-              type="text"
-              placeholder="Enter your last name"
-            />
-            <input
-              className={styles["form-register"]}
-              name="biography"
-              type="text"
-              placeholder="Write a short description of yourself"
-            />
-
-            <input
-              className={styles["form-register"]}
-              name="citizenship"
-              type="text"
-              placeholder="Enter your nationality"
-            />
-            <input
-              className={styles["form-register"]}
-              name="email"
+              className={clsx(
+                "shadow mt-[12px] appearance-none border w-[300px] h-[40px]",
+                "rounded-lg py-2 px-3 text-gray-700",
+                "mb-2 bg-[#F6F9FF]"
+              )}
+              name="correo"
               type="email"
               placeholder="Enter your email"
             />
             <input
-              className={styles["form-register"]}
-              name="password"
-              type="password"
-              placeholder="Enter your password"
+              className={clsx(
+                "shadow mt-[12px] appearance-none border w-[300px] h-[40px]",
+                "rounded-lg py-2 px-3 text-gray-700",
+                "mb-2 bg-[#F6F9FF]"
+              )}
+              name="correo"
+              type="email"
+              placeholder="Enter your email"
             />
-            <input name="myFile" type="file" />
             <input
-              className={styles["form-register__button"]}
-              type="submit"
-              value="Register"
+              className={clsx(
+                "shadow mt-[12px] appearance-none border w-[300px] h-[40px]",
+                "rounded-lg py-2 px-3 text-gray-700",
+                "mb-2 bg-[#F6F9FF]"
+              )}
+              name="correo"
+              type="email"
+              placeholder="Enter your email"
             />
           </form>
-          {/* <p className={styles["form-register__login"]}>
-        Ya tienes cuenta, <Link to="/login">inicia sesión</Link>
-      </p> */}
+          <p className={clsx("")}>
+            {/* Ya tienes cuenta, <Link to="/login">inicia sesión</Link> */}
+          </p>
         </article>
       </main>
     </>
