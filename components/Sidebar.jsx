@@ -7,9 +7,9 @@ const MobileSidebar = ({ closeSidebar }) => {
   return (
     <>
       <section className={clsx("bg-[#ffffff]/40 h-screen w-screen fixed top-0 left-0")}>
-        <section className={clsx("bg-white max-w-[50%] p-4 h-full border-2")}>
+        <section className={clsx("bg-white max-w-[70%] p-4 h-full border-2")}>
           <section className={clsx("flex justify-between")}>
-            <div className={clsx("flex items-center mb-8 ")}>
+            <div className={clsx("flex items-center mb-8")}>
               <Link href="">
                 <Image src={images.beeyouLogo} alt="Bee You Logo" />
               </Link>
@@ -30,25 +30,25 @@ const MobileSidebar = ({ closeSidebar }) => {
               </Link>
               <Link href="">
                 <li className={clsx("mt-3 h-10 pl-7 pt-1 hover:bg-yellow-100 hover:text-[#BA9E3A] rounded-lg hover:text-lg")}>
-                  <Image className={clsx("inline-flex mr-4 hover:file:bg-violet-100")} src={images.events} alt="Events Icon"/>
+                  <Image className={clsx("inline-flex mr-4 hover:file:bg-violet-100")} src={images.eventsIcon} alt="Events Icon"/>
                   Eventos
                 </li>
               </Link>
               <Link href="">
                 <li className={clsx("mt-3 h-10 pl-7 pt-1 hover:bg-yellow-100 hover:text-[#BA9E3A] rounded-lg hover:text-lg")}>
-                  <Image className={clsx("inline-flex mr-4 selection:text-fuchsia-900")} src={images.places} alt="Places Icon"/>
+                  <Image className={clsx("inline-flex mr-4 selection:text-fuchsia-900")} src={images.placesIcon} alt="Places Icon"/>
                   Espacios
                 </li>
               </Link>
               <Link href="">
                 <li className="mt-3 h-10 pl-7 pt-1 hover:bg-yellow-100 hover:text-[#BA9E3A] rounded-lg hover:text-lg">
-                  <Image className={clsx("inline-flex mr-4 hover:fill-[#BA9E3A]")} src={images.discounts} alt="Discounts Icon"/>
+                  <Image className={clsx("inline-flex mr-4 hover:fill-[#BA9E3A]")} src={images.discountsIcon} alt="Discounts Icon"/>
                   Descuentos
                 </li>
               </Link>
               <Link href="">
                 <li className={clsx("mt-3 h-10 pl-7 pt-1 hover:bg-yellow-100 hover:text-[#BA9E3A] rounded-lg hover:text-lg")}>
-                  <Image className={clsx("inline-flex mr-4 hover:fill-[#BA9E3A]")} src={images.favorite} alt="My favourites Icon"/>
+                  <Image className={clsx("inline-flex mr-4 hover:fill-[#BA9E3A]")} src={images.favoriteIcon} alt="My favourites Icon"/>
                   Mis Favoritos
                 </li>
               </Link>
@@ -68,12 +68,15 @@ export default function Sidebar() {
 
   return (
     <>
-      <nav className={clsx("w-full p-4 max-xl:hidden")}>
+      <nav className={clsx("w-[247px] p-4 max-xl:hidden")}>
         {isMobileSidebarOpen && <MobileSidebar closeSidebar={closeSidebar} />}
-        <section className={clsx("h-20 w-10/12 bg-neutral-300 text-center rounded-lg flex m-auto")}>
+        <section className={clsx("flex justify-center mt-10")}>
+        <Image src={images.beeyouLogo} alt="Bee You Logo"/>
+        </section>
+        <section className={clsx("h-[76px] w-[215px] bg-blue-gray-50 text-center rounded-lg flex m-4 mt-7")}>
           <div className={clsx("w-1/4 ml-5 m-auto")}>
             <Link href="">
-              <div className={clsx("h-16 w-16 bg-red-400 rounded-full")}></div>
+              <div className={clsx("h-10 w-10 bg-[#EFD16B] rounded-full")}></div>
             </Link>
           </div>
           <div className={clsx("w-3/4 mb-auto mt-auto -ml-5")}>
@@ -85,16 +88,16 @@ export default function Sidebar() {
             </p>
           </div>
         </section>
-        <p className={clsx("text-xs text-slate-500 font-medium pl-7 pt-8")}>
+        <h3 className={clsx("text-xs text-blue-gray-600 font-bold pl-7 pt-8")}>
           GENERAL
-        </p>
+        </h3>
         <section>
-          <ul className={clsx("text-slate-500 w-128 p-2 ")}>
+          <ul className={clsx("text-blue-gray-500 text-montserrat font-light text-[16px] leading-[24px] w-128 p-2 ")}>
             <Link href="">
               <li className={clsx("mt-3 h-10 pl-7 pt-1 hover:bg-yellow-100 hover:text-[#BA9E3A] rounded-lg hover:text-lg")}>
                 <Image
                   className={clsx("inline-flex mr-4")}
-                  src={images.home}
+                  src={images.homeIcon}
                   alt="Home Icon"
                 />
                 Inicio
@@ -104,7 +107,7 @@ export default function Sidebar() {
               <li className={clsx("mt-3 h-10 pl-7 pt-1 hover:bg-yellow-100 hover:text-[#BA9E3A] rounded-lg hover:text-lg")}>
                 <Image
                   className={clsx("inline-flex mr-4 hover:file:bg-violet-100")}
-                  src={images.events}
+                  src={images.eventsIcon}
                   alt="Events Icon"
                 />
                 Eventos
@@ -114,7 +117,7 @@ export default function Sidebar() {
               <li className={clsx("mt-3 h-10 pl-7 pt-1 hover:bg-yellow-100 hover:text-[#BA9E3A] rounded-lg hover:text-lg")}>
                 <Image
                   className={clsx("inline-flex mr-4 selection:text-fuchsia-900")}
-                  src={images.places}
+                  src={images.placesIcon}
                   alt="Places Icon"
                 />
                 Espacios
@@ -124,7 +127,7 @@ export default function Sidebar() {
               <li className={clsx("mt-3 h-10 pl-7 pt-1 hover:bg-yellow-100 hover:text-[#BA9E3A] rounded-lg hover:text-lg")}>
                 <Image
                   className={clsx("inline-flex mr-4 hover:fill-[#BA9E3A]")}
-                  src={images.discounts}
+                  src={images.discountsIcon}
                   alt="Discounts Icon"
                 />
                 Descuentos
@@ -134,27 +137,27 @@ export default function Sidebar() {
               <li className={clsx("mt-3 h-10 pl-7 pt-1 hover:bg-yellow-100 hover:text-[#BA9E3A] rounded-lg hover:text-lg")}>
                 <Image
                   className={clsx("inline-flex mr-4 hover:fill-[#BA9E3A]")}
-                  src={images.favorite}
-                  alt="My Favourites Icon"
+                  src={images.favoriteIcon}
+                  alt="My Favorites Icon"
                 />
                 Mis Favoritos
               </li>
             </Link>
           </ul>
         </section>
-        <section className={clsx("bg-yellow-100 h-auto mt-10 text-center rounded-lg flex m-auto w-10/12")}>
-          <div className={clsx("m-auto")}>
-            <p className={clsx("text-blue-gray-800 ml-3 font-semibold")}>¡Bienvenido</p>
-            <p className={clsx("text-blue-gray-600 ml-3")}>a tu espacio</p>
-            <p className={clsx("text-blue-gray-600 ml-3")}>seguro!</p>
-          </div>
-          <div>
-            <Image
-              className={clsx("m-4 h-auto w-20")}
-              src={images.friends}
-              alt="Discounts Icon"
-            />
-          </div>
+        <section className={clsx("block justify-center lgbtiq-grad-bg w-[217px] h-[108px] rounded-lg pl-[1px] pt-[1px] mt-11")}>
+          <section className={clsx("bg-yellow-100 text-center rounded-lg flex items-end w-[215px] h-[106px]")}>
+            <div className={clsx("m-auto")}>
+              <p className={clsx("font-poppins font-medium text-[16px] leading-[17px] text-blue-gray-800 ml-3")}>¡Bienvenido</p>
+              <p className={clsx("font-montserrat font-normal text-[14px] leading-[17px] text-blue-gray-600 max-w-[90px] ml-3 text-start")}>a tu espacio seguro!</p>
+            </div>
+            <div>
+              <Image
+                src={images.friendsFigure}
+                alt="Friends Figure"
+              />
+            </div>
+          </section>
         </section>
       </nav>
       <nav className={clsx("bg-[#ffffff] shadow-lg h-[60px] flex justify-between fixed top-0 w-full space-x-10 sppace-y-4 xl:hidden")}>
@@ -170,7 +173,7 @@ export default function Sidebar() {
           }}
         >
           <Link href="">
-            <img src="/icon-menu-mobile.svg" alt="menu" />
+            <Image src={images.mobileIcon} alt="Mobile Menu Icon" />
           </Link>
         </div>
       </nav>

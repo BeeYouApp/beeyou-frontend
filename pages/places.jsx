@@ -1,14 +1,15 @@
 import clsx from "clsx";
-import Navbar from "../components/Navbar";
+import Link from "next/link";
 import Image from "next/image";
 import { images } from "../lib/images";
 import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
+import Navbar from "../components/Navbar";
+import Sidebar from "../components/Sidebar";
 import CardPlacesSm from "../components/CardPlacesSm";
 import CardPlacesLg from "../components/CardPlacesLg";
-import Sidebar from "../components/Sidebar";
 
 export default function PlacesPage() {
   return (
@@ -80,7 +81,7 @@ export default function PlacesPage() {
         </section>
         <section className={clsx("lg:flex lg:items-center lg:justify-between")}>
           <section className={clsx("flex items-center mt-10 mb-5")}>
-            <Image src={images.placesIcon} alt="Friendly Places Icon" />
+            <Image src={images.locateIcon} alt="Friendly Places Icon" />
             <h4 className={clsx("font-montserrat font-normal text-blue-gray-700 text-[20px] leading-[28px] ml-5")}>
               Espacios friendly
             </h4>
@@ -109,7 +110,7 @@ export default function PlacesPage() {
               name="search"
               id="search"
               placeholder="Busca tu espacio..."
-              className={clsx("font-search form-input rounded-lg border border-gray-200 py-3 bg-white font-light placeholder-blue-gray-500 text-blue-gray-500 appearance-none w-full lg:w-[320px] block pl-16 focus:outline-none")}/>
+              className={clsx("font-montserrat form-input rounded-lg border border-gray-200 py-3 bg-white font-light placeholder-blue-gray-500 text-blue-gray-500 appearance-none w-full lg:w-[320px] block pl-16 focus:outline-none")}/>
           </label>
         </section>
         <div className={clsx("flex flex-col")}>
