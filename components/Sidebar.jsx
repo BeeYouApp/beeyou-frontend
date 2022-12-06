@@ -173,7 +173,7 @@ export default function Sidebar() {
           }}
         >
           <Link href="">
-            <img src="/icon-menu-mobile.svg" alt="menu" />
+            <Image src={images.mobileIcon} alt="Mobile Menu Icon" />
           </Link>
         </div>
       </nav>
