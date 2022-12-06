@@ -110,7 +110,7 @@ export default function PlacesPage() {
               name="search"
               id="search"
               placeholder="Busca tu espacio..."
-              className={clsx("font-search form-input rounded-lg border border-gray-200 py-3 bg-white font-light placeholder-blue-gray-500 text-blue-gray-500 appearance-none w-full lg:w-[320px] block pl-16 focus:outline-none")}/>
+              className={clsx("font-montserrat form-input rounded-lg border border-gray-200 py-3 bg-white font-light placeholder-blue-gray-500 text-blue-gray-500 appearance-none w-full lg:w-[320px] block pl-16 focus:outline-none")}/>
           </label>
         </section>
         <div className={clsx("flex flex-col")}>
