@@ -81,7 +81,7 @@ export default function PlacesPage() {
         </section>
         <section className={clsx("lg:flex lg:items-center lg:justify-between")}>
           <section className={clsx("flex items-center mt-10 mb-5")}>
-            <Image src={images.placesIcon} alt="Friendly Places Icon" />
+            <Image src={images.locateIcon} alt="Friendly Places Icon" />
             <h4 className={clsx("font-montserrat font-normal text-blue-gray-700 text-[20px] leading-[28px] ml-5")}>
               Espacios friendly
             </h4>

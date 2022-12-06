@@ -12,7 +12,7 @@ export default function TableEvents() {
           <table className={clsx("min-w-full text-center")}>
             <thead className={clsx("border-b bg-gray-50")}>
               <tr>
-                <th scope="col" className={clsx("text-[14px] font-medium text-blue-gray-600 pl-6 pr-32 py-4")}>
+                <th scope="col" className={clsx("text-start text-[14px] font-medium text-blue-gray-600 pl-6 pr-32 py-4")}>
                   PROMOCIÓN
                 </th>
                 <th scope="col" className={clsx("text-[14px] font-medium text-blue-gray-600 px-6 py-4")}>
