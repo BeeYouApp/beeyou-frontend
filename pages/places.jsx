@@ -6,7 +6,6 @@ import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import CardPlacesSm from "../components/CardPlacesSm";
 import CardPlacesLg from "../components/CardPlacesLg";
@@ -14,13 +13,8 @@ import CardPlacesLg from "../components/CardPlacesLg";
 export default function PlacesPage() {
   return (
     <>
-    <div className="block lg:hidden">
-      <Navbar />
-    </div>
       <div className="flex">
-      <article>
-        <div className="w-[247px] h-[745px] bg-blue-gray-100 hidden lg:block"></div>
-      </article>
+      <Sidebar />
       <article className={clsx("px-4 md:px-8 mt-24 lg:mt-14")}>
         <div className="flex">
           <h3 className={clsx("font-montserrat font-bold text-blue-gray-900 text-[24px] leading-[30px] mr-[79px]")}>
