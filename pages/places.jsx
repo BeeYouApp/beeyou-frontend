@@ -6,7 +6,6 @@ import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
 import CardPlacesSm from "../components/CardPlacesSm";
 import CardPlacesLg from "../components/CardPlacesLg";
@@ -14,15 +13,10 @@ import CardPlacesLg from "../components/CardPlacesLg";
 export default function PlacesPage() {
   return (
     <>
-    <div className="block lg:hidden">
-      <Navbar />
-    </div>
       <div className="flex">
-      <article>
-        <div className="w-[247px] h-[745px] bg-blue-gray-100 hidden lg:block"></div>
-      </article>
+      <Sidebar />
       <article className={clsx("px-4 md:px-8 mt-24 lg:mt-14")}>
-        <div className="flex">
+        <div className="flex lg:mt-10 xl:mt-0">
           <h3 className={clsx("font-montserrat font-bold text-blue-gray-900 text-[24px] leading-[30px] mr-[79px]")}>
             Tus espacios
           </h3>
@@ -41,21 +35,14 @@ export default function PlacesPage() {
         </section>
         <section className={clsx("md:flex md:justify-evenly")}>
           <div className={clsx("flex justify-center")}>
-            <section className={clsx("hidden md:flex md:items-center md:mr-[65px]")}>
+            <section className={clsx("hidden md:flex md:items-center md:mr-[85px] md:-ml-[40px] lg:ml-0 xl:mr-5 xl:-ml-[34px]")}>
               <Image src={images.leftArrow} alt="Left Arrow Icon" />
             </section>
-            <div className={clsx("max-w-sm mr-4 md:mr-5")}>
+            <div className={clsx("max-w-sm mr-4 md:mr-5 xl:mr-12 2xl:mr-12")}>
               <a href="#!">
                 <CardPlacesSm />
               </a>
             </div>
-            <div className={clsx("max-w-sm md:mr-5")}>
-              <a href="#!">
-                <CardPlacesSm />
-              </a>
-            </div>
-          </div>
-          <div className={clsx("hidden md:block")}>
             <div className={clsx("max-w-sm md:mr-5")}>
               <a href="#!">
                 <CardPlacesSm />
@@ -69,7 +56,42 @@ export default function PlacesPage() {
               </a>
             </div>
           </div>
-          <section className={clsx("hidden md:flex md:items-center md:ml-[45px]")}>
+          <div className={clsx("hidden lg:block")}>
+            <div className={clsx("max-w-sm md:mr-5")}>
+              <a href="#!">
+                <CardPlacesSm />
+              </a>
+            </div>
+          </div>
+          <div className={clsx("hidden 2xl:block")}>
+            <div className={clsx("max-w-sm md:mr-5")}>
+              <a href="#!">
+                <CardPlacesSm />
+              </a>
+            </div>
+          </div>
+          <div className={clsx("hidden 2xl:block")}>
+            <div className={clsx("max-w-sm md:mr-5")}>
+              <a href="#!">
+                <CardPlacesSm />
+              </a>
+            </div>
+          </div>
+          <div className={clsx("hidden 2xl:block")}>
+            <div className={clsx("max-w-sm md:mr-5")}>
+              <a href="#!">
+                <CardPlacesSm />
+              </a>
+            </div>
+          </div>
+          <div className={clsx("hidden 2xl:block")}>
+            <div className={clsx("max-w-sm md:mr-5")}>
+              <a href="#!">
+                <CardPlacesSm />
+              </a>
+            </div>
+          </div>
+          <section className={clsx("hidden md:flex md:items-center md:ml-[20px] md:-mr-[34px] lg:mr-0 xl:-ml-[25px] xl:-mr-[34px]")}>
             <Image src={images.rightArrow} alt="Right Arrow Icon" />
           </section>
         </section>
