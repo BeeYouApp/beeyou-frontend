@@ -36,19 +36,19 @@ const MobileSidebar = ({ closeSidebar }) => {
               </Link>
               <Link href="">
                 <li className={clsx("mt-3 h-10 pl-7 pt-1 hover:bg-yellow-100 hover:text-[#BA9E3A] rounded-lg hover:text-lg")}>
-                  <Image className={clsx("inline-flex mr-4 selection:text-fuchsia-900")} src={images.discountsIcon} alt="Places Icon"/>
+                  <Image className={clsx("inline-flex mr-4 selection:text-fuchsia-900")} src={images.discountsIcon} alt="Discounts Icon"/>
                   Descuentos
                 </li>
               </Link>
               <Link href="">
                 <li className="mt-3 h-10 pl-7 pt-1 hover:bg-yellow-100 hover:text-[#BA9E3A] rounded-lg hover:text-lg">
-                  <Image className={clsx("inline-flex mr-4 hover:fill-[#BA9E3A]")} src={images.planproIcon} alt="Discounts Icon"/>
+                  <Image className={clsx("inline-flex mr-4 hover:fill-[#BA9E3A]")} src={images.planProIcon} alt="Visibility Icon"/>
                   Visibilidad
                 </li>
               </Link>
               <Link href="">
                 <li className={clsx("mt-3 h-10 pl-7 pt-1 hover:bg-yellow-100 hover:text-[#BA9E3A] rounded-lg hover:text-lg")}>
-                  <Image className={clsx("inline-flex mr-4 hover:fill-[#BA9E3A]")} src={images.metricsIcon} alt="My favourites Icon"/>
+                  <Image className={clsx("inline-flex mr-4 hover:fill-[#BA9E3A]")} src={images.metricsIcon} alt="Metrics Icon"/>
                   Métricas
                 </li>
               </Link>
@@ -127,8 +127,8 @@ export default function Sidebar() {
               <li className={clsx("mt-3 h-10 pl-7 pt-1 hover:bg-yellow-100 hover:text-[#BA9E3A] rounded-lg hover:text-lg")}>
                 <Image
                   className={clsx("inline-flex mr-4 hover:fill-[#BA9E3A]")}
-                  src={images.proPlanIcon}
-                  alt="Discounts Icon"
+                  src={images.planProIcon}
+                  alt="Visibility Icon"
                 />
                 Visibilidad
               </li>
@@ -138,7 +138,7 @@ export default function Sidebar() {
                 <Image
                   className={clsx("inline-flex mr-4 hover:fill-[#BA9E3A]")}
                   src={images.metricsIcon}
-                  alt="My Favorites Icon"
+                  alt="Metrics Icon"
                 />
                 Métricas
               </li>
