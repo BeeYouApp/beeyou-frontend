@@ -5,7 +5,7 @@ import Input from "./Input"
 import { ToastContainer,toast } from "react-toastify"
 import Button from "./Button"
 
-export default function(){
+export default function(children){
   const {register,handleSubmit} = useForm()
   const onSubmit = async data => {
   {console.log(data)}
@@ -78,5 +78,7 @@ export default function(){
         </Button>
     </article>
   </section>
-    )
+ 
+  
+  )
 }
