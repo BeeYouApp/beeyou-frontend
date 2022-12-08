@@ -6,15 +6,15 @@ import React, { useState } from "react";
 const MobileSidebar = ({ closeSidebar }) => {
   return (
     <>
-      <section className={clsx("bg-[#ffffff]/40 h-screen w-screen fixed top-0 left-0")}>
-        <section className={clsx("bg-white max-w-[70%] p-4 h-full border-2")}>
+      <section className={clsx("bg-[#000000]/40 h-screen w-screen fixed top-0 left-0 lg:hidden")}>
+        <section className={clsx("bg-white max-w-[70%] md:max-w-[35%] p-4 h-full border-2")}>
           <section className={clsx("flex justify-between")}>
             <div className={clsx("flex items-center mb-8")}>
               <Link href="">
                 <Image src={images.beeyouLogo} alt="Bee You Logo" />
               </Link>
             </div>
-            <button onClick={() => closeSidebar()}>
+            <button className={clsx("mb-10")} onClick={() => closeSidebar()}>
             <Image src={images.xMarkIcon} alt="Close Mark Icon" />
             </button>
           </section>

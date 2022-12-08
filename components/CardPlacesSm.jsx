@@ -6,13 +6,11 @@ export default function CardPlacesSm(props) {
   return (
     <>
       <div className={clsx("relative shadow-lg")}>
-        <a href="#!">
           <Image
             className={clsx("rounded-lg w-[215px] h-[150px] object-cover")}
             src={images.placeImage}
             alt="Place Image"
           />
-        </a>
         <div className={clsx("font-montserrat absolute bottom-0 left-0 right-0 px-4 py-2 text-montserrat text-[#FFFFFF]")}>
           <h5 className={clsx("text-[14px] font-bold leading-[15px] mt-[72px]")}>
             Cielito Querido
