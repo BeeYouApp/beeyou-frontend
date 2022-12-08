@@ -8,7 +8,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { images } from "../lib/images";
 
-export default function Register({}) {
+export default function Register({ }) {
   const { register, handleSubmit } = useForm();
   const onSubmit = async (data) => {
     {
@@ -41,7 +41,7 @@ export default function Register({}) {
         className={clsx("flex flex-col items-center")}
         onSubmit={handleSubmit(onSubmit)}
       >
-        <section className={clsx("flex justify-between mx-8  w-[100%]")}>
+        <section className={clsx("flex justify-between mx-8 w-[100%]")}>
           <button
             className={clsx(
               "font-poppins font-medium leading-[20px] mt-6 pb-2",
@@ -61,7 +61,11 @@ export default function Register({}) {
         </section>
 
         <ToastContainer />
-        <div>
+        <div className={clsx("w-[100%] mb-4 relative")}>
+          <dlv className={clsx("flex justify-between px-2.5 w-[100%] absolute top-1/3")}>
+            <p className={clsx("font-poppins text-medium text-[12px] leading-[18px]",
+              "w-[100%] text-blue-gray-700")}>Correo</p>
+          </dlv>
           <Input
             htmlFor="email"
             id="username2"
@@ -71,45 +75,58 @@ export default function Register({}) {
             message="error"
             register={register}
             style={clsx(
-              "shadow mt-[12px] appearance-none border w-[300px] h-[46px]",
-              "rounded-lg py-2 px-3 text-gray-700",
-              "mb-4 bg-[#F6F9FF] h-[46px] "
+              "shadow mt-[12px] appearance-none border w-[300px] h-[56px]",
+              "rounded-lg pt-7 px-2.5 text-gray-700",
+              "bg-[#F6F9FF] h-[46px] "
             )}
           />
         </div>
-
-        <input
-          className={clsx(
-            "shadow mt-[12px] appearance-none border w-[300px] h-[46px]",
-            "rounded-lg py-2 px-3 text-gray-700",
-            "mb-4 bg-[#F6F9FF] hover:border-violet-700 border-2",
-            "focus:outline-none focus:shadow-outline"
-          )}
-          id="password"
-          type="password"
-          {...register("password", {
-            required: true,
-            maxLength: 16,
-            minLength: 8,
-          })}
-        />
-
-        <input
-          className={clsx(
-            "shadow mt-[12px] appearance-none border w-[300px] h-[46px]",
-            "rounded-lg py-2 px-3 text-gray-700",
-            " bg-[#F6F9FF] hover:border-violet-700 border-2",
-            "focus:outline-none focus:shadow-outline"
-          )}
-          id="password"
-          type="password"
-          {...register("password", {
-            required: true,
-            maxLength: 16,
-            minLength: 8,
-          })}
-        />
-
+        <div className={clsx("w-[100%] mb-4 relative")}>
+          <dlv className={clsx("flex justify-between px-2.5 w-[100%] absolute top-1/4")}>
+            <p className={clsx("font-poppins text-medium text-[12px] leading-[18px]",
+              "w-[100%] text-blue-gray-700")}>Contraseña</p>
+            <p className={clsx("ont-poppins text-normal text-[12px] text-end leading-[18px]",
+              "text-center text-blue-gray-400 w-[100%] underline underline-offset-3")}>Mostrar</p>
+          </dlv>
+          <input
+            className={clsx(
+              "shadow mt-[12px] appearance-none border w-[300px] h-[56px]",
+              "rounded-lg pt-7 px-3 text-gray-700",
+              "bg-[#F6F9FF] hover:border-violet-700 border-2",
+              "focus:outline-none focus:shadow-outline"
+            )}
+            id="password"
+            type="password"
+            {...register("password", {
+              required: true,
+              maxLength: 16,
+              minLength: 8,
+            })}
+          />
+        </div>
+        <div className={clsx("w-[100%] relative")}>
+          <dlv className={clsx("flex justify-between px-2.5 w-[100%] absolute top-1/4")}>
+            <p className={clsx("font-poppins text-medium text-[12px] leading-[18px]",
+              "w-[100%] text-blue-gray-700")}>Confirmar contraseña</p>
+            <p className={clsx("ont-poppins text-normal text-[12px] text-end leading-[18px]",
+              "text-center text-blue-gray-400 w-[100%] underline underline-offset-3")}>Mostrar</p>
+          </dlv>
+          <input
+            className={clsx(
+              "shadow mt-[12px] appearance-none border w-[300px] h-[56px]",
+              "rounded-lg pt-7 px-3 text-gray-700",
+              "bg-[#F6F9FF] hover:border-violet-700 border-2",
+              "focus:outline-none focus:shadow-outline"
+            )}
+            id="password"
+            type="password"
+            {...register("password", {
+              required: true,
+              maxLength: 16,
+              minLength: 8,
+            })}
+          />
+        </div>
         <button className={clsx("shadow-md lgbtiq-button lgbtiq-grad-bg mt-8")}>
           ¡REGÍSTRATE!
         </button>
@@ -123,8 +140,8 @@ export default function Register({}) {
         )}
       >
         Al crear tu cuenta de usuario en beeyou, aceptas los{" "}
-        <span>Términos y Condiciones</span> y el{" "}
-        <span>Aviso de privacidad</span> del servicio
+        <span className="font-medium lgbtiq-grad-color">Términos y Condiciones</span> y el{" "}
+        <span className="font-medium lgbtiq-grad-color">Aviso de privacidad</span> del servicio
       </p>
       <p
         className={clsx(

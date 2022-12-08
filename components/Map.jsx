@@ -31,7 +31,7 @@ export default function Map() {
 
     return (
         <div>
-            <div className="sidebar">
+            <div className="sidebar absolute">
                 Longitude: {lng} | Latitude: {lat} | Zoom: {zoom}
             </div>
             <div style={{height: '500px', width: '100%',}} ref={mapContainer} className="map-container" />

@@ -1,12 +1,10 @@
 import clsx from "clsx";
 import Sidebar from "./Sidebar";
-import SearchMap from "./SearchMap";
-import Navbar from "./Navbar";
 
 export default function LayautDashboard({ children, style }) {
   return (
     <>
-      <aside className=" inline-flex h-screen w-1/6 max-xl:w-[0px] border-2 mt-[60px]">
+      <aside className=" inline-flex h-screen w-1/6 max-xl:w-[0px] border-r-4 ">
         <Sidebar />
       </aside>
       <main
@@ -16,6 +14,7 @@ export default function LayautDashboard({ children, style }) {
           "h-screen",
           "w-5/6 min-xl:w-6/6",
           "absolute",
+
           { style }
         )}
       >

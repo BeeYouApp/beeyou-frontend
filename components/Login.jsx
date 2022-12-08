@@ -7,7 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { images } from "../lib/images";
 
-export default function Login({}) {
+export default function Login({ }) {
   return (
     <article
       className={clsx(
@@ -26,8 +26,8 @@ export default function Login({}) {
         </h2>
       </div>
       <form
-        className={clsx("flex flex-col items-center")}
-        // onSubmit={handleSubmit(onSubmit)}
+        className={clsx("flex flex-col items-center mt-6")}
+      // onSubmit={handleSubmit(onSubmit)}
       >
         <ToastContainer />
         <Input
@@ -38,23 +38,30 @@ export default function Login({}) {
           value={/\S+@\S+\.\S+/}
           message="error"
           style={clsx(
-            "shadow mt-[12px] appearance-none border w-[300px] h-[46px]",
+            "shadow mt-[12px] appearance-none border w-[300px] h-[56px]",
             "rounded-lg py-2 px-3 text-gray-700",
             "mb-4 bg-[#F6F9FF] h-[46px] m"
           )}
         />
 
-        <input
-          placeholder="Ingresa tu contraseña"
-          className={clsx(
-            "shadow mt-[12px] appearance-none border w-[300px] h-[46px]",
-            "rounded-lg py-2 px-3 text-gray-700",
-            "mb-4 bg-[#F6F9FF] hover:border-violet-700 border-2",
-            "focus:outline-none focus:shadow-outline"
-          )}
-          id="password"
-          type="password"
-        />
+        <div className={clsx("w-[100%] relative")}>
+          <dlv className={clsx("flex justify-between px-2.5 w-[100%] absolute top-1/4")}>
+            <p className={clsx("font-poppins text-medium text-[12px] leading-[18px]",
+              "w-[100%] text-blue-gray-700")}>Contraseña</p>
+            <p className={clsx("ont-poppins text-normal text-[12px] text-end leading-[18px]",
+              "text-center text-blue-gray-400 w-[100%] underline underline-offset-3")}>Mostrar</p>
+          </dlv>
+          <input
+            className={clsx(
+              "shadow mt-[12px] appearance-none border w-[300px] h-[56px]",
+              "rounded-lg pt-7 px-3 text-gray-700",
+              "bg-[#F6F9FF] hover:border-violet-700 border-2",
+              "focus:outline-none focus:shadow-outline"
+            )}
+            id="password"
+            type="password"
+          />
+        </div>
 
         <button className={clsx("shadow-md lgbtiq-button lgbtiq-grad-bg mt-8")}>
           Iniciar sesión

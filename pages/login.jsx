@@ -5,8 +5,9 @@ import Login from "../components/Login";
 export default function RegisterPage(props) {
   return (
     <>
+      <Navbar />
       <main
-        className={clsx("flex flex-col justify-center items-center w-screen")}
+        className={clsx("flex flex-col justify-center items-center w-screen mt-28")}
       >
         <h1
           className={clsx(
