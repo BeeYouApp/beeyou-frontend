@@ -4,7 +4,7 @@ import Sidebar from "./Sidebar";
 export default function LayautDashboard({ children, style }) {
   return (
     <>
-      <aside className=" inline-flex h-screen w-1/6 max-xl:w-[0px] border-r-4 ">
+      <aside className={clsx("inline-flex h-screen w-1/6 max-xl:w-[0px] border-r-4")}>
         <Sidebar />
       </aside>
       <main
