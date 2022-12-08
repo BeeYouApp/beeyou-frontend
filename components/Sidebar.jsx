@@ -75,17 +75,17 @@ export default function Sidebar() {
         </section>
         <section className={clsx("h-[76px] w-[215px] bg-blue-gray-50 text-center rounded-lg flex m-4 mt-7")}>
           <div className={clsx("w-1/4 ml-5 m-auto")}>
-            <Link href="">
               <div className={clsx("h-10 w-10 bg-[#EFD16B] rounded-full")}></div>
-            </Link>
           </div>
           <div className={clsx("w-3/4 mb-auto mt-auto -ml-5")}>
+            <Link href="/user/profile-configuration">
             <p className={clsx("text-base font-poppins font-medium text-blue-gray-900")}>
               Víctor Torres
             </p>
             <p className={clsx("text-[12px] leading-[15px] font-medium font-montserrat text-blue-gray-500")}>
               friend
             </p>
+            </Link>
           </div>
         </section>
         <h3 className={clsx("text-xs text-blue-gray-600 font-bold pl-7 pt-8")}>

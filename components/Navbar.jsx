@@ -26,7 +26,7 @@ const MobileSidebar = ({ closeSidebar }) => {
             </Link>
           </li>
           <li className={clsx("pl-6 overflow-hidden hover:opacity-90 hover:rounded hover:w-56 hover:h-7 transition duration-300 ease-in-out hover:bg-blue-gray-50 mt-4")}>
-            <Link href="">Beneficios</Link>{" "}
+            <Link>Beneficios</Link>{" "}
           </li>
           <li className={clsx("pl-6 overflow-hidden hover:opacity-90 hover:rounded hover:w-56 hover:h-7 transition duration-300 ease-in-out hover:bg-blue-gray-50 mt-4")}>
             <Link href="">Iniciar sesión</Link>{" "}

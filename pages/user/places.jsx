@@ -15,7 +15,7 @@ export default function PlacesPage() {
     <>
       <div className="flex">
       <Sidebar />
-      <article className={clsx("px-4 md:px-8 mt-24 lg:mt-14")}>
+      <article className={clsx("px-4 md:px-8 mt-24 lg:mt-14 xl:mt-10")}>
         <div className="flex lg:mt-10 xl:mt-0">
           <h3 className={clsx("font-montserrat font-bold text-blue-gray-900 text-[24px] leading-[30px] mr-[79px]")}>
             Tus espacios
