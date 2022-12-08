@@ -1,151 +1,143 @@
-import clsx from "clsx"
-import React from "react"
-import {useForm} from "react-hook-form"
-import Button from "./Button"
-import Input from "./Input"
-import { ToastContainer,toast } from "react-toastify"
-import { register } from "../lib/api"
+import clsx from "clsx";
+import React from "react";
+import { useForm } from "react-hook-form";
+import Input from "./Input";
+import { ToastContainer, toast } from "react-toastify";
+import { register } from "../lib/api";
+import Link from "next/link";
+import Image from "next/image";
+import { images } from "../lib/images";
 
-export default function Register({ }) {
-  
-const {register,handleSubmit} = useForm()
-const onSubmit = async data => {
-  {console.log(data)}
-  const result = await register(data)
-  console.log("result:", result)
-  if(!result ){
-    toast.error("ups hubo un error")
-  } 
+export default function Register({}) {
+  const { register, handleSubmit } = useForm();
+  const onSubmit = async (data) => {
+    {
+      console.log(data);
+    }
+    const result = await register(data);
+    console.log("result:", result);
+    if (!result) {
+      toast.error("ups hubo un error");
+    }
+  };
+  return (
+    <article
+      className={clsx(
+        "flex flex-col justify-center items-center mt-8 mb-8",
+        "w-[328px] h-[608px] md:w-[364px] border-1 border-blue-gray-100 rounded-[16px] shadow-md"
+      )}
+    >
+      <div
+        className={clsx(
+          "border-b-2 border-blue-gray-100 font-montserrat font-bold",
+          "text-[16px] text-blue-gray-900 text-center leading-[20px] w-[100%]"
+        )}
+      >
+        <h2 className={clsx("font-montserrat font-bold text-[16px] my-6")}>
+          Regístrate
+        </h2>
+      </div>
+      <form
+        className={clsx("flex flex-col items-center")}
+        onSubmit={handleSubmit(onSubmit)}
+      >
+        <section className={clsx("flex justify-between mx-8  w-[100%]")}>
+          <button
+            className={clsx(
+              "font-poppins font-medium leading-[20px] mt-6 pb-2",
+              "text-center text-[16px] text-blue-gray-400 w-[50%] border-b-2 border-blue-gray-100"
+            )}
+          >
+            Soy Usuario
+          </button>
+          <button
+            className={clsx(
+              "font-poppins font-medium leading-[20px] mt-6 pb-2",
+              "text-center text-[16px] text-blue-gray-400 w-[50%] border-b-2 "
+            )}
+          >
+            Soy Negocio
+          </button>
+        </section>
 
-}
-  return(
-    <>
-      <section className={clsx(
-        'md:py-10 md:px-5', 
-        'lg:max-w-screen-xl w-full', 
-        'flex', 
-        'lg:space-x-20 md:content-center'
-      )}>
-        <article className={clsx(
-          'hidden lg:flex',
-          'lg:w-1/2',
-          'bg-login bg-contain bg-center bg-no-repeat', 
+        <ToastContainer />
+        <div>
+          <Input
+            htmlFor="email"
+            id="username2"
+            type="email"
+            placeholder="example@example.com"
+            value={/\S+@\S+\.\S+/}
+            message="error"
+            register={register}
+            style={clsx(
+              "shadow mt-[12px] appearance-none border w-[300px] h-[46px]",
+              "rounded-lg py-2 px-3 text-gray-700",
+              "mb-4 bg-[#F6F9FF] h-[46px] "
+            )}
+          />
+        </div>
+
+        <input
+          className={clsx(
+            "shadow mt-[12px] appearance-none border w-[300px] h-[46px]",
+            "rounded-lg py-2 px-3 text-gray-700",
+            "mb-4 bg-[#F6F9FF] hover:border-violet-700 border-2",
+            "focus:outline-none focus:shadow-outline"
           )}
-        >
-        </article>
-        <article className={clsx(
-          'h-full', 
-          'w-full lg:w-1/2', 
-        )}  
-        >
-      <form className={clsx(
-        'bg-white',
-        'shadow-md',
-        'rounded-lg px-8 pt-6 pb-8 mb-4'
-      )} onSubmit={handleSubmit(onSubmit)}>
-        <ToastContainer/>
-        <div className={clsx('mb-4')}>
-          <h1 className={clsx(
-            'text-center',
-            'text-xl',
-            'py-11'
-          )}>Registro</h1>
+          id="password"
+          type="password"
+          {...register("password", {
+            required: true,
+            maxLength: 16,
+            minLength: 8,
+          })}
+        />
 
+        <input
+          className={clsx(
+            "shadow mt-[12px] appearance-none border w-[300px] h-[46px]",
+            "rounded-lg py-2 px-3 text-gray-700",
+            " bg-[#F6F9FF] hover:border-violet-700 border-2",
+            "focus:outline-none focus:shadow-outline"
+          )}
+          id="password"
+          type="password"
+          {...register("password", {
+            required: true,
+            maxLength: 16,
+            minLength: 8,
+          })}
+        />
 
-
-
-        <Input htmlFor='name' 
-          label='Nombres'
-          id='username2'
-          type='label'
-          placeholder='Ingresa tu nombre'
-          value={/\S+@\S+\.\S+/}
-          message='error'
-          register={register} />
-
-        <Input htmlFor='name' 
-          label='Apellidos'
-          id='username2'
-          type='email'
-          placeholder='Ingresa tus apellidos'
-          value={/\S+@\S+\.\S+/}
-          message='error'
-          register={register} />
-          
-          <Input htmlFor='email' 
-          label='Correo'
-          id='username2'
-          type='email'
-          placeholder='Ingresa tu correo'
-          value={/\S+@\S+\.\S+/}
-          message='error'
-          register={register} />
-
-
-          <label className={clsx(
-            'block',
-            'text-gray-700 text-sm font-bold mb-3 mt-3'
-          )} htmlFor="password">
-            Contraseña
-          </label>
-          <input className={clsx(
-            'shadow',
-            'appearance-none',
-            'border',
-            'rounded',
-            'w-full',
-            'py-2 px-3',
-            'text-gray-700',
-            'mb-3',
-            'leading-tight',
-            'hover:border-cyan-400 border-2',
-            'focus:outline-none focus:shadow-outline')}
-            id="password" 
-            type="password" 
-            placeholder="******************" {...register("password", { required: true, maxLength:16,minLength:8     
-            })}/>  
-
-        <label className={clsx(
-            'block',
-            'text-gray-700 text-sm font-bold mb-3 mt-3'
-          )} htmlFor="password">
-            Repite Contraseña
-          </label>
-          <input className={clsx(
-            'shadow',
-            'appearance-none',
-            'border',
-            'rounded',
-            'w-full',
-            'py-2 px-3',
-            'text-gray-700',
-            'mb-3',
-            'leading-tight',
-            'hover:border-cyan-400 border-2',
-            'focus:outline-none focus:shadow-outline')}
-            id="password" 
-            type="password" 
-            placeholder="******************" {...register("password", { required: true, maxLength:16,minLength:8     
-            })}/>  
-        </div>
-
-        <div className={clsx(
-          ' flex ',
-          ' items-center',
-          'justify-between',
-          'flex-col'
-          )}>
-
-          <Button
-            label='Registrar'
-            isSubmit/>
-          
-        </div>
+        <button className={clsx("shadow-md lgbtiq-button lgbtiq-grad-bg mt-8")}>
+          ¡REGÍSTRATE!
+        </button>
       </form>
-          
-        </article>
-      </section>
-        
-    </>
-  )
+
+      <Image src={images.dividerIcon} className={clsx("mt-8 mb-6")} />
+      <p
+        className={clsx(
+          "text-center font-poppins font-normal leading-[18px] mb-4 w-[280px]",
+          "text-blue-gray-400 text-[12px]"
+        )}
+      >
+        Al crear tu cuenta de usuario en beeyou, aceptas los{" "}
+        <span>Términos y Condiciones</span> y el{" "}
+        <span>Aviso de privacidad</span> del servicio
+      </p>
+      <p
+        className={clsx(
+          "text-center font-poppins font-medium leading-[18px] mb-6 lgbtiq-grad-color text-[12px]"
+        )}
+      >
+        <span
+          className={clsx("font-montserrat leading-[40px] text-yellow-900")}
+        >
+          Inicia sesión en{" "}
+        </span>
+        bee you
+      </p>
+    </article>
+  );
 }

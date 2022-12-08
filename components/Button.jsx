@@ -1,27 +1,14 @@
-<<<<<<< HEAD
-import clsx from "clsx"
-
-export default function Button({ label, style, onClick, image, isSubmit=false }) {
-=======
 import clsx from "clsx";
->>>>>>> develop
 
-export default function Button({ label, style, onClick, isSubmit = false }) {
+export default function Button({
+  label,
+  style,
+  onClick,
+  image,
+  isSubmit = false,
+}) {
   return (
     <>
-<<<<<<< HEAD
-      {
-        !isSubmit &&
-        <a className={clsx(
-          'py-2 px-4',
-          'text-white text-center font-bold',
-          'w-40',
-          'hover:bg-sky-900',
-          'focus:outline-none focus:shadow-outline',
-          
-          style
-        )}
-=======
       {!isSubmit && (
         <a
           className={clsx(
@@ -33,7 +20,6 @@ export default function Button({ label, style, onClick, isSubmit = false }) {
             "focus:outline-none focus:shadow-outline",
             style
           )}
->>>>>>> develop
           onClick={onClick}
         >
           {image}
