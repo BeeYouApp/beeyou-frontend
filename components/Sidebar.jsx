@@ -28,13 +28,13 @@ const MobileSidebar = ({ closeSidebar }) => {
                   Inicio
                 </li>
               </Link>
-              <Link href="">
+              <Link href="/user/events">
                 <li className={clsx("mt-3 h-10 pl-7 pt-1 hover:bg-yellow-100 hover:text-[#BA9E3A] rounded-lg hover:text-lg")}>
                   <Image className={clsx("inline-flex mr-4 hover:file:bg-violet-100")} src={images.eventsIcon} alt="Events Icon"/>
                   Eventos
                 </li>
               </Link>
-              <Link href="">
+              <Link href="/user/places">
                 <li className={clsx("mt-3 h-10 pl-7 pt-1 hover:bg-yellow-100 hover:text-[#BA9E3A] rounded-lg hover:text-lg")}>
                   <Image className={clsx("inline-flex mr-4 selection:text-fuchsia-900")} src={images.placesIcon} alt="Places Icon"/>
                   Espacios
@@ -46,7 +46,7 @@ const MobileSidebar = ({ closeSidebar }) => {
                   Descuentos
                 </li>
               </Link>
-              <Link href="">
+              <Link href="/user/favorites">
                 <li className={clsx("mt-3 h-10 pl-7 pt-1 hover:bg-yellow-100 hover:text-[#BA9E3A] rounded-lg hover:text-lg")}>
                   <Image className={clsx("inline-flex mr-4 hover:fill-[#BA9E3A]")} src={images.favoriteIcon} alt="My favourites Icon"/>
                   Mis Favoritos
@@ -70,7 +70,7 @@ export default function Sidebar() {
     <>
       <nav className={clsx("w-[247px] p-4 max-xl:hidden")}>
         {isMobileSidebarOpen && <MobileSidebar closeSidebar={closeSidebar} />}
-        <section className={clsx("flex justify-center mt-10")}>
+        <section className={clsx("flex justify-center mt-6")}>
         <Image src={images.beeyouLogo} alt="Bee You Logo"/>
         </section>
         <section className={clsx("h-[76px] w-[215px] bg-blue-gray-50 text-center rounded-lg flex m-4 mt-7")}>
@@ -103,7 +103,7 @@ export default function Sidebar() {
                 Inicio
               </li>
             </Link>
-            <Link href="">
+            <Link href="/user/events">
               <li className={clsx("mt-3 h-10 pl-7 pt-1 hover:bg-yellow-100 hover:text-[#BA9E3A] rounded-lg hover:text-lg")}>
                 <Image
                   className={clsx("inline-flex mr-4 hover:file:bg-violet-100")}
@@ -113,7 +113,7 @@ export default function Sidebar() {
                 Eventos
               </li>
             </Link>
-            <Link href="">
+            <Link href="/user/places">
               <li className={clsx("mt-3 h-10 pl-7 pt-1 hover:bg-yellow-100 hover:text-[#BA9E3A] rounded-lg hover:text-lg")}>
                 <Image
                   className={clsx("inline-flex mr-4 selection:text-fuchsia-900")}
@@ -133,7 +133,7 @@ export default function Sidebar() {
                 Descuentos
               </li>
             </Link>
-            <Link href="">
+            <Link href="/user/favorites">
               <li className={clsx("mt-3 h-10 pl-7 pt-1 hover:bg-yellow-100 hover:text-[#BA9E3A] rounded-lg hover:text-lg")}>
                 <Image
                   className={clsx("inline-flex mr-4 hover:fill-[#BA9E3A]")}

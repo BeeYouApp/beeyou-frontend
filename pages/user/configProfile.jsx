@@ -1,8 +1,8 @@
 import clsx from "clsx";
 import Link from "next/link";
-import Navbar from "../components/Navbar";
-import CardProfile from "../components/CardProfile";
-import PersonalForm from "../components/PersonalForm";
+import Navbar from "../../components/Navbar";
+import CardProfile from "../../components/CardProfile";
+import PersonalForm from "../../components/PersonalForm";
 
 export default function ConfigProfile(){
   return(

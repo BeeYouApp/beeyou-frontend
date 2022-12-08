@@ -1,10 +1,10 @@
 import clsx from "clsx";
 import Link from "next/link";
 import Image from "next/image";
-import { images } from "../lib/images";
-import Sidebar from "../components/Sidebar";
-import TableEvents from "../components/TableEvents";
-import CardEventsSm from "../components/CardEventsSm";
+import { images } from "../../lib/images";
+import Sidebar from "../../components/Sidebar";
+import TableEvents from "../../components/TableEvents";
+import CardEventsSm from "../../components/CardEventsSm";
 import { Navigation, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
