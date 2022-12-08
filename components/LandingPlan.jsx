@@ -13,10 +13,7 @@ export default function LandingPlan() {
     <section className={clsx("mx-4 md:pl-10 lg:pl-14")}>
       <section>
         <h2
-          className={clsx(
-            "text-left text-[32px] text-blue-gray-900 font-montserrat font-bold mt-6 mb-2 pt-10 leading-none"
-          )}
-        >
+          className={clsx("text-left text-[32px] text-blue-gray-900 font-montserrat font-bold mt-6 mb-2 pt-10 leading-none")}>
           ¡Únete ahora! y...
         </h2>
         <div className={clsx("flex")}>
