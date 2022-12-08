@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import Sidebar from "./SideBar";
+import Sidebar from "./Sidebar";
 
 export default function LayautDashboard({children, style}){
   return(

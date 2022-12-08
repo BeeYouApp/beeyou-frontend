@@ -9,8 +9,6 @@
     .card {
         background-color: theme("colors.white");
         border-radius: theme("borderRadius.lg");
-        /* border: theme("colors.red.800"); */
-        /* padding: theme("spacing.6"); */
         box-shadow: theme("boxShadow.xl");
     }
 }
@@ -19,15 +17,15 @@ h1 {
     font-family: "Montserrat", "sans-serif";
 }
 
-.lgbtiq-gradient {
-    /* background-color: "linear-gradient(90.41deg, #FF4C35 7.46%, #FE9B05 22.91%, #FBC600 38.35%, #72C63D 57.77%, #665DFB 73.66%, #C92CE5 92.2%)"; */
-    /* background-color: "bg-gradient-to-r from-[#FF4C35]/7.46, via-[#FE9B05]/22.91 via-[#FBC600]/38.35 via-[#72C63D]/57.377 via-[#665DFB]/73.66 to-[#C92CE5/92.2]", */
-    background-image: linear-gradient(to right, #FF4C35 7.46%, #FE9B05 22.91%, #FBC600 38.35%,#72C63D 57.77%, #665DFB 73.66%, #C92CE5 92.2%);
+.lgbtiq-grad-bg {
+    background-image: linear-gradient(to right, #FF4C35 7.46%, #FE9B05 22.91%, #FBC600 38.35%, #72C63D 57.77%, #665DFB 73.66%, #C92CE5 92.2%);
 }
 
-    /* background: linear-gradient(to right, #FF4C35 7.46%, #FE9B05 22.91%, #FBC600 38.35%,#72C63D 57.77%, #665DFB 73.66%, #C92CE5 92.2%);
+.lgbtiq-grad-color {
+    background: linear-gradient(to right, #FF4C35 7.46%, #FE9B05 22.91%, #FBC600 38.35%, #72C63D 57.77%, #665DFB 73.66%, #C92CE5 92.2%);
     background-clip: text;
-    color: transparent; */
+    color: transparent;
+}
 
 .lgbtiq-button {
     font-family: "Montserrat", "sans-serif";
@@ -40,9 +38,8 @@ h1 {
     padding: 14px, 75px, 14px, 75px;
     border-radius: 8px;
     box-shadow: 0px 6px 28px rgba(0, 0, 0, 0.16);
-    background-color: blue;
     width: 100%;
-    height: 50px;    
+    height: 50px;
 }
 
 .lgbtiq-button-two {
@@ -56,9 +53,31 @@ h1 {
     padding: 14px, 75px, 14px, 75px;
     border-radius: 1000px;
     box-shadow: 0px 6px 28px rgba(0, 0, 0, 0.16);
-    background-color: blue;
     width: 300px;
-    height: 50px;    
+    height: 50px;
+}
+
+.swiper-pagination-bullet {
+    background: #B0BEC5 !important;
+    width: 16px !important;
+    height: 16px !important;
+}
+
+#__next {
+    overflow: hidden;
+}
+
+.purple-button {
+    font-family: "Montserrat", "sans-serif";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 17px;
+    padding: 5px, 27px, 5px, 27px;
+    border-radius: 1000px;
+    box-shadow: 0px 6px 28px rgba(0, 0, 0, 0.16);
+    width: 100%;
+    height: 28px;
 }
 
 
@@ -79,7 +98,7 @@ h1 {
     margin: auto;
     margin-bottom: .2rem;
     border-radius: 4px;
-        }
+}
 
     
 
