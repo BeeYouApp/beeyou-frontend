@@ -30,7 +30,7 @@ export default function BussinesForm(){
       "rounded-[16px] border-2 border-blue-sky-50",
       "p-5 mr-10 max-lg:mr-[0px]",
       "shadow-xl",
-      "w-[700px] h-[1370px] max-lg:w-[340px] max-lg:h-[1750px]",
+      "w-[700px] h-[1390px] max-lg:w-[340px] max-lg:h-[1750px]",
     )}>
       <article>
         <h1 className="mt-[13px] max-lg:mt-[20px] text-[20px] font-bold font-montserrat text-blue-gray-900 max-lg:ml-[3px]">Datos del negocio</h1>
