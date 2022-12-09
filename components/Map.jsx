@@ -1,8 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
-// import * as dotenv from "dotenv";
 import mapboxgl from '!mapbox-gl'; 
 
-// dotenv.config()
 const mapboxToken = process.env.mapboxToken;
  
 mapboxgl.accessToken = mapboxToken;
