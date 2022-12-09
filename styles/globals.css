@@ -57,6 +57,26 @@ h1 {
     height: 50px;
 }
 
+.map-container {
+    position: relative;
+    border-radius: 4px;
+}
+
+.sidebar {
+    background-color: rgba(35, 55, 75, 0.522);
+    color: #fff;
+    padding: 6px 12px;
+    font-family: monospace;
+    z-index: 1;
+    position: relative;
+    top: 0;
+    left: 0;
+    margin: auto;
+    margin-bottom: .2rem;
+    border-radius: 4px;
+}
+
+
 .swiper-pagination-bullet {
     background: #B0BEC5 !important;
     width: 16px !important;
@@ -80,11 +100,21 @@ h1 {
     height: 28px;
 }
 
-/* .bg-gray-grad {
-    width: 215px;
-    height: 150px;
-    border-bottom: 100%;
-    background: linear-gradient(180deg, rgba(38, 50, 56, 0) 0%, #263238 70%);
+/* .map-container {
+    position: relative;
+    border-radius: 4px;
+    } */
 
-    CardPlaces
-} */
+.sidebar {
+    background-color: rgba(35, 55, 75, 0.522);
+    color: #fff;
+    padding: 6px 12px;
+    font-family: monospace;
+    z-index: 1;
+    /*     position: relative;
+    top: 0;
+    left: 0; */
+    margin: auto;
+    margin-bottom: .2rem;
+    border-radius: 4px;
+}

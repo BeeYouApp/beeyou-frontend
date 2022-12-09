@@ -2,7 +2,7 @@ import clsx from "clsx"
 import React from "react"
 import {useForm} from "react-hook-form"
 import Input from "./Input"
-import { ToastContainer,toast } from "react-toastify"
+import { ToastContainer, toast } from "react-toastify"
 import Button from "./Button"
 
 export default function(){
