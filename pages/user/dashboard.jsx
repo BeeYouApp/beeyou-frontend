@@ -1,12 +1,12 @@
 import React, { Children } from "react";
-import Map from "../components/Map";
-import Navbar from "../components/Navbar";
-import Button from "../components/Button"
-import Layaut from "../components/LayoutDashboard";
-import dynamic from 'next/dynamic'
+import Map from "../../components/Map";
+import Navbar from "../../components/Navbar";
+import Button from "../../components/Button"
+import Layaut from "../../components/LayoutDashboard";
+import dynamic from 'next/dynamic';
 
 const DynamicComponent = dynamic(() =>
-  import('../components/AuitofillMap'), {
+  import('../../components/AuitofillMap'), {
     ssr: false,
   }
 )
