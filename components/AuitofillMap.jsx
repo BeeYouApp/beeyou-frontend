@@ -67,7 +67,7 @@ export default function AutofillForm() {
                       'shadow',
                       'mt-[12px]',
                       'appearance-none',
-                      'border w-[300px] h-[40px] rounded-lg py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline',
+                      'border w-[100%] h-[40px] rounded-lg py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline',
                       'hover:border-violet-700 border-2 mb-2',
                     )}
                   placeholder="Busca tu espacio."
@@ -77,7 +77,7 @@ export default function AutofillForm() {
                 { !showFormExpanded && 
             <div
                 id="manual-entry"
-                className="hover:text-purple-900 hover:font-medium text-center"
+                className="hover:text-purple-900 hover:font-medium text-center cursor-pointer"
                 onClick={() => setShowFormExpanded(true)}>Ingresa direccion manual
             </div>
             }
@@ -131,7 +131,7 @@ export default function AutofillForm() {
               'border w-[300px] h-[40px] rounded-lg py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline',
               'hover:border-violet-700 border-2 mb-2',)}"
               placeholder="Codigo Postal"
-               autoComplete="postal-code"/>
+              autoComplete="postal-code"/>
             </div>
             </div>
             <div className="">
