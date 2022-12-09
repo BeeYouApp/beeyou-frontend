@@ -29,18 +29,18 @@ const MobileSidebar = ({ closeSidebar }) => {
             <Link>Beneficios</Link>{" "}
           </li>
           <li className={clsx("pl-6 overflow-hidden hover:opacity-90 hover:rounded hover:w-56 hover:h-7 transition duration-300 ease-in-out hover:bg-blue-gray-50 mt-4")}>
-            <Link href="">Iniciar sesión</Link>{" "}
+            <Link href="/login">Iniciar sesión</Link>{" "}
           </li>
           <button className={clsx("font-montserrat text-sm font-semibold mt-5 w-56 p-1 rounded-lg border-x border-y lgbtiq-grad-color")}>
             {" "}
-            <Link href="">
+            <Link href="/register">
               <Image
                 className={clsx("inline-block mr-4")}
                 src={images.joinIcon}
                 alt="Join Icon"
               />
+              Únete a Bee you+!
             </Link>
-            Únete a Bee you+!
           </button>
         </ul>
       </section>
@@ -50,7 +50,7 @@ const MobileSidebar = ({ closeSidebar }) => {
 export default function Navbar() {
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
 
-  const closeSidebar = () => {setIsMobileSidebarOpen(false);};
+  const closeSidebar = () => { setIsMobileSidebarOpen(false); };
 
   return (
     <>
@@ -72,26 +72,26 @@ export default function Navbar() {
           </Link>
         </div>
         <div className={clsx("flex items-center font-montserrat text-sm text-blue-gray-700 max-lg:hidden")}>
-          <a className={clsx("overflow-hidden hover:opacity-90 hover:rounded px-6 py-2 transition duration-300 ease-in-out hover:bg-blue-gray-50")}href="">
-            Inicio
+          <a className={clsx("overflow-hidden hover:opacity-90 hover:rounded px-6 py-2 transition duration-300 ease-in-out hover:bg-blue-gray-50")} href="">
+            <Link href="">Inicio</Link>
           </a>
-          <a className={clsx("overflow-hidden hover:opacity-90 hover:rounded px-6 py-2 transition duration-300 ease-in-out hover:bg-blue-gray-50")}href="">
+          <a className={clsx("overflow-hidden hover:opacity-90 hover:rounded px-6 py-2 transition duration-300 ease-in-out hover:bg-blue-gray-50")} href="">
             Beneficios
           </a>
           <a
-            className={clsx("overflow-hidden hover:opacity-90 hover:rounded px-8 py-2 transition duration-300 ease-in-out hover:bg-blue-gray-50")}href="">
-            Iniciar sesión
+            className={clsx("overflow-hidden hover:opacity-90 hover:rounded px-8 py-2 transition duration-300 ease-in-out hover:bg-blue-gray-50")} href="">
+            <Link href="/login">Iniciar sesión</Link>
           </a>
           <button
             className={clsx("font-montserrat text-sm font-semibold m-6 w-56 p-2 rounded-lg border-x border-y lgbtiq-grad-color")}>
-            <Link href="">
+            <Link href="/register">
               <Image
                 className={clsx("inline-block mr-4")}
                 src={images.joinIcon}
                 alt="Join Icon"
               />
+              Únete a Bee you+!
             </Link>
-            Únete a Bee you+!
           </button>
         </div>
         <div
@@ -103,18 +103,18 @@ export default function Navbar() {
             "items-center",
             "lg:hidden"
           )}
-          onClick={() => {setIsMobileSidebarOpen(true);}}>
+          onClick={() => { setIsMobileSidebarOpen(true); }}>
           <div className={clsx("hidden md:mr-4 md:mb-5 md:block")}>
             <button className={clsx("font-montserrat text-sm font-semibold mt-5 w-56 p-1 rounded-lg border-x border-y lgbtiq-grad-color")}>
               {" "}
-              <Link href="">
+              <Link href="/register">
                 <Image
                   className={clsx("inline-block mr-4 outline-[lgbtiq-grad-color]")}
                   src={images.joinIcon}
                   alt="Join Icon"
                 />
+                Únete a Bee you+!
               </Link>
-              Únete a Bee you+!
             </button>
           </div>
           <Link href="">
