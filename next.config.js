@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   env: {
-    SERVER: process.env.mapboxToken,
+    mapboxToken: process.env.mapboxToken,
   },
 }
 
