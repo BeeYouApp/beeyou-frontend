@@ -72,16 +72,16 @@ export default function Navbar() {
           </Link>
         </div>
         <div className={clsx("flex items-center font-montserrat text-sm text-blue-gray-700 max-lg:hidden")}>
-          <a className={clsx("overflow-hidden hover:opacity-90 hover:rounded px-6 py-2 transition duration-300 ease-in-out hover:bg-blue-gray-50")}href="">
-            Inicio
-          </a>
-          <a className={clsx("overflow-hidden hover:opacity-90 hover:rounded px-6 py-2 transition duration-300 ease-in-out hover:bg-blue-gray-50")}href="">
-            Beneficios
-          </a>
-          <a
-            className={clsx("overflow-hidden hover:opacity-90 hover:rounded px-8 py-2 transition duration-300 ease-in-out hover:bg-blue-gray-50")}href="">
-            Iniciar sesión
-          </a>
+          <button className={clsx("overflow-hidden hover:opacity-90 hover:rounded px-6 py-2 transition duration-300 ease-in-out hover:bg-blue-gray-50")} href="">
+            <Link href="">Inicio</Link>
+          </button>
+          <button className={clsx("overflow-hidden hover:opacity-90 hover:rounded px-6 py-2 transition duration-300 ease-in-out hover:bg-blue-gray-50")} href="">
+          <Link href="/#benefits">Beneficios</Link>
+          </button>
+          <button
+            className={clsx("overflow-hidden hover:opacity-90 hover:rounded px-8 py-2 transition duration-300 ease-in-out hover:bg-blue-gray-50")} href="">
+            <Link href="/login">Iniciar sesión</Link>
+          </button>
           <button
             className={clsx("font-montserrat text-sm font-semibold m-6 w-56 p-2 rounded-lg border-x border-y lgbtiq-grad-color")}>
             <Link href="">

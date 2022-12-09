@@ -10,7 +10,7 @@ export default function LandingPage() {
     <>
       <Navbar />
       <LandingHero />
-      <LandingBenefits />
+      <LandingBenefits id="benefits"/>
       <LandingPlan />
       <Footer />
     </>
