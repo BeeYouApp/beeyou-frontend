@@ -100,10 +100,10 @@ h1 {
     height: 28px;
 }
 
-/* .map-container {
+.map-container {
     position: relative;
     border-radius: 4px;
-    } */
+    } 
 
 .sidebar {
     background-color: rgba(35, 55, 75, 0.522);
@@ -111,9 +111,9 @@ h1 {
     padding: 6px 12px;
     font-family: monospace;
     z-index: 1;
-    /*     position: relative;
+    position: relative;
     top: 0;
-    left: 0; */
+    left: 0;
     margin: auto;
     margin-bottom: .2rem;
     border-radius: 4px;

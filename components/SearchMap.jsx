@@ -10,7 +10,7 @@ export default function SearchMap () {
         <input
             className='border'
             name="address" 
-            placeholder="Adress" 
+            placeholder="Search" 
             type="text"
             autoComplete="address-line1"/>
       </AddressAutofill>
