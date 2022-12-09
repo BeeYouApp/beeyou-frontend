@@ -1,9 +1,9 @@
 import React, { useRef, useEffect, useState } from 'react';
 import mapboxgl from '!mapbox-gl'; 
 
-const mapboxToken = process.env.mapboxToken;
+const MAPBOXTOKEN = process.env.MAPBOXTOKEN;
  
-mapboxgl.accessToken = mapboxToken;
+mapboxgl.accessToken = MAPBOXTOKEN;
 
 export default function Map() {
     const mapContainer = useRef(null);
