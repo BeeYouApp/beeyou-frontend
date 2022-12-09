@@ -9,6 +9,7 @@ import "swiper/css/navigation";
 import Sidebar from "../../components/Sidebar";
 import CardPlacesSm from "../../components/CardPlacesSm";
 import CardPlacesLg from "../../components/CardPlacesLg";
+import Map from "../../components/Map";
 
 export default function PlacesPage() {
   return (
@@ -138,7 +139,8 @@ export default function PlacesPage() {
         <div className={clsx("flex flex-col")}>
           <div className={clsx("overflow-x-auto sm:-mx-6 lg:-mx-8")}>
             <div className={clsx("py-4 inline-block min-w-full sm:px-6 lg:px-8")}>
-              <Image className={clsx("rounded-md lg:w-screen")} src={images.mapsImg} alt="Maps Image Example" />
+              <Map />
+              {/* <Image className={clsx("rounded-md lg:w-screen")} src={images.mapsImg} alt="Maps Image Example" /> */}
             </div>
           </div>
         </div>
