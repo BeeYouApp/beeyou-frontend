@@ -25,7 +25,13 @@ export default function BussinesForm(){
 
 }
   return(
-    <section className="w-[700px] h-[1700px] max-lg:w-[340px] max-lg:h-[1560px] rounded-[16px] border-2 border-blue-sky-50 flex flex-col shadow-xl absolute p-5 mr-10 max-lg:mr-[0px]">
+    <section className={clsx(
+      "absolute flex flex-col",
+      "rounded-[16px] border-2 border-blue-sky-50",
+      "p-5 mr-10 max-lg:mr-[0px]",
+      "shadow-xl",
+      "w-[700px] h-[1370px] max-lg:w-[340px] max-lg:h-[1750px]",
+    )}>
       <article>
         <h1 className="mt-[13px] max-lg:mt-[20px] text-[20px] font-bold font-montserrat text-blue-gray-900 max-lg:ml-[3px]">Datos del negocio</h1>
       </article>
@@ -168,11 +174,11 @@ export default function BussinesForm(){
         <DynamicComponent></DynamicComponent>
     </section>
 
-    <article className="w-full h-[50px] relative mt-4">
+    <article className="w-full mt-4">
       <Map></Map>
     </article>
 
-    <article className=" mt-3 inline-block ">
+    <article className=" mt-16 inline-block m-auto">
         <Button
           label='CONTUNUAR'
           isSubmit
@@ -183,5 +189,5 @@ export default function BussinesForm(){
     </article>
   
   </section>
-    )
+  )
 }
