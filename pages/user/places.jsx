@@ -1,21 +1,22 @@
 import clsx from "clsx";
 import Link from "next/link";
 import Image from "next/image";
-import { images } from "../lib/images";
+import { images } from "../../lib/images";
 import { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-import Sidebar from "../components/Sidebar";
-import CardPlacesSm from "../components/CardPlacesSm";
-import CardPlacesLg from "../components/CardPlacesLg";
+import Sidebar from "../../components/Sidebar";
+import CardPlacesSm from "../../components/CardPlacesSm";
+import CardPlacesLg from "../../components/CardPlacesLg";
+import Map from "../../components/Map";
 
 export default function PlacesPage() {
   return (
     <>
       <div className="flex">
       <Sidebar />
-      <article className={clsx("px-4 md:px-8 mt-24 lg:mt-14")}>
+      <article className={clsx("px-4 md:px-8 mt-24 lg:mt-14 xl:mt-10")}>
         <div className="flex lg:mt-10 xl:mt-0">
           <h3 className={clsx("font-montserrat font-bold text-blue-gray-900 text-[24px] leading-[30px] mr-[79px]")}>
             Tus espacios
@@ -138,7 +139,8 @@ export default function PlacesPage() {
         <div className={clsx("flex flex-col")}>
           <div className={clsx("overflow-x-auto sm:-mx-6 lg:-mx-8")}>
             <div className={clsx("py-4 inline-block min-w-full sm:px-6 lg:px-8")}>
-              <Image className={clsx("rounded-md lg:w-screen")} src={images.mapsImg} alt="Maps Image Example" />
+              <Map />
+              {/* <Image className={clsx("rounded-md lg:w-screen")} src={images.mapsImg} alt="Maps Image Example" /> */}
             </div>
           </div>
         </div>

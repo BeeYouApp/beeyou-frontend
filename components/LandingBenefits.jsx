@@ -9,8 +9,9 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
-export default function LandingBenefits() {
+export default function LandingBenefits( { id } ) {
   return (
+  <div id={id} className="pt-20">
     <section className={clsx("mx-4 md:pl-10 lg:pl-14")}>
       <section className={clsx("flex md:w-full lg:content-center")}>
         <article>
@@ -132,5 +133,6 @@ export default function LandingBenefits() {
         </section>
       </article>
     </section>
+  </div>
   );
 }

@@ -1,10 +1,10 @@
 import clsx from "clsx";
 import Link from "next/link";
 import Image from "next/image";
-import { images } from "../lib/images";
-import Sidebar from "../components/Sidebar";
-import TableEvents from "../components/TableEvents";
-import CardEventsSm from "../components/CardEventsSm";
+import { images } from "../../lib/images";
+import Sidebar from "../../components/Sidebar";
+import TableEvents from "../../components/TableEvents";
+import CardEventsSm from "../../components/CardEventsSm";
 import { Navigation, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -16,7 +16,7 @@ export default function Events() {
     <section>
       <div className={clsx("flex")}>
         <Sidebar />
-        <article className={clsx("w-screen h-screen px-4 md:px-8 mt-24 lg:mt-14")}
+        <article className={clsx("w-screen h-screen px-4 md:px-8 mt-24 md:mt-24 lg:mt-14 xl:mt-10")}
         >
           {/* <Swiper
             modules={[Navigation, A11y]}

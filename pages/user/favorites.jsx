@@ -1,17 +1,17 @@
 import clsx from "clsx";
 import Link from "next/link";
 import Image from "next/image";
-import { images } from "../lib/images";
-import Sidebar from "../components/Sidebar";
-import TableFavorites from "../components/TableFavorites";
-import CardFavoritesSm from "../components/CardFavoritesSm";
+import { images } from "../../lib/images";
+import Sidebar from "../../components/Sidebar";
+import TableFavorites from "../../components/TableFavorites";
+import CardFavoritesSm from "../../components/CardFavoritesSm";
 
 export default function Favorites() {
   return (
     <section>
       <div className={clsx("flex")}>
         <Sidebar />
-        <article className={clsx("px-4 md:px-8 mt-24 md:mt-24 lg:mt-14")}>
+        <article className={clsx("px-4 md:px-8 mt-24 md:mt-24 lg:mt-24 xl:mt-10")}>
           <h3 className={clsx("font-montserrat font-bold text-blue-gray-900 text-[24px] leading-[30px]")}>
             Tus favoritos
           </h3>
