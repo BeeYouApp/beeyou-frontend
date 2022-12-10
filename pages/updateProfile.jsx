@@ -19,9 +19,7 @@ export default function UpdateProf(){
           <article className={clsx("bg-blue-100 w-7/12 inline-flex max-lg:w-full h-2/4 max-lg:h-[620px] pl-[40px] pt-[32px] max-lg:flex max-lg:justify-center max-lg:pl-[0px]")}>
             <UpdateProfile></UpdateProfile>
           </article>
-          <article className={clsx("flex justify-end w-7/12 max-lg:w-full max-lg:h-[620px] pl-[40px] pt-[32px] max-lg:flex max-lg:justify-center max-lg:pl-[0px]")}>
-            <UpdateProfile></UpdateProfile>
-          </article>
+          
         </main>
     </>
   )
