@@ -64,7 +64,7 @@ export default function Login({ }) {
         </div>
 
         <button className={clsx("shadow-md lgbtiq-button lgbtiq-grad-bg mt-8")}>
-          <Link href="/user/dasboard">Iniciar sesión</Link>
+          <Link href="/user/dashboard">Iniciar sesión</Link>
         </button>
       </form>
 
