@@ -50,6 +50,7 @@ import figureChangePlan from "../public/assets/dashboard/figure-change-plan.png"
 import figureBussines from "../public/assets/dashboard/figure-business.webp";
 import figureRoll from "../public/assets/dashboard/figure-on-a-roll@2x.png";
 import figureEvents from "../public/assets/dashboard/figure-events@2x.png";
+import figureDiscount from "../public/assets/dashboard/figure-discount.svg";
 
 export const images = {
   beeyouLogo,
@@ -104,4 +105,5 @@ export const images = {
   figureBussines,
   figureRoll,
   figureEvents,
+  figureDiscount,
 };
