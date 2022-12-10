@@ -118,3 +118,7 @@ h1 {
     margin-bottom: .2rem;
     border-radius: 4px;
 }
+
+.lgbtiq-grad-bg-opacy {
+    background-image: linear-gradient(to right, #ff4d3521 7.46%, #fe9a0528 22.91%, #fbc50028 38.35%, #71c63d28 57.77%, #655dfb31 73.66%, #c92ce536 92.2%);
+}
