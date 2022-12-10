@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Navbar from "../components/Navbar";
+import Navbar from "../../components/Navbar";
 import clsx from "clsx";
-import Login from "../components/Login";
+import Login from "../../components/Login";
 export default function RegisterPage(props) {
   return (
     <>

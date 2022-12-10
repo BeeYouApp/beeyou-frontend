@@ -6,8 +6,8 @@ import { images } from "../lib/images";
 export default function LandingHero() {
   return (
     <main>
-      <section className={clsx("flex flex-col lg:flex-row mx-4")}>
-        <section className={clsx("text-center md:text-start mt-10 md:mt-32 md:pl-8 lg:pl-14 lg:mt-[229px]")}>
+      <section className={clsx("flex flex-col lg:flex-row mx-4 z-1")}>
+        <section className={clsx("text-center md:text-start mt-10 md:mt-32 md:pl-8 lg:pl-14 ")}>
           <section className={clsx("md:flex")}>
             <article>
               <h2 className={clsx("text-center md:text-start text-lg font-normal md:text-2xl font-montserrat text-blue-gray-900 mt-14 md:mt-0")}>
@@ -44,7 +44,7 @@ export default function LandingHero() {
             </Button>
           </article>
         </section>
-        <section className={clsx("flex items-end p-8 md:w-6/6 md:mb-20 lg:w-3/6 lg:mt-[100px] lg:ml-32")}>
+        <section className={clsx("flex items-end p-8 md:w-6/6 md:mb-16 lg:w-3/6 lg:mt-[100px] lg:ml-32")}>
           <Image src={images.heroCards} alt="Figure Hero Cards" />
         </section>
       </section>
