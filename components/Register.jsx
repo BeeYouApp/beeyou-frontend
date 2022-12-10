@@ -45,18 +45,18 @@ export default function Register({ }) {
           <button
             className={clsx(
               "font-poppins font-medium leading-[20px] mt-6 pb-2",
-              "text-center text-[16px] text-blue-gray-400 w-[50%] border-b-2 border-blue-gray-100"
+              "text-center text-[16px] text-blue-gray-400 w-[50%] border-b-4 border-green-900"
             )}
           >
-            Soy Usuario
+            <Link href="/user/register">Soy Usuario</Link>
           </button>
           <button
             className={clsx(
               "font-poppins font-medium leading-[20px] mt-6 pb-2",
-              "text-center text-[16px] text-blue-gray-400 w-[50%] border-b-2 "
+              "text-center text-[16px] text-blue-gray-400 w-[50%] border-b-2 border-blue-gray-100"
             )}
           >
-            Soy Negocio
+            <Link href="/company/register">Soy Negocio</Link>
           </button>
         </section>
 
@@ -128,7 +128,7 @@ export default function Register({ }) {
           />
         </div>
         <button className={clsx("shadow-md lgbtiq-button lgbtiq-grad-bg mt-8")}>
-          ¡REGÍSTRATE!
+          <Link href="/user/profile-configuration">¡REGÍSTRATE!</Link>
         </button>
       </form>
 

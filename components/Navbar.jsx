@@ -67,24 +67,24 @@ export default function Navbar() {
       >
         {isMobileSidebarOpen && <MobileSidebar closeSidebar={closeSidebar} />}
         <div className={clsx("flex items-center pl-6")}>
-          <Link href="">
+          <Link href="/">
             <Image src={images.beeyouLogo} alt="Bee You Logo" />
           </Link>
         </div>
         <div className={clsx("flex items-center font-montserrat text-sm text-blue-gray-700 max-lg:hidden")}>
           <button className={clsx("overflow-hidden hover:opacity-90 hover:rounded px-6 py-2 transition duration-300 ease-in-out hover:bg-blue-gray-50")} href="">
-            <Link href="">Inicio</Link>
+            <Link href="/">Inicio</Link>
           </button>
           <button className={clsx("overflow-hidden hover:opacity-90 hover:rounded px-6 py-2 transition duration-300 ease-in-out hover:bg-blue-gray-50")} href="">
-          <Link href="/#benefits">Beneficios</Link>
+            <Link href="/#benefits">Beneficios</Link>
           </button>
           <button
             className={clsx("overflow-hidden hover:opacity-90 hover:rounded px-8 py-2 transition duration-300 ease-in-out hover:bg-blue-gray-50")} href="">
-            <Link href="/login">Iniciar sesión</Link>
+            <Link href="user/login">Iniciar sesión</Link>
           </button>
           <button
             className={clsx("font-montserrat text-sm font-semibold m-6 w-56 p-2 rounded-lg border-x border-y lgbtiq-grad-color")}>
-            <Link href="/register">
+            <Link href="/user/register">
               <Image
                 className={clsx("inline-block mr-4")}
                 src={images.joinIcon}
@@ -107,7 +107,7 @@ export default function Navbar() {
           <div className={clsx("hidden md:mr-4 md:mb-5 md:block")}>
             <button className={clsx("font-montserrat text-sm font-semibold mt-5 w-56 p-1 rounded-lg border-x border-y lgbtiq-grad-color")}>
               {" "}
-              <Link href="/register">
+              <Link href="/user/register">
                 <Image
                   className={clsx("inline-block mr-4 outline-[lgbtiq-grad-color]")}
                   src={images.joinIcon}
