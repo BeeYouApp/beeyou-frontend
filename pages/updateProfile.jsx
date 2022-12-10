@@ -1,33 +1,28 @@
 import Navbar from "../components/Navbar";
 import CardProfile from "../components/CardProfile";
-import Sidebar from "../components/Sidebar";
 import UpdateProfile from "../components/UpdateProfile";
+import clsx from "clsx";
 
 export default function UpdateProf(){
   return(
     <>
-      <Navbar/>
-      <div className="flex">
-      <Sidebar/>
-      <article className="w-1/4 px-4 md:px-8 mt-24 lg:mt-14">
-        <div className="flex lg:mt-10 xl:mt-0">
-          <h1 className="font-montserrat font-bold text-blue-gray-900 text-[24px] leading-[30px] mr-[79px]">Actualicemos tu perfil</h1>
-        </div>
-        <section>
-          <article className="inline-flex w-1/4 max-lg:w-full h-2/4 max-lg:h-[450px] justify-end pt-[32px] max-lg:flex max-lg:justify-center">
+    <Navbar/>
+        <main className={clsx("w-screen h-screen p-10")}>
+          <section className={clsx("bg-green-200 inline-block w-full h-1/4 m-auto font-poppins max-lg:h-[100px]")}>
+            <article className={clsx("text-center text-3xl font-bold mb-4")}>
+              <h1 className={clsx("mt-10 text-blue-gray-900 font-poppins")}>Actualicemos tu perfil</h1>
+            </article>  
+          </section>
+          <article className={clsx("bg-orange-200 inline-flex w-5/12 max-lg:w-full h-2/4 max-lg:h-[450px] justify-end pt-[32px] max-lg:flex max-lg:justify-center")}>
             <CardProfile></CardProfile>
           </article>
-          <article className="inline-flex w-2/4 max-lg:w-full h-2/4 3 max-lg:h-[620px] pl-[40px] pt-[32px] max-lg:flex max-lg:justify-center max-lg:pl-[0px] ">
-            <UpdateProfile></UpdateProfile>
-          </article>        
-        </section>
-        <section>
-          <article className="k w-2/4 max-lg:w-full h-4/4 3 max-lg:h-[620px] pl-[40px] pt-[32px] max-lg:flex max-lg:justify-center max-lg:pl-[0px] ">
+          <article className={clsx("bg-blue-100 w-7/12 inline-flex max-lg:w-full h-2/4 max-lg:h-[620px] pl-[40px] pt-[32px] max-lg:flex max-lg:justify-center max-lg:pl-[0px]")}>
             <UpdateProfile></UpdateProfile>
           </article>
-        </section>
-      </article>
-      </div>
+          <article className={clsx("flex justify-end w-7/12 max-lg:w-full max-lg:h-[620px] pl-[40px] pt-[32px] max-lg:flex max-lg:justify-center max-lg:pl-[0px]")}>
+            <UpdateProfile></UpdateProfile>
+          </article>
+        </main>
     </>
   )
 
