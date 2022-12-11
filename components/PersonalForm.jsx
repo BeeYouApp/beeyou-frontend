@@ -6,7 +6,7 @@ import { ToastContainer, toast } from "react-toastify"
 import Button from "./Button"
 
 export default function(){
-  const {register,handleSubmit} = useForm()
+  const { register, handleSubmit } = useForm()
   const onSubmit = async data => {
   {console.log(data)}
   const result = await register(data)
