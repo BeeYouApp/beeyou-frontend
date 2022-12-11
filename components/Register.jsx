@@ -104,7 +104,7 @@ export default function Register(props) {
             register={register}
             className={clsx(
               "shadow mt-[12px] appearance-none border w-[300px] h-[56px]",
-              "rounded-lg pt-7 px-2.5 text-gray-700",
+              "rounded-lg pt-8 pb-4 px-2.5 text-gray-700",
               "bg-[#F6F9FF] h-[46px]",
               "hover:border-violet-700 border-2",
               "focus:outline-none focus:shadow-outline",
@@ -112,36 +112,39 @@ export default function Register(props) {
           />
         </div>
         <div className={clsx("w-[100%] mb-4 relative")}>
-          <dlv className={clsx("flex justify-between px-2.5 w-[100%] absolute top-1/4")}>
+          <div className={clsx("flex justify-between px-2.5 w-[100%] absolute top-1/4")}>
             <p className={clsx(
               "font-poppins text-medium text-[12px] leading-[18px]",
               "w-[100%] text-blue-gray-700")}>Contraseña</p>
             <p className={clsx(
               "font-poppins text-normal text-[12px] text-end leading-[18px]",
               "text-center text-blue-gray-400 w-[100%] underline underline-offset-3")}>Mostrar</p>
-          </dlv>
+          </div>
           <input
             className={clsx(
               "shadow mt-[12px] appearance-none border w-[300px] h-[56px]",
-              "rounded-lg pt-7 px-3 text-gray-700",
+              "rounded-lg pt-8 pb-4 px-3 text-gray-700",
               "bg-[#F6F9FF] hover:border-violet-700 border-2",
-              "focus:outline-none focus:shadow-outline")}
+              "focus:outline-none focus:shadow-outline"
+            )}
             id="password"
             name="password"
             type="password"
           />
         </div>
         <div className={clsx("w-[100%] relative")}>
-          <dlv className={clsx("flex justify-between px-2.5 w-[100%] absolute top-1/4")}>
-            <p className={clsx("font-poppins text-medium text-[12px] leading-[18px]",
+          <div className={clsx("flex justify-between px-2.5 w-[100%] absolute top-1/4")}>
+            <p className={clsx(
+              "font-poppins text-medium text-[12px] leading-[18px]",
               "w-[100%] text-blue-gray-700")}>Confirmar contraseña</p>
-            <p className={clsx("ont-poppins text-normal text-[12px] text-end leading-[18px]",
+            <p className={clsx(
+              "font-poppins text-normal text-[12px] text-end leading-[18px]",
               "text-center text-blue-gray-400 w-[100%] underline underline-offset-3")}>Mostrar</p>
-          </dlv>
+          </div>
           <input
             className={clsx(
               "shadow mt-[12px] appearance-none border w-[300px] h-[56px]",
-              "rounded-lg pt-7 px-3 text-gray-700",
+              "rounded-lg pt-8 pb-4 px-3 text-gray-700",
               "bg-[#F6F9FF] hover:border-violet-700 border-2",
               "focus:outline-none focus:shadow-outline"
             )}

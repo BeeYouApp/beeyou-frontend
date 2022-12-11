@@ -91,7 +91,7 @@ export default function LoginCompany(props) {
                     <input
                         className={clsx(
                             "shadow mt-[12px] appearance-none border w-[300px] h-[56px]",
-                            "rounded-lg pt-7 px-3 text-gray-700",
+                            "rounded-lg pt-8 pb-4 px-3 text-gray-700",
                             "bg-[#F6F9FF] hover:border-violet-700 border-2",
                             "focus:outline-none focus:shadow-outline")}
                         id="password"

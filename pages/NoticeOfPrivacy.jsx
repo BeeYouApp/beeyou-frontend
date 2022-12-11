@@ -16,7 +16,7 @@ export default function ConfigProfile(){
             <h3>Marca las casillas que cumplen para continuar</h3>
           </article>
         </section>
-        <section className="flex justify-center">
+        <section className={clsx("flex justify-center")}>
           <Notice></Notice>
         </section>
       </main>

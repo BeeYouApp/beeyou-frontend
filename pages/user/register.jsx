@@ -18,7 +18,7 @@ export default function RegisterPage(props) {
           bee you!
         </h1>
         <p className={clsx("font-poppins font-normal leading-[21px] text-blue-gray-900 text-[14px] mt-3")}>
-          Encuenta tu espacio en Ciudad de México
+            Encuenta tu espacio en Ciudad de México
         </p>
         <Register token={token} setToken={setToken} />
       </main>
