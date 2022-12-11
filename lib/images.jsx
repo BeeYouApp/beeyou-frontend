@@ -51,6 +51,7 @@ import figureBussines from "../public/assets/dashboard/figure-business.webp";
 import figureRoll from "../public/assets/dashboard/figure-on-a-roll@2x.png";
 import figureEvents from "../public/assets/dashboard/figure-events@2x.png";
 import figureDiscount from "../public/assets/dashboard/figure-discount.svg";
+import iconUserBeeYou from "../public/assets/dashboard/icon-user-bee-you.svg";
 
 export const images = {
   beeyouLogo,
@@ -106,4 +107,5 @@ export const images = {
   figureRoll,
   figureEvents,
   figureDiscount,
+  iconUserBeeYou,
 };
