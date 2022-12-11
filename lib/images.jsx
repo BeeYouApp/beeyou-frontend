@@ -46,6 +46,11 @@ import streakIcon from "../public/assets/dashboard/icon-streak.svg";
 import favNotFilledIcon from "../public/assets/dashboard/icon-favorite-not-filled.svg";
 import savePlacesIcon from "../public/assets/dashboard/icon-save-places.svg";
 import dividerIcon from "../public/assets/dashboard/figure-divider.svg";
+import figureChangePlan from "../public/assets/dashboard/figure-change-plan.png";
+import figureBussines from "../public/assets/dashboard/figure-business.webp";
+import figureRoll from "../public/assets/dashboard/figure-on-a-roll@2x.png";
+import figureEvents from "../public/assets/dashboard/figure-events@2x.png";
+import figureDiscount from "../public/assets/dashboard/figure-discount.svg";
 
 export const images = {
   beeyouLogo,
@@ -96,4 +101,9 @@ export const images = {
   favNotFilledIcon,
   savePlacesIcon,
   dividerIcon,
+  figureChangePlan,
+  figureBussines,
+  figureRoll,
+  figureEvents,
+  figureDiscount,
 };
