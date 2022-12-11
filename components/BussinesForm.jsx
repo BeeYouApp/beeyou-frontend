@@ -113,7 +113,7 @@ export default function BussinesForm(){
       <article>
         <label className={clsx(
           'text-[12px] font-montserrat font-medium text-blue-gray-500',
-          'block ml-1 mt-2',)}> HORARIO DE SERVICIO
+          'block ml-1 mt-2')}> HORARIO DE SERVICIO
         </label>
           <div className="inline-flex">
             <Input
@@ -143,7 +143,7 @@ export default function BussinesForm(){
         <article>
           <label className={clsx(
             'text-[12px] font-montserrat font-medium text-blue-gray-500',
-            'block ml-1 mt-3 mb-4')}> DIAS DE SERVICIO
+            'block ml-1 mt-3 mb-4')}>DIAS DE SERVICIO
           </label>
           <form className="text-gray-700 font-montserrat" onSubmit={handleSubmit(console.log)}>
             <section className="flex justify-between">
@@ -178,7 +178,7 @@ export default function BussinesForm(){
       <Map></Map>
     </article>
 
-    <article className=" mt-16 inline-block m-auto">
+    <article className="mt-16 inline-block m-auto">
         <Button
           label='CONTUNUAR'
           isSubmit
