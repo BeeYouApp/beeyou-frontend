@@ -33,12 +33,12 @@ export default function BussinesForm(){
       "w-[700px] h-[1390px] max-lg:w-[340px] max-lg:h-[1750px]",
     )}>
       <article>
-        <h1 className="mt-[13px] max-lg:mt-[20px] text-[20px] font-bold font-montserrat text-blue-gray-900 max-lg:ml-[3px]">Datos del negocio</h1>
+        <h1 className={clsx("mt-[13px] max-lg:mt-[20px] text-[20px] font-bold font-montserrat text-blue-gray-900 max-lg:ml-[3px]")}>Datos del negocio</h1>
       </article>
-    <section className="max-lg:inline-block">
+    <section className={clsx("max-lg:inline-block")}>
 
-    <h3 className="mt-[15px] mb-[8px] text-[16px] font-medium font-montserrat text-blue-gray-900 max-lg:ml-[3px]">Nombre comercial</h3>
-    <section className="max-lg:inline-block flex grid-rows-2 justify-between">
+    <h3 className={clsx("mt-[15px] mb-[8px] text-[16px] font-medium font-montserrat text-blue-gray-900 max-lg:ml-[3px]")}>Nombre comercial</h3>
+    <section className={clsx("max-lg:inline-block flex grid-rows-2 justify-between")}>
       <article>
         <Input
           htmlFor='name' 
@@ -66,8 +66,8 @@ export default function BussinesForm(){
     </section>
 
     <section>
-      <article className="flexgrid-rows-2">
-      <h3 className="mt-[16px] mb-[10px] text-[16px] font-medium font-montserrat text-blue-gray-900 max-lg:ml-[3px]">Persona Moral</h3>
+      <article className={clsx("flexgrid-rows-2")}>
+      <h3 className={clsx("mt-[16px] mb-[10px] text-[16px] font-medium font-montserrat text-blue-gray-900 max-lg:ml-[3px]")}>Persona Moral</h3>
         <Input
           htmlFor='name' 
           label='NOMBRE Y APELLIDO DEL REPRESENTANTE LEGAL DEL NEGOCIO'
@@ -81,7 +81,7 @@ export default function BussinesForm(){
       </article>
     </section>
 
-    <section className="max-lg:inline-block flex grid-rows-2 justify-between">
+    <section className={clsx("max-lg:inline-block flex grid-rows-2 justify-between")}>
       <section>
         <article>
           <Input
@@ -98,7 +98,7 @@ export default function BussinesForm(){
         <label className={clsx(
           'text-[12px] font-montserrat font-medium text-blue-gray-500',
           'block ml-1 mt-3',
-          )}> DESCRIPCION DE TU NEGOCIO
+          )}> DESCRIPCIÓN DE TU NEGOCIO
         </label>
           <textarea className={clsx(
               'shadow w-full h-[100px]' ,
@@ -109,13 +109,14 @@ export default function BussinesForm(){
           )}></textarea>
         </article>
      </section>
+     
     <section>
       <article>
         <label className={clsx(
           'text-[12px] font-montserrat font-medium text-blue-gray-500',
           'block ml-1 mt-2')}> HORARIO DE SERVICIO
         </label>
-          <div className="inline-flex">
+          <div className={clsx("inline-flex")}>
             <Input
               htmlFor='name' 
               label=''
@@ -126,7 +127,7 @@ export default function BussinesForm(){
               register={register}
               style="w-[139px]">
             </Input>
-            <h3 className="m-auto ml-1 text-[12px] font-montserrat font-bold text-blue-gray-900">A:</h3>
+            <h3 className={clsx("m-auto ml-1 text-[12px] font-montserrat font-bold text-blue-gray-900")}>A:</h3>
             <Input
               htmlFor='name' 
               label=''
@@ -142,43 +143,42 @@ export default function BussinesForm(){
 
         <article>
           <label className={clsx(
-            'text-[12px] font-montserrat font-medium text-blue-gray-500',
-            'block ml-1 mt-3 mb-4')}>DIAS DE SERVICIO
+            "text-[12px] font-montserrat font-medium text-blue-gray-500",
+            "block ml-1 mt-3 mb-4")}>DÍAS DE SERVICIO
           </label>
           <form className="text-gray-700 font-montserrat" onSubmit={handleSubmit(console.log)}>
             <section className="flex justify-between">
               <input {...register("checkbox")} type="checkbox" value="A" />Lunes
               <input {...register("checkbox")} type="checkbox" value="B" />Martes
-              <input {...register("checkbox")} type="checkbox" value="C" />Miercoles
+              <input {...register("checkbox")} type="checkbox" value="C" />Miércoles
             </section>
             <section className="mt-1 flex justify-between">
               <input {...register("checkbox")} type="checkbox" value="D" />Jueves
               <input {...register("checkbox")} type="checkbox" value="E" />Viernes
-              <input {...register("checkbox")} type="checkbox" value="F" />Sabado
+              <input {...register("checkbox")} type="checkbox" value="F" />Sábado
             </section>
             <section className="mt-1 flex justify-between">
               <input {...register("checkbox")} type="checkbox" value="G" />Domingo
-              <input {...register("checkbox")} type="checkbox" value="G" />Todos los dias
+              <input {...register("checkbox")} type="checkbox" value="G" />Todos los días
             </section>
               {/* <input type="submit" /> */}
           </form>
         </article>
       </section>
    </section>
-
         <label className={clsx(
           'text-[12px] font-montserrat font-medium text-blue-gray-500',
           'block ml-1 mt-3 mb-2',
-          )}> DIRECCION DE TU NEGOCIO
+          )}> DIRECCIÓN DE TU NEGOCIO
         </label>
         <DynamicComponent></DynamicComponent>
     </section>
 
-    <article className="w-full mt-4">
+    <article className={clsx("w-full mt-4")}>
       <Map></Map>
     </article>
 
-    <article className="mt-16 inline-block m-auto">
+    <article className={clsx("mt-16 inline-block m-auto")}>
         <Button
           label='CONTUNUAR'
           isSubmit
@@ -187,7 +187,6 @@ export default function BussinesForm(){
           )}>
         </Button>
     </article>
-  
   </section>
   )
 }
