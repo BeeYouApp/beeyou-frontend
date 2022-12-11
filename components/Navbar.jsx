@@ -11,7 +11,7 @@ const MobileSidebar = ({ closeSidebar }) => {
       <section className={clsx("bg-white max-w-[70%] md:max-w-[35%] p-4 h-full border-2")}>
         <section className={clsx("flex justify-between")}>
           <div className={clsx("flex items-center mb-8")}>
-            <Link href="">
+            <Link href="#">
               <Image src={images.beeyouLogo} alt="Bee You Logo" />
             </Link>
           </div>
@@ -21,7 +21,7 @@ const MobileSidebar = ({ closeSidebar }) => {
         </section>
         <ul className={clsx("font-montserrat text-sm text-blue-gray-700")}>
           <li className={clsx("pl-6 overflow-hidden hover:opacity-90 hover:rounded hover:w-56 hover:h-7 transition duration-300 ease-in-out hover:bg-blue-gray-50")}>
-            <Link className={clsx("align-middle")} href="">
+            <Link className={clsx("align-middle")} href="#">
               Inicio
             </Link>
           </li>
@@ -117,7 +117,7 @@ export default function Navbar() {
               </Link>
             </button>
           </div>
-          <Link href="">
+          <Link href="#">
             <Image src={images.mobileIcon} alt="Mobile Menu Icon" />
           </Link>
         </div>
