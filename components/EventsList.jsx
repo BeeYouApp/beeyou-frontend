@@ -3,20 +3,17 @@ import Link from "next/link";
 import Image from "next/image";
 import { images } from "../lib/images";
 import TableEventsRow from "../components/TableEventsRow";
+import ButtonPurple from "./ButtonPurple";
 
 export default function TableEvents() {
   return (
     <div className={clsx("flex justify-center sm:-mx-8 lg:-mx-8")}>
       <div className={clsx("bg-yellow-100 py-10 md:mb-[75px] inline-block justify-center max-h-[600px] max-w-[328px] md:min-w-[680px] lg:min-w-[1050px] 2xl:min-w-[2166px] 2xl:max-h-[700px] sm:px-6 lg:px-8")}>
         <div className={clsx("bg-red-100")}>
-          <button
-              className={clsx(
-                "purple-button bg-purple-900 border-purple-900 text-[#FFFFFF] md:w-[194px] h-[48px] rounded-[8px] justify-items-end m-10"
-              )}
-            >
-              <h4>+ Nuevo evento</h4>
-              {/* {props.children} */}
-            </button>
+          <ButtonPurple
+          label="+ Nuevo evento"
+          style="rounded-none md:w-28 justify-items-end m-10"
+          ></ButtonPurple>
           <table className={clsx("min-w-full text-center")}>
             <thead className={clsx("border-b bg-gray-50")}>
               <tr>

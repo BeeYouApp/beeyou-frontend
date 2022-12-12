@@ -1,6 +1,6 @@
 import clsx from "clsx";
 
-export default function ButtonPurple({props, style, label}) {
+export default function ButtonPurple({style, label}) {
   return (
     <>
       <button
@@ -10,7 +10,6 @@ export default function ButtonPurple({props, style, label}) {
         )}
       >
         {label}
-{/*         {props.children} */}
       </button>
     </>
   );
