@@ -4,7 +4,7 @@ export default function Cards(){
     return(
         <>
             <CardCompany></CardCompany>
-{/*             <CardPlacesLg></CardPlacesLg> */}
+            <CardPlacesLg></CardPlacesLg>
         </>
     )
 }
