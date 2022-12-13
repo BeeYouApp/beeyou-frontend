@@ -21,7 +21,7 @@ export default function EventsUpdate (){
   } 
 }
   return(
-    <section className={clsx("w-[680px] h-[846px] rounded-[16px] border-2 border-blue-sky-50 shadow-xl p-5 mr-10 absolute flex flex-col ")}>
+    <section className={clsx("bg-white w-[680px] h-[846px] rounded-[16px] border-2 border-blue-sky-50 shadow-xl p-5 mr-10 absolute flex flex-col ")}>
       <article>
         <h1 className={clsx("mt-[13px] text-[20px] font-montserrat text-blue-gray-900 max-lg:ml-[3px]")}>Actualizar datos del evento</h1>
       </article>
@@ -61,7 +61,7 @@ export default function EventsUpdate (){
           htmlFor='name' 
           id='username'
           type='string'
-          placeholder='Convevencia'
+          placeholder='Convivencia'
           message='error'
           register={register}
           className={clsx(
@@ -105,7 +105,7 @@ export default function EventsUpdate (){
             'block ml-1 mt-2',
             )}
             >
-            DESCRIPCIÓN DE TU EVENTO
+            IMAGEN DEL EVENTO
             </label>
             <article className={clsx(
                 "shadow mt-[8px] appearance-none border w-[300px] h-[100px]",
@@ -113,7 +113,7 @@ export default function EventsUpdate (){
                 "bg-[#F6F9FF] hover:border-violet-700 border-2",
                 "focus:outline-none focus:shadow-outline")}>
             <article >
-              <p className="rounded-lg py-2 px-3 text-gray-700">Sube una imagen alusiva al evento</p>
+              <p className="rounded-lg py-2 px-3 text-blue-gray-500">Sube una imagen alusiva al evento</p>
               <div className={clsx("items-baseline w-[200px] h-[36px]")}>
                   <ButtonPurple className="text-normal text-[12px] text-center text-white">CARGAR IMAGEN</ButtonPurple>
               </div>
@@ -122,7 +122,7 @@ export default function EventsUpdate (){
           </div>
         </div>
       <article>
-        <h2 className={clsx("mt-[30px] text-[20px] font-montserrat text-blue-gray-900 max-lg:ml-[3px]")}>Horario del evento</h2>
+        <h2 className={clsx("mt-[30px] text-[20px] font-montserrat text-blue-gray-900 max-lg:ml-[3px]")}>Actualizar horario del evento</h2>
       </article>
       <div className="inline-block"> 
         <article >
@@ -137,7 +137,7 @@ export default function EventsUpdate (){
             htmlFor='name' 
             id='username'
             type='string'
-            placeholder='dd/mm/aaaa*'
+            placeholder='17/01/2023'
             message='error'
             register={register}
             className={clsx(
@@ -162,7 +162,7 @@ export default function EventsUpdate (){
           htmlFor='name'
           id='username'
           type='string'
-          placeholder='dd/mm/aaaa*'
+          placeholder='18/01/2023'
           message='error'
           register={register}
           className={clsx(
@@ -186,7 +186,7 @@ export default function EventsUpdate (){
           htmlFor='name' 
           id='username'
           type='string'
-          placeholder='00:00 pm*'
+          placeholder='13:00 pm'
           message='error'
           register={register}
           className={clsx(
@@ -210,7 +210,7 @@ export default function EventsUpdate (){
           htmlFor='name' 
           id='username'
           type='string'
-          placeholder='00:00 pm*'
+          placeholder='23:00 pm'
           message='error'
           register={register}
           className={clsx(
@@ -237,7 +237,7 @@ export default function EventsUpdate (){
           htmlFor='name'
           id='username'
           type='string'
-          placeholder='$ 00.00 MXN*'
+          placeholder='$ 125.00 MXN'
           message='error'
           register={register}
           className={clsx(
@@ -260,7 +260,7 @@ export default function EventsUpdate (){
           htmlFor='name'
           id='username'
           type='string'
-          placeholder='000 asistentes*'
+          placeholder='200 asistentes'
           message='error'
           register={register}
           className={clsx(
@@ -273,14 +273,14 @@ export default function EventsUpdate (){
       </article>
     </section>
     <article className={clsx("mt-3 flex justify-between")}>
-        <h3 className="text-lgbtiq">
+        <h3 className="lgbtiq-grad-color font-bold mt-5 ml-7">
           CANCELAR
         </h3>
         <Button
-          label='PUBLICAR EVENTO'
+          label='ACTUALIZAR EVENTO'
           isSubmit
           style={clsx(
-            "lgbtiq-grad-bg rounded-lg  max-lg:mt-[10px]"
+            "lgbtiq-grad-bg rounded-lg max-lg:mt-[10px]"
           )}>
         </Button>
     </article>
