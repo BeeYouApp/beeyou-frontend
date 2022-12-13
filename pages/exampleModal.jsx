@@ -1,9 +1,9 @@
 
-import Modal3 from "../components/Modal2"
+import Modal from "../components/Modal"
 
 export default function ExampleModal(){
     return(
-        <Modal3></Modal3>
+        <Modal></Modal>
 
     )
 }

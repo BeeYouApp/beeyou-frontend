@@ -1,16 +1,10 @@
-// CORRECTO
+
 import clsx from "clsx"
 import React from "react"
 import {useForm} from "react-hook-form"
-// import Input from "./Input"
 import { ToastContainer, toast } from "react-toastify"
 import ButtonPurple from "./ButtonPurple"
-// import { register } from "../lib/api";
 import Button from "./Button"
-import dateIcon from "../public/assets/dashboard/icon-date-gray-dark.svg";
-import closeClockIcon from "../public/assets/dashboard/icon-clock-close-gray-dark.svg";
-import openClockIcon from "../public/assets/dashboard/icon-clock-open-gray-dark.svg";
-import Modal from "./Modal"
 import { register } from "../lib/api"
 
 
