@@ -10,19 +10,13 @@ import Button from "./Button"
 import dateIcon from "../public/assets/dashboard/icon-date-gray-dark.svg";
 import closeClockIcon from "../public/assets/dashboard/icon-clock-close-gray-dark.svg";
 import openClockIcon from "../public/assets/dashboard/icon-clock-open-gray-dark.svg";
+import Modal from "./Modal"
+import { register } from "../lib/api"
 
-export default function EventsModalBiz (){
-  const {register,handleSubmit} = useForm()
-  const onSubmit = async data => {
-  {console.log(data)}
-  const result = await register(data)
-  console.log("result:", result)
-  if(!result ){
-    toast.error("ups hubo un error")
-  } 
-}
+
+export default function EventsModalBiz  ({ } ){
   return(
-    <section className={clsx("w-[680px] h-[846px] rounded-[16px] border-2 border-blue-sky-50 shadow-xl p-5 mr-10 absolute flex flex-col ")}>
+<section className={clsx("w-[680px] h-[846px] rounded-[16px] border-2 border-blue-sky-50 shadow-xl p-5 mr-10 flex flex-col ")}>
       <article>
         <h1 className={clsx("mt-[13px] text-[20px] font-montserrat text-blue-gray-900 max-lg:ml-[3px]")}>Datos del evento</h1>
       </article>
@@ -286,5 +280,8 @@ export default function EventsModalBiz (){
         </Button>
     </article>
   </section>
+
+
+    
     )
 }
