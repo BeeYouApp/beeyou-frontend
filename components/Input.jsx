@@ -18,14 +18,14 @@ export default function Input({ label, id, type, value, message, placeholder, ht
         'border w-[300px] h-[40px] rounded-lg py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline',
         'hover:border-violet-700 border-2 mb-2',
         style
-        )}
+      )}
         id={id}
         type={type}
         placeholder={placeholder}
-         {...register(htmlFor, {required} ,{
+        {...register(htmlFor, { required }, {
           pattern: {
-          value: {value},
-          message:{message}
+            value: { value },
+            message: { message }
           }
         })} />
     </>

@@ -1,18 +1,18 @@
-const baseUrl = ' '
+const baseUrl = "https://api.bee-you.app/"
 
-async function register(data){
+async function register(data) {
 
-    let result = await fetch(
-      `${baseUrl}register`,
-      {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      }
-    )
-    console.log("result:", result)
-  }
+  let result = await fetch(
+    `${baseUrl}company`,
+    {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    }
+  )
+  console.log("result:", result)
+}
 
-  export { 
-    register
-  }
+export {
+  register
+}

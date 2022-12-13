@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useRef, useState, useCallback, useEffect } from 'react';
 import { AddressAutofill, AddressMinimap, useConfirmAddress, config } from '@mapbox/search-js-react';
 import clsx from 'clsx';
 import { useForm } from "react-hook-form";
@@ -32,16 +32,9 @@ export default function AutofillForm() {
 
   function handleSaveMarkerLocation(coordinate) {
     const coordinateToSave = JSON.stringify(coordinate);
-    console.log(`Marker moved to ${JSON.stringify(coordinateToSave)}.`)
+    console.log(`Marker moved to ${JSON.stringify(coordinate)}.`)
     return coordinateToSave
   }
-
-  //
-  const handleSubmit = useCallback(async (e) => {
-    e.preventDefault();
-    const result = await showConfirm();
-    if (result.type === 'nochange') submitForm();
-  }, [showConfirm]);
 
   function submitForm() {
     setShowValidationText(true);
@@ -57,6 +50,11 @@ export default function AutofillForm() {
     setShowValidationText(false);
     setFeature(null);
   }
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+  } = useForm();
 
   const onSubmit = async (data) => {
     console.log(handleSaveMarkerLocation());
@@ -64,9 +62,9 @@ export default function AutofillForm() {
       const result = await showConfirm();
       console.log(result);
       console.log(data);
-      const fullAddress = `${data.address_line1}, ${data?.address_line2}, ${data.zip} ${data.city}, ${data.state}`;
+      const fullAddress = `${data.address_line1}, ${data?.calle}, ${data.ciudad}, ${data.estado}, ${data.postal}`;
+      console.log(fullAddress)
       const coordinatesAddress = `${handleSaveMarkerLocation()}`;
-
     } catch (error) {
       console.log("Error: ", error);
     }
@@ -75,10 +73,9 @@ export default function AutofillForm() {
   return (
     <>
       <form ref={formRef} className="font-montserrat font-medium'" onSubmit={handleSubmit(onSubmit)}>
-        <div className="">
+        <div className="lg:flex justify-between mb-20">
           <div className="">
             {/* Input form */}
-            <label className=""></label>
             <AddressAutofill accessToken={token} onRetrieve={handleRetrieve}>
               <input
                 className={clsx(
@@ -86,11 +83,13 @@ export default function AutofillForm() {
                   'mt-[12px]',
                   'appearance-none',
                   'border w-[100%] h-[40px] rounded-lg py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline',
-                  'hover:border-violet-700 border-2 mb-2',
+                  'hover:border-violet-700 border-2 mb-2'
                 )}
                 placeholder="Busca tu espacio."
                 autoComplete="address-line1"
-                id="mapbox-autofill" />
+                id="mapbox-autofill"
+                {...register("calle")}
+              />
             </AddressAutofill>
             {!showFormExpanded &&
               <div
@@ -102,16 +101,18 @@ export default function AutofillForm() {
             <div className="secondary-inputs" style={{ display: showFormExpanded ? 'block' : 'none' }}>
               <label className={clsx(
                 'text-[12px] font-montserrat font-medium text-blue-gray-500',
-                'block ml-1 mt-1')}>Calle
+                'block ml-1 mt-1')}>
+                Local/Edificio
               </label>
               <input className={clsx(
                 'shadow',
                 'mt-[10px]',
                 'appearance-none',
                 'border w-[300px] h-[40px] rounded-lg py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline',
-                'hover:border-violet-700 border-2 mb-2',)}
+                'hover:border-violet-700 border-2 mb-2')}
                 placeholder="Apartment, suite, unit, building, floor, etc."
-                autoComplete="address-line2" />
+                autoComplete="address-line2"
+                {...register("local")} />
               <label className={clsx(
                 'text-[12px] font-montserrat font-medium text-blue-gray-500',
                 'block ml-1 mt-1')}>Ciudad</label>
@@ -122,7 +123,8 @@ export default function AutofillForm() {
                 'border w-[300px] h-[40px] rounded-lg py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline',
                 'hover:border-violet-700 border-2 mb-2')}
                 placeholder="Ciudad"
-                autoComplete="address-level2" />
+                autoComplete="address-level2"
+                {...register("ciudad")} />
 
               <label className={clsx(
                 'text-[12px] font-montserrat font-medium text-blue-gray-500',
@@ -134,29 +136,33 @@ export default function AutofillForm() {
                   'mt-[10px]',
                   'appearance-none',
                   'border w-[300px] h-[40px] rounded-lg py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline',
-                  'hover:border-violet-700 border-2 mb-2',)}
+                  'hover:border-violet-700 border-2 mb-2')}
                 placeholder="State / Region"
                 autoComplete="address-level1"
+                {...register("estado")}
               />
               <label className={clsx(
                 'text-[12px] font-montserrat font-medium text-blue-gray-500',
                 'block ml-1 mt-1')}>Codigo Postal </label>
               <input
-                className="{clsx(
-              'shadow',
-              'mt-[10px]',
-              'appearance-none',
-              'border w-[300px] h-[40px] rounded-lg py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline',
-              'hover:border-violet-700 border-2 mb-2',)}"
+                className={clsx(
+                  'shadow',
+                  'mt-[10px]',
+                  'appearance-none',
+                  'border w-[300px] h-[40px] rounded-lg py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline',
+                  'hover:border-violet-700 border-2 mb-2')}
                 placeholder="Codigo Postal"
-                autoComplete="postal-code" />
+                autoComplete="postal-code"
+                {...register("postal")}
+              />
             </div>
           </div>
-          <div className="">
+
+          <div className="" style={{ display: showFormExpanded ? 'block' : 'none' }}>
             {/* Visual confirmation map */}
             <div
               id="minimap-container"
-              className="mt-2"
+              className="mt-2 relative w-[300px] h-[200px]"
             >
               <AddressMinimap
                 canAdjustMarker={true}
@@ -164,26 +170,31 @@ export default function AutofillForm() {
                 feature={feature}
                 show={showMinimap}
                 onSaveMarkerLocation={handleSaveMarkerLocation} />
+              {/* Form buttons */}
+              {showFormExpanded &&
+                <div className="flex justify-end w-[300px] h-[25px] mt-20">
+                  <button type="submit" className={clsx("px-3 border border-slate-300 rounded-md",
+                    "text-sm shadow-sm text-white bg-sky-500 hover:bg-sky-700 text-center")}
+                    id="btn-confirm">
+                    Confirm
+                  </button>
+                  <button type="button" className={clsx("px-3 border border-slate-300 rounded-md",
+                    "text-sm shadow-sm bg-white text-center ml-2")}
+                    id="btn-reset" onClick={resetForm}>
+                    Reset
+                  </button>
+                </div>
+              }
             </div>
           </div>
         </div>
 
-        {/* Form buttons */}
-        {showFormExpanded &&
-          <div className="">
-            <button type="submit" className="btn round" id="btn-confirm">
-              Confirm
-            </button>
-            <button type="button" className="" id="btn-reset" onClick={resetForm}>
-              Reset
-            </button>
-          </div>
-        }
+
       </form>
 
       {/* Validation text */}
       {showValidationText &&
-        <div id="validation-msg" className="">Order successfully submitted.</div>
+        <div id="validation-msg" className="block">Order successfully submitted.</div>
       }
     </>
   );
