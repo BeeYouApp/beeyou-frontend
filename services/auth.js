@@ -14,7 +14,6 @@ function signIn(email, password, typeUser) {
     return fetch(URL, options) // regresa una promesa
 }
 
-
 function login(email, password) {
     const URL = `${URL_BASE_API}/login`
     const options =  {

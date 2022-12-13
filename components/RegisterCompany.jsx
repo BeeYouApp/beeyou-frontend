@@ -53,7 +53,7 @@ export default function RegisterCompany({ }) {
     
         if (response.status === 200) {
             if(userType === "user") router.push(`/user/profile-configuration?id=${response.data.user}&token=${response.data.token}`)
-            if(userType === "company") router.push('/company/profile-configuration?id=6397b4966a4a8e0d6bedf62f&token=')
+            if(userType === "company") router.push('/company/profile-configuration?id=6395ca209bd7d4cf001e0bf9&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOTVjYTIwOWJkN2Q0Y2YwMDFlMGJmOSIsInJvbGUiOiJDb21wYW55IiwiaWF0IjoxNjcwOTA0ODA0LCJleHAiOjE2NzA5OTEyMDR9.4BoXsrThIdlDaAMgGh9Yx86aryDdigQ3EebmYLFEpSY')
             return
         }
         setMessageError("Ya existe un usuario con este correo")
