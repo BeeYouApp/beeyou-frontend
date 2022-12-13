@@ -13,7 +13,7 @@ export default function ConfigProfile() {
             <h1 className={clsx("mt-20 text-blue-gray-900 font-poppins")}>Configuremos tu negocio</h1>
             <h1 className={clsx("text-blue-gray-900 font-poppins")}>en <span className={clsx("lgbtiq-grad-color leading-tight")}>bee you!</span></h1>
           </article>
-          <article className={clsx<("text-center text-[18px] font-normal")}>
+          <article className={clsx("text-center text-[14px] leading-[21px] text-blue-gray-900 font-normal")}>
             <h3>Antes de publicar tu negocio es importante que</h3>
             <h3>configuremos tu perfil de negocio</h3>
           </article>
