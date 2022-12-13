@@ -26,7 +26,7 @@ const MobileSidebar = ({ closeSidebar }) => {
             </Link>
           </li>
           <li className={clsx("pl-6 overflow-hidden hover:opacity-90 hover:rounded hover:w-56 hover:h-7 transition duration-300 ease-in-out hover:bg-blue-gray-50 mt-4")}>
-            <Link>Beneficios</Link>{" "}
+            <Link href="#">Beneficios</Link>{" "}
           </li>
           <li className={clsx("pl-6 overflow-hidden hover:opacity-90 hover:rounded hover:w-56 hover:h-7 transition duration-300 ease-in-out hover:bg-blue-gray-50 mt-4")}>
             <Link href="/login">Iniciar sesión</Link>{" "}
@@ -80,7 +80,7 @@ export default function Navbar() {
           </button>
           <button
             className={clsx("overflow-hidden hover:opacity-90 hover:rounded px-8 py-2 transition duration-300 ease-in-out hover:bg-blue-gray-50")} href="">
-            <Link href="user/login">Iniciar sesión</Link>
+            <Link href="/login">Iniciar sesión</Link>
           </button>
           <button
             className={clsx("font-montserrat text-sm font-semibold m-6 w-56 p-2 rounded-lg border-x border-y lgbtiq-grad-color")}>

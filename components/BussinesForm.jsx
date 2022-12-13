@@ -180,7 +180,7 @@ export default function BussinesForm(){
 
     <article className={clsx("mt-16 inline-block m-auto")}>
         <Button
-          label='CONTUNUAR'
+          label='CONTINUAR'
           isSubmit
           style={clsx(
             "lgbtiq-grad-bg rounded-lg  max-lg:mt-[10px]"

@@ -1,58 +1,69 @@
 import clsx from "clsx";
-import Input from "./Input";
 import Link from "next/link";
 import Image from "next/image";
 import { images } from "../lib/images";
 import React, { useState } from "react";
-import { useForm } from "react-hook-form";
-import { register } from "../lib/api";
 import { useRouter } from "next/router";
 import { ToastContainer, toast } from "react-toastify";
+import { useForm } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from "yup";
 
+const registerSchema = yup.object({
+    email: yup
+      .string()
+      .email("Email inválido")
+      .required("Email requerido"),
+    password: yup
+      .string()
+      .min(8, "La contraseña debe tener al menos 8 caracteres")
+      .matches(/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/)
+      .required("Contraseña requerida"),
+    confirmPassword: yup
+      .string()
+      .oneOf([yup.ref("password"), null], "Las contraseñas deben coincidir")
+      .required("Confirmar contraseña es requerido"),
+  }).required()
 
 export default function RegisterCompany({ }) {
-    // const { register, handleSubmit } = useForm();
-    // const onSubmit = async (data) => {
-    //     {
-    //         console.log(data);
-    //     }
-    //     const result = await register(data);
-    //     console.log("result:", result);
-    //     if (!result) {
-    //         toast.error("¡Ooops! Hubo un error");
-    //     }
-    // };
-
   const [registerError, setRegisterError] = useState(false);
-  const [register, setRegister] = useState(false);
+  const [companyRegister, setRegister] = useState(false);
   const navigate = useRouter();
-  const submitRegister = (e) => {
-    e.preventDefault();
+
+  const { register, handleSubmit, formState:{ errors } } = useForm({
+    resolver: yupResolver(registerSchema)
+  });
+  const onSubmit = data => submitRegister(data);
+
+  const popupRegister = (data) => {
+    //LOGICA DE ABRIR POPUP Y AL HACER CLICK EN BOTON EJECUTAR CODIGO DE ABAJO
+    //El boton del popup debe tener:  onSubmit={(data) => submitRegister(data)}
+  }
+
+  const submitRegister = (data) => {
     setRegisterError(false);
-    const formData = new FormData(e.target);
-    const email = formData.get("email");
-    const password = formData.get("password");
+    const email = data["email"];
+    const password = data["password"];
+    const verificationLevel = 0
     fetch("http://beeyou-env.eba-xttf5uw4.us-east-1.elasticbeanstalk.com/company", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       mode: "cors",
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify({ email, password, verificationLevel }),
     })
       .then((res) => res.json())
       .then((successResponse) => {
         if (successResponse.success) {
           // props.setToken(successResponse);
           setRegister(successResponse);
+          return <Link href={navigate.push("/company/profile-configuration")}/>;
         }
       });
       setRegisterError(" ");
   };
 
-  if (register) {
-    return <Link href={navigate.push("/company/profile-configuration")}/>;
-  }
     return (
         <article
             className={clsx(
@@ -68,8 +79,7 @@ export default function RegisterCompany({ }) {
             </div>
             <form
                 className={clsx("flex flex-col items-center")}
-                // onSubmit={handleSubmit(onSubmit)}
-                onSubmit={(event) => submitRegister(event)}
+                onSubmit={handleSubmit(onSubmit)}
             >
                 <section className={clsx("flex justify-between mx-8 w-[100%]")}>
                     <button
@@ -77,7 +87,7 @@ export default function RegisterCompany({ }) {
                             "font-poppins font-medium leading-[20px] mt-6 pb-2",
                             "text-center text-[16px] text-blue-gray-400 w-[50%] border-b-2 border-blue-gray-100"
                         )}>
-                        <Link href="/company/register">Soy Negocio</Link>
+                        <Link href="/user/register">Soy Usuario</Link>
                     </button>
                     <button
                         className={clsx(
@@ -91,7 +101,8 @@ export default function RegisterCompany({ }) {
                 <ToastContainer />
                 <div className={clsx("w-[100%] mb-4 relative")}>
                     <div className={clsx("flex justify-between px-2.5 w-[100%] absolute top-1/3")}>
-                        <p className={clsx("font-poppins text-medium text-[12px] leading-[18px]",
+                        <p className={clsx(
+                            "font-poppins text-medium text-[12px] leading-[18px]",
                             "w-[100%] text-blue-gray-700")}>Correo</p>
                     </div>
                     <input
@@ -100,9 +111,6 @@ export default function RegisterCompany({ }) {
                         id="username2"
                         type="email"
                         placeholder="example@example.com"
-                        // value={/\S+@\S+\.\S+/}
-                        message="error"
-                        register={register}
                         className={clsx(
                             "shadow mt-[12px] appearance-none border w-[300px] h-[56px]",
                             "rounded-lg pt-8 pb-4 px-2.5 text-gray-700",
@@ -110,7 +118,9 @@ export default function RegisterCompany({ }) {
                             "hover:border-violet-700 border-2",
                             "focus:outline-none focus:shadow-outline",
                         )}
+                        {...register("email")}
                     />
+                    <p>{errors?.email?.message}</p>
                 </div>
                 <div className={clsx("w-[100%] mb-4 relative")}>
                     <div className={clsx("flex justify-between px-2.5 w-[100%] absolute top-1/4")}>
@@ -126,15 +136,12 @@ export default function RegisterCompany({ }) {
                             "bg-[#F6F9FF] hover:border-violet-700 border-2",
                             "focus:outline-none focus:shadow-outline"
                         )}
-                        id="password"
                         name="password"
+                        id="password"
                         type="password"
-                        // {...register("password", {
-                        //     required: true,
-                        //     maxLength: 16,
-                        //     minLength: 8,
-                        // })}
+                        {...register("password")}
                     />
+                    <p>{errors?.password?.message}</p>
                 </div>
                 <div className={clsx("w-[100%] relative")}>
                     <div className={clsx("flex justify-between px-2.5 w-[100%] absolute top-1/4")}>
@@ -155,15 +162,12 @@ export default function RegisterCompany({ }) {
                         id="password"
                         name="password"
                         type="password"
-                        // {...register("password", {
-                        //     required: true,
-                        //     maxLength: 16,
-                        //     minLength: 8,
-                        // })}
+                        {...register("confirmPassword")}
                     />
+                    <p>{errors?.confirmPassword?.message}</p>
                 </div>
                 <input 
-                 className={clsx("shadow-md lgbtiq-button lgbtiq-grad-bg mt-8")}
+                 className={clsx("shadow-md lgbtiq-button cursor-pointer lgbtiq-grad-bg mt-8")}
                  type="submit"
                  value="¡REGÍSTRATE!"
                 />
