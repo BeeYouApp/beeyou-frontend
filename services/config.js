@@ -1,0 +1,1 @@
+export const URL_BASE_API = process.env.NEXT_PUBLIC_URL_BASE_API || 'http://localhost:8080'

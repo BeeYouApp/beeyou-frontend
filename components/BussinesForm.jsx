@@ -6,6 +6,32 @@ import { ToastContainer, toast } from "react-toastify"
 import Button from "./Button"
 import dynamic from 'next/dynamic'
 import Map from "./Map"
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from "yup";
+
+const companyFormSchema = yup.object({
+  brandName: yup
+    .string()
+    .required("Requerido"),
+  rfc: yup
+    .string()
+    .required("Requerido"),
+  legalRepresentative: yup
+    .string()
+    .required("Requerido"),
+  type: yup
+    .string()
+    .required("Requerido"),
+  image: yup
+    .string()
+    .required("Requerido"),
+  description: yup
+    .string()
+    .required("Requerido"),
+  address: yup
+    .string()
+    .required("Requerido"),
+}).required()
 
 const DynamicComponent = dynamic(() =>
   import('../components/AuitofillMap'), {
@@ -13,7 +39,7 @@ const DynamicComponent = dynamic(() =>
   }
 )
 
-export default function BussinesForm(){
+export default function BussinesForm() {
   const {register,handleSubmit} = useForm()
   const onSubmit = async data => {
   {console.log(data)}
@@ -22,6 +48,10 @@ export default function BussinesForm(){
   if(!result ){
     toast.error("ups hubo un error")
   } 
+
+  const { register, handleSubmit, formState:{ errors } } = useForm({
+    resolver: yupResolver(registerSchema)
+  });
 
 }
   return(
@@ -41,14 +71,15 @@ export default function BussinesForm(){
     <section className={clsx("max-lg:inline-block flex grid-rows-2 justify-between")}>
       <article>
         <Input
-          htmlFor='name' 
+          htmlFor='name'
           label='NOMBRE COMERCIAL DE TU NEGOCIO'
           id='username'
           type='string'
-          placeholder='Ingresa nombre de tu negocio*'
+          placeholder='Ingresa el nombre de tu negocio*'
           message='error'
           register={register}
-          style="">
+          style=""
+          {...register("brandName")}>
         </Input>
       </article>
       <article>
@@ -60,7 +91,8 @@ export default function BussinesForm(){
           placeholder='Ingresa RFC*'
           message='error'
           register={register}
-          style="inline-flex">
+          style="inline-flex"
+          {...register("rfc")}>
           </Input>
       </article>
     </section>
@@ -73,10 +105,11 @@ export default function BussinesForm(){
           label='NOMBRE Y APELLIDO DEL REPRESENTANTE LEGAL DEL NEGOCIO'
           id='username'
           type='string'
-          placeholder='ingresar dato*'
+          placeholder='Ingresar datos*'
           message='error'
           register={register}
-          style="w-[100%]">
+          style="w-[100%]"
+          {...register("legalRepresentative")}>
         </Input>
       </article>
     </section>
@@ -92,7 +125,8 @@ export default function BussinesForm(){
             placeholder='Giro de tu negocio*'
             message='error'
             register={register}
-            style="">
+            style=""
+            {...register("type")}>
           </Input>
 
         <label className={clsx(
@@ -100,13 +134,15 @@ export default function BussinesForm(){
           'block ml-1 mt-3',
           )}> DESCRIPCIÓN DE TU NEGOCIO
         </label>
-          <textarea className={clsx(
-              'shadow w-full h-[100px]' ,
+          <textarea 
+            className={clsx(
+              'shadow w-full h-[100px]',
               'mt-[12px]',
               'appearance-none',
               'border w-[300px] h-[40px] rounded-lg py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline',
               'hover:border-violet-700 border-2 mb-2',
-          )}></textarea>
+            {...register("description")})}
+            ></textarea>
         </article>
      </section>
      
@@ -118,23 +154,23 @@ export default function BussinesForm(){
         </label>
           <div className={clsx("inline-flex")}>
             <Input
-              htmlFor='name' 
-              label=''
-              id='username'
-              type='time'
-              placeholder=''
-              message='error'
+              htmlFor="name" 
+              label=""
+              id="username"
+              type="time"
+              placeholder=""
+              message="error"
               register={register}
               style="w-[139px]">
             </Input>
             <h3 className={clsx("m-auto ml-1 text-[12px] font-montserrat font-bold text-blue-gray-900")}>A:</h3>
             <Input
-              htmlFor='name' 
-              label=''
-              id='username'
-              type='time'
+              htmlFor="name" 
+              label=""
+              id="username"
+              type="time"
               placeholder=''
-              message='error'
+              message="error"
               register={register}
               style="w-[139px]">
             </Input>
@@ -166,10 +202,12 @@ export default function BussinesForm(){
         </article>
       </section>
    </section>
-        <label className={clsx(
-          'text-[12px] font-montserrat font-medium text-blue-gray-500',
-          'block ml-1 mt-3 mb-2',
-          )}> DIRECCIÓN DE TU NEGOCIO
+        <label 
+        className={clsx(
+          "text-[12px] font-montserrat font-medium text-blue-gray-500",
+          "block ml-1 mt-3 mb-2",
+          {...register("address")})}
+        > DIRECCIÓN DE TU NEGOCIO
         </label>
         <DynamicComponent></DynamicComponent>
     </section>
@@ -180,10 +218,10 @@ export default function BussinesForm(){
 
     <article className={clsx("mt-16 inline-block m-auto")}>
         <Button
-          label='CONTINUAR'
+          label="CONTINUAR"
           isSubmit
           style={clsx(
-            "lgbtiq-grad-bg rounded-lg  max-lg:mt-[10px]"
+            "lgbtiq-grad-bg rounded-lg max-lg:mt-[10px]"
           )}>
         </Button>
     </article>

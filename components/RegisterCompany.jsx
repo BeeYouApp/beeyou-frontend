@@ -8,6 +8,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
+import {signIn} from "../services/auth"
 
 const registerSchema = yup.object({
     email: yup
@@ -26,9 +27,9 @@ const registerSchema = yup.object({
   }).required()
 
 export default function RegisterCompany({ }) {
-  const [registerError, setRegisterError] = useState(false);
-  const [companyRegister, setRegister] = useState(false);
-  const navigate = useRouter();
+  const [messageError, setMessageError] = useState("");
+  const [userType, setUserType] = useState('user');
+  const router = useRouter();
 
   const { register, handleSubmit, formState:{ errors } } = useForm({
     resolver: yupResolver(registerSchema)
@@ -40,29 +41,32 @@ export default function RegisterCompany({ }) {
     //El boton del popup debe tener:  onSubmit={(data) => submitRegister(data)}
   }
 
-  const submitRegister = (data) => {
-    setRegisterError(false);
-    const email = data["email"];
-    const password = data["password"];
-    const verificationLevel = 0
-    fetch("http://beeyou-env.eba-xttf5uw4.us-east-1.elasticbeanstalk.com/company", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      mode: "cors",
-      body: JSON.stringify({ email, password, verificationLevel }),
-    })
-      .then((res) => res.json())
-      .then((successResponse) => {
-        if (successResponse.success) {
-          // props.setToken(successResponse);
-          setRegister(successResponse);
-          return <Link href={navigate.push("/company/profile-configuration")}/>;
+  const submitRegister = async (data) => {
+    try {
+        setMessageError("");
+        console.log(data);
+        const { email, password } = data
+        const response = await signIn(email, password)
+        const dataJson = await response.json()
+        console.log(response)
+        console.log(dataJson)
+    
+        if (response.status === 200) {
+            if(userType === "user") router.push(`/user/profile-configuration?id=${response.data.user}&token=${response.data.token}`)
+            if(userType === "company") router.push('/company/profile-configuration?id=6397b4966a4a8e0d6bedf62f&token=')
+            return
         }
-      });
-      setRegisterError(" ");
+        setMessageError("Ya existe un usuario con este correo")
+    } catch (error) {
+        console.log('Error: ', error)
+        setMessageError("Ops ocurrió un error")
+    }
   };
+
+  const handleClickSelectUserType= (type)  => {
+    console.log(type)
+    setUserType(type)
+  }
 
     return (
         <article
@@ -85,19 +89,26 @@ export default function RegisterCompany({ }) {
                     <button
                         className={clsx(
                             "font-poppins font-medium leading-[20px] mt-6 pb-2",
-                            "text-center text-[16px] text-blue-gray-400 w-[50%] border-b-2 border-blue-gray-100"
-                        )}>
-                        <Link href="/user/register">Soy Usuario</Link>
+                            `text-center text-[16px] text-blue-gray-400 w-[50%] ${userType === 'user' ? 'border-b-4 border-green-900' : 'border-b-2 border-blue-gray-100'}`
+                        )}
+                        onClick={() => handleClickSelectUserType("user")}
+                        type="button"
+                        >
+                        Soy Usuario
+                        
                     </button>
                     <button
                         className={clsx(
                             "font-poppins font-medium leading-[20px] mt-6 pb-2",
-                            "text-center text-[16px] text-blue-gray-400 w-[50%] border-b-4 border-green-900"
-                        )}>
-                        <Link href="/company/register">Soy Negocio</Link>
+                            `text-center text-[16px] text-blue-gray-400 w-[50%] ${userType === 'company' ? ' border-b-4 border-green-900' : 'border-b-2 border-blue-gray-100'}`
+                        )}
+                        onClick={() => handleClickSelectUserType('company')}
+                        type="button"
+                        >
+                        Soy Negocio
                     </button>
                 </section>
-                {registerError && (<h3 className="text-red-900 font-bold">¡Ooops! Hubo un error</h3>)}
+                {messageError && (<h3 className="text-red-900 font-bold">{messageError}</h3>)}
                 <ToastContainer />
                 <div className={clsx("w-[100%] mb-4 relative")}>
                     <div className={clsx("flex justify-between px-2.5 w-[100%] absolute top-1/3")}>
@@ -166,11 +177,16 @@ export default function RegisterCompany({ }) {
                     />
                     <p>{errors?.confirmPassword?.message}</p>
                 </div>
-                <input 
+                <button
                  className={clsx("shadow-md lgbtiq-button cursor-pointer lgbtiq-grad-bg mt-8")}
                  type="submit"
-                 value="¡REGÍSTRATE!"
-                />
+                >
+                    {
+                        userType === "company" 
+                        ? "¡CONTINUAR!"
+                        : "¡REGÍSTRATE!"
+                    }
+                    </button>
             </form>
 
             <Image src={images.dividerIcon} className={clsx("mt-8 mb-6")} />
