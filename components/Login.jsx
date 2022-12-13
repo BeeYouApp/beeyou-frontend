@@ -108,7 +108,7 @@ export default function Login(props) {
       <Image src={images.dividerIcon} className={clsx("mt-8 mb-6")} />
       <p className={clsx(
           "text-end font-poppins font-medium leading-[18px] mb-4 w-[280px]",
-          "text-blue-gray-400 text-[12px] lgbtiq-grad-color")}>
+          "text-blue-gray-400 text-[12px] lgbtiq-grad-color font-bold")}>
         ¿Has olvidado tu contraseña?
       </p>
       <p className={clsx("text-center font-poppins font-medium leading-[18px] mb-6 lgbtiq-grad-color text-[12px]")}>
