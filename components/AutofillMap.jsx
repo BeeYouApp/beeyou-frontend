@@ -252,7 +252,7 @@ export default function AutofillForm() {
   const [token, setToken] = useState('');
 
   useEffect(() => {
-    const accessToken = 'sk.eyJ1IjoiYWJ5YmxhY2ttb3V0aCIsImEiOiJjbGJkN29mMmUwemFlM29vNXcyeDlvaGVyIn0.SO4z3m0gdj7Pe2Rlu_bE9A';
+    const accessToken = "pk.eyJ1IjoiYWJ5YmxhY2ttb3V0aCIsImEiOiJjbGFodTBobmowODIwM3hvYmxva20zYWQ4In0.GWgmsYW9P5xUKzxDGliiVg";
     setToken(accessToken)
     config.accessToken = accessToken;
   }, [])
