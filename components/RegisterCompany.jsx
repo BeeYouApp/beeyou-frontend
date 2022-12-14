@@ -1,5 +1,4 @@
 import clsx from "clsx";
-import Link from "next/link";
 import Image from "next/image";
 import { images } from "../lib/images";
 import React, { useState } from "react";
@@ -8,7 +7,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
-import {signIn} from "../services/auth"
+import {signIn} from "../services/auth";
 
 const registerSchema = yup.object({
     email: yup
@@ -28,7 +27,7 @@ const registerSchema = yup.object({
 
 export default function RegisterCompany({ }) {
   const [messageError, setMessageError] = useState("");
-  const [userType, setUserType] = useState('user');
+  const [userType, setUserType] = useState("user");
   const router = useRouter();
 
   const { register, handleSubmit, formState:{ errors } } = useForm({
@@ -52,7 +51,7 @@ export default function RegisterCompany({ }) {
         console.log(dataJson)
     
         if (response.status === 200) {
-            if(userType === "user") router.push(`/user/profile-configuration?id=${response.data.user}&token=${response.data.token}`)
+            if(userType === "user") router.push(`/user/profile-configuration?id=${response.user}&token=${response.token}`)
             if(userType === "company") router.push('/company/profile-configuration?id=6395ca209bd7d4cf001e0bf9&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOTVjYTIwOWJkN2Q0Y2YwMDFlMGJmOSIsInJvbGUiOiJDb21wYW55IiwiaWF0IjoxNjcwOTA0ODA0LCJleHAiOjE2NzA5OTEyMDR9.4BoXsrThIdlDaAMgGh9Yx86aryDdigQ3EebmYLFEpSY')
             return
         }

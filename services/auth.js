@@ -1,7 +1,7 @@
-import {URL_BASE_API} from './config'
+import {URL_BASE_API} from "./config"
 
 function signIn(email, password, typeUser) {
-    const endpoint = typeUser === 'user' ? 'user' : 'company'
+    const endpoint = typeUser === "user" ? "user" : "company"
     const URL = `${URL_BASE_API}/${endpoint}`
     const options =  {
         method: "POST",

@@ -1,7 +1,7 @@
 import {URL_BASE_API} from "./config"
 
-function updateUser(id, newData, token) {
-    const URL = `${URL_BASE_API}/users/${id}`
+function updateCompany(id, newData, token) {
+    const URL = `${URL_BASE_API}/company/${id}`
     const options =  {
         method: "PATCH",
         headers: {
@@ -16,5 +16,5 @@ function updateUser(id, newData, token) {
 
 
 export {
-    updateUser
+    updateCompany
   }
