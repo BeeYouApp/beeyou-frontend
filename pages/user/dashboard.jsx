@@ -7,7 +7,7 @@ import dynamic from 'next/dynamic';
 import CardCompany from "../../components/CardCompany";
 
 const DynamicComponent = dynamic(() =>
-  import('../../components/AuitofillMap'), {
+  import('../../components/AutofillMap'), {
     ssr: false,
   }
 )

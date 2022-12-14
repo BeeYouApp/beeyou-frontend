@@ -1,44 +1,57 @@
 import clsx from "clsx";
-import Input from "./Input";
-import Link from "next/link";
 import Image from "next/image";
 import { images } from "../lib/images";
+import Link from "next/link";
 import React, { useState } from "react";
-import { useForm } from "react-hook-form";
 import { useRouter } from "next/router";
 import { ToastContainer, toast } from "react-toastify";
+import { useForm } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from "yup";
+import {login} from "../services/auth";
+
+const loginSchema = yup.object({
+    email: yup
+      .string()
+      .email("Email inválido")
+      .required("Email requerido"),
+    password: yup
+      .string()
+      .required("Contraseña requerida"),
+}).required()
 
 export default function LoginCompany(props) {
-  const [loginError, setLoginError] = useState(false);
-  const [login, setLogin] = useState(false);
-  const navigate = useRouter();
-  const submitLogin = (e) => {
-    e.preventDefault();
-    setLoginError(false);
-    const formData = new FormData(e.target);
-    const email = formData.get("email");
-    const password = formData.get("password");
-    fetch("http://beeyou-env.eba-xttf5uw4.us-east-1.elasticbeanstalk.com/login/company",{
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        mode: "cors",
-        body: JSON.stringify({ email, password }),
-      })
-      .then((res) => res.json())
-      .then((successResponse) => {
-        if (successResponse.success) {
-          props.setToken(successResponse);
-          setLogin(successResponse);
-        }
-      });
-      setLoginError(" ");
-  };
+  const [messageError, setMessageError] = useState(false);
+  const [userType] = useState("user");
+  const router = useRouter();
 
-    if (login) {
-      return <Link href={navigate.push("/company/dashboard")}/>;
+  const { register, handleSubmit, formState:{ errors } } = useForm({
+    resolver: yupResolver(loginSchema)
+  });
+
+  const onSubmit = data => submitLogin(data);
+
+  const submitLogin = async (data) => {
+    try {
+        setMessageError("");
+        console.log(data);
+        const { email, password } = data
+        const response = await login(email, password)
+        const dataJson = await response.json()
+        console.log(response)
+        console.log(dataJson)
+    
+        if (response.status === 200) {
+            if(userType === "user") router.push(`/user/dashboard?id=${response.user}&token=${response.token}`)
+            if(userType === "company") router.push(`/company/dashboard?id=${response.user}&token=${response.token}`)
+            return
+        }
+        setMessageError("Ya existe un usuario con este correo")
+    } catch (error) {
+        console.log('Error: ', error)
+        setMessageError("Ops ocurrió un error")
     }
+  };
 
     return (
         <article
@@ -55,9 +68,9 @@ export default function LoginCompany(props) {
             </div>
             <form
                 className={clsx("flex flex-col items-center mt-6")}
-                onSubmit={(event) => submitLogin(event)}
+                onSubmit={handleSubmit(onSubmit)}
             >
-                {loginError && (<h3 className="text-red-900 font-bold">Credenciales inválidas</h3>)}
+                {messageError && (<h3 className="text-red-900 font-bold">Credenciales inválidas</h3>)}
                 <ToastContainer />
                 <input
                     htmlFor="email"
@@ -65,7 +78,6 @@ export default function LoginCompany(props) {
                     id="username2"
                     type="email"
                     placeholder="Ingresa tu correo"
-                    // value={/\S+@\S+\.\S+/}
                     message="error"
                     className={clsx(
                         "shadow mt-[12px] appearance-none border w-[300px] h-[56px]",
@@ -74,7 +86,9 @@ export default function LoginCompany(props) {
                         "hover:border-violet-700 border-2",
                         "focus:outline-none focus:shadow-outline",
                     )}
+                    {...register("email")}
                 />
+                <p>{errors?.email?.message}</p>
                 <div className={clsx("w-[100%] relative")}>
                     <div className={clsx("flex justify-between px-2.5 w-[100%] absolute top-1/4")}>
                         <p className={clsx(
@@ -97,7 +111,9 @@ export default function LoginCompany(props) {
                         id="password"
                         name="password"
                         type="password"
+                        {...register("password")}
                     />
+                    <p>{errors?.password?.message}</p>
                 </div>
                 <input 
                     className={clsx("shadow-md lgbtiq-button lgbtiq-grad-bg mt-8")}

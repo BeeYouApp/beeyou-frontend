@@ -47,14 +47,14 @@ export default function BussinesForm() {
         console.log(data);
         try {
             setMessageError("");
-            const id = "639933cb4d9f1d5a2e0d3863"
-            const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOTkzM2NiNGQ5ZjFkNWEyZTBkMzg2MyIsInJvbGUiOiJDb21wYW55IiwiaWF0IjoxNjcwOTg0NjUxLCJleHAiOjE2NzEwNzEwNTF9.Xvg6wksp4_5VoxwxuW_j7UdMHkWu3ukBs1q_ROWDTGc"
+            // const id = "639933cb4d9f1d5a2e0d3863"
+            // const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOTkzM2NiNGQ5ZjFkNWEyZTBkMzg2MyIsInJvbGUiOiJDb21wYW55IiwiaWF0IjoxNjcwOTg0NjUxLCJleHAiOjE2NzEwNzEwNTF9.Xvg6wksp4_5VoxwxuW_j7UdMHkWu3ukBs1q_ROWDTGc"
             const response = await updateCompany(id, data, token);
 
             if (response.status === 200) {
                 if (userType === "company")
                 router.push(
-                    "/company/dashboard?id=6395ca209bd7d4cf001e0bf9&token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOTVjYTIwOWJkN2Q0Y2YwMDFlMGJmOSIsInJvbGUiOiJDb21wYW55IiwiaWF0IjoxNjcwOTA0ODA0LCJleHAiOjE2NzA5OTEyMDR9.4BoXsrThIdlDaAMgGh9Yx86aryDdigQ3EebmYLFEpSY"
+                    `/company/dashboard?id=${response.user}&token=${response.token}`
                 );
                 return;
             }
