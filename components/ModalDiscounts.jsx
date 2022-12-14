@@ -25,11 +25,7 @@ export default function CreateDiscount (){
       <section className={clsx("bg-white w-[680px] h-[812px] rounded-[16px] border-2 border-blue-sky-50 shadow-xl p-5 mr-10 absolute flex flex-col ")}>
         <div>
           <article>
-<<<<<<< HEAD
-            <h1 className={clsx("mt-[13px] text-[20px] font-montserrat text-blue-600 max-lg:ml-[3px]")}>Crea un descuento</h1>
-=======
             <h1 className={clsx("mt-[13px] text-[20px] font-montserrat text-blue-gray-900 max-lg:ml-[3px]")}>Crea un descuento</h1>
->>>>>>> abc22717feff6e0e4f28d2eaa14db321f422cf87
           </article>
           <article className=" ">
             <label className={clsx(
