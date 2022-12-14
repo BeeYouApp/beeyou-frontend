@@ -329,7 +329,7 @@ export default function AutofillForm() {
                 placeholder="Busca tu espacio"
                 autoComplete="address-line1"
                 id="mapbox-autofill"
-                // {...register("calle")}
+              // {...register("calle")}
               />
             </AddressAutofill>
             {!showFormExpanded &&
@@ -403,7 +403,7 @@ export default function AutofillForm() {
             {/* Visual confirmation map */}
             <div
               id="minimap-container"
-              className="mt-2 relative w-[300px] h-[200px]"
+              className="mt-2  w-[300px] h-[200px]"
             >
               <AddressMinimap
                 canAdjustMarker={true}
