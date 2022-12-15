@@ -1,6 +1,6 @@
 import clsx from "clsx";
-import Navbar from "../../components/Navbar";
-import Register from "../../components/RegisterCompany";
+import Navbar from "../components/Navbar";
+import Register from "../components/Register";
 import React, { useState } from "react";
 
 export default function RegisterPage(props) {

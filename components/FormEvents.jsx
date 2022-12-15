@@ -22,7 +22,7 @@ const schema = yup.object().shape({
     .min(10, "requerido minimo 10 caracteres")
     .max(300, "requerido maximo 300 caracteres"),
   // images: yup.string().trim().required("campo requerido"),
-});
+});aceptar
 
 export default function EventsModalBiz() {
   const {

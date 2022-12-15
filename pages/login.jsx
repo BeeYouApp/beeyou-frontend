@@ -1,9 +1,9 @@
 import clsx from "clsx";
 import React, { useState } from "react";
-import Navbar from "../../components/Navbar";
-import Login from "../../components/LoginCompany";
+import Navbar from "../components/Navbar";
+import Login from "../components/Login";
 
-export default function RegisterPage(props) {
+export default function LoginPage(props) {
   
   const [token, setToken] = useState(null);
   

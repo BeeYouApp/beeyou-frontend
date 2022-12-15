@@ -1,6 +1,6 @@
-import Navbar from "../components/Navbar";
+import Navbar from "../../components/Navbar";
 import clsx from "clsx";
-import Notice from "../components/Notice";
+import Notice from "../../components/Notice";
 
 export default function ConfigProfile(){
   return(
@@ -23,4 +23,3 @@ export default function ConfigProfile(){
   </>
   )
 }
-
