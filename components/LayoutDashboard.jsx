@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import Sidebar from "./Sidebar";
 
-export default function LayautDashboard({ children, style }) {
+export default function LayoutDashboard({ children, style }) {
   return (
     <>
       <aside className={clsx("inline-flex h-screen w-1/6 max-xl:w-[0px] border-r-4")}>

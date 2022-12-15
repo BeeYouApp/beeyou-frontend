@@ -16,7 +16,7 @@ export default function CardCompany({title, image, stars, description, TagSectio
 						</button>
 					</div>
 						{image}
-						<button className="w-[197px] h-[26px] bg-blue-gray-900 -mt-6 absolute text-[12px] text-[#FFFF] rounded-b-[10px] font-montserrat hover:font-bold">VER MAS</button>
+						<button className="w-[197px] h-[26px] bg-blue-gray-900 -mt-6 absolute text-[12px] text-[#FFFF] rounded-b-[10px] font-montserrat hover:font-bold">VER MÁS</button>
 					</article>
 					<section className="px-4 py-5 font-montserrat w-[360px]">
 							<article className="flex">
@@ -38,8 +38,6 @@ export default function CardCompany({title, image, stars, description, TagSectio
 								{TagSection}
 						</section>
 				</section>
-	</>
-
-
+		</>
     )
 }
