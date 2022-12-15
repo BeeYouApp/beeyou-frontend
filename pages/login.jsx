@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
-import LoginCompany from "../components/LoginCompany";
+import Login from "../components/Login";
 
 export default function LoginPage(props) {
   
@@ -20,7 +20,7 @@ export default function LoginPage(props) {
         <p className={clsx("font-poppins font-normal leading-[21px] text-blue-gray-900 text-[14px] mt-3")}>
           Encuenta tu espacio en Ciudad de México
         </p>
-        <LoginCompany token={token} setToken={setToken}/>
+        <Login token={token} setToken={setToken}/>
       </main>
     </>
   );

@@ -19,7 +19,7 @@ const loginSchema = yup.object({
       .required("Contraseña requerida"),
 }).required()
 
-export default function LoginCompany(props) {
+export default function Login(props) {
   const [messageError, setMessageError] = useState(false);
   const [userType] = useState("user");
   const router = useRouter();

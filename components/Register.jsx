@@ -25,7 +25,7 @@ const registerSchema = yup.object({
       .required("Confirmar contraseña es requerido"),
   }).required()
 
-export default function RegisterCompany({ }) {
+export default function Register({ }) {
   const [messageError, setMessageError] = useState("");
   const [userType, setUserType] = useState("user");
   const router = useRouter();
@@ -169,7 +169,7 @@ export default function RegisterCompany({ }) {
                             "bg-[#F6F9FF] hover:border-violet-700 border-2",
                             "focus:outline-none focus:shadow-outline"
                         )}
-                        id="password"
+                        id="confirmPassword"
                         name="password"
                         type="password"
                         {...register("confirmPassword")}
@@ -188,7 +188,7 @@ export default function RegisterCompany({ }) {
                     </button>
             </form>
 
-            <Image src={images.dividerIcon} className={clsx("mt-8 mb-6")} />
+            <Image src={images.dividerIcon} className={clsx("mt-8 mb-6")} alt="Split Icon" />
             <p className={clsx(
                     "text-center font-poppins font-normal leading-[18px] mb-4 w-[280px]",
                     "text-blue-gray-400 text-[12px]"
