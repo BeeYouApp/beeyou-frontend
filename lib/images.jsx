@@ -45,6 +45,8 @@ import profilePicture from "../public/assets/dashboard/profilePicture.png";
 import streakIcon from "../public/assets/dashboard/icon-streak.svg";
 import favNotFilledIcon from "../public/assets/dashboard/icon-favorite-not-filled.svg";
 import savePlacesIcon from "../public/assets/dashboard/icon-save-places.svg";
+import planProIcon from "../public/assets/dashboard/icon-plan-pro.svg";
+import metricsIcon from "../public/assets/dashboard/icon-metrics.svg";
 import dividerIcon from "../public/assets/dashboard/figure-divider.svg";
 import figureChangePlan from "../public/assets/dashboard/figure-change-plan.png";
 import figureBussines from "../public/assets/dashboard/figure-business.webp";
@@ -102,6 +104,8 @@ export const images = {
   streakIcon,
   favNotFilledIcon,
   savePlacesIcon,
+  planProIcon,
+  metricsIcon,
   dividerIcon,
   figureChangePlan,
   figureBussines,
