@@ -1,7 +1,6 @@
 import clsx from "clsx";
 import Image from "next/image";
 import { images } from "../lib/images";
-import Link from "next/link";
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 import { ToastContainer, toast } from "react-toastify";
@@ -34,16 +33,14 @@ export default function LoginCompany(props) {
   const submitLogin = async (data) => {
     try {
         setMessageError("");
-        console.log(data);
         const { email, password } = data
         const response = await login(email, password)
         const dataJson = await response.json()
-        console.log(response)
-        console.log(dataJson)
     
         if (response.status === 200) {
-            if(userType === "user") router.push(`/user/dashboard?id=${response.user}&token=${response.token}`)
-            if(userType === "company") router.push(`/company/dashboard?id=${response.user}&token=${response.token}`)
+            localStorage.setItem("token", dataJson.token);
+            if(userType === "user") router.push(`/user/dashboard`)
+            else if(userType === "company") router.push(`/company/dashboard`)
             return
         }
         setMessageError("Ya existe un usuario con este correo")
