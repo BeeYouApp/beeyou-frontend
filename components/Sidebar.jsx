@@ -35,11 +35,11 @@ const MobileSidebar = ({ closeSidebar, logout }) => {
             </Link>
           </div>
         </section>
-        <button 
+        <button
           className={clsx("h-[25px] w-[215px] bg-blue-gray-50 rounded-lg font-medium font-montserrat flex justify-center items-center cursor-pointer hover:underline m-4 p-4 text-blue-gray-900")}
           onClick={logout}
           type="reset">
-            Cerrar sesión
+          Cerrar sesión
         </button>
         <section>
           <ul className={clsx("text-blue-gray-500 text-montserrat font-light text-[16px] leading-[24px] w-128 p-2")}>
@@ -101,7 +101,7 @@ const MobileSidebar = ({ closeSidebar, logout }) => {
               </p>
               <p className={clsx("font-montserrat font-normal text-[14px] leading-[17px] text-blue-gray-600 max-w-[90px] ml-3 text-start")}>
                 a tu espacio seguro!
-                </p>
+              </p>
             </div>
             <div>
               <Image src={images.friendsFigure} alt="Friends Figure" />
@@ -118,7 +118,7 @@ export default function Sidebar() {
   const closeSidebar = () => {
     setIsMobileSidebarOpen(false);
   };
- 
+
   function logout() {
     localStorage.clear()
     router.reload()
@@ -126,116 +126,116 @@ export default function Sidebar() {
 
   const router = useRouter();
   if (typeof window !== "undefined") {
-      return (
-        <>
-          <nav className={clsx("w-[247px] p-4 max-xl:hidden")}>
-            <section className={clsx("flex justify-center mt-6")}>
+    return (
+      <>
+        <nav className={clsx("w-[247px] p-4 max-lg:hidden")}>
+          <section className={clsx("flex justify-center mt-6")}>
+            <Image src={images.beeyouLogo} alt="Bee You Logo" />
+          </section>
+          <section className={clsx("h-[76px] w-[215px] bg-blue-gray-50 text-center rounded-lg flex m-4 mt-7")}>
+            <div className={clsx("w-1/4 ml-5 m-auto")}>
+              <div className={clsx("h-10 w-10 bg-[#EFD16B] rounded-full")}></div>
+            </div>
+            <div className={clsx("w-3/4 mb-auto mt-auto -ml-5 cursor-pointer hover:underline")}>
+              <Link href="/user/profile-configuration">
+                <p className={clsx("text-base font-poppins font-medium text-blue-gray-900")}>
+                  Víctor Torres
+                </p>
+                <p className={clsx("text-[12px] leading-[15px] font-medium font-montserrat text-blue-gray-500")}>
+                  friend
+                </p>
+              </Link>
+            </div>
+          </section>
+          <button
+            className={clsx("h-[25px] w-[215px] bg-blue-gray-50 rounded-lg font-medium font-montserrat flex justify-center items-center cursor-pointer hover:underline m-4 p-4 text-blue-gray-900")}
+            onClick={logout}
+            type="reset">
+            Cerrar sesión
+          </button>
+          <h3 className={clsx("text-xs text-blue-gray-600 font-bold pl-7 pt-8")}>
+            GENERAL
+          </h3>
+          <section>
+            <ul className={clsx("text-blue-gray-500 text-montserrat font-light text-[16px] leading-[24px] w-128 p-2")}>
+              <Link href="/user/dashboard">
+                <li className={clsx("mt-3 h-10 pl-7 pt-1 hover:bg-yellow-100 hover:text-[#BA9E3A] rounded-lg hover:text-lg")}>
+                  <Image
+                    className={clsx("inline-flex mr-4")}
+                    src={images.homeIcon}
+                    alt="Home Icon"
+                  />
+                  Inicio
+                </li>
+              </Link>
+              <Link href="/user/events">
+                <li className={clsx("mt-3 h-10 pl-7 pt-1 hover:bg-yellow-100 hover:text-[#BA9E3A] rounded-lg hover:text-lg")}>
+                  <Image
+                    className={clsx("inline-flex mr-4 hover:file:bg-violet-100")}
+                    src={images.eventsIcon}
+                    alt="Events Icon"
+                  />
+                  Eventos
+                </li>
+              </Link>
+              <Link href="/user/places">
+                <li className={clsx("mt-3 h-10 pl-7 pt-1 hover:bg-yellow-100 hover:text-[#BA9E3A] rounded-lg hover:text-lg")}>
+                  <Image
+                    className={clsx("inline-flex mr-4 selection:text-fuchsia-900")}
+                    src={images.placesIcon}
+                    alt="Places Icon"
+                  />
+                  Espacios
+                </li>
+              </Link>
+              <Link href="/user/favorites">
+                <li className={clsx("mt-3 h-10 pl-7 pt-1 hover:bg-yellow-100 hover:text-[#BA9E3A] rounded-lg hover:text-lg")}>
+                  <Image
+                    className={clsx("inline-flex mr-4 hover:fill-[#BA9E3A]")}
+                    src={images.favoriteIcon}
+                    alt="My Favorites Icon"
+                  />
+                  Mis Favoritos
+                </li>
+              </Link>
+            </ul>
+          </section>
+          <section className={clsx("block justify-center lgbtiq-grad-bg w-[217px] h-[108px] rounded-lg pl-[1px] pt-[1px] mt-11")}>
+            <section className={clsx("bg-yellow-100 text-center rounded-lg flex items-end w-[215px] h-[106px]")}>
+              <div className={clsx("m-auto")}>
+                <p className={clsx("font-poppins font-medium text-[16px] leading-[17px] text-blue-gray-800 ml-3")}>
+                  ¡Bienvenid@
+                </p>
+                <p className={clsx("font-montserrat font-normal text-[14px] leading-[17px] text-blue-gray-600 max-w-[90px] ml-3 text-start")}>
+                  a tu espacio seguro!
+                </p>
+              </div>
+              <div>
+                <Image src={images.friendsFigure} alt="Friends Figure" />
+              </div>
+            </section>
+          </section>
+        </nav>
+        <nav className={clsx("bg-[#ffffff] shadow-lg h-[60px] flex justify-between fixed top-0 w-full space-x-10 sppace-y-4 lg:hidden")}>
+          {isMobileSidebarOpen && (
+            <MobileSidebar closeSidebar={closeSidebar} logout={logout} />
+          )}
+          <div className={clsx("flex items-center pl-6")}>
+            <Link href="#">
               <Image src={images.beeyouLogo} alt="Bee You Logo" />
-            </section>
-            <section className={clsx("h-[76px] w-[215px] bg-blue-gray-50 text-center rounded-lg flex m-4 mt-7")}>
-              <div className={clsx("w-1/4 ml-5 m-auto")}>
-                <div className={clsx("h-10 w-10 bg-[#EFD16B] rounded-full")}></div>
-              </div>
-              <div className={clsx("w-3/4 mb-auto mt-auto -ml-5 cursor-pointer hover:underline")}>
-                <Link href="/user/profile-configuration">
-                  <p className={clsx("text-base font-poppins font-medium text-blue-gray-900")}>
-                    Víctor Torres
-                  </p>
-                  <p className={clsx("text-[12px] leading-[15px] font-medium font-montserrat text-blue-gray-500")}>
-                    friend
-                  </p>
-                </Link>
-              </div>
-            </section>
-            <button
-              className={clsx("h-[25px] w-[215px] bg-blue-gray-50 rounded-lg font-medium font-montserrat flex justify-center items-center cursor-pointer hover:underline m-4 p-4 text-blue-gray-900")}
-              onClick={logout}
-              type="reset">
-                Cerrar sesión
-            </button>
-            <h3 className={clsx("text-xs text-blue-gray-600 font-bold pl-7 pt-8")}>
-              GENERAL
-            </h3>
-            <section>
-              <ul className={clsx("text-blue-gray-500 text-montserrat font-light text-[16px] leading-[24px] w-128 p-2")}>
-                <Link href="/user/dashboard">
-                  <li className={clsx("mt-3 h-10 pl-7 pt-1 hover:bg-yellow-100 hover:text-[#BA9E3A] rounded-lg hover:text-lg")}>
-                    <Image
-                      className={clsx("inline-flex mr-4")}
-                      src={images.homeIcon}
-                      alt="Home Icon"
-                    />
-                    Inicio
-                  </li>
-                </Link>
-                <Link href="/user/events">
-                  <li className={clsx("mt-3 h-10 pl-7 pt-1 hover:bg-yellow-100 hover:text-[#BA9E3A] rounded-lg hover:text-lg")}>
-                    <Image
-                      className={clsx("inline-flex mr-4 hover:file:bg-violet-100")}
-                      src={images.eventsIcon}
-                      alt="Events Icon"
-                    />
-                    Eventos
-                  </li>
-                </Link>
-                <Link href="/user/places">
-                  <li className={clsx("mt-3 h-10 pl-7 pt-1 hover:bg-yellow-100 hover:text-[#BA9E3A] rounded-lg hover:text-lg")}>
-                    <Image
-                      className={clsx("inline-flex mr-4 selection:text-fuchsia-900")}
-                      src={images.placesIcon}
-                      alt="Places Icon"
-                    />
-                    Espacios
-                  </li>
-                </Link>
-                <Link href="/user/favorites">
-                  <li className={clsx("mt-3 h-10 pl-7 pt-1 hover:bg-yellow-100 hover:text-[#BA9E3A] rounded-lg hover:text-lg")}>
-                    <Image
-                      className={clsx("inline-flex mr-4 hover:fill-[#BA9E3A]")}
-                      src={images.favoriteIcon}
-                      alt="My Favorites Icon"
-                    />
-                    Mis Favoritos
-                  </li>
-                </Link>
-              </ul>
-            </section>
-            <section className={clsx("block justify-center lgbtiq-grad-bg w-[217px] h-[108px] rounded-lg pl-[1px] pt-[1px] mt-11")}>
-              <section className={clsx("bg-yellow-100 text-center rounded-lg flex items-end w-[215px] h-[106px]")}>
-                <div className={clsx("m-auto")}>
-                  <p className={clsx("font-poppins font-medium text-[16px] leading-[17px] text-blue-gray-800 ml-3")}>
-                    ¡Bienvenid@
-                  </p>
-                  <p className={clsx("font-montserrat font-normal text-[14px] leading-[17px] text-blue-gray-600 max-w-[90px] ml-3 text-start")}>
-                    a tu espacio seguro!
-                  </p>
-                </div>
-                <div>
-                  <Image src={images.friendsFigure} alt="Friends Figure" />
-                </div>
-              </section>
-            </section>
-          </nav>
-          <nav className={clsx("bg-[#ffffff] shadow-lg h-[60px] flex justify-between fixed top-0 w-full space-x-10 sppace-y-4 xl:hidden")}>
-            {isMobileSidebarOpen && (
-              <MobileSidebar closeSidebar={closeSidebar} logout={logout}/>
-            )}
-            <div className={clsx("flex items-center pl-6")}>
-              <Link href="#">
-                <Image src={images.beeyouLogo} alt="Bee You Logo" />
-              </Link>
-            </div>
-            <div
-              className={clsx("px-4 cursor-pointer flex items-center")}
-              onClick={() => {setIsMobileSidebarOpen(true);}}>
-              <Link href="#">
-                <Image src={images.mobileIcon} alt="Mobile Menu Icon" />
-              </Link>
-            </div>
-          </nav>
-        </>
-      );
-    } else {
-      router.push(`/login`);
+            </Link>
+          </div>
+          <div
+            className={clsx("px-4 cursor-pointer flex items-center")}
+            onClick={() => { setIsMobileSidebarOpen(true); }}>
+            <Link href="#">
+              <Image src={images.mobileIcon} alt="Mobile Menu Icon" />
+            </Link>
+          </div>
+        </nav>
+      </>
+    );
+  } else {
+    router.push(`/login`);
   };
 };

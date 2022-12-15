@@ -165,8 +165,8 @@ export default function AutofillForm() {
               className="mt-2  w-[300px] h-[200px]"
             >
               <AddressMinimap
-                canAdjustMarker={true}
-                satelliteToggle={true}
+                canAdjustMarker
+                satelliteToggle
                 feature={feature}
                 show={showMinimap}
                 onSaveMarkerLocation={handleSaveMarkerLocation} />
