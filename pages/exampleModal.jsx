@@ -4,9 +4,6 @@ import FormEvents from "../components/FormEvents"
 
 export default function ExampleModal(){
     return(
-        
         <Modal></Modal>
-        // <FormEvents></FormEvents>
-
     )
 }
