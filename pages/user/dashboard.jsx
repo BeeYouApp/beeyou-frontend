@@ -2,8 +2,7 @@ import React, { Children } from "react";
 import Map from "../../components/Map";
 import { useRouter } from "next/router";
 import Button from "../../components/Button";
-import Layaut from "../../components/LayoutDashboard";
-import dynamic from "next/dynamic";
+import Layout from "../../components/LayoutDashboard";
 import CardCompany from "../../components/CardCompany";
 
 export default function Dashboard() {
@@ -11,10 +10,10 @@ export default function Dashboard() {
   if (typeof window !== 'undefined') {
     if (localStorage.getItem("token")) {
       return (
-        <Layaut>
+        <Layout>
           <section className="w-11/12 radaial-2 m-auto rounded-2xl ">
             <h1 className="text-4xl font-montserrat font-bold mb-10 mt-8">
-              Friendly espacios
+              Espacios friendly
             </h1>
             <Map></Map>
           </section>
@@ -45,7 +44,7 @@ export default function Dashboard() {
             ></Button>
           </section>
           <CardCompany></CardCompany>
-        </Layaut>
+        </Layout>
       );
     } else {
       router.push(`/login`);
