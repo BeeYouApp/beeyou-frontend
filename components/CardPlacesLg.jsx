@@ -107,7 +107,9 @@ export default function CardPlacesLg() {
               </h5>
             </div>
             <div className={clsx("max-w-[292px]")}>
-              <ButtonPurple>DEJAR UN COMENTARIO</ButtonPurple>
+              <ButtonPurple
+                label="DEJAR UN COMENTARIO">
+              </ButtonPurple>
             </div>
           </section>
           {/* 4TH SECTION */}
