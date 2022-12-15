@@ -1,4 +1,3 @@
-import React, { Children } from "react";
 import Map from "../../components/Map";
 import { useRouter } from "next/router";
 import Button from "../../components/Button";
@@ -11,16 +10,15 @@ export default function Dashboard() {
     if (localStorage.getItem("token")) {
       return (
           <Layout>
-              <>
                 <section className="w-11/12 radaial-2 m-auto rounded-2xl ">
-                  <h1 className="text-4xl font-montserrat font-bold mb-10 mt-8">
+                  {/* <h1 className="text-4xl font-montserrat font-bold mb-10 mt-8">
                     Espacios friendly
-                  </h1>
-                  <Map></Map>
+                  </h1> */}
+                  {/* <Map></Map> */}
                 </section>
-                <section className="w-11/12 m-auto mt-20 flex justify-between md:justify-around mb-10 ">
+                {/* <section className="w-11/12 m-auto mt-20 flex justify-between md:justify-around mb-10 ">
                   <Button
-                    label="Cafeterias"
+                    label="Cafeterías"
                     style="bg-gray-700 w-96 rounded-full"
                   ></Button>
                   <Button
@@ -32,7 +30,7 @@ export default function Dashboard() {
                     style="bg-gray-700 w-96 rounded-full"
                   ></Button>
                   <Button
-                    label="Librerias"
+                    label="Librerías"
                     style="bg-gray-700 w-96 rounded-full"
                   ></Button>
                   <Button
@@ -43,9 +41,8 @@ export default function Dashboard() {
                     label="Descuentos"
                     style="bg-gray-700 w-96 rounded-full max-lg:hidden"
                   ></Button>
-                </section>
-                <CardCompany></CardCompany>
-              </>
+                </section> */}
+                {/* <CardCompany></CardCompany> */}
           </Layout>
       );
     } else {
