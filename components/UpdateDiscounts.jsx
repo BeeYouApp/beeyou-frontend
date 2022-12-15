@@ -64,7 +64,7 @@ export default function UpdateDiscount (){
             <input
             htmlFor='name' 
             id='username'
-            type='string'
+            type='number'
             placeholder='10 %'
             message='error'
             register={register}
@@ -143,7 +143,7 @@ export default function UpdateDiscount (){
             <input
             htmlFor='name' 
             id='username'
-            type='string'
+            type='date'
             placeholder='17/01/2023'
             message='error'
             register={register}
@@ -168,7 +168,7 @@ export default function UpdateDiscount (){
           <input
           htmlFor='name'
           id='username'
-          type='string'
+          type='date'
           placeholder='18/01/2023'
           message='error'
           register={register}
@@ -192,7 +192,7 @@ export default function UpdateDiscount (){
           <input
           htmlFor='name' 
           id='username'
-          type='string'
+          type='time'
           placeholder='13:00 pm'
           message='error'
           register={register}
@@ -216,7 +216,7 @@ export default function UpdateDiscount (){
           <input
           htmlFor='name' 
           id='username'
-          type='string'
+          type='time'
           placeholder='23:00 pm'
           message='error'
           register={register}
