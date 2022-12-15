@@ -16,8 +16,7 @@ export default function LayautDashboard({ children, style }) {
           "absolute",
 
           { style }
-        )}
-      >
+        )}>
         {children}
       </main>
     </>
