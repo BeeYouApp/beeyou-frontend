@@ -36,10 +36,10 @@ const DynamicComponent = dynamic(() => import('./AutofillMap'), {
 });
 
 export default function BussinesForm() {
-    const [messageError, setMessageError] = useState("");
+    const [setMessageError] = useState("");
     const router = useRouter();
-    const { register, handleSubmit, formState: { errors }, } = useForm({
-        resolver: yupResolver(companyFormSchema),
+    const { register, handleSubmit, formState: { errors } } = useForm({
+        resolver: yupResolver(companyFormSchema)
     });
     const onSubmit = (data) => submitBusinessForm(data);
 
@@ -67,13 +67,7 @@ export default function BussinesForm() {
 
     return (
         <form
-            className={clsx(
-                "absolute flex flex-col",
-                "rounded-[16px] border-2 border-blue-sky-50",
-                "p-5 mr-10 max-lg:mr-[0px]",
-                "shadow-xl",
-                "w-[700px] max-lg:w-[340px]"
-            )}
+            className={clsx("absolute flex flex-col rounded-[16px] border-2 border-blue-sky-50 p-5 mr-10 max-lg:mr-[0px] shadow-xl w-[700px] max-lg:w-[340px]")}
             onSubmit={handleSubmit(onSubmit)}
         >
             <article>
@@ -93,7 +87,6 @@ export default function BussinesForm() {
                             name="brandName"
                             type="string"
                             placeholder="Ingresa el nombre de tu negocio*"
-                            style=""
                             register={register("brandName")}
                         >
                         </Input>
@@ -116,9 +109,7 @@ export default function BussinesForm() {
 
                 <section>
                     <article className={clsx("flexgrid-rows-2")}>
-                        <h3
-                            className={clsx("mt-[16px] mb-[10px] text-[16px] font-medium font-montserrat text-blue-gray-900 max-lg:ml-[3px]")}
-                        >
+                        <h3 className={clsx("mt-[16px] mb-[10px] text-[16px] font-medium font-montserrat text-blue-gray-900 max-lg:ml-[3px]")}>
                             Persona Moral
                         </h3>
                         <Input
@@ -144,7 +135,6 @@ export default function BussinesForm() {
                                 name="type"
                                 type="string"
                                 placeholder="Giro de tu negocio*"
-                                style=""
                                 register={register("type")}
                             >
                             </Input>
@@ -272,9 +262,7 @@ export default function BussinesForm() {
                     type="string"
                     className={clsx(
                         "text-[12px] font-montserrat font-medium text-blue-gray-500",
-                        "block ml-1 mt-3 mb-2"
-                    )}
-                >
+                        "block ml-1 mt-3 mb-2")}>
                     {" "}DIRECCIÓN DE TU NEGOCIO
                 </label>
                 <DynamicComponent></DynamicComponent>
@@ -283,11 +271,8 @@ export default function BussinesForm() {
 
             <article className={clsx("mt-16 inline-block")}>
                 <button
-                    className={clsx(
-                        "shadow-md lgbtiq-button cursor-pointer lgbtiq-grad-bg mt-8"
-                    )}
-                    type="submit"
-                >
+                    className={clsx("shadow-md lgbtiq-button cursor-pointer lgbtiq-grad-bg mt-8")}
+                    type="submit">
                     {"CONTINUAR"}
                 </button>
             </article>

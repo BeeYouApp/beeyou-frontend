@@ -45,14 +45,15 @@ export default function Register({ }) {
         setMessageError("");
         console.log(data);
         const { email, password } = data
-        const response = await signIn(email, password)
+        const response = await signIn(email, password, userType)
         const dataJson = await response.json()
         console.log(response)
         console.log(dataJson)
     
         if (response.status === 200) {
-            if(userType === "user") router.push(`/user/profile-configuration?id=${response.user}&token=${response.token}`)
-            if(userType === "company") router.push(`/company/profile-configuration?id=${response.user}&token=${response.token}`)
+            localStorage.setItem("token", dataJson.token);
+            if(userType === "user") router.push(`/user/profile-configuration`)
+            else if(userType === "company") router.push(`/company/profile-configuration`)
             return
         }
         setMessageError("Ya existe un usuario con este correo")
