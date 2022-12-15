@@ -1,12 +1,13 @@
 import {URL_BASE_API} from "./config"
 
 function updateCompany(id, newData, token) {
+  console.log(token)
     const URL = `${URL_BASE_API}/company/${id}`
     const options =  {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
-          "Autorization": token
+          "Authorization": token
         },
         mode: "cors",
         body: JSON.stringify(newData),
