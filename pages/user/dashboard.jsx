@@ -1,4 +1,4 @@
-import React, { Children } from "react";
+import React from "react";
 import Map from "../../components/Map";
 import { useRouter } from "next/router";
 import Button from "../../components/Button";
@@ -11,7 +11,7 @@ export default function Dashboard() {
     if (localStorage.getItem("token")) {
       return (
         <Layout>
-          <section className="w-11/12 radaial-2 m-auto rounded-2xl ">
+          <section className="w-11/12 radaial-2 m-auto rounded-2xl">
             <h1 className="text-4xl font-montserrat font-bold mb-10 mt-8">
               Espacios friendly
             </h1>
