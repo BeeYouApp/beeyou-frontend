@@ -3,12 +3,8 @@ import React from "react"
 import {useForm} from "react-hook-form"
 // import Input from "./Input"
 import { ToastContainer, toast } from "react-toastify"
-import ButtonPurple from "./ButtonPurple"
 // import { register } from "../lib/api";
 import Button from "./Button"
-import dateIcon from "../public/assets/dashboard/icon-date-gray-dark.svg";
-import closeClockIcon from "../public/assets/dashboard/icon-clock-close-gray-dark.svg";
-import openClockIcon from "../public/assets/dashboard/icon-clock-open-gray-dark.svg";
 
 export default function UpdateDiscount (){
   const {register,handleSubmit} = useForm()
@@ -22,7 +18,7 @@ export default function UpdateDiscount (){
 }
   return(
     <div>
-      <section className={clsx("bg-white w-[680px] h-[812px] rounded-[16px] border-2 border-blue-sky-50 shadow-xl p-5 mr-10 absolute flex flex-col ")}>
+      <section className={clsx("bg-white w-[680px] rounded-[16px] border-2 border-blue-sky-50 shadow-xl p-5 mr-10 absolute flex flex-col ")}>
         <div>
           <article>
             <h1 className={clsx("mt-[13px] text-[20px] font-montserrat text-blue-gray-600 max-lg:ml-[3px]")}>Actualizar descuento</h1>
@@ -30,9 +26,7 @@ export default function UpdateDiscount (){
           <article className=" ">
             <label className={clsx(
             'text-[10px] font-montserrat font-medium text-blue-gray-500',
-            'block ml-1 mt-1',
-            )}
-            >
+            'block ml-1 mt-1')}>
             EJEMPLO
             </label>
             <input
@@ -44,24 +38,21 @@ export default function UpdateDiscount (){
             register={register}
             className={clsx(
             "shadow mt-[8px] appearance-none border w-[300px] h-[40px]",
-            "rounded-lg py-2 px-3 text-blue-gray-50",
+            "rounded-lg py-2 px-2 text-blue-gray-50",
             "bg-[#F6F9FF] hover:border-violet-700 border-2",
-            "focus:outline-none focus:shadow-outline"
-            )}>
+            "focus:outline-none focus:shadow-outline")}>
             </input>
           </article>
         </div>
-        <div className="flex inline-flex rounded-lg py-2 px-3 text-gray-700 border shadow mt[8px] w-[616px] h-[132px] mt-5">
-          <article className=" ">
-          <div class="flex items-center mb-4">
-          <input id="default-checkbox" type="checkbox" value="" class="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
-          <label for="default-checkbox" class="ml-2 rounded-lg py-2 px-3 text-gray-400">Rápido</label>
-          </div>
+        <div className="flex inline-flex rounded-lg py-2 px-3 text-gray-700 border shadow w-[616px] h-[132px] mt-5">
+          <article className="">
+            <div class="flex items-center">
+              <input id="green-checkbox" type="checkbox" value="" class="w-4 h-4 text-green-600 bg-gray-100 rounded border-gray-300 focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
+              <label for="green-checkbox" class="ml-2 rounded-lg py-2 px-3 text-gray-400">Rápido</label>
+            </div>
             <label className={clsx(
             'text-[10px] font-montserrat font-medium text-blue-gray-500',
-            'block ml-1 mt-1',
-            )}
-            >
+            'block ml-1 mb')}>
             PORCENTAJE DE DESCUENTO
             </label>
             <input
@@ -72,20 +63,17 @@ export default function UpdateDiscount (){
             message='error'
             register={register}
             className={clsx(
-            "shadow mt-[8px] appearance-none border w-[176px] h-[40px]",
+            "shadow mt-[8px] appearance-none border w-[176px] h-[40px] pl-16",
             "rounded-lg py-2 px-3 text-gray-700",
             "bg-[#F6F9FF] hover:border-violet-700 border-2",
-            "focus:outline-none focus:shadow-outline"
-            )}>
+            "focus:outline-none focus:shadow-outline")}>
             </input>
           </article>
-          <p className="rounded-lg py-2 px-3 text-gray-400 mt-16">de descuento en</p>
+          <p className="rounded-lg py-2 px-3 text-gray-400 mt-16">% de descuento en</p>
           <article className=" ">
             <label className={clsx(
             'text-[10px] font-montserrat font-medium text-blue-gray-500',
-            'block ml-1 mt-11',
-            )}
-            >
+            'block ml-1 mt-11')}>
             DESCRIPCIÓN DEL DESCUENTO/PROMOCIÓN
             </label>
             <input
@@ -99,19 +87,19 @@ export default function UpdateDiscount (){
             "shadow mt-[8px] appearance-none border w-[250px] h-[40px]",
             "rounded-lg py-2 px-3 text-gray-700",
             "bg-[#F6F9FF] hover:border-violet-700 border-2",
-            "focus:outline-none focus:shadow-outline"
-            )}>
+            "focus:outline-none focus:shadow-outline")}>
             </input>
           </article>
         </div>
-        <div className="flex inline-flex rounded-lg py-2 px-3 text-gray-700 border shadow mt[8px] w-[616px] h-[132px] mt-5">
+        <div className="flex inline-flex rounded-lg py-2 px-3 text-gray-700 border shadow w-[616px] h-[132px] mt-5">
           <article className=" ">
-            <p className="rounded-lg py-2 px-3 text-gray-400">Custom</p>
+            <div class="flex items-center">
+              <input id="green-checkbox" type="checkbox" value="" class="w-4 h-4 text-green-600 bg-gray-100 rounded border-gray-300 focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
+              <label for="green-checkbox" class="ml-2 rounded-lg py-2 px-3 text-gray-400">Custom</label>
+            </div>
             <label className={clsx(
             'text-[10px] font-montserrat font-medium text-blue-gray-500',
-            'block ml-1 mt-1',
-            )}
-            >
+            'block ml-1 mt-1')}>
             DESCRIPCIÓN DEL DESCUENTO/PROMOCIÓN
             </label>
             <input
@@ -125,8 +113,7 @@ export default function UpdateDiscount (){
             "shadow mt-[8px] appearance-none border w-[584px] h-[40px]",
             "rounded-lg py-2 px-3 text-gray-700",
             "bg-[#F6F9FF] hover:border-violet-700 border-2",
-            "focus:outline-none focus:shadow-outline"
-            )}>
+            "focus:outline-none focus:shadow-outline")}>
             </input>
           </article>
         </div>
@@ -138,15 +125,13 @@ export default function UpdateDiscount (){
           <article >
             <label className={clsx(
             'text-[10px] font-montserrat font-medium text-blue-gray-500',
-            'block ml-1 mt-1',
-            )}
-            >
-            FECHA DE INICIO
+            'block ml-1 mt-1')}>
+            FECHA Y HORA DE INICIO
             </label>
             <input
             htmlFor='name' 
             id='username'
-            type='date'
+            type='datetime-local'
             placeholder='17/01/2023'
             message='error'
             register={register}
@@ -154,24 +139,20 @@ export default function UpdateDiscount (){
               "shadow mt-[8px] appearance-none border w-[300px] h-[40px]",
               "rounded-lg py-2 px-3 text-gray-700",
               "bg-[#F6F9FF] hover:border-violet-700 border-2",
-              "focus:outline-none focus:shadow-outline"
-            )}>
+              "focus:outline-none focus:shadow-outline")}>
             </input>
-            <dateIcon/>
           </article>
         </div>
         <article className="m-4 inline-block">
           <label className={clsx(
           'text-[10px] font-montserrat font-medium text-blue-gray-500',
-          'block ml-1 mt-1',
-          )}
-          >
-          FECHA DE FIN
+          'block ml-1 mt-1')}>
+          FECHA Y HORA DE TERMINO
           </label>
           <input
           htmlFor='name'
           id='username'
-          type='date'
+          type='datetime-local'
           placeholder='18/01/2023'
           message='error'
           register={register}
@@ -179,58 +160,8 @@ export default function UpdateDiscount (){
             "shadow mt-[8px] appearance-none border w-[300px] h-[40px]",
             "rounded-lg py-2 px-3 text-gray-700",
             "bg-[#F6F9FF] hover:border-violet-700 border-2",
-            "focus:outline-none focus:shadow-outline"
-          )}>
+            "focus:outline-none focus:shadow-outline")}>
           </input>
-          <dateIcon></dateIcon>
-        </article>
-        <article className=" inline-block">
-          <label className={clsx(
-          'text-[10px] font-montserrat font-medium text-blue-gray-500',
-          'block ml-1 mt-1',
-          )}
-          >
-          HORA DE INICIO
-          </label>
-          <input
-          htmlFor='name' 
-          id='username'
-          type='time'
-          placeholder='13:00 pm'
-          message='error'
-          register={register}
-          className={clsx(
-            "shadow mt-[8px] appearance-none border w-[300px] h-[40px]",
-            "rounded-lg py-2 px-3 text-gray-700",
-            "bg-[#F6F9FF] hover:border-violet-700 border-2",
-            "focus:outline-none focus:shadow-outline"
-          )}>
-          </input>
-          <openClockIcon></openClockIcon>
-        </article>
-        <article className="m-4 inline-block">
-          <label className={clsx(
-          'text-[10px] font-montserrat font-medium text-blue-gray-500',
-          'block ml-1 mt-1',
-          )}
-          >
-          HORA DE FIN
-          </label>
-          <input
-          htmlFor='name' 
-          id='username'
-          type='time'
-          placeholder='23:00 pm'
-          message='error'
-          register={register}
-          className={clsx(
-            "shadow mt-[8px] appearance-none border w-[300px] h-[40px]",
-            "rounded-lg py-2 px-3 text-gray-700",
-            "bg-[#F6F9FF] hover:border-violet-700 border-2",
-            "focus:outline-none focus:shadow-outline"
-          )}>
-          </input>
-          <closeClockIcon></closeClockIcon>
         </article>
       </div>
     
@@ -242,8 +173,7 @@ export default function UpdateDiscount (){
           label='ACTUALIZAR DESCUENTO'
           isSubmit
           style={clsx(
-            "lgbtiq-grad-bg rounded-lg max-lg:mt-[10px]"
-          )}>
+            "lgbtiq-grad-bg rounded-lg max-lg:mt-[10px] ")}>
         </Button>
       </div>
     </section>
