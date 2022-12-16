@@ -1,10 +1,10 @@
 import clsx from "clsx";
-import React from "react";
-import ButtonPurple from "./ButtonPurple";
 import { useForm } from "react-hook-form";
+import React, { useState } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import Button from "./Button";
+import { createEvent } from "../services/events";
+import { useRouter } from "next/router";
 
 
 const schema = yup.object().shape({
@@ -25,25 +25,47 @@ const schema = yup.object().shape({
 });
 
 export default function EventsModalBiz() {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm({
+  const [messageError, setMessageError] = useState("");
+  const router = useRouter();
+
+  const { register, handleSubmit, formState: { errors } } = useForm({
     resolver: yupResolver(schema),
   });
-  // console.log('Errores en el form:')
-  // console.log(errors)
-  const onSubmit = (data) => {
-    try {
+  const onSubmit = (data) => submitRegister(data)
+/*     try {
       console.log('Creando evento...')
       console.log(data)
 
     } catch (error) {
       console.log('Error:', error)
-    }
+    } */
     
-  }
+  
+  const submitRegister = async (data) => {
+    try {
+      setMessageError("");
+      console.log(data);
+      const { name, topic, timeStart, timeEnd, cost, capacity, description } = data
+      const response = await createEvent(name, topic, timeStart, timeEnd, cost, capacity, description)
+      const dataJson = await response.json()
+      console.log(response)
+      console.log(dataJson)
+
+      if (response.status === 200) {
+        router.push(`/company/events?id=${response.user}&token=${response.token}`)
+        return
+    }
+    setMessageError("Ya existe un usuario con este correo")
+
+    } catch (error) {
+      console.log('Error: ', error)
+      setMessageError("Ops ocurrió un error")
+    }
+  } 
+
+
+
+
 
   return (
     <form

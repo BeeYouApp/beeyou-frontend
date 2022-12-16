@@ -1,6 +1,6 @@
 import {URL_BASE_API} from "./config"
 
-function createEvet(name, date, topic, timeStart, timeEnd, haveCost, cost, capacity, description, images, keyImages) {
+function createEvent(name, topic, timeStart, timeEnd, cost, capacity, description) {
     const URL = `${URL_BASE_API}/events`
     const options =  {
         method: "POST",
@@ -8,7 +8,7 @@ function createEvet(name, date, topic, timeStart, timeEnd, haveCost, cost, capac
           "Content-Type": "application/json",
         },
         mode: "cors",
-        body: JSON.stringify({ name, date, topic, timeStart, timeEnd, haveCost, cost, capacity, description, images, keyImages }),
+        body: JSON.stringify({ name, topic, timeStart, timeEnd, cost, capacity, description}),
       }
     return fetch(URL, options) // regresa una promesa
 }
@@ -29,6 +29,6 @@ function updateEvents(id, newData, token) {
 
 
 export {
-    createEvet,
+    createEvent,
     updateEvents
   }
