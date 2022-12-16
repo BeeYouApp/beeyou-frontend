@@ -36,7 +36,7 @@ const DynamicComponent = dynamic(() => import('./AutofillMap'), {
 });
 
 export default function BussinesForm() {
-    const [setMessageError] = useState("");
+    const [messageError, setMessageError] = useState("");
     const router = useRouter();
     const { register, handleSubmit, formState: { errors } } = useForm({
         resolver: yupResolver(companyFormSchema)
@@ -273,7 +273,7 @@ export default function BussinesForm() {
                 <button
                     className={clsx("shadow-md lgbtiq-button cursor-pointer lgbtiq-grad-bg mt-8")}
                     type="submit">
-                    {"CONTINUAR"}
+                    CONTINUAR
                 </button>
             </article>
         </form>

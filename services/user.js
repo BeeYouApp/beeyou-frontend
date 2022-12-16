@@ -16,5 +16,5 @@ function updateUser(id, newData, token) {
 
 
 export {
-    updateUser
+  updateUser
   }

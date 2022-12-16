@@ -7,31 +7,30 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { updateUser } from "../services/user";
 
-const personalFormSchema = yup
-  .object({
-    name: yup
+const personalFormSchema = yup.object({
+  name: yup
     .string()
     .required("Requerido"),
-    surname: yup
+  surname: yup
     .string()
     .required("Requerido"),
-    birthDate: yup
+  birthDate: yup
     .date()
     .required("Requerido"),
-    type: yup
+  gender: yup
     .string()
-    .required("Requerido"),
-    gender: yup
-      .string()
-  }).required();
+}).required();
 
 export default function PersonalForm() {
-  const [setMessageError] = useState("");
+  const [messageError, setMessageError] = useState("");
   const router = useRouter();
   const { register, handleSubmit, formState: { errors } } = useForm({
-    resolver: yupResolver(personalFormSchema) 
+    resolver: yupResolver(personalFormSchema)
   });
-  const onSubmit = (data) => submitPersonalForm(data);
+  const onSubmit = (data) => {
+    submitPersonalForm(data)
+    console.log("botton")
+  };
 
   const submitPersonalForm = async (data) => {
     console.log(data);
@@ -57,7 +56,7 @@ export default function PersonalForm() {
 
   return (
     <form
-      className={clsx("w-[680px] h-[362px] max-lg:w-[340px] max-lg:h-[560px] rounded-[16px] border-2 border-blue-sky-50 flex flex-col shadow-xl absolute p-5 mr-10 max-lg:mr-[0px]")}
+      className={clsx("absolute flex flex-col rounded-[16px] border-2 border-blue-sky-50 p-5 mr-10 max-lg:mr-[0px] shadow-xl w-[700px] max-lg:w-[340px]")}
       onSubmit={handleSubmit(onSubmit)}
     >
       <article>
@@ -96,7 +95,7 @@ export default function PersonalForm() {
             label="FECHA DE NACIMIENTO"
             id="birthDate"
             name="birthDate"
-            type="string"
+            type="date"
             placeholder="DD/MM/AAAA*"
             register={register("birthDate")}
           >
@@ -114,13 +113,14 @@ export default function PersonalForm() {
           <p>{errors?.gender?.message}</p>
         </article>
       </section>
-      <article className={clsx("mt-3 flex justify-end")}>
+      <article className={clsx("mt-16 inline-block")}>
         <button
           className={clsx("shadow-md lgbtiq-button cursor-pointer lgbtiq-grad-bg mt-8")}
           type="submit">
-          {"CONTINUAR"}
+          CONTINUAR
         </button>
       </article>
     </form>
   );
 }
+
