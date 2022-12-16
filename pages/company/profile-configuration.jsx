@@ -1,7 +1,12 @@
 import clsx from "clsx";
 import Navbar from "../../components/Navbar";
 import CardProfile from "../../components/CardProfile";
-import BussinesForm from "../../components/BussinesForm";
+// import BussinesForm from "../../components/BussinesForm";
+import dynamic from "next/dynamic";
+
+const DynamicComponent = dynamic(() => import('../../components/BussinesForm'), {
+  ssr: false,
+});
 
 export default function ConfigProfile() {
   return (
@@ -22,7 +27,7 @@ export default function ConfigProfile() {
           <CardProfile></CardProfile>
         </article>
         <article className={clsx("inline-flex w-8©/12 max-lg:w-full h-3/4 3 max-lg:h-[620px] pl-[40px] pt-[32px] max-lg:flex max-lg:justify-center max-lg:pl-[0px]")}>
-          <BussinesForm></BussinesForm>
+          <DynamicComponent></DynamicComponent>
         </article>
       </main>
     </>
