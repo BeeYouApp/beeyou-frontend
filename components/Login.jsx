@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import Link from "next/link";
 import Image from "next/image";
 import { images } from "../lib/images";
 import React, { useState } from "react";
@@ -7,48 +8,49 @@ import { ToastContainer, toast } from "react-toastify";
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
-import {login} from "../services/auth";
+import { login } from "../services/auth";
 
 const loginSchema = yup.object({
     email: yup
-      .string()
-      .email("Email inválido")
-      .required("Email requerido"),
+        .string()
+        .email("Email inválido")
+        .required("Email requerido"),
     password: yup
-      .string()
-      .required("Contraseña requerida"),
+        .string()
+        .required("Contraseña requerida"),
 }).required()
 
 export default function Login(props) {
-  const [messageError, setMessageError] = useState(false);
-  const [userType] = useState("user");
-  const router = useRouter();
+    const [messageError, setMessageError] = useState(false);
+    const [userType, setUserType] = useState("company");
+    const router = useRouter();
 
-  const { register, handleSubmit, formState:{ errors } } = useForm({
-    resolver: yupResolver(loginSchema)
-  });
+    const { register, handleSubmit, formState: { errors } } = useForm({
+        resolver: yupResolver(loginSchema)
+    });
 
-  const onSubmit = data => submitLogin(data);
+    const onSubmit = data => submitLogin(data);
 
-  const submitLogin = async (data) => {
-    try {
-        setMessageError("");
-        const { email, password } = data
-        const response = await login(email, password)
-        const dataJson = await response.json()
-    
-        if (response.status === 200) {
-            localStorage.setItem("token", dataJson.token);
-            if(userType === "user") router.push(`/user/dashboard`)
-            else if(userType === "company") router.push(`/company/dashboard`)
-            return
+    const submitLogin = async (data) => {
+        try {
+            setMessageError("");
+            const { email, password } = data
+            const response = await login(email, password)
+            const dataJson = await response.json()
+
+            if (response.status === 200) {
+                localStorage.setItem("token", dataJson.token);
+                console.log(dataJson)
+                if (userType === "user") router.push(`/user/dashboard`)
+                else if (userType === "company") router.push(`/company/dashboard`)
+                return
+            }
+            setMessageError("Ya existe un usuario con este correo")
+        } catch (error) {
+            console.log('Error: ', error)
+            setMessageError("Ops ocurrió un error")
         }
-        setMessageError("Ya existe un usuario con este correo")
-    } catch (error) {
-        console.log('Error: ', error)
-        setMessageError("Ops ocurrió un error")
-    }
-  };
+    };
 
     return (
         <article
@@ -91,7 +93,7 @@ export default function Login(props) {
                         <p className={clsx(
                             "font-poppins text-medium text-[12px] leading-[18px]",
                             "w-[100%] text-blue-gray-700")}>
-                           Contraseña
+                            Contraseña
                         </p>
                         {/* <p className={clsx(
                             "ont-poppins text-normal text-[12px] text-end leading-[18px]",
@@ -112,7 +114,7 @@ export default function Login(props) {
                     />
                     <p>{errors?.password?.message}</p>
                 </div>
-                <input 
+                <input
                     className={clsx("shadow-md lgbtiq-button lgbtiq-grad-bg mt-8")}
                     type="submit"
                     value="Iniciar sesión"
@@ -122,9 +124,11 @@ export default function Login(props) {
             <p className={clsx(
                 "text-end font-poppins font-medium leading-[18px] mb-4 w-[280px]",
                 "text-blue-gray-400 text-[12px] lgbtiq-grad-color")}>
-               ¿Has olvidado tu contraseña?
+                ¿Has olvidado tu contraseña?
             </p>
             <p className={clsx("text-center font-poppins font-medium leading-[18px] mb-6 lgbtiq-grad-color text-[12px]")}>
+                <Link href="/register">
+                </Link>
                 <span className={clsx("font-montserrat leading-[40px] text-yellow-900")}>
                     Publica tu negocio en{" "}
                 </span>
