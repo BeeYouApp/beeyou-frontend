@@ -7,7 +7,7 @@ export default function ContentOff(){
   return(
     <>
     <section>
-      <Image className="ml-6 w-[40px] h-[40px] inline-flex" src={images.nearEventIcon} alt="Icon Events " />
+      <Image className="ml-1 w-[40px] h-[40px] inline-flex" src={images.nearEventIcon} alt="Icon Events " />
       <h1 className="text-[20px] text-blue-gray-700 font-bold font-montserrat inline-flex">Mis descuentos publicados</h1>
       <section className="w-[508px] h-[320px] border-2 rounded-2xl mt-6 gap-6 flex justify-center items-center">
         <article className="flex flex-col">
