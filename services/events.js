@@ -1,6 +1,6 @@
 import {URL_BASE_API} from "./config"
 
-function createEvent(data, id, token) {
+function createEvent(data, token) {
     const URL = `${URL_BASE_API}/events`
     const options =  {
         method: "POST",
@@ -9,7 +9,7 @@ function createEvent(data, id, token) {
           "Authorization": token
         },
         mode: "cors",
-        body: JSON.stringify({ data, id}),
+        body: JSON.stringify( data ),
       }
     return fetch(URL, options) // regresa una promesa
 }

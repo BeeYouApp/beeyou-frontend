@@ -10,9 +10,9 @@ import { useRouter } from "next/router";
 const schema = yup.object().shape({
   name: yup.string().trim().required("campo requerido"),
   topic: yup.string().trim().required("campo requerido"),
-  timeStart: yup.date().required("campo requerido"),
-  timeEnd: yup.date().required("campo requerido"),
-/*   haveCost: yup.boolean().required("campo requerido").default(true), */
+  dateStart: yup.date().required("campo requerido"),
+  dateEnd: yup.date().required("campo requerido"),
+  haveCost: yup.boolean().required("campo requerido").default(true),
   cost: yup.number().required("campo requerido"),
   capacity: yup.number().required("campo requerido"),
   description: yup
@@ -38,13 +38,13 @@ export default function EventsModalBiz() {
       setMessageError("");
 
       const id = "639be1d1289c2e72639b9538"
-      const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOWJlMWQxMjg5YzJlNzI2MzliOTUzOCIsInJvbGUiOiJjb21wYW55IiwiaWF0IjoxNjcxMTY1NDA3LCJleHAiOjE2NzEyNTE4MDd9.DFXcnWxaKEGsCbjRnZSG95KdewIShwC2g7bReVnlamw"
+      const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOWJlMWQxMjg5YzJlNzI2MzliOTUzOCIsInJvbGUiOiJjb21wYW55IiwiaWF0IjoxNjcxMjYwMDA3LCJleHAiOjE2NzEzNDY0MDd9.DcWfFIPUU5vyyrhSQ6AQLTYmrm8PNlgETTtmzQOExBU"
 
 
       
       console.log(data);
 /*       const { name, topic, timeStart, timeEnd, cost, capacity, description } = data */
-      const response = await createEvent( data, id, token )
+      const response = await createEvent( data, token )
       const dataJson = await response.json()
       console.log(response)
       console.log(dataJson)
@@ -181,17 +181,16 @@ export default function EventsModalBiz() {
                 FECHA DE INICIO
             </label>
             <input
-              htmlFor="timeStart"
               id="username"
               type="datetime-local"
               placeholder="dd/mm/aaaa*"
-              {...register("timeStart")}
+              {...register("dateStart")}
               className={clsx(
                 "mt-[8px] appearance-none border w-[300px] h-[40px]",
                 "rounded-lg py-2 px-3 text-gray-700",
                 "bg-[#F6F9FF] hover:border-violet-700 border-2",
                 "focus:outline-none focus:shadow-outline")}/>
-            <p className="text-red-400 text-[10px] ml-1">{errors.timeStart?.message}</p>
+            <p className="text-red-400 text-[10px] ml-1">{errors.dateStart?.message}</p>
           </article>
         </div>
         <article className="m-4 inline-block">
@@ -205,13 +204,13 @@ export default function EventsModalBiz() {
             id="username"
             placeholder="dd/mm/aaaa*"
             type="datetime-local"
-            {...register("timeEnd")}
+            {...register("dateEnd")}
             className={clsx(
               "mt-[8px] appearance-none border w-[300px] h-[40px]",
               "rounded-lg py-2 px-3 text-gray-700",
               "bg-[#F6F9FF] hover:border-violet-700 border-2",
               "focus:outline-none focus:shadow-outline")}/>
-          <p className="text-red-400 text-[10px] ml-1">{errors.timeEnd?.message}</p>
+          <p className="text-red-400 text-[10px] ml-1">{errors.dateEnd?.message}</p>
         </article>
 
 
@@ -224,10 +223,19 @@ export default function EventsModalBiz() {
 
         <section className="inline-flex">
           <article className="flex w-[300px] justify-between items-center">
-            <input className="mr-2" name="costo" type="radio" />
-            <label className="mr-8"> Con costo </label>
-            <input className="" name="costo" type="radio" />
-            <label> Sin costo </label>
+          <input 
+            name="costo" 
+            type="radio" 
+            value="true"             
+            {...register("haveCost")} />
+          <label> Sin costo </label>
+          <input className="mr-2" 
+            name="costo" 
+            type="radio" 
+            value="false" 
+            {...register("haveCost")} />
+          <label className="mr-8">Con costo </label>
+
 {/*             <p  className="text-red-400 text-[10px] ml-1">{errors.timeEnd?.message}</p> */}
           </article>
           <article className="flex items-center">
@@ -253,7 +261,7 @@ export default function EventsModalBiz() {
             className={clsx(
               "text-[10px] font-montserrat font-medium text-blue-gray-500",
               "block ml-1 mt-2")}>
-            AFORO
+              AFORO
           </label>
           <input
             id="username"
@@ -278,3 +286,5 @@ export default function EventsModalBiz() {
     </form>
   )
 }
+
+
