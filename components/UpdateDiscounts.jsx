@@ -21,7 +21,7 @@ export default function UpdateDiscount (){
       <section className={clsx("bg-white w-[680px] rounded-[16px] border-2 border-blue-sky-50 shadow-xl p-5 mr-10 absolute flex flex-col ")}>
         <div>
           <article>
-            <h1 className={clsx("mt-[13px] text-[20px] font-montserrat text-blue-gray-600 max-lg:ml-[3px]")}>Crea un descuento</h1>
+            <h1 className={clsx("mt-[13px] text-[20px] font-montserrat text-blue-gray-600 max-lg:ml-[3px]")}>Actualizar descuento</h1>
           </article>
           <article className=" ">
             <label className={clsx(
@@ -38,7 +38,7 @@ export default function UpdateDiscount (){
             register={register}
             className={clsx(
             "shadow mt-[8px] appearance-none border w-[300px] h-[40px]",
-            "rounded-lg py-2 px-2 text-blue-gray-700",
+            "rounded-lg py-2 px-2 text-blue-gray-50",
             "bg-blue-gray-50 hover:border-violet-700 border-2",
             "focus:outline-none focus:shadow-outline")}>
             </input>
@@ -59,7 +59,7 @@ export default function UpdateDiscount (){
             htmlFor='name' 
             id='username'
             type='number'
-            placeholder='00'
+            placeholder='10 %'
             message='error'
             register={register}
             className={clsx(
@@ -80,7 +80,7 @@ export default function UpdateDiscount (){
             htmlFor='name' 
             id='username'
             type='string'
-            placeholder='Escribe una breve descripción'
+            placeholder='En todas las bebidas'
             message='error'
             register={register}
             className={clsx(
@@ -119,7 +119,7 @@ export default function UpdateDiscount (){
         </div>
         <div>
         <article>
-          <h2 className={clsx("mt-[30px] text-[20px] font-montserrat text-blue-gray-600 max-lg:ml-[3px]")}>Vigencia del descuento</h2>
+          <h2 className={clsx("mt-[30px] text-[20px] font-montserrat text-blue-gray-600 max-lg:ml-[3px]")}>Actualizar vigencia del descuento</h2>
         </article>
         <div className="inline-block"> 
           <article >
@@ -170,7 +170,7 @@ export default function UpdateDiscount (){
           CANCELAR
         </button>
         <Button
-          label='PUBLICAR DESCUENTO'
+          label='ACTUALIZAR DESCUENTO'
           isSubmit
           style={clsx(
             "lgbtiq-grad-bg rounded-lg max-lg:mt-[10px] ")}>
