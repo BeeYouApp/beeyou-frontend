@@ -1,21 +1,26 @@
 import clsx from "clsx"
 import React from "react"
 import {useForm} from "react-hook-form"
-// import Input from "./Input"
 import { ToastContainer, toast } from "react-toastify"
-// import { register } from "../lib/api";
 import Button from "./Button"
+import * as yup from 'yup';
 
+const SchemaDiscounts = yup.object().shape({
+  name: yup.string().required("Campo requerido").trim(),
+  // mealsDiscounts: yup.number(),
+  // beverageDiscounts: yup.number(),
+  // mealsDiscountsPorcentage: yup.number(),
+  // beverageDiscountsPorcentage: yup.number(),
+  // twoOnePromos: yup.string(),
+  // threeTwoPromos: yup.string(),
+  customsDiscounts: yup.string(),
+  initialDate: yup.date().required("Campo requerido"),
+  endDate: yup.date().required("Campo requerido"),
+  // company: yup.mongoose.Schema.Types.ObjectId.required("Campo requerido"),
+
+})
 export default function UpdateDiscount (){
-  const {register,handleSubmit} = useForm()
-  const onSubmit = async data => {
-  {console.log(data)}
-  const result = await register(data)
-  console.log("result:", result)
-  if(!result ){
-    toast.error("ups hubo un error")
-  } 
-}
+ 
   return(
     <div>
       <section className={clsx("bg-white w-[680px] rounded-[16px] border-2 border-blue-sky-50 shadow-xl p-5 mr-10 absolute flex flex-col ")}>
@@ -29,25 +34,20 @@ export default function UpdateDiscount (){
             'block ml-1 mt-1')}>
             EJEMPLO
             </label>
-            <input
-            htmlFor='name' 
-            id='username'
-            type='string'
-            placeholder='10% de descuento en todas las bebidas'
-            message='error'
-            register={register}
+            <div
             className={clsx(
             "shadow mt-[8px] appearance-none border w-[300px] h-[40px]",
             "rounded-lg py-2 px-2 text-blue-gray-700",
             "bg-blue-gray-50 hover:border-violet-700 border-2",
             "focus:outline-none focus:shadow-outline")}>
-            </input>
+              <p>10% de descuento en todas las bebidas</p>
+            </div>
           </article>
         </div>
         <div className="flex inline-flex rounded-lg py-2 px-3 text-gray-700 border shadow w-[616px] h-[132px] mt-5">
           <article className="">
             <div class="flex items-center">
-              <input id="green-checkbox" type="checkbox" value="" class="w-4 h-4 text-green-600 bg-gray-100 rounded border-gray-300 focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
+              <input id="green-radio" type="radio" value="" class="w-4 h-4 text-green-600 bg-gray-100 rounded border-gray-300 focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
               <label for="green-checkbox" class="ml-2 rounded-lg py-2 px-3 text-gray-400">Rápido</label>
             </div>
             <label className={clsx(
@@ -61,7 +61,6 @@ export default function UpdateDiscount (){
             type='number'
             placeholder='00'
             message='error'
-            register={register}
             className={clsx(
             "shadow mt-[8px] appearance-none border w-[176px] h-[40px] pl-16",
             "rounded-lg py-2 px-3 text-gray-700",
@@ -82,7 +81,6 @@ export default function UpdateDiscount (){
             type='string'
             placeholder='Escribe una breve descripción'
             message='error'
-            register={register}
             className={clsx(
             "shadow mt-[8px] appearance-none border w-[250px] h-[40px]",
             "rounded-lg py-2 px-3 text-gray-700",
@@ -108,7 +106,6 @@ export default function UpdateDiscount (){
             type='string'
             placeholder='Escribe una breve descripción'
             message='error'
-            register={register}
             className={clsx(
             "shadow mt-[8px] appearance-none border w-[584px] h-[40px]",
             "rounded-lg py-2 px-3 text-gray-700",
@@ -134,7 +131,6 @@ export default function UpdateDiscount (){
             type='datetime-local'
             placeholder='17/01/2023'
             message='error'
-            register={register}
             className={clsx(
               "shadow mt-[8px] appearance-none border w-[300px] h-[40px]",
               "rounded-lg py-2 px-3 text-gray-700",
@@ -155,7 +151,6 @@ export default function UpdateDiscount (){
           type='datetime-local'
           placeholder='18/01/2023'
           message='error'
-          register={register}
           className={clsx(
             "shadow mt-[8px] appearance-none border w-[300px] h-[40px]",
             "rounded-lg py-2 px-3 text-gray-700",
