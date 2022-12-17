@@ -39,7 +39,7 @@ export default function UpdateDiscount (){
             className={clsx(
             "shadow mt-[8px] appearance-none border w-[300px] h-[40px]",
             "rounded-lg py-2 px-2 text-blue-gray-50",
-            "bg-[#F6F9FF] hover:border-violet-700 border-2",
+            "bg-blue-gray-50 hover:border-violet-700 border-2",
             "focus:outline-none focus:shadow-outline")}>
             </input>
           </article>
