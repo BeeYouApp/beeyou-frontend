@@ -1,12 +1,13 @@
-import clsx from "clsx"
-import React, { useState } from "react"
-import {useForm} from "react-hook-form"
-import { ToastContainer, toast } from "react-toastify"
-import Button from "./Button"
+import clsx from "clsx";
+import React, { useState } from "react";
+import {useForm} from "react-hook-form";
+import { ToastContainer, toast } from "react-toastify";
+import Button from "./Button";
 import * as yup from 'yup';
-import { data } from "browserslist"
-import { useRouter } from "next/router"
-import { yupResolver } from "@hookform/resolvers/yup"; 
+import { data } from "browserslist";
+import { useRouter } from "next/router";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { createDiscount } from "../services/discount";
 
 const SchemaDiscounts = yup.object().shape({
   name: yup.string().required("Campo requerido").trim(),
@@ -22,39 +23,41 @@ const SchemaDiscounts = yup.object().shape({
   // company: yup.mongoose.Schema.Types.ObjectId.required("Campo requerido"),
 
 })
+
+
 export default function UpdateDiscount (){
-  const [messageError, setMessageError] = useState("")
-  const router = useRouter()
-  const {register, handleSubmit, formState: { error } } = useForm ({
-    resolver: yupResolver(SchemaDiscounts)
+  const [messageError, setMessageError] = useState("");
+  const router = useRouter();
+  const {register, handleSubmit, formState: { error },} = useForm ({
+    resolver: yupResolver(SchemaDiscounts),
   })
 
-  const onSubmit = (data) => submitRegister(data) 
-
+  const onSubmit = (data) => submitRegister(data);
+    
     const submitRegister = async (data) => {
-     
+    console.log(data);
     try {
-      setMessageError("")
+      setMessageError("");
 
-      const id = ""
-      const token = ""
+      const id = "639be1d1289c2e72639b9538"
+      const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOWJlMWQxMjg5YzJlNzI2MzliOTUzOCIsInJvbGUiOiJjb21wYW55IiwiaWF0IjoxNjcxMzQwODQ1LCJleHAiOjE2NzE0MjcyNDV9.AOT64xgxAzaK7gViNuep2egRHUIIzfpAtIJGTDvzYfg"
       
       console.log(data)
       
-      const response = await createDiscount( data, token )
+      const response = await createDiscount( data, token );
       const dataJson = await response.Json()
-      console.log(response)
-      console.log(dataJson)
+      console.log(response);
+      console.log(dataJson);
 
       if (response.status === 200){
-        router.push(`/company/events?id=${response.user}&token=${response.token}`)
+        router.push(`/company/modal-discounts?id=${response.user}&token=${response.token}`);
         return 
       }
       setErrorMessage ("Ya existe un descuento con el mismo nombre")
 
     } catch (error) {
-      console.log("error", error)
-      setMessageError ("Ups! Ocurrió un error")
+      console.log("Error: ", error);
+      setMessageError ("Ups! Ocurrió un error");
     }
   }
 
@@ -131,10 +134,9 @@ export default function UpdateDiscount (){
         </div> */}
         <div className="flex inline-flex rounded-lg py-2 px-3 text-gray-700 border shadow w-[616px] h-[132px] mt-5">
           <article className=" ">
-            <div class="flex items-center">
-              <input id="green-checkbox" type="checkbox" value="" class="w-4 h-4 text-green-600 bg-gray-100 rounded border-gray-300 focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
-              <label for="green-checkbox" class="ml-2 rounded-lg py-2 px-3 text-gray-400">Custom</label>
-            </div>
+            {/* <div class="flex items-center">
+              <p className=" rounded-lg py-2 px-3 text-gray-400">Ingresa la siguiente información</p>
+            </div> */}
             <label className={clsx(
             'text-[10px] font-montserrat font-medium text-blue-gray-500',
             'block ml-1 mt-1')}>
@@ -145,7 +147,7 @@ export default function UpdateDiscount (){
             placeholder='Escribe una breve descripción'
             { ...register("name")}
             className={clsx(
-            "shadow mt-[8px] appearance-none border w-[584px] h-[40px]",
+            "shadow mt-[8px] appearance-none border w-[584px] h-[80px]",
             "rounded-lg py-2 px-3 text-gray-700",
             "bg-[#F6F9FF] hover:border-violet-700 border-2",
             "focus:outline-none focus:shadow-outline")}>
