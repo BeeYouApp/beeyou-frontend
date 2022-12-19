@@ -1,9 +1,12 @@
 
 import Modal from "../components/Modal"
-import FormEvents from "../components/FormEvents"
+import TableEventsDos from "../components/TableEvents2"
 
 export default function ExampleModal(){
     return(
+        <>
         <Modal></Modal>
+        <TableEventsDos></TableEventsDos>
+        </>
     )
 }
