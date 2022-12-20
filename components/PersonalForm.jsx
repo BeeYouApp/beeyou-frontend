@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import Input from "./Input";
@@ -25,26 +25,24 @@ export default function PersonalForm() {
   const [messageError, setMessageError] = useState("");
   const router = useRouter();
   const { register, handleSubmit, formState: { errors } } = useForm({
-    resolver: yupResolver(personalFormSchema)
+    resolver: yupResolver(personalFormSchema) 
   });
-  const onSubmit = (data) => {
-    submitPersonalForm(data)
-    console.log("botton")
-  };
+  const onSubmit = (data) => submitPersonalForm(data);
 
   const submitPersonalForm = async (data) => {
-    console.log(data);
     try {
       setMessageError("");
-      const id = "639ba588cdddd19b1c4d43a2";
-      const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOWJhNTg4Y2RkZGQxOWIxYzRkNDNhMiIsInJvbGUiOiJVc2VyIiwiaWF0IjoxNjcxMTQ0ODQwLCJleHAiOjE2NzEyMzEyNDB9.iBEB5tzzOeuy5NBAnMNCLQFzHTPGLRaVKTjyhIKzf1I";
+      const user = JSON.parse(Buffer(localStorage.getItem("user"), "base64").toString("ascii"));
+      const id = user._id;
+      const token = localStorage.getItem("token");
       const response = await updateUser(id, data, token);
+      const dataJson = await response.json()
 
       if (response.status === 200) {
+        localStorage.setItem("user", Buffer(JSON.stringify(dataJson.user)).toString("base64"));
+        const userType = user.role
         if (userType === "user")
-          router.push(
-            `/user/dashboard?id=${response.user}&token=${response.token}`
-          );
+          window.location.href = "/user/dashboard";
         return;
       }
       setMessageError("Ya existe un usuario con este correo");
@@ -53,6 +51,30 @@ export default function PersonalForm() {
       setMessageError("Ops ocurrió un error");
     }
   };
+
+  const [name, setName] = useState("");
+  const [surname, setSurname] = useState("");
+  const [gender, setGender] = useState("");
+  const [birthdate, setBirthdate] = useState("");
+
+  useEffect(() => {
+    const user = JSON.parse(Buffer(localStorage.getItem("user"), "base64").toString("ascii"));
+    if (user) {
+      setName(user.name);
+      setSurname(user.surname);
+      setGender(user.gender);
+      // const curr = new Date(user.birthDate);
+      // const date = curr.toISOString().substring(0,10);
+      // setBirthdate(date);
+    }
+  }, []);
+
+  const [hasMounted, setHasMounted] = useState(false);
+  useEffect(() => {setHasMounted(true)}, []);
+  if (!hasMounted) {
+    return null;
+  }
+  if (typeof window !== "undefined") {
 
   return (
     <form
@@ -76,6 +98,7 @@ export default function PersonalForm() {
             type="string"
             placeholder="Ingresa tu nombre*"
             register={register("name")}
+            defaultValue={name}
           >
           </Input>
           <p>{errors?.name?.message}</p>
@@ -86,6 +109,7 @@ export default function PersonalForm() {
             type="string"
             placeholder="Ingresa tu apellido*"
             register={register("surname")}
+            defaultValue={surname}
           >
           </Input>
           <p>{errors?.surname?.message}</p>
@@ -96,8 +120,9 @@ export default function PersonalForm() {
             id="birthDate"
             name="birthDate"
             type="date"
-            placeholder="DD/MM/AAAA*"
+            placeholder="DD/MM/AAAA"
             register={register("birthDate")}
+            defaultValue={birthdate}
           >
           </Input>
           <p>{errors?.birthDate?.message}</p>
@@ -108,19 +133,22 @@ export default function PersonalForm() {
             type="string"
             placeholder="Ingresa tu género"
             register={register("gender")}
+            defaultValue={gender}
           >
           </Input>
           <p>{errors?.gender?.message}</p>
         </article>
       </section>
-      <article className={clsx("mt-16 inline-block")}>
+      <article className={clsx("mt-3 flex justify-end")}>
         <button
           className={clsx("shadow-md lgbtiq-button cursor-pointer lgbtiq-grad-bg mt-8")}
           type="submit">
-          CONTINUAR
+          {"CONTINUAR"}
         </button>
       </article>
     </form>
   );
+} else {
+  router.push(`/login`);
 }
-
+}
