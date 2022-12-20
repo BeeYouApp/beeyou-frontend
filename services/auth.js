@@ -1,6 +1,6 @@
 import {URL_BASE_API} from "./config"
 
-function signIn(email, password, typeUser) {
+function signUp(email, password, typeUser) {
     const endpoint = typeUser === "user" ? "user" : "company"
     const URL = `${URL_BASE_API}/${endpoint}`
     const options =  {
@@ -28,6 +28,6 @@ function login(email, password) {
 }
 
 export {
-  signIn,
+  signUp,
   login
 }

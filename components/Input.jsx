@@ -9,6 +9,7 @@ export default function Input({
   htmlFor,
   register,
   style,
+  defaultValue,
 }) {
   return (
     <>
@@ -33,6 +34,7 @@ export default function Input({
         id={id}
         type={type}
         placeholder={placeholder}
+        defaultValue={defaultValue}
         {...register}
       />
     </>

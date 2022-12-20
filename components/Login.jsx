@@ -22,10 +22,9 @@ const loginSchema = yup.object({
 
 export default function Login(props) {
     const [messageError, setMessageError] = useState(false);
-    const [userType, setUserType] = useState("company");
     const router = useRouter();
 
-    const { register, handleSubmit, formState: { errors } } = useForm({
+    const { register, handleSubmit, formState:{ errors } } = useForm({
         resolver: yupResolver(loginSchema)
     });
 
@@ -37,12 +36,13 @@ export default function Login(props) {
             const { email, password } = data
             const response = await login(email, password)
             const dataJson = await response.json()
-
+        
             if (response.status === 200) {
                 localStorage.setItem("token", dataJson.token);
-                console.log(dataJson)
-                if (userType === "user") router.push(`/user/dashboard`)
-                else if (userType === "company") router.push(`/company/dashboard`)
+                const userType = dataJson.user.role;
+                localStorage.setItem("user", Buffer(JSON.stringify(dataJson.user)).toString("base64"));
+                if(userType === "user") router.push(`/user/dashboard`)
+                else if(userType === "company") router.push(`/company/dashboard`)
                 return
             }
             setMessageError("Ya existe un usuario con este correo")
@@ -50,7 +50,7 @@ export default function Login(props) {
             console.log('Error: ', error)
             setMessageError("Ops ocurrió un error")
         }
-    };
+      };
 
     return (
         <article

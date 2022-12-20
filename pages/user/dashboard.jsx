@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import clsx from "clsx";
 import Map from "../../components/Map";
 import { useRouter } from "next/router";
@@ -7,6 +7,11 @@ import Layout from "../../components/LayoutDashboard";
 import CardCompany from "../../components/CardCompany";
 
 export default function Dashboard() {
+  const [hasMounted, setHasMounted] = useState(false);
+  useEffect(() => {setHasMounted(true)}, []);
+  if (!hasMounted) {
+    return null;
+  }
   const router = useRouter();
   if (typeof window !== "undefined") {
     if (localStorage.getItem("token")) {
