@@ -8,7 +8,7 @@ import { ToastContainer, toast } from "react-toastify";
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
-import { signIn } from "../services/auth";
+import { signUp } from "../services/auth";
 
 const registerSchema = yup.object({
     email: yup
@@ -28,13 +28,13 @@ const registerSchema = yup.object({
 
 export default function Register({ }) {
     const [messageError, setMessageError] = useState("");
-    const [userType, setUserType] = useState("company");
+    const [userType, setUserType] = useState("user");
     const router = useRouter();
 
-    const { register, handleSubmit, formState: { errors } } = useForm({
+    const { register, handleSubmit, formState:{ errors } } = useForm({
         resolver: yupResolver(registerSchema)
-    });
-    const onSubmit = data => submitRegister(data);
+      });
+      const onSubmit = data => submitRegister(data);
 
     const popupRegister = (data) => {
         //LOGICA DE ABRIR POPUP Y AL HACER CLICK EN BOTON EJECUTAR CODIGO DE ABAJO
@@ -44,17 +44,16 @@ export default function Register({ }) {
     const submitRegister = async (data) => {
         try {
             setMessageError("");
-            console.log(data);
             const { email, password } = data
-            const response = await signIn(email, password, userType)
+            const response = await signUp(email, password, userType)
             const dataJson = await response.json()
-            console.log(response)
-            console.log(dataJson)
 
             if (response.status === 200) {
                 localStorage.setItem("token", dataJson.token);
-                if (userType === "user") router.push(`/user/profile-configuration`)
-                else if (userType === "company") router.push(`/company/profile-configuration`)
+                const userType = dataJson.user.role;
+                localStorage.setItem("user", Buffer(JSON.stringify(dataJson.user)).toString("base64"));
+                if(userType === "user") router.push(`/user/profile-configuration`)
+                else if(userType === "company") router.push(`/company/profile-configuration`)
                 return
             }
             setMessageError("Ya existe un usuario con este correo")
@@ -62,10 +61,9 @@ export default function Register({ }) {
             console.log('Error: ', error)
             setMessageError("Ops ocurrió un error")
         }
-    };
+      };
 
     const handleClickSelectUserType = (type) => {
-        console.log(type)
         setUserType(type)
     }
 
