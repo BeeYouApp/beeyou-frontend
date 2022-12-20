@@ -1,10 +1,10 @@
-import React, { useRef, useState, useCallback, useEffect } from "react";
-import { AddressAutofill, AddressMinimap, useConfirmAddress, config } from '@mapbox/search-js-react';
 import clsx from "clsx";
+import React, { useRef, useState, useCallback, useEffect } from "react"; //
+import { AddressAutofill, AddressMinimap, useConfirmAddress, config } from '@mapbox/search-js-react';
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import Input from "./Input";
-import dynamic from "next/dynamic";
+import dynamic from "next/dynamic"; //
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { updateCompany } from "../services/company";
@@ -27,16 +27,19 @@ const companyFormSchema = yup.object({
         .required("Requerido")
         .min(10, "La descripción debe contener al menos 10 caracteres")
         .max(280, "La descripción debe contener al menos 280 caracteres"),
-    calle: yup
+    // address: yup
+    //     .string()
+    //     .required("Requerido"),
+    street: yup // *****
         .string()
         .required("Requerido"),
-    ciudad: yup
+    city: yup // *****
         .string()
         .required("Requerido"),
-    estado: yup
+    state: yup // *****
         .string()
         .required("Requerido"),
-    postal: yup
+    postalCode: yup // *****
         .string()
         .required("Requerido"),
 }).required();
@@ -46,14 +49,44 @@ const DynamicComponent = dynamic(() => import('./AutofillMap'), {
 });
 
 export default function BussinesForm() {
-    //state for autofill map
+    const [messageError, setMessageError] = useState("");
+    const router = useRouter();
+    const { register, handleSubmit, formState: { errors } } = useForm({
+        resolver: yupResolver(companyFormSchema),
+    });
+    const onSubmit = (data) => submitBusinessForm(data);
+    const submitBusinessForm = async (data) => {
+        try {
+            const result = await showConfirm();
+            const fullAddress = `${data.address_line1}, ${data?.calle}, ${data.ciudad}, ${data.estado}, ${data.postal}`;
+            const coordinatesAddress = `${handleSaveMarkerLocation()}`;
+            setMessageError("");
+            const user = JSON.parse(Buffer(localStorage.getItem("user"), "base64").toString("ascii"));
+            const id = user._id;
+            const token = localStorage.getItem("token");
+            const response = await updateCompany(id, data, token);
+
+            if (response.status === 200) {
+                const userType = user.role
+                if (userType === "company")
+                  router.push("/company/dashboard");
+                return;
+              }
+              setMessageError("Ya existe un usuario con este correo");
+            } catch (error) {
+              console.log("Error: ", error);
+              setMessageError("Ops ocurrió un error");
+            }
+          };
+    
+    // State for autofill map
     const [showFormExpanded, setShowFormExpanded] = useState(false);
     const [showMinimap, setShowMinimap] = useState(false);
     const [feature, setFeature] = useState();
     const [showValidationText, setShowValidationText] = useState(false);
     const [token, setToken] = useState('');
 
-    useEffect(() => { //mapbox
+    useEffect(() => { //Mapbox
         const accessToken = "pk.eyJ1IjoiYWJ5YmxhY2ttb3V0aCIsImEiOiJjbGFodTBobmowODIwM3hvYmxva20zYWQ4In0.GWgmsYW9P5xUKzxDGliiVg";
         setToken(accessToken)
         config.accessToken = accessToken;
@@ -93,44 +126,6 @@ export default function BussinesForm() {
         setShowValidationText(false)
         setFeature(null)
     }
-
-    const [messageError, setMessageError] = useState("");
-    const router = useRouter();
-    const { register, handleSubmit, formState: { errors } } = useForm({
-        resolver: yupResolver(companyFormSchema)
-    });
-    const onSubmit = (data) => submitBusinessForm(data);
-
-    const submitBusinessForm = async (data) => {
-        console.log(data);
-        console.log(handleSaveMarkerLocation());
-        try {
-            setMessageError("");
-
-            const result = await showConfirm();
-            console.log(result);
-            console.log(data);
-            const fullAddress = `${data.address_line1}, ${data?.calle}, ${data.ciudad}, ${data.estado}, ${data.postal}`;
-            console.log(fullAddress)
-            const coordinatesAddress = `${handleSaveMarkerLocation()}`;
-
-            const id = "63981d0604727e1a45c8181f"
-            const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOTgxZDA2MDQ3MjdlMWE0NWM4MTgxZiIsInJvbGUiOiJDb21wYW55IiwiaWF0IjoxNjcxMDc1ODk5LCJleHAiOjE2NzExNjIyOTl9.wDQPhYbFNQ2WxWDTjnDPGvmYEHX35dmc2rG43iHOPvg"
-            const response = await updateCompany(id, data, token);
-
-            if (response.status === 200) {
-                if (userType === "company")
-                    router.push(
-                        `/company/dashboard?id=${response.user}&token=${response.token}`
-                    );
-                return;
-            }
-            setMessageError("Ya existe un usuario con este correo");
-        } catch (error) {
-            console.log("Error: ", error);
-            setMessageError("Ops ocurrió un error");
-        }
-    };
 
     return (
         <>
@@ -222,11 +217,11 @@ export default function BussinesForm() {
                                     name="description"
                                     type="string"
                                     className={clsx(
-                                        "shadow w-full h-[100px]",
-                                        "mt-[12px]",
-                                        "appearance-none",
-                                        "border w-[300px] h-[40px] rounded-lg py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
-                                        "hover:border-violet-700 border-2 mb-2"
+                                      "shadow w-full h-[100px]",
+                                      "mt-[12px]",
+                                      "appearance-none",
+                                      "border w-[300px] h-[40px] rounded-lg py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline",
+                                      "hover:border-violet-700 border-2 mb-2"
                                     )}
                                     {...register("description")}
                                 >
@@ -348,9 +343,9 @@ export default function BussinesForm() {
                             placeholder="Busca tu espacio"
                             autoComplete="address-line1"
                             id="mapbox-autofill"
-                            {...register("calle")}
+                            {...register("street")}
                         />
-                        <p>{errors?.brandName?.message}</p>
+                        <p>{errors?.street?.message}</p>
                     </AddressAutofill>
                     {!showFormExpanded &&
                         <div
@@ -385,8 +380,8 @@ export default function BussinesForm() {
                             'hover:border-violet-700 border-2 mb-2')}
                             placeholder="Ciudad"
                             autoComplete="address-level2"
-                            {...register("ciudad")} />
-                        <p>{errors?.brandName?.message}</p>
+                            {...register("city")} />
+                        <p>{errors?.city?.message}</p>
                         <label className={clsx(
                             'text-[12px] font-montserrat font-medium text-blue-gray-500',
                             'block ml-1 mt-1')}>Estado / Región
@@ -400,9 +395,9 @@ export default function BussinesForm() {
                                 'hover:border-violet-700 border-2 mb-2')}
                             placeholder="State / Región"
                             autoComplete="address-level1"
-                            {...register("estado")}
+                            {...register("state")}
                         />
-                        <p>{errors?.brandName?.message}</p>
+                        <p>{errors?.state?.message}</p>
                         <label className={clsx(
                             'text-[12px] font-montserrat font-medium text-blue-gray-500',
                             'block ml-1 mt-1')}>Código Postal </label>
@@ -415,9 +410,9 @@ export default function BussinesForm() {
                                 'hover:border-violet-700 border-2 mb-2')}
                             placeholder="Código Postal"
                             autoComplete="postal-code"
-                            {...register("postal")}
+                            {...register("postalCode")}
                         />
-                        <p>{errors?.brandName?.message}</p>
+                        <p>{errors?.postalCode?.message}</p>
                     </div>
 
                     <div style={{ display: showFormExpanded ? "block" : "none" }}>
@@ -447,7 +442,7 @@ export default function BussinesForm() {
                     </div>
 
                     {/* <DynamicComponent></DynamicComponent> */}
-                    <p>{errors?.address?.message}</p>
+                    {/* <p>{errors?.address?.message}</p> */}
                 </section>
 
                 <article className={clsx("mt-16 inline-block")}>
