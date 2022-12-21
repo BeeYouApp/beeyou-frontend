@@ -35,6 +35,8 @@ export default function PersonalForm() {
       const user = JSON.parse(Buffer(localStorage.getItem("user"), "base64").toString("ascii"));
       const id = user._id;
       const token = localStorage.getItem("token");
+      // const formattedDate = data.birthDate 
+      // data.birthDate = formattedDate
       const response = await updateUser(id, data, token);
       const dataJson = await response.json()
 
@@ -63,9 +65,9 @@ export default function PersonalForm() {
       setName(user.name);
       setSurname(user.surname);
       setGender(user.gender);
-      // const curr = new Date(user.birthDate);
-      // const date = curr.toISOString().substring(0,10);
-      // setBirthdate(date);
+      const curr = new Date(user.birthDate);
+      const date = curr.toISOString().substring(0,10);
+      setBirthdate(date);
     }
   }, []);
 
