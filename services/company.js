@@ -6,7 +6,7 @@ function updateCompany(id, newData, token) {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
-          "Autorization": token
+          "Authorization": token
         },
         mode: "cors",
         body: JSON.stringify(newData),

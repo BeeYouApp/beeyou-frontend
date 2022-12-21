@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import Link from "next/link";
 import Image from "next/image";
 import { images } from "../lib/images";
 import React, { useState } from "react";
@@ -7,65 +8,64 @@ import { ToastContainer, toast } from "react-toastify";
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
-import {signIn} from "../services/auth";
+import { signUp } from "../services/auth";
 
 const registerSchema = yup.object({
     email: yup
-      .string()
-      .email("Email inválido")
-      .required("Email requerido"),
+        .string()
+        .email("Email inválido")
+        .required("Email requerido"),
     password: yup
-      .string()
-      .min(8, "La contraseña debe tener al menos 8 caracteres")
-      .matches(/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/)
-      .required("Contraseña requerida"),
+        .string()
+        .min(8, "La contraseña debe tener al menos 8 caracteres")
+        .matches(/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/)
+        .required("Contraseña requerida"),
     confirmPassword: yup
-      .string()
-      .oneOf([yup.ref("password"), null], "Las contraseñas deben coincidir")
-      .required("Confirmar contraseña es requerido"),
-  }).required()
+        .string()
+        .oneOf([yup.ref("password"), null], "Las contraseñas deben coincidir")
+        .required("Confirmar contraseña es requerido"),
+}).required()
 
 export default function Register({ }) {
-  const [messageError, setMessageError] = useState("");
-  const [userType, setUserType] = useState("user");
-  const router = useRouter();
+    const [messageError, setMessageError] = useState("");
+    const [userType, setUserType] = useState("user");
+    const router = useRouter();
 
-  const { register, handleSubmit, formState:{ errors } } = useForm({
-    resolver: yupResolver(registerSchema)
-  });
-  const onSubmit = data => submitRegister(data);
+    const { register, handleSubmit, formState:{ errors } } = useForm({
+        resolver: yupResolver(registerSchema)
+      });
+      const onSubmit = data => submitRegister(data);
 
-  const popupRegister = (data) => {
-    //LOGICA DE ABRIR POPUP Y AL HACER CLICK EN BOTON EJECUTAR CODIGO DE ABAJO
-    //El boton del popup debe tener:  onSubmit={(data) => submitRegister(data)}
-  }
-
-  const submitRegister = async (data) => {
-    try {
-        setMessageError("");
-        console.log(data);
-        const { email, password } = data
-        const response = await signIn(email, password)
-        const dataJson = await response.json()
-        console.log(response)
-        console.log(dataJson)
-    
-        if (response.status === 200) {
-            if(userType === "user") router.push(`/user/profile-configuration?id=${response.user}&token=${response.token}`)
-            if(userType === "company") router.push(`/company/profile-configuration?id=${response.user}&token=${response.token}`)
-            return
-        }
-        setMessageError("Ya existe un usuario con este correo")
-    } catch (error) {
-        console.log('Error: ', error)
-        setMessageError("Ops ocurrió un error")
+    const popupRegister = (data) => {
+        //LOGICA DE ABRIR POPUP Y AL HACER CLICK EN BOTON EJECUTAR CODIGO DE ABAJO
+        //El boton del popup debe tener:  onSubmit={(data) => submitRegister(data)}
     }
-  };
 
-  const handleClickSelectUserType= (type)  => {
-    console.log(type)
-    setUserType(type)
-  }
+    const submitRegister = async (data) => {
+        try {
+            setMessageError("");
+            const { email, password } = data
+            const response = await signUp(email, password, userType)
+            const dataJson = await response.json()
+
+            if (response.status === 200) {
+                localStorage.setItem("token", dataJson.token);
+                const userType = dataJson.user.role;
+                localStorage.setItem("user", Buffer(JSON.stringify(dataJson.user)).toString("base64"));
+                if(userType === "user") router.push(`/user/profile-configuration`)
+                else if(userType === "company") router.push(`/company/profile-configuration`)
+                return
+            }
+            setMessageError("Ya existe un usuario con este correo")
+        } catch (error) {
+            console.log('Error: ', error)
+            setMessageError("Ops ocurrió un error")
+        }
+      };
+
+    const handleClickSelectUserType = (type) => {
+        setUserType(type)
+    }
 
     return (
         <article
@@ -92,9 +92,9 @@ export default function Register({ }) {
                         )}
                         onClick={() => handleClickSelectUserType("user")}
                         type="button"
-                        >
+                    >
                         Soy Usuario
-                        
+
                     </button>
                     <button
                         className={clsx(
@@ -103,7 +103,7 @@ export default function Register({ }) {
                         )}
                         onClick={() => handleClickSelectUserType('company')}
                         type="button"
-                        >
+                    >
                         Soy Negocio
                     </button>
                 </section>
@@ -177,31 +177,34 @@ export default function Register({ }) {
                     <p>{errors?.confirmPassword?.message}</p>
                 </div>
                 <button
-                 className={clsx("shadow-md lgbtiq-button cursor-pointer lgbtiq-grad-bg mt-8")}
-                 type="submit"
+                    className={clsx("shadow-md lgbtiq-button cursor-pointer lgbtiq-grad-bg mt-8")}
+                    type="submit"
                 >
                     {
-                        userType === "company" 
-                        ? "¡CONTINUAR!"
-                        : "¡REGÍSTRATE!"
+                        userType === "company"
+                            ? "¡CONTINUAR!"
+                            : "¡REGÍSTRATE!"
                     }
-                    </button>
+                </button>
             </form>
 
             <Image src={images.dividerIcon} className={clsx("mt-8 mb-6")} alt="Split Icon" />
             <p className={clsx(
-                    "text-center font-poppins font-normal leading-[18px] mb-4 w-[280px]",
-                    "text-blue-gray-400 text-[12px]"
-                )}>
+                "text-center font-poppins font-normal leading-[18px] mb-4 w-[280px]",
+                "text-blue-gray-400 text-[12px]"
+            )}>
                 Al crear tu cuenta de usuario en beeyou, aceptas los{" "}
                 <span className="font-medium lgbtiq-grad-color">Términos y Condiciones</span> y el{" "}
                 <span className="font-medium lgbtiq-grad-color">Aviso de privacidad</span> del servicio
             </p>
             <p className={clsx("text-center font-poppins font-medium leading-[18px] mb-6 lgbtiq-grad-color text-[12px]")}>
-                <span className={clsx("font-montserrat leading-[40px] text-yellow-900")}>
-                    Inicia sesión en{" "}
-                </span>
-                bee you
+                <Link href="/login">
+                    <span className={clsx("font-montserrat leading-[40px] text-yellow-900")}>
+                        Inicia sesión en{" "}
+                    </span>
+                    bee you
+                </Link>
+
             </p>
         </article>
     );

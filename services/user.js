@@ -1,12 +1,12 @@
 import {URL_BASE_API} from "./config"
 
 function updateUser(id, newData, token) {
-    const URL = `${URL_BASE_API}/users/${id}`
+    const URL = `${URL_BASE_API}/user/${id}`
     const options =  {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
-          "Autorization": token
+          "Authorization": token
         },
         mode: "cors",
         body: JSON.stringify(newData),
@@ -16,5 +16,5 @@ function updateUser(id, newData, token) {
 
 
 export {
-    updateUser
+  updateUser
   }

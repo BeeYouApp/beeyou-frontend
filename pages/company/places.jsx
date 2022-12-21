@@ -140,7 +140,6 @@ export default function PlacesPage() {
           <div className={clsx("overflow-x-auto sm:-mx-6 lg:-mx-8")}>
             <div className={clsx("py-4 inline-block min-w-full sm:px-6 lg:px-8")}>
               <Map />
-              {/* <Image className={clsx("rounded-md lg:w-screen")} src={images.mapsImg} alt="Maps Image Example" /> */}
             </div>
           </div>
         </div>
