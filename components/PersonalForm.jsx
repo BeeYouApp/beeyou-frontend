@@ -65,9 +65,9 @@ export default function PersonalForm() {
       setName(user.name);
       setSurname(user.surname);
       setGender(user.gender);
-      const curr = new Date(user.birthDate);
-      const date = curr.toISOString().substring(0,10);
-      setBirthdate(date);
+      // const curr = new Date(user.birthDate);
+      // const date = curr.toISOString().substring(0,10);
+      // setBirthdate(date);
     }
   }, []);
 
