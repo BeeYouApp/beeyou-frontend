@@ -53,7 +53,7 @@ export default function Register({ }) {
                 const userType = dataJson.user.role;
                 localStorage.setItem("user", Buffer(JSON.stringify(dataJson.user)).toString("base64"));
                 if(userType === "user") router.push(`/user/profile-configuration`)
-                else if(userType === "company") router.push(`/company/profile-configuration`)
+                else if(userType === "company") router.push(`/company/business-verification`)
                 return
             }
             setMessageError("Ya existe un usuario con este correo")
