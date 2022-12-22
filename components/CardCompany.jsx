@@ -11,10 +11,13 @@ export default function CardCompany({ title, image, stars, description, TagSecti
 						<Image className={clsx("m-auto")} src={images.iconFavorite} alt="icon-favorite" />
 					</button>
 				</div>
-				{image}
-				<button className={clsx("w-[197px] h-[26px] bg-blue-gray-900 -mt-6 absolute text-[12px] text-[#FFFF] rounded-b-[10px] font-montserrat hover:font-bold")}>
-					VER MÁS
-				</button>
+				<div className={clsx("w-[100%] h-[100%] relative")}>
+					<img src={image} className={clsx("w-[100%] h-[100%]")} />
+					{/* {image} */}
+					<button className={clsx("w-[197px] h-[26px] bg-blue-gray-900 -mt-6 absolute text-[12px] text-[#FFFF] rounded-b-[10px] font-montserrat hover:font-bold")}>
+						VER MÁS
+					</button>
+				</div>
 			</article>
 			<section className={clsx("px-4 py-5 font-montserrat w-[360px]")}>
 				<article className={clsx("flex")}>
