@@ -10,77 +10,68 @@ import * as yup from "yup";
 import { updateCompany } from "../services/company";
 
 const companyFormSchema = yup.object({
-    brandName: yup
-        .string()
-        .required("Requerido"),
-    rfc: yup
-        .string()
-        .required("Requerido"),
-    legalRepresentative: yup
-        .string()
-        .required("Requerido"),
-    type: yup
-        .string()
-        .required("Requerido"),
-    description: yup
-        .string()
-        .required("Requerido")
-        .min(10, "La descripción debe contener al menos 10 caracteres")
-        .max(280, "La descripción debe contener al menos 280 caracteres"),
-    // address: yup
-    //     .string()
-    //     .required("Requerido"),
-    street: yup // *****
-        .string()
-        .required("Requerido"),
-    city: yup // *****
-        .string()
-        .required("Requerido"),
-    state: yup // *****
-        .string()
-        .required("Requerido"),
-    postalCode: yup // *****
-        .string()
-        .required("Requerido"),
-}).required();
+  brandName: yup.string().required("Requerido"),
+  rfc: yup.string().required("Requerido"),
+  legalRepresentative: yup.string().required("Requerido"),
+  type: yup.string().required("Requerido"),
+  description: 
+    yup
+    .string()
+    .required("Requerido")
+    .min(10, "La descripción debe contener al menos 10 caracteres")
+    .max(280, "La descripción debe contener al menos 280 caracteres"),
+  // address: yup//   .string() //   .required("Requerido"),
+  street: yup.string().required("Requerido"),
+  city: yup.string().required("Requerido"),
+  state: yup.string().required("Requerido"),
+  postalCode: yup.string().required("Requerido"),
+}).required(); // <------ este porque va aqui?
 
 const DynamicComponent = dynamic(() => import('./AutofillMap'), {
     ssr: false,
 });
 
 export default function BussinesForm() {
-    const [messageError, setMessageError] = useState("");
-    const router = useRouter();
-    const { register, handleSubmit, formState: { errors } } = useForm({
-        resolver: yupResolver(companyFormSchema),
-    });
-    const onSubmit = (data) => submitBusinessForm(data);
-    const submitBusinessForm = async (data) => {
-        try {
-            const result = await showConfirm();
-            const fullAddress = `${data.address_line1}, ${data?.calle}, ${data.ciudad}, ${data.estado}, ${data.postal}`;
-            const coordinatesAddress = `${handleSaveMarkerLocation()}`;
+  const [messageError, setMessageError] = useState("");
+  const router = useRouter();
 
-            setMessageError("");
-            const user = JSON.parse(Buffer(localStorage.getItem("user"), "base64").toString("ascii"));
-            const id = user._id;
-            const token = localStorage.getItem("token");
-            const response = await updateCompany(id, data, token);
-            const dataJson = await response.json()
+  const { register, handleSubmit, formState: { errors } } = useForm({
+      resolver: yupResolver(companyFormSchema),
+  });
 
-            if (response.status === 200) {
-                localStorage.setItem("user", Buffer(JSON.stringify(dataJson.user)).toString("base64"));
-                const userType = user.role
-                if (userType === "company")
-                  router.push("/company/dashboard");
-                return;
-              }
-              setMessageError("Ya existe un usuario con este correo");
-            } catch (error) {
-              console.log("Error: ", error);
-              setMessageError("Ops ocurrió un error");
-            }
-          };
+  const onSubmit = (data) => submitBusinessForm(data);
+
+  const submitBusinessForm = async (data) => {
+    try {
+      const result = await showConfirm();
+      const fullAddress = `${data.address_line1}, ${data?.calle}, ${data.ciudad}, ${data.estado}, ${data.postal}`;
+      const coordinatesAddress = `${handleSaveMarkerLocation()}`;
+
+      setMessageError("");
+/*         const user = JSON.parse(Buffer(localStorage.getItem("user"), "base64").toString("ascii")); */
+/*         const id = user._id;
+        const token = localStorage.getItem("token"); */
+
+        const id = "639be1d1289c2e72639b9538"
+        const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOWJlMWQxMjg5YzJlNzI2MzliOTUzOCIsInJvbGUiOiJjb21wYW55IiwiaWF0IjoxNjcxNjgxNzU1LCJleHAiOjE2NzE3NjgxNTV9.2y0tMJMfwV-pOzJB2kIeBWn-POePXvaEeZccdx81q00"
+        const response = await updateCompany(id, data, token);
+        const dataJson = await response.json()
+
+
+        if (response.status === 200) {
+          console.log(dataJson)
+          localStorage.setItem("user", Buffer(JSON.stringify(dataJson.user)).toString("base64"));
+          const userType = user.role
+            if (userType === "company")
+              router.push("/company/dashboard");
+            return;
+      }
+      setMessageError("Ya existe un usuario con este correo");
+        } catch (error) {
+          console.log("Error: ", error);
+          setMessageError("Ops ocurrió un error");
+        }
+      };
     
     // State for autofill map
     const [showFormExpanded, setShowFormExpanded] = useState(false);
@@ -141,7 +132,7 @@ export default function BussinesForm() {
     const [postalCode, setPostalCode] = useState("");
 
 
-    useEffect(() => {
+  /*   useEffect(() => {
         const user = JSON.parse(Buffer(localStorage.getItem("user"), "base64").toString("ascii"));
         if (user) {
         setBrandName(user.brandName);
@@ -154,7 +145,7 @@ export default function BussinesForm() {
         setState(user.state);
         setPostalCode(user.postalCode);
         }
-    }, []);
+    }, []); */
 
     const [hasMounted, setHasMounted] = useState(false);
     useEffect(() => {setHasMounted(true)}, []);
