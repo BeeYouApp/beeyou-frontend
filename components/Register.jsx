@@ -136,8 +136,12 @@ export default function Register({ }) {
                     <div className={clsx("flex justify-between px-2.5 w-[100%] absolute top-1/4")}>
                         <p className={clsx("font-poppins text-medium text-[12px] leading-[18px]",
                             "w-[100%] text-blue-gray-700")}>Contraseña</p>
-                        <p className={clsx("ont-poppins text-normal text-[12px] text-end leading-[18px]",
-                            "text-center text-blue-gray-400 w-[100%] underline underline-offset-3")}>Mostrar</p>
+                        <p className={clsx(
+                            "cursor-pointer",
+                            "font-poppins text-normal text-[12px] text-end leading-[18px]",
+                            "text-center text-blue-gray-400 w-[100%] underline underline-offset-3")}>
+                            Mostrar
+                        </p>
                     </div>
                     <input
                         className={clsx(
@@ -159,6 +163,7 @@ export default function Register({ }) {
                             "font-poppins text-medium text-[12px] leading-[18px]",
                             "w-[100%] text-blue-gray-700")}>Confirmar contraseña</p>
                         <p className={clsx(
+                            "cursor-pointer",
                             "font-poppins text-normal text-[12px] text-end leading-[18px]",
                             "text-center text-blue-gray-400 w-[100%] underline underline-offset-3")}>Mostrar</p>
                     </div>
