@@ -51,6 +51,11 @@ export default function Login(props) {
             setMessageError("Ops ocurrió un error")
         }
       };
+    
+    const [passwordShown, setPasswordShown] = useState(false);
+    const togglePassword = () => {
+        setPasswordShown(!passwordShown);
+      };
 
     return (
         <article
@@ -95,11 +100,13 @@ export default function Login(props) {
                             "w-[100%] text-blue-gray-700")}>
                             Contraseña
                         </p>
-                        {/* <p className={clsx(
-                            "ont-poppins text-normal text-[12px] text-end leading-[18px]",
-                            "text-center text-blue-gray-400 w-[100%] underline underline-offset-3")}>
+                        <p className={clsx(
+                            "cursor-pointer",
+                            "font-poppins text-normal text-[12px] text-end leading-[18px]",
+                            "text-center text-blue-gray-400 w-[100%] underline underline-offset-3")}
+                            onClick={togglePassword}>
                             Mostrar
-                        </p> */}
+                        </p>
                     </div>
                     <input
                         className={clsx(
@@ -109,7 +116,7 @@ export default function Login(props) {
                             "focus:outline-none focus:shadow-outline")}
                         id="password"
                         name="password"
-                        type="password"
+                        type={passwordShown ? "text" : "password"}
                         {...register("password")}
                     />
                     <p>{errors?.password?.message}</p>
