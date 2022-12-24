@@ -97,17 +97,18 @@ export default function Sidebar() {
     setIsMobileSidebarOpen(false);
   };
 
+  const router = useRouter();
+
   function logout() {
     localStorage.clear();
     router.reload();
   }
 
-  const router = useRouter();
+
   if (typeof window !== "undefined") {
     return (
       <>
         <nav className={clsx("w-[247px] p-4 max-xl:hidden")}>
-          {isMobileSidebarOpen && <MobileSidebar closeSidebar={closeSidebar} />}
           <section className={clsx("flex justify-center mt-10")}>
             <Image src={images.beeyouLogo} alt="Bee You Logo" />
           </section>
@@ -294,5 +295,5 @@ export default function Sidebar() {
     );
   } else {
     router.push(`/login`);
-  }
-}
+  };
+};

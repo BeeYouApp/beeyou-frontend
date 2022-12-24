@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import clsx from "clsx";
 import Map from "../../components/Map";
 import { useRouter } from "next/router";
 import Button from "../../components/Button";
 import Layout from "../../components/LayoutDashboard";
-import CardCompany from "../../components/CardCompany";
+import Feed from "../../components/FeedCompanies";
 
 export default function Dashboard() {
   const [hasMounted, setHasMounted] = useState(false);
-  useEffect(() => {setHasMounted(true)}, []);
+  useEffect(() => { setHasMounted(true) }, []);
   if (!hasMounted) {
     return null;
   }
@@ -26,6 +26,7 @@ export default function Dashboard() {
                 Cerca de ti
               </p>
             </section>
+
             <Map></Map>
           </section>
           <section className={clsx("w-11/12 m-auto mt-20 flex justify-between md:justify-around mb-10")}>
@@ -54,7 +55,7 @@ export default function Dashboard() {
               style="bg-gray-700 w-96 rounded-full max-lg:hidden">
             </Button>
           </section>
-          <CardCompany></CardCompany>
+          <Feed />
         </Layout>
       );
     } else {
