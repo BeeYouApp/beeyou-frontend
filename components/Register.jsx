@@ -36,11 +36,6 @@ export default function Register({ }) {
       });
       const onSubmit = data => submitRegister(data);
 
-    const popupRegister = (data) => {
-        //LOGICA DE ABRIR POPUP Y AL HACER CLICK EN BOTON EJECUTAR CODIGO DE ABAJO
-        //El boton del popup debe tener:  onSubmit={(data) => submitRegister(data)}
-    }
-
     const submitRegister = async (data) => {
         try {
             setMessageError("");
@@ -67,6 +62,15 @@ export default function Register({ }) {
         setUserType(type)
     }
 
+    const [passwordShownFirst, setPasswordShownFirst] = useState(false);
+    const togglePasswordFirst = () => {
+        setPasswordShownFirst(!passwordShownFirst);
+      };
+    const [passwordShownSecond, setPasswordShownSecond] = useState(false);
+    const togglePasswordSecond = () => {
+        setPasswordShownSecond(!passwordShownSecond);
+    };
+
     return (
         <article
             className={clsx(
@@ -88,7 +92,7 @@ export default function Register({ }) {
                     <button
                         className={clsx(
                             "font-poppins font-medium leading-[20px] mt-6 pb-2",
-                            `text-center text-[16px] text-blue-gray-400 w-[50%] ${userType === 'user' ? 'border-b-4 border-green-900' : 'border-b-2 border-blue-gray-100'}`
+                            `text-center text-[16px] w-[50%] ${userType === 'user' ? 'border-b-[3px] border-green-900 text-blue-gray-700' : 'border-b-[1px] border-blue-gray-100 text-blue-gray-400'}`
                         )}
                         onClick={() => handleClickSelectUserType("user")}
                         type="button"
@@ -99,7 +103,7 @@ export default function Register({ }) {
                     <button
                         className={clsx(
                             "font-poppins font-medium leading-[20px] mt-6 pb-2",
-                            `text-center text-[16px] text-blue-gray-400 w-[50%] ${userType === 'company' ? ' border-b-4 border-green-900' : 'border-b-2 border-blue-gray-100'}`
+                            `text-center text-[16px] w-[50%] ${userType === 'company' ? 'border-b-[3px] border-green-900 text-blue-gray-700' : 'border-b-[1px] border-blue-gray-100 text-blue-gray-400'}`
                         )}
                         onClick={() => handleClickSelectUserType('company')}
                         type="button"
@@ -109,11 +113,12 @@ export default function Register({ }) {
                 </section>
                 {messageError && (<h3 className="text-red-900 font-bold">{messageError}</h3>)}
                 <ToastContainer />
-                <div className={clsx("w-[100%] mb-4 relative")}>
-                    <div className={clsx("flex justify-between px-2.5 w-[100%] absolute top-1/3")}>
+                <div className={clsx("w-[100%] mt-2 mb-2 relative")}>
+                    <div className={clsx("flex justify-between px-2.5 w-[100%] absolute top-1/4")}>
                         <p className={clsx(
-                            "font-poppins text-medium text-[12px] leading-[18px]",
-                            "w-[100%] text-blue-gray-700")}>Correo</p>
+                            "font-poppins font-medium text-[12px] leading-[18px]",
+                            "w-[100%] text-blue-gray-700")}>
+                                Correo electrónico</p>
                     </div>
                     <input
                         htmlFor="email"
@@ -122,29 +127,32 @@ export default function Register({ }) {
                         type="email"
                         placeholder="example@example.com"
                         className={clsx(
+                            "text-blue-gray-400 font-poppins font-normal text-[15px] leading-[24px]",
                             "shadow mt-[12px] appearance-none border w-[300px] h-[56px]",
-                            "rounded-lg pt-8 pb-4 px-2.5 text-gray-700",
-                            "bg-[#F6F9FF] h-[46px]",
-                            "hover:border-violet-700 border-2",
+                            "rounded-lg pt-8 pb-4 px-2.5",
+                            "bg-[#F6F9FF] hover:border-violet-700 border-2",
                             "focus:outline-none focus:shadow-outline",
                         )}
                         {...register("email")}
                     />
                     <p>{errors?.email?.message}</p>
                 </div>
-                <div className={clsx("w-[100%] mb-4 relative")}>
+                <div className={clsx("w-[100%] mb-2 relative")}>
                     <div className={clsx("flex justify-between px-2.5 w-[100%] absolute top-1/4")}>
-                        <p className={clsx("font-poppins text-medium text-[12px] leading-[18px]",
+                        <p className={clsx(
+                            "font-poppins font-medium text-[12px] leading-[18px]",
                             "w-[100%] text-blue-gray-700")}>Contraseña</p>
                         <p className={clsx(
                             "cursor-pointer",
-                            "font-poppins text-normal text-[12px] text-end leading-[18px]",
-                            "text-center text-blue-gray-400 w-[100%] underline underline-offset-3")}>
+                            "font-poppins font-normal text-[12px] text-end leading-[18px]",
+                            "text-center text-blue-gray-400 w-[100%] underline underline-offset-3")}
+                            onClick={togglePasswordFirst}>
                             Mostrar
                         </p>
                     </div>
                     <input
                         className={clsx(
+                            "text-blue-gray-400 font-poppins font-normal text-[15px] leading-[24px]",
                             "shadow mt-[12px] appearance-none border w-[300px] h-[56px]",
                             "rounded-lg pt-8 pb-4 px-3 text-gray-700",
                             "bg-[#F6F9FF] hover:border-violet-700 border-2",
@@ -152,7 +160,7 @@ export default function Register({ }) {
                         )}
                         name="password"
                         id="password"
-                        type="password"
+                        type={passwordShownFirst ? "text" : "password"}
                         {...register("password")}
                     />
                     <p>{errors?.password?.message}</p>
@@ -160,15 +168,19 @@ export default function Register({ }) {
                 <div className={clsx("w-[100%] relative")}>
                     <div className={clsx("flex justify-between px-2.5 w-[100%] absolute top-1/4")}>
                         <p className={clsx(
-                            "font-poppins text-medium text-[12px] leading-[18px]",
+                            "font-poppins font-medium text-[12px] leading-[18px]",
                             "w-[100%] text-blue-gray-700")}>Confirmar contraseña</p>
                         <p className={clsx(
                             "cursor-pointer",
-                            "font-poppins text-normal text-[12px] text-end leading-[18px]",
-                            "text-center text-blue-gray-400 w-[100%] underline underline-offset-3")}>Mostrar</p>
+                            "font-poppins font-normal text-[12px] text-end leading-[18px]",
+                            "text-center text-blue-gray-400 w-[100%] underline underline-offset-3")}
+                            onClick={togglePasswordSecond}>
+                            Mostrar
+                        </p>
                     </div>
                     <input
                         className={clsx(
+                            "text-blue-gray-400 font-poppins font-normal text-[15px] leading-[24px]",
                             "shadow mt-[12px] appearance-none border w-[300px] h-[56px]",
                             "rounded-lg pt-8 pb-4 px-3 text-gray-700",
                             "bg-[#F6F9FF] hover:border-violet-700 border-2",
@@ -176,7 +188,7 @@ export default function Register({ }) {
                         )}
                         id="confirmPassword"
                         name="password"
-                        type="password"
+                        type={passwordShownSecond ? "text" : "password"}
                         {...register("confirmPassword")}
                     />
                     <p>{errors?.confirmPassword?.message}</p>
