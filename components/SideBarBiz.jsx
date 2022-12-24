@@ -3,7 +3,9 @@ import { images } from "../lib/images";
 import clsx from "clsx";
 import Link from "next/link";
 import React, { useState } from "react";
-const MobileSidebar = ({ closeSidebar }) => {
+import { useRouter } from "next/router";
+
+const MobileSidebar = ({ closeSidebar, logout }) => {
   return (
     <section className={clsx("bg-[#ffffff]/40 h-screen w-screen fixed top-0 left-0")}>
       <section className={clsx("bg-white max-w-[70%] p-4 h-full border-2")}>
@@ -95,17 +97,18 @@ export default function Sidebar() {
     setIsMobileSidebarOpen(false);
   };
 
+  const router = useRouter();
+
   function logout() {
     localStorage.clear();
     router.reload();
   }
 
-  const router = useRouter();
+
   if (typeof window !== "undefined") {
     return (
       <>
         <nav className={clsx("w-[247px] p-4 max-xl:hidden")}>
-          {isMobileSidebarOpen && <MobileSidebar closeSidebar={closeSidebar} />}
           <section className={clsx("flex justify-center mt-10")}>
             <Image src={images.beeyouLogo} alt="Bee You Logo" />
           </section>
@@ -292,5 +295,5 @@ export default function Sidebar() {
     );
   } else {
     router.push(`/login`);
-  }
-}
+  };
+};

@@ -119,12 +119,13 @@ export default function Sidebar() {
     setIsMobileSidebarOpen(false);
   };
 
+  const router = useRouter();
+
   function logout() {
     localStorage.clear()
     router.reload()
   }
 
-  const router = useRouter();
   if (typeof window !== "undefined") {
     return (
       <>
