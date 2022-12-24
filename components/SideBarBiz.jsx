@@ -5,7 +5,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 
-const MobileSidebar = ({ closeSidebar }) => {
+const MobileSidebar = ({ closeSidebar, logout }) => {
   return (
     <section className={clsx("bg-[#ffffff]/40 h-screen w-screen fixed top-0 left-0")}>
       <section className={clsx("bg-white max-w-[70%] p-4 h-full border-2")}>
@@ -21,7 +21,7 @@ const MobileSidebar = ({ closeSidebar }) => {
         </section>
         <section>
           <ul className={clsx("text-slate-500 w-128 p-2 ")}>
-            <Link href="#">
+            <Link href="/company/dashboard">
               <li className={clsx("mt-3 h-10 pl-7 pt-1 hover:bg-yellow-100 hover:text-[#BA9E3A] rounded-lg hover:text-lg")}>
                 <svg
                   className={clsx("inline-flex mr-4 hover:fill-red-900")}
@@ -38,7 +38,7 @@ const MobileSidebar = ({ closeSidebar }) => {
                 Inicio
               </li>
             </Link>
-            <Link href="">
+            <Link href="#">
               <li className={clsx("mt-3 h-10 pl-7 pt-1 hover:bg-yellow-100 hover:text-[#BA9E3A] rounded-lg hover:text-lg")}>
                 <Image
                   className={clsx("inline-flex mr-4 hover:file:bg-violet-100")}
@@ -60,7 +60,7 @@ const MobileSidebar = ({ closeSidebar }) => {
                 Descuentos
               </li>
             </Link>
-            <Link href="">
+            <Link href="#">
               <li className="mt-3 h-10 pl-7 pt-1 hover:bg-yellow-100 hover:text-[#BA9E3A] rounded-lg hover:text-lg">
                 <Image
                   className={clsx("inline-flex mr-4 hover:fill-[#BA9E3A]")}
@@ -70,7 +70,7 @@ const MobileSidebar = ({ closeSidebar }) => {
                 Visibilidad
               </li>
             </Link>
-            <Link href="">
+            <Link href="#">
               <li
                 className={clsx(
                   "mt-3 h-10 pl-7 pt-1 hover:bg-yellow-100 hover:text-[#BA9E3A] rounded-lg hover:text-lg"
@@ -117,7 +117,7 @@ export default function Sidebar() {
             )}
           >
             <div className={clsx("w-1/4 ml-5 m-auto")}>
-              <Link href="">
+              <Link href="#">
                 <div
                   className={clsx("h-10 w-10 bg-[#EFD16B] rounded-full")}
                 ></div>
@@ -160,7 +160,7 @@ export default function Sidebar() {
                 "text-blue-gray-500 text-montserrat font-light text-[16px] leading-[24px] w-128 p-2 "
               )}
             >
-              <Link href="">
+              <Link href="#">
                 <li
                   className={clsx(
                     "mt-3 h-10 pl-7 pt-1 hover:bg-yellow-100 hover:text-[#BA9E3A] rounded-lg hover:text-lg"
@@ -174,7 +174,7 @@ export default function Sidebar() {
                   Inicio
                 </li>
               </Link>
-              <Link href="">
+              <Link href="#">
                 <li
                   className={clsx(
                     "mt-3 h-10 pl-7 pt-1 hover:bg-yellow-100 hover:text-[#BA9E3A] rounded-lg hover:text-lg"
@@ -190,7 +190,7 @@ export default function Sidebar() {
                   Eventos
                 </li>
               </Link>
-              <Link href="">
+              <Link href="#">
                 <li
                   className={clsx(
                     "mt-3 h-10 pl-7 pt-1 hover:bg-yellow-100 hover:text-[#BA9E3A] rounded-lg hover:text-lg"
@@ -206,7 +206,7 @@ export default function Sidebar() {
                   Descuentos
                 </li>
               </Link>
-              <Link href="">
+              <Link href="#">
                 <li
                   className={clsx(
                     "mt-3 h-10 pl-7 pt-1 hover:bg-yellow-100 hover:text-[#BA9E3A] rounded-lg hover:text-lg"
@@ -220,7 +220,7 @@ export default function Sidebar() {
                   Visibilidad
                 </li>
               </Link>
-              <Link href="">
+              <Link href="#">
                 <li
                   className={clsx(
                     "mt-3 h-10 pl-7 pt-1 hover:bg-yellow-100 hover:text-[#BA9E3A] rounded-lg hover:text-lg"
@@ -275,7 +275,7 @@ export default function Sidebar() {
         >
           {isMobileSidebarOpen && <MobileSidebar closeSidebar={closeSidebar} />}
           <div className={clsx("flex items-center pl-6")}>
-            <Link href="">
+            <Link href="#">
               <Image src={images.beeyouLogo} alt="Bee You Logo" />
             </Link>
           </div>
