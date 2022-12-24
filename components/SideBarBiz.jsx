@@ -21,7 +21,7 @@ const MobileSidebar = ({ closeSidebar, logout }) => {
         </section>
         <section>
           <ul className={clsx("text-slate-500 w-128 p-2 ")}>
-            <Link href="#">
+            <Link href="/company/dashboard">
               <li className={clsx("mt-3 h-10 pl-7 pt-1 hover:bg-yellow-100 hover:text-[#BA9E3A] rounded-lg hover:text-lg")}>
                 <svg
                   className={clsx("inline-flex mr-4 hover:fill-red-900")}
@@ -38,7 +38,7 @@ const MobileSidebar = ({ closeSidebar, logout }) => {
                 Inicio
               </li>
             </Link>
-            <Link href="">
+            <Link href="#">
               <li className={clsx("mt-3 h-10 pl-7 pt-1 hover:bg-yellow-100 hover:text-[#BA9E3A] rounded-lg hover:text-lg")}>
                 <Image
                   className={clsx("inline-flex mr-4 hover:file:bg-violet-100")}
@@ -60,7 +60,7 @@ const MobileSidebar = ({ closeSidebar, logout }) => {
                 Descuentos
               </li>
             </Link>
-            <Link href="">
+            <Link href="#">
               <li className="mt-3 h-10 pl-7 pt-1 hover:bg-yellow-100 hover:text-[#BA9E3A] rounded-lg hover:text-lg">
                 <Image
                   className={clsx("inline-flex mr-4 hover:fill-[#BA9E3A]")}
@@ -70,7 +70,7 @@ const MobileSidebar = ({ closeSidebar, logout }) => {
                 Visibilidad
               </li>
             </Link>
-            <Link href="">
+            <Link href="#">
               <li
                 className={clsx(
                   "mt-3 h-10 pl-7 pt-1 hover:bg-yellow-100 hover:text-[#BA9E3A] rounded-lg hover:text-lg"
@@ -118,7 +118,7 @@ export default function Sidebar() {
             )}
           >
             <div className={clsx("w-1/4 ml-5 m-auto")}>
-              <Link href="">
+              <Link href="#">
                 <div
                   className={clsx("h-10 w-10 bg-[#EFD16B] rounded-full")}
                 ></div>
@@ -137,7 +137,7 @@ export default function Sidebar() {
                   "text-[12px] leading-[15px] font-medium font-montserrat text-blue-gray-500"
                 )}
               >
-                administrador
+                admin
               </p>
             </div>
           </section>
@@ -161,7 +161,7 @@ export default function Sidebar() {
                 "text-blue-gray-500 text-montserrat font-light text-[16px] leading-[24px] w-128 p-2 "
               )}
             >
-              <Link href="">
+              <Link href="#">
                 <li
                   className={clsx(
                     "mt-3 h-10 pl-7 pt-1 hover:bg-yellow-100 hover:text-[#BA9E3A] rounded-lg hover:text-lg"
@@ -175,7 +175,7 @@ export default function Sidebar() {
                   Inicio
                 </li>
               </Link>
-              <Link href="">
+              <Link href="#">
                 <li
                   className={clsx(
                     "mt-3 h-10 pl-7 pt-1 hover:bg-yellow-100 hover:text-[#BA9E3A] rounded-lg hover:text-lg"
@@ -191,7 +191,7 @@ export default function Sidebar() {
                   Eventos
                 </li>
               </Link>
-              <Link href="">
+              <Link href="#">
                 <li
                   className={clsx(
                     "mt-3 h-10 pl-7 pt-1 hover:bg-yellow-100 hover:text-[#BA9E3A] rounded-lg hover:text-lg"
@@ -207,7 +207,7 @@ export default function Sidebar() {
                   Descuentos
                 </li>
               </Link>
-              <Link href="">
+              <Link href="#">
                 <li
                   className={clsx(
                     "mt-3 h-10 pl-7 pt-1 hover:bg-yellow-100 hover:text-[#BA9E3A] rounded-lg hover:text-lg"
@@ -221,7 +221,7 @@ export default function Sidebar() {
                   Visibilidad
                 </li>
               </Link>
-              <Link href="">
+              <Link href="#">
                 <li
                   className={clsx(
                     "mt-3 h-10 pl-7 pt-1 hover:bg-yellow-100 hover:text-[#BA9E3A] rounded-lg hover:text-lg"
@@ -253,7 +253,7 @@ export default function Sidebar() {
                     "font-poppins font-medium text-[16px] leading-[17px] text-blue-gray-800 ml-3"
                   )}
                 >
-                  ¡Bienvenido
+                  ¡Bienvenid@
                 </p>
                 <p
                   className={clsx(
@@ -276,7 +276,7 @@ export default function Sidebar() {
         >
           {isMobileSidebarOpen && <MobileSidebar closeSidebar={closeSidebar} />}
           <div className={clsx("flex items-center pl-6")}>
-            <Link href="">
+            <Link href="#">
               <Image src={images.beeyouLogo} alt="Bee You Logo" />
             </Link>
           </div>
