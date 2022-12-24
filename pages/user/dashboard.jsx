@@ -26,6 +26,7 @@ export default function Dashboard() {
                 Cerca de ti
               </p>
             </section>
+
             <Map></Map>
           </section>
           <section className={clsx("w-11/12 m-auto mt-20 flex justify-between md:justify-around mb-10")}>
