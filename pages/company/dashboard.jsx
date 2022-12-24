@@ -1,14 +1,14 @@
 import CardUpgrade from "../../components/CardUpgrade";
 import ContentEvents from "../../components/ContentEvents";
 import ContentOff from "../../components/ContentOff";
-import Sidebar from "../../components/Sidebar";
+import SidebarBiz from "../../components/SideBarBiz";
 
 export default function Dashboard(){
   return(
     <>
       <main className="w-screen inline-flex ">
         <section className="w-1/4">
-          <Sidebar></Sidebar>
+          <SidebarBiz></SidebarBiz>
         </section>
         <section className="mt-6">
           <article>

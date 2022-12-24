@@ -3,6 +3,8 @@ import { images } from "../lib/images";
 import clsx from "clsx";
 import Link from "next/link";
 import React, { useState } from "react";
+import { useRouter } from "next/router";
+
 const MobileSidebar = ({ closeSidebar }) => {
   return (
     <section className={clsx("bg-[#ffffff]/40 h-screen w-screen fixed top-0 left-0")}>
@@ -134,7 +136,7 @@ export default function Sidebar() {
                   "text-[12px] leading-[15px] font-medium font-montserrat text-blue-gray-500"
                 )}
               >
-                administrador
+                admin
               </p>
             </div>
           </section>
@@ -250,7 +252,7 @@ export default function Sidebar() {
                     "font-poppins font-medium text-[16px] leading-[17px] text-blue-gray-800 ml-3"
                   )}
                 >
-                  ¡Bienvenido
+                  ¡Bienvenid@
                 </p>
                 <p
                   className={clsx(

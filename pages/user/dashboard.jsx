@@ -17,12 +17,12 @@ export default function Dashboard() {
     if (localStorage.getItem("token")) {
       return (
         <Layout>
-          <section className={clsx("w-11/12 radaial-2 m-auto rounded-2xl")}>
+          <section className={clsx("w-11/12 m-auto rounded-2xl")}>
             <section className={clsx("flex items-center mt-8 xl:-mt-4")}>
               <h1 className={clsx("text-[28px] leading-[36px] font-montserrat font-bold mb-10 lg:mt-0 to-blue-gray-800")}>
                 Espacios friendly
               </h1>
-              <p className={clsx("font-montserrat font-bold text-[#FFFFFF] text-[12px] leading-4 bg-green-900 rounded-lg ml-3 px-3 py-1")}>
+              <p className={clsx("font-montserrat font-bold text-[#FFFFFF] text-[12px] leading-4 bg-green-900 rounded-lg ml-3 px-3 py-1 xl:-mt-10")}>
                 Cerca de ti
               </p>
             </section>

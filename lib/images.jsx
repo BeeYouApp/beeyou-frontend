@@ -49,10 +49,10 @@ import planProIcon from "../public/assets/dashboard/icon-plan-pro.svg";
 import metricsIcon from "../public/assets/dashboard/icon-metrics.svg";
 import dividerIcon from "../public/assets/dashboard/figure-divider.svg";
 import figureChangePlan from "../public/assets/dashboard/figure-change-plan.png";
-import figureBussines from "../public/assets/dashboard/figure-business.webp";
-import figureRoll from "../public/assets/dashboard/figure-on-a-roll@2x.png";
-import figureEvents from "../public/assets/dashboard/figure-events@2x.png";
+import figureBussines from "../public/assets/dashboard/figure-business.svg";
+import figureEvents from "../public/assets/dashboard/figure-events.svg";
 import figureDiscount from "../public/assets/dashboard/figure-discount.svg";
+import iconPrideDiscount from "../public/assets/dashboard/icon-discount-pride.svg";
 import iconUserBeeYou from "../public/assets/dashboard/icon-user-bee-you.svg";
 import iconFavorite from "../public/assets/dashboard/icon-favorite-white.svg";
 
@@ -109,9 +109,9 @@ export const images = {
   dividerIcon,
   figureChangePlan,
   figureBussines,
-  figureRoll,
   figureEvents,
   figureDiscount,
+  iconPrideDiscount,
   iconUserBeeYou,
   iconFavorite,
 };
