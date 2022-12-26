@@ -16,7 +16,7 @@ export default function Feed() {
 
     const getAllCompanies = async () => {
         try {
-            const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzYTRmNGM5YWZlNWIwNmVjMDcxNGExNCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNjcxOTAxNDA0LCJleHAiOjE2NzE5ODc4MDR9.rwtttKjCz2JlHbkA3XHgVhxlh6jnJp1Ds1nPVzukMTw"
+            const token = localStorage.getItem("token");
             const response = await getCompanies(token)
             const dataJson = await response.json()
             setCompanies(dataJson.data.company)
@@ -61,7 +61,8 @@ export default function Feed() {
                             image={company.image}
                             stars="5"
                             description={company.description}
-                            TagSection={company.email}
+                            TagSection={company.type}
+                            discounts="ejemplo de descuento"
                         />
                     </li>
                 );
