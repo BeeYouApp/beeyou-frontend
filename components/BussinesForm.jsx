@@ -44,8 +44,7 @@ export default function BussinesForm() {
   const submitBusinessForm = async (data) => {
     try {
       const result = await showConfirm();
-      const fullAddress = `${data.address_line1}, ${data?.calle}, ${data.ciudad}, ${data.estado}, ${data.postal}`;
-      const coordinatesAddress = `${handleSaveMarkerLocation()}`;
+      const fullAddress = `${data.street}, ${data.city}, ${data.state}, ${data.postalCode}`;
 
       setMessageError("");
 /*         const user = JSON.parse(Buffer(localStorage.getItem("user"), "base64").toString("ascii")); */
@@ -53,8 +52,8 @@ export default function BussinesForm() {
         const token = localStorage.getItem("token"); */
 
         const id = "639be1d1289c2e72639b9538"
-        const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOWJlMWQxMjg5YzJlNzI2MzliOTUzOCIsInJvbGUiOiJjb21wYW55IiwiaWF0IjoxNjcxNjgxNzU1LCJleHAiOjE2NzE3NjgxNTV9.2y0tMJMfwV-pOzJB2kIeBWn-POePXvaEeZccdx81q00"
-        const response = await updateCompany(id, data, token);
+        const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOWJlMWQxMjg5YzJlNzI2MzliOTUzOCIsInJvbGUiOiJjb21wYW55IiwiaWF0IjoxNjcyMDkxMzI5LCJleHAiOjE2NzIxNzc3Mjl9.VBnEd5Uh8oZgmrt3377Xdo81yjM1R9n2xRR89Ci3KTI"
+        const response = await updateCompany(id, data, token, newCoordinates, fullAddress); // ---
         const dataJson = await response.json()
 
 
@@ -79,6 +78,9 @@ export default function BussinesForm() {
     const [feature, setFeature] = useState();
     const [showValidationText, setShowValidationText] = useState(false);
     const [token, setToken] = useState('');
+    const [newCoordinates, setNewCoordinates] = useState([]);
+    const [lat, setLat] = useState("")
+    const [long, setLong] = useState("")
 
     useEffect(() => { //Mapbox
         const accessToken = "pk.eyJ1IjoiYWJ5YmxhY2ttb3V0aCIsImEiOiJjbGFodTBobmowODIwM3hvYmxva20zYWQ4In0.GWgmsYW9P5xUKzxDGliiVg";
@@ -101,9 +103,21 @@ export default function BussinesForm() {
     }, [setFeature, setShowMinimap]);
 
     function handleSaveMarkerLocation(coordinate) {
-        const coordinateToSave = JSON.stringify(coordinate);
-        console.log(`Marker moved to ${JSON.stringify(coordinate)}.`)
-        return coordinateToSave
+/*         const coordinateToSave = JSON.stringify(coordinate);
+        console.log(`Marker moved to ${JSON.stringify(coordinate)}.`) */
+        setNewCoordinates(coordinate)
+
+        console.log(newCoordinates) 
+
+/*  const nLong = coordinate[0]
+    const nLat = coordinate[1]
+    setLong(nLong)
+    setLat(nLat) */
+
+/*         console.log("La longitud es:", nLong) 
+        console.log("La latitud es:", nLat) */
+/*         console.log(coordinate) */
+/*         return coordinateToSave */
     }
 
     function submitForm() {
@@ -132,7 +146,7 @@ export default function BussinesForm() {
     const [postalCode, setPostalCode] = useState("");
 
 
-  /*   useEffect(() => {
+/*     useEffect(() => {
         const user = JSON.parse(Buffer(localStorage.getItem("user"), "base64").toString("ascii"));
         if (user) {
         setBrandName(user.brandName);
