@@ -1,6 +1,5 @@
 import { getCompanies } from "../services/company.js"
 import React, { useEffect, useState, useContext } from "react";
-import CardCompany from "./CardCompany"
 import clsx from "clsx";
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -9,10 +8,17 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "swiper/css/navigation";
+import Slider from "react-slick";
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
+import dynamic from "next/dynamic";
+
+const CardCompany = dynamic(() => import('./CardCompany'), {
+    ssr: false,
+});
 
 export default function Feed() {
     const [companies, setCompanies] = useState([]);
-
 
     const getAllCompanies = async () => {
         try {
@@ -28,34 +34,48 @@ export default function Feed() {
         getAllCompanies()
     },
         [])
+
+    const settings = {
+        dots: true,
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        speed: 500,
+        initialSlide: 0,
+        nextArrow: ">",
+        prevArrow: "<",
+        responsive: [
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    infinite: true,
+                    dots: false
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    };
+
     return (
-        // <Swiper
-        //     modules={[Navigation, A11y]}
-        //     spaceBetween={10}
-        //     slidesPerView={1}
-        //     pagination={{ clickable: true }}
-        //     onSwiper={(swiper) => console.log(swiper)}
-        //     onSlideChange={() => console.log("slide change")}
-        //     breakpoints={{
-        //         360: {
-        //             slidesPerView: 1,
-        //         },
-        //         768: {
-        //             slidesPerView: 2,
-        //         },
-        //         1024: {
-        //             slidesPerView: 3,
-        //         },
-        //         1024: {
-        //             slidesPerView: 4,
-        //         }
-        //     }}
-        //     className="w-[100%]"
-        // >
-        <ul className="w-[100%]">
-            {companies.map((company) => {
-                return (
-                    <li className={clsx("mb-20")}>
+        <div className="w-[100%]">
+            <Slider {...settings}>
+                {companies?.map((company, index) => (
+                    <div key={index}>
                         <CardCompany
                             title={company.brandName}
                             image={company.image}
@@ -64,10 +84,9 @@ export default function Feed() {
                             TagSection={company.type}
                             discounts="ejemplo de descuento"
                         />
-                    </li>
-                );
-            })}
-        </ul>
-        // </Swiper>
+                    </div>
+                ))}
+            </Slider>
+        </div>
     );
 };

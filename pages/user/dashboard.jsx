@@ -4,7 +4,13 @@ import Map from "../../components/Map";
 import { useRouter } from "next/router";
 import Button from "../../components/Button";
 import Layout from "../../components/LayoutDashboard";
-import Feed from "../../components/FeedCompanies";
+// import Feed from "../../components/FeedCompanies";
+import dynamic from "next/dynamic";
+
+const Feed = dynamic(() => import('../../components/FeedCompanies'), {
+  ssr: false,
+});
+
 
 export default function Dashboard() {
   const [hasMounted, setHasMounted] = useState(false);
@@ -17,11 +23,11 @@ export default function Dashboard() {
     if (localStorage.getItem("token")) {
       return (
         <Layout>
-          <section className={clsx("w-11/12 m-auto rounded-2xl")}>
+          <section className={clsx("w-12/12 lg:w-11/12 m-auto rounded-2xl")}>
             <section className={clsx("md:flex flex-row-reverse items-center justify-end mt-8 xl:-mt-4")}>
-              <div className={clsx("bg-green-900 rounded-lg xl:-mt-10 w-[88px] h-[24px]",
+              <div className={clsx("bg-green-900 rounded-lg w-[88px] h-[24px]",
                 "flex items-center justify-center")}>
-                <p className={clsx("font-bold text-[#FFFFFF] text-[12px] text-center leading-4")}>
+                <p className={clsx("font-montserrat font-bold text-[#FFFFFF] text-[12px] text-center leading-4")}>
                   Cerca de ti
                 </p>
               </div>
