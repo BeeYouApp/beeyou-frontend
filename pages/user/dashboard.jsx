@@ -4,13 +4,7 @@ import Map from "../../components/Map";
 import { useRouter } from "next/router";
 import Button from "../../components/Button";
 import Layout from "../../components/LayoutDashboard";
-// import Feed from "../../components/FeedCompanies";
-import dynamic from "next/dynamic";
-
-const Feed = dynamic(() => import('../../components/FeedCompanies'), {
-  ssr: false,
-});
-
+import Feed from "../../components/FeedCompanies";
 
 export default function Dashboard() {
   const [hasMounted, setHasMounted] = useState(false);
@@ -27,12 +21,16 @@ export default function Dashboard() {
             <section className={clsx("md:flex flex-row-reverse items-center justify-end mt-8 xl:-mt-4")}>
               <div className={clsx("bg-green-900 rounded-lg w-[88px] h-[24px]",
                 "flex items-center justify-center")}>
-                <p className={clsx("font-montserrat font-bold text-[#FFFFFF] text-[12px] text-center leading-4")}>
+                <p className={clsx(
+                  "font-montserrat font-bold",
+                  "text-[#FFFFFF] text-[12px] text-center leading-4")}>
                   Cerca de ti
                 </p>
               </div>
 
-              <h1 className={clsx("text-[28px] leading-[36px] font-montserrat font-bold lg:mt-0 to-blue-gray-800 mr-2")}>
+              <h1 className={clsx(
+                "text-[28px] leading-[36px] font-montserrat font-bold",
+                "lg:mt-0 to-blue-gray-800 mr-2")}>
                 Espacios friendly
               </h1>
 

@@ -1,17 +1,9 @@
-import { getCompanies } from "../services/company.js"
-import React, { useEffect, useState, useContext } from "react";
-import clsx from "clsx";
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
-import "swiper/css/navigation";
+import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import dynamic from "next/dynamic";
+import { getCompanies } from "../services/company.js"
 
 const CardCompany = dynamic(() => import('./CardCompany'), {
     ssr: false,
@@ -42,8 +34,6 @@ export default function Feed() {
         slidesToScroll: 1,
         speed: 500,
         initialSlide: 0,
-        nextArrow: ">",
-        prevArrow: "<",
         responsive: [
             {
                 breakpoint: 992,
@@ -72,7 +62,7 @@ export default function Feed() {
     };
 
     return (
-        <div className="w-[100%]">
+        <div className="flex w-[100%]">
             <Slider {...settings}>
                 {companies?.map((company, index) => (
                     <div key={index}>
