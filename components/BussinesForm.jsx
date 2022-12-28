@@ -14,18 +14,20 @@ const companyFormSchema = yup.object({
   rfc: yup.string().required("Requerido"),
   legalRepresentative: yup.string().required("Requerido"),
   type: yup.string().required("Requerido"),
+  timeServiceStart: yup.string().trim().required("Requerido"),
+  timeServiceEnd: yup.string().trim().required("Requerido"),
   description: 
     yup
     .string()
     .required("Requerido")
     .min(10, "La descripción debe contener al menos 10 caracteres")
     .max(280, "La descripción debe contener al menos 280 caracteres"),
-  // address: yup//   .string() //   .required("Requerido"),
   street: yup.string().required("Requerido"),
   city: yup.string().required("Requerido"),
   state: yup.string().required("Requerido"),
   postalCode: yup.string().required("Requerido"),
 }).required();
+
 
 const DynamicComponent = dynamic(() => import('./AutofillMap'), {
     ssr: false,
@@ -132,7 +134,10 @@ export default function BussinesForm() {
     const [city, setCity] = useState("");
     const [state, setState] = useState("");
     const [postalCode, setPostalCode] = useState("");
+    const [timeServiceStart, setfTimeServiceStart] = useState("");
+    const [timeServiceEnd, setTimeServiceEnd] = useState("")
     const [hasMounted, setHasMounted] = useState(false);
+
 
     useEffect(() => {setHasMounted(true)}, []);
     if (!hasMounted) {
@@ -246,21 +251,27 @@ export default function BussinesForm() {
             </label>
             <div className={clsx("inline-flex")}>
               <Input
-                id="fromTimezone"
-                name="fromTimezone"
+                id="timeServiceStart"
+                name="timeServiceStart"
                 type="time"
-                style="w-[139px]">  
+                style="w-[139px]"
+                register={register("timeServiceStart")}
+                defaultValue={timeServiceStart}>  
               </Input>
+              <p>{errors?.timeServiceStart?.message}</p>
               <h3
                 className={clsx(
                 "m-auto ml-1 text-[12px] font-montserrat font-bold text-blue-gray-900")}>A
               </h3>
               <Input
-                id="toTimezone"
-                name="toTimezone"
+                id="timeServiceEnd"
+                name="timeServiceEnd"
                 type="time"
-                style="w-[139px]">
+                style="w-[139px]"
+                register={register("timeServiceEnd")}
+                defaultValue={timeServiceEnd}>
               </Input>
+              <p>{errors?.timeServiceEnd?.message}</p>
             </div>
           </article>
           <article>
