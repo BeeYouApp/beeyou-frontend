@@ -2,25 +2,28 @@ import clsx from "clsx";
 import Image from "next/image";
 import { images } from "../lib/images";
 
-export default function CardCompany({ title, image, stars, description, TagSection }) {
+export default function CardCompany({ title, image, stars, description, TagSection, discounts }) {
 	return (
-		<section className={clsx("flex justify-center")}>
-			<section className={clsx("w-[95%] h-[400px] md:h-[259px] rounded-[16px] border-4 border-blue-sky-50 shadow-xl flex flex-col md:flex-row")}>
+		<section className={clsx("w-[100%] m-1")}>
+			<section className={clsx("w-[100%] h-[400px] md:h-[259px] rounded-[16px] border-4",
+				"border-blue-sky-50 shadow-xl flex flex-col md:flex-row")}>
 				<article className={clsx("w-[100%] md:w-[200px] h-full rounded-[16px]")}>
 					<div className={clsx("flex justify-end")}>
-						<button className={clsx("w-[32px] h-[32px] bg-[#000000]/20 hover:bg-[#000000]/60 rounded-full absolute m-1")}>
+						<button className={clsx("w-[32px] h-[32px] bg-[#000000]/20 rounded-full absolute m-1")}>
 							<Image className={clsx("m-auto")} src={images.iconFavorite} alt="icon-favorite" />
 						</button>
 					</div>
 					<div className={clsx("w-[100%] h-[100%] static")}>
 						<img src={image} className={clsx("w-[100%] h-[100%]")} />
 						{/* {image} */}
-						<button className={clsx("w-[100%] h-[26px] bg-blue-gray-900 text-[12px] text-[#FFFF] rounded-b-[10px]  font-montserrat hover:font-bold max-md:hidden")}>
+						<button className={clsx("w-[100%] h-[26px] bg-blue-gray-900",
+							"text-[12px] text-[#FFFF] rounded-b-[10px]  font-montserrat",
+							"hover:font-bold max-md:hidden")}>
 							VER MÁS
 						</button>
 					</div>
 				</article>
-				<section className={clsx("px-4 py-5 font-montserrat w-[360px]")}>
+				<section className={clsx("px-4 py-5 font-montserrat w-[100%]")}>
 					<article className={clsx("flex")}>
 						<h1 className={clsx("text-[18px] w-[65%] text-blue-gray-900 font-bold")}>
 							{title}
@@ -42,7 +45,14 @@ export default function CardCompany({ title, image, stars, description, TagSecti
 					<article className={clsx("block mt-2 text-blue-gray-700 text-[14px]")}>
 						{description}
 					</article>
-					{TagSection}
+					<section className={clsx("flex justify-between")}>
+						<div>
+							{TagSection}
+						</div>
+						<div>
+							{discounts}
+						</div>
+					</section>
 				</section>
 				<button className={clsx("w-[100%] h-[26px] bg-blue-gray-900 text-[12px] text-[#FFFF] rounded-b-[10px] font-montserrat hover:font-bold md:hidden")}>
 					VER MÁS
