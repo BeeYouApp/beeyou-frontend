@@ -16,7 +16,9 @@ export default function CardCompany({ title, image, stars, description, TagSecti
 					<div className={clsx("w-[100%] h-[100%] static")}>
 						<img src={image} className={clsx("w-[100%] h-[100%]")} />
 						{/* {image} */}
-						<button className={clsx("w-[100%] h-[26px] bg-blue-gray-900 text-[12px] text-[#FFFF] rounded-b-[10px]  font-montserrat hover:font-bold max-md:hidden")}>
+						<button className={clsx("w-[100%] h-[26px] bg-blue-gray-900",
+							"text-[12px] text-[#FFFF] rounded-b-[10px]  font-montserrat",
+							"hover:font-bold max-md:hidden")}>
 							VER MÁS
 						</button>
 					</div>
