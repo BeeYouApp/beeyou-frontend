@@ -6,13 +6,14 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint ./ --ext js,jsx,ts,tsx"
   },
   "dependencies": {
     "@hookform/resolvers": "^2.9.10",
     "@mapbox/search-js-react": "^1.0.0-beta.14",
     "clsx": "^1.2.1",
     "date-fns": "^2.29.3",
+    "eslint-config-next": "^12.3.4",
     "leaflet": "^1.9.3",
     "mapbox-gl": "^2.11.0",
     "maplibre-gl": "^2.4.0",
@@ -21,7 +22,7 @@
     "react-dom": "18.2.0",
     "react-hook-form": "^7.40.0",
     "react-map-gl": "^7.0.20",
-    "react-map-gl-geocoder": "^2.2.0",
+    "react-map-gl-geocoder": "^1.8.1",
     "react-slick": "^0.29.0",
     "react-toastify": "^9.1.1",
     "sass": "^1.56.1",
@@ -31,6 +32,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",
+    "eslint": "^8.30.0",
     "postcss": "^8.4.19",
     "tailwindcss": "^3.2.4"
   }

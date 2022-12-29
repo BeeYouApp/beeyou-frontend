@@ -12,7 +12,7 @@ export default function CardPlacesLg() {
         <div className="w-[100%] lg:w-[402px]">
           <Image className={clsx("rounded-t-lg w-[100%] h-[116px] md:w-[100%] md:h-[250px] lg:w-[100%] lg:h-[100%] object-cover")}
             src={images.placeImage}
-            alt="Place Image"/>
+            alt="Place Image" />
         </div>
         {/* GREEN */}
         <div className={clsx("px-6 pt-5 pb-4")}>
@@ -28,23 +28,23 @@ export default function CardPlacesLg() {
                 </div>
                 <div className="md:flex md:flex-col md:self-end lg:ml-14">
                   <h6 className={clsx("text-[10px] font-light leading-[12px] aling-items self-end")}>
-                  <span className={clsx("inline-block self-center text-blue-gray-500 text-[10px] leading-[12px] mr-1")}>
-                    100% FRIENDLY
-                  </span>
-                  <Image className={clsx("inline-block")} src={images.verifiedIcon} alt="Verified Place Icon" />
+                    <span className={clsx("inline-block self-center text-blue-gray-500 text-[10px] leading-[12px] mr-1")}>
+                      100% FRIENDLY
+                    </span>
+                    <Image className={clsx("inline-block")} src={images.verifiedIcon} alt="Verified Place Icon" />
                   </h6>
                   <h6 className={clsx("hidden md:block text-[10px] font-light leading-[12px] aling-items self-end")}>
-                  <span className={clsx("md:inline-block  self-center text-blue-gray-500 text-[10px] leading-[12px] mr-1")}>
-                    NEGOCIO EN RACHA
-                  </span>
-                  <Image className="md:inline-block " src={images.streakIcon} alt="Streak Icon" />
+                    <span className={clsx("md:inline-block  self-center text-blue-gray-500 text-[10px] leading-[12px] mr-1")}>
+                      NEGOCIO EN RACHA
+                    </span>
+                    <Image className="md:inline-block " src={images.streakIcon} alt="Streak Icon" />
                   </h6>
                 </div>
               </div>
               <p
                 className={clsx("text-blue-gray-700 text-[14px] font-light leading-[21px] max-w-[255px] lg:max-w-[328px] mb-4 lg:mb-4 mt-4 lg:mt-4")}>
                 CIELITO ® es un refugio único que inspirado en nuestra historia
-                y calidez latina, reinventa la experiencia de “tomar café"...
+                y calidez latina, reinventa la experiencia de “tomar café”...
               </p>
             </section>
 
@@ -54,15 +54,15 @@ export default function CardPlacesLg() {
                 <h6>TAGS RELACIONADOS</h6>
                 <ul className={clsx("mt-3")}>
                   <li className={clsx("mb-3")}>
-                    <Image className={clsx("inline-block mr-2")} src={images.tagIcon} alt="Tag Icon"/>
+                    <Image className={clsx("inline-block mr-2")} src={images.tagIcon} alt="Tag Icon" />
                     LGBT
                   </li>
                   <li className={clsx("mb-3")}>
-                    <Image className={clsx("inline-block mr-2")} src={images.tagIcon} alt="Tag Icon"/>
+                    <Image className={clsx("inline-block mr-2")} src={images.tagIcon} alt="Tag Icon" />
                     Café
                   </li>
                   <li className={clsx("mb-[18px]")}>
-                    <Image className={clsx("inline-block mr-2")} src={images.tagIcon}alt="Tag Icon"/>
+                    <Image className={clsx("inline-block mr-2")} src={images.tagIcon} alt="Tag Icon" />
                     Descuentos
                   </li>
                 </ul>
@@ -72,15 +72,15 @@ export default function CardPlacesLg() {
                 <h6>HORARIOS</h6>
                 <ul className={clsx("mt-3")}>
                   <li className={clsx("mb-3")}>
-                    <Image className={clsx("inline-block mr-2")} src={images.dateIcon} alt="Date Icon"/>
+                    <Image className={clsx("inline-block mr-2")} src={images.dateIcon} alt="Date Icon" />
                     D, L, M, X, J, V, S
                   </li>
                   <li className={clsx("mb-3")}>
-                    <Image className={clsx("inline-block mr-2")} src={images.openClockIcon} alt="Open Clock Icon"/>
+                    <Image className={clsx("inline-block mr-2")} src={images.openClockIcon} alt="Open Clock Icon" />
                     1:00 pm
                   </li>
                   <li className={clsx("mb-[18px]")}>
-                    <Image className={clsx("inline-block mr-2")} src={images.closeClockIcon} alt="Close Clock Icon"/>
+                    <Image className={clsx("inline-block mr-2")} src={images.closeClockIcon} alt="Close Clock Icon" />
                     12:00 am
                   </li>
                 </ul>
@@ -90,11 +90,11 @@ export default function CardPlacesLg() {
           {/* 2ND SECTION */}
           <section className={clsx("md:flex md:justify-between font-montserrat font-normal text-blue-gray-600 text-[12px] leading-[15px]")}>
             <Dropdown>
-              <Image className={clsx("mr-2")} src={images.offerIcon} alt="Offer Icon"/>
+              <Image className={clsx("mr-2")} src={images.offerIcon} alt="Offer Icon" />
               10% de descuento en todas...
             </Dropdown>
             <Dropdown>
-              <Image className={clsx("mr-2")} src={images.pinIcon} alt="Pin Icon"/>
+              <Image className={clsx("mr-2")} src={images.pinIcon} alt="Pin Icon" />
               Juárez, 06600 Ciudad de Méxi...
             </Dropdown>
           </section>
