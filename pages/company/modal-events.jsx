@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import ModalEvents from "../../components/ModalEvents";
+// import ModalEvents from "../../components/ModalEvents";
 
 export default function ModalEventsBiz(){
   return(
@@ -9,7 +9,7 @@ export default function ModalEventsBiz(){
             
           </section>
           <article className={clsx("max-lg:w-full h-/4 max-lg:h-[620px] pl-[40px] pt-[32px] max-lg:flex max-lg:justify-center max-lg:pl-[0px]")}>
-            <ModalEvents></ModalEvents>
+            {/* <ModalEvents></ModalEvents> */}
           </article>
         </main>
         </>
