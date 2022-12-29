@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from "react";
-import Slider from "react-slick";
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
+// import Slider from "react-slick";
+// import 'slick-carousel/slick/slick.css'
+// import 'slick-carousel/slick/slick-theme.css'
 import dynamic from "next/dynamic";
 import { getCompanies } from "../services/company.js"
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+// import "./style.css";
 
 const CardCompany = dynamic(() => import('./CardCompany'), {
   ssr: false,
@@ -29,54 +33,35 @@ export default function Feed() {
 
   const settings = {
     dots: true,
+    arrows: false,
+    fade: true,
     infinite: true,
-    slidesToShow: 3,
+    slidesToShow: 1,
     slidesToScroll: 1,
-    speed: 500,
-    initialSlide: 0,
-    responsive: [
-      {
-        breakpoint: 992,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          infinite: true,
-          dots: false
-        }
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2
-        }
-      },
-      {
-        breakpoint: 576,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
-        }
-      }
-    ]
+    autoplaySpeed: 3000,
+    pauseOnHover: true,
+    autoplay: true,
+    swipeToSlide: true,
+    adaptiveHeight: true
   };
 
   return (
-    <div className="flex w-[100%]">
-      <Slider {...settings}>
-        {companies?.map((company, index) => (
-          <div key={index}>
-            <CardCompany
-              title={company.brandName}
-              image={company.image}
-              stars="5"
-              description={company.description}
-              TagSection={company.type}
-              discounts="ejemplo de descuento"
-            />
-          </div>
-        ))}
-      </Slider>
-    </div>
+    // <div className="flex w-[100%]">
+    <Slider {...settings}>
+      {companies.map((company, index) => (
+        <CardCompany
+          title={company.brandName}
+          image={company.image}
+          stars="5"
+          description={company.description}
+          TagSection={company.type}
+          discounts="ejemplo de descuento"
+          key={index}
+        />
+      ))}
+    </Slider>
+    // </div>
   );
 };
+
+
