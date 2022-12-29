@@ -13,23 +13,23 @@ export default function Notice(){
           >Mi espacio friendly cumple con:</h2>
         <form className="p-7 text-justify text-[15px] text-blue-gray-700 font-montserrat" method="get" action="">
           <label className="flex mb-4">
-            <input className="mb-6" name="cbipeliculas" type="checkbox"/>
+            <input className="mb-6" name="friendly" type="checkbox" value="false"/>
             <h1 className="pl-2">Mi negocio participa activamente en eventos de la comunidad LGBTIQ+</h1>
           </label>
           <label className="flex mb-4">
-            <input className="mb-6" name="cbipeliculas" type="checkbox"/>
+            <input className="mb-6" name="friendly" type="checkbox" value="false"/>
             <h1 className="pl-2">Mi negocio organiza eventos que incluyan a la comunidad LGBTIQ+</h1>
           </label>
           <label className="flex mb-4">
-            <input className="mb-6" name="cbipeliculas" type="checkbox"/>
+            <input className="mb-6" name="friendly" type="checkbox" value="false" />
             <h1 className="pl-2">Mi negocio está abierto a personas que forman parte de la comunidad LGBTIQ+</h1>
           </label>
           <label className="flex mb-4">
-            <input className="mb-6" name="cbipeliculas" type="checkbox"/>
+            <input className="mb-6" name="friendly" type="checkbox" value="false" />
             <h1 className="pl-2">Mi negocio está verificado en un organismo oficial como establecimiento LGBTIQ+ friendly</h1>
           </label>
           <label className="flex">
-            <input className="mb-6" name="cbipeliculas" type="checkbox"/>
+            <input className="mb-6" name="friendly" type="checkbox" value="false" />
             <h1 className="pl-2">Mi negocio es incluyente y no discrimina a  ningún miembro de la comunidad LGBTIQ+</h1>
           </label>
         </form>
