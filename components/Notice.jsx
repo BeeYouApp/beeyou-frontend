@@ -10,10 +10,25 @@ export default function Notice(){
   const [checkThree, setCheckThree] = useState(false)
   const [checkFour, setCheckFour] = useState(false)
   const [checkFive, setCheckFive] = useState(false)
+  const [checkNotice, setCheckNotice] = useState(false)
+  const [validation, setValidation] = useState(false)
 
   useEffect(() => {
-      console.log(value)
+      console.log("Llevas" , value, " checks de 5")
   }, [value]);
+
+  useEffect(() => {
+    console.log("La firma del aviso de privacidad es: ", checkNotice)
+  }, [checkNotice]);
+
+  useEffect(()=>{
+    if(value >= 3 && checkNotice === true){
+      setValidation(true)
+      console.log("Usuario validado, puedes pasar")
+    } else{
+      console.log("No eres suficiente friendy par continuar")
+    }
+})
 
   return(
     <>
@@ -111,7 +126,7 @@ export default function Notice(){
           </label>
         </form>
         <section className="flex grid-rows-2 ml-7 ">
-        <article>
+{/*         <article>
           <Input
             label="Ingresa EL ID de certificacíón LGBTIQ+ Bussines"
             style="w-[263px]"
@@ -125,11 +140,22 @@ export default function Notice(){
             style="w-[263px]"
             type="date">
           </Input>
-        </article>
+        </article> */}
         </section>
         <form className="p-8 text-justify text-[10px] text-blue-gray-700 font-montserrat" method="get" action="">
           <label className="flex mb-5">
-            <input className="mb-[80px]" name="cbipeliculas" type="checkbox"/>
+            <input 
+              className="mb-[80px]" 
+              name="notice" 
+              type="checkbox"
+              value ={checkNotice}
+              onChange={()=>{
+                if (checkNotice === !true){
+                  setCheckNotice(true)
+                  } else {
+                    setCheckNotice(false)
+                  }
+              }}/>
             <h1 className="pl-2">Haz click aquí para verificar. Certifico que estas respuestas se basan en el compromiso ético y moral de mi negocio que promueve la igualdad así como un mayor respeto por los derechos de las personas LGBTIQ+ y sus identidades. Manifiesto de forma clara y contundente mi oposición contra quienes abusan de las personas del colectivo así como no permanecer impasible si sucede algún acontecimiento que atente contra ellas en mi establecimiento. Es un compromiso ético y personal con las personas LGBTIQ+ más allá del rédito económico que pueda obtener por la prestación de servicios de bee you.</h1>
           </label>
         </form>
@@ -142,13 +168,12 @@ export default function Notice(){
           </Button>
           <Button
             onClick={() => {
-              setValue(value);
-                  }}
+              setValidation(validation)
+            }}
             label='CONTINUAR'
             isSubmit
             style={clsx(
-              "lgbtiq-grad-bg rounded-lg w-[250px]")}>
-                
+              "lgbtiq-grad-bg rounded-lg w-[250px]")}>   
           </Button>
         </article>
       </section>
