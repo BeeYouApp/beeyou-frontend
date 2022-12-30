@@ -13,12 +13,13 @@ const Feed = dynamic(() => import('../../components/FeedCompanies'), {
 
 
 export default function Dashboard() {
+  const router = useRouter();
   const [hasMounted, setHasMounted] = useState(false);
   useEffect(() => { setHasMounted(true) }, []);
   if (!hasMounted) {
     return null;
   }
-  const router = useRouter();
+
   if (typeof window !== "undefined") {
     if (localStorage.getItem("token")) {
       return (
