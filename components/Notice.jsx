@@ -3,9 +3,13 @@ import Input from "./Input";
 import Button from "./Button";
 import React, { useState, useEffect } from "react";
 
-
 export default function Notice(){
-  const [value, setValue]= useState(0)
+  const [value, setValue] = useState(0)
+  const [check, setCheck] = useState(false)
+  const [checkTwo, setCheckTwo] = useState(false)
+  const [checkThree, setCheckThree] = useState(false)
+  const [checkFour, setCheckFour] = useState(false)
+  const [checkFive, setCheckFive] = useState(false)
 
   useEffect(() => {
       console.log(value)
@@ -25,8 +29,16 @@ export default function Notice(){
               className="mb-6" 
               name="friendly" 
               type="checkbox" 
-              value="1"
-              onChange={() => setValue(value +1 )}/>
+              value={check}
+              onChange={()=>{
+                if (check === !true){
+                  setCheck(true)
+                  setValue(value + 1)
+                  } else {
+                    setCheck(false)
+                    setValue(value - 1)
+                  }
+              }}/>
             <h1 className="pl-2">Mi negocio participa activamente en eventos de la comunidad LGBTIQ+</h1>
           </label>
           <label className="flex mb-4">
@@ -34,8 +46,16 @@ export default function Notice(){
               className="mb-6" 
               name="friendly" 
               type="checkbox" 
-              value="false"
-              onChange={() => setValue(value +1 )}/>
+              value={checkTwo}
+              onChange={()=>{
+                if (checkTwo === !true){
+                  setCheckTwo(true)
+                  setValue(value + 1)
+                  } else {
+                    setCheckTwo(false)
+                    setValue(value - 1)
+                  }
+              }}/>
             <h1 className="pl-2">Mi negocio organiza eventos que incluyan a la comunidad LGBTIQ+</h1>
           </label>
           <label className="flex mb-4">
@@ -43,8 +63,16 @@ export default function Notice(){
               className="mb-6" 
               name="friendly" 
               type="checkbox" 
-              value="false" 
-              onChange={() => setValue(value +1 )}/>
+              value={checkThree}
+              onChange={()=>{
+                if (checkThree === !true){
+                  setCheckThree(true)
+                  setValue(value + 1)
+                  } else {
+                    setCheckThree(false)
+                    setValue(value - 1)
+                  }
+              }}/>
             <h1 className="pl-2">Mi negocio está abierto a personas que forman parte de la comunidad LGBTIQ+</h1>
           </label>
           <label className="flex mb-4">
@@ -52,8 +80,16 @@ export default function Notice(){
               className="mb-6" 
               name="friendly" 
               type="checkbox" 
-              value="false" 
-              onChange={() => setValue(value +1 )}/>
+              value={checkFour}
+              onChange={()=>{
+                if (checkFour === !true){
+                  setCheckFour(true)
+                  setValue(value + 1)
+                  } else {
+                    setCheckFour(false)
+                    setValue(value - 1)
+                  }
+              }}/>
             <h1 className="pl-2">Mi negocio está verificado en un organismo oficial como establecimiento LGBTIQ+ friendly</h1>
           </label>
           <label className="flex">
@@ -61,8 +97,16 @@ export default function Notice(){
               className="mb-6" 
               name="friendly" 
               type="checkbox" 
-              value="false"
-              onChange={() => setValue(value +1 )}/>
+              value={checkFive}
+              onChange={()=>{
+                if (checkFive === !true){
+                  setCheckFive(true)
+                  setValue(value + 1)
+                  } else {
+                    setCheckFive(false)
+                    setValue(value - 1)
+                  }
+              }}/>
             <h1 className="pl-2">Mi negocio es incluyente y no discrimina a  ningún miembro de la comunidad LGBTIQ+</h1>
           </label>
         </form>
