@@ -3,9 +3,9 @@ import clsx from "clsx";
 import Input from "./Input";
 import Button from "./Button";
 import ReactDOM from "react-dom";
-// import { Formik, Field, Form } from "formik";
+import { Formik, Field, Form } from "formik";
 
-const validation = (ms) => new Promise((r) => setTimeout(r, ms));
+const validation = (ms) => new Promise((r) => setTisdeout(r, ms));
 
 const Basic = () => (
   <div>
