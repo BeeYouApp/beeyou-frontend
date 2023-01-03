@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import clsx from "clsx";
 import Map from "../../components/Map";
 import { useRouter } from "next/router";
@@ -41,7 +41,7 @@ export default function Dashboard() {
             <Map></Map>
           </section>
           <section className={clsx("w-11/12 m-auto mt-20 flex justify-between md:justify-around mb-10")}>
-            {/* <Button
+            <Button
               label="Cafeterías"
               style="bg-gray-700 w-96 rounded-full">
             </Button>
@@ -64,7 +64,7 @@ export default function Dashboard() {
             <Button
               label="Descuentos"
               style="bg-gray-700 w-96 rounded-full max-lg:hidden">
-            </Button> */}
+            </Button>
           </section>
           <Feed />
         </Layout>
