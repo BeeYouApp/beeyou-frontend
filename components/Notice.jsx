@@ -1,9 +1,12 @@
 import clsx from "clsx";
-import Input from "./Input";
-import Button from "./Button";
 import React, { useState, useEffect } from "react";
+import { useRouter } from "next/router";
+import { updateVerification } from "../services/company";
 
 export default function Notice(){
+  const router = useRouter();
+  const [messageError, setMessageError] = useState("");
+  
   const [value, setValue] = useState(0)
   const [check, setCheck] = useState(false)
   const [checkTwo, setCheckTwo] = useState(false)
@@ -13,18 +16,41 @@ export default function Notice(){
   const [checkNotice, setCheckNotice] = useState(false)
   const [validation, setValidation] = useState(false)
 
-  useEffect(() => {
-      console.log("Llevas" , value, " checks de 5")
-  }, [value]);
+  const onSubmit = async (event) => {
+    try {
+      event.preventDefault()
+      console.log("submitRegister")
+      setMessageError("")
 
-  useEffect(() => {
-    console.log("La firma del aviso de privacidad es: ", checkNotice)
-  }, [checkNotice]);
+      const user = JSON.parse(Buffer(localStorage.getItem("user"), "base64").toString("ascii"));
+      const id = user._id
+      const token = localStorage.getItem("token")
+
+      const data = {verificationLevel:value, isVerified:validation}
+      console.log(data)
+      const response = await updateVerification( id, token, value, validation )
+      const dataJson = await response.json()
+      console.log(dataJson)
+
+
+      if (response.status === 200 && dataJson.user.isVerified === true) {
+        router.push(`/company/profile-configuration?id=${response.user}&token=${response.token}`);
+    }
+    setMessageError(" ")
+
+    } catch (error) {
+      console.log('Error: ', error)
+      setMessageError("Ops ocurrió un error")
+    }
+  } 
+
 
   useEffect(()=>{
     if(value >= 3 && checkNotice === true){
       setValidation(true)
       console.log("Usuario validado, puedes pasar")
+
+
     } else{
       console.log("No eres suficiente friendy par continuar")
     }
@@ -38,11 +64,13 @@ export default function Notice(){
           "text-center text-[17px] font-bold font-montserrat text-blue-gray-900",
           "border-b-2 border-b-gray-200 shadow-xs")}
           >Mi espacio friendly cumple con:</h2>
-        <form className="p-7 text-justify text-[15px] text-blue-gray-700 font-montserrat" method="get" action="">
+        <form 
+          onSubmit={onSubmit}
+          className="p-7 text-justify text-[15px] text-blue-gray-700 font-montserrat">
           <label className="flex mb-4">
             <input 
               className="mb-6" 
-              name="friendly" 
+              name="check" 
               type="checkbox" 
               value={check}
               onChange={()=>{
@@ -59,7 +87,7 @@ export default function Notice(){
           <label className="flex mb-4">
             <input 
               className="mb-6" 
-              name="friendly" 
+              name="checkTwo" 
               type="checkbox" 
               value={checkTwo}
               onChange={()=>{
@@ -76,7 +104,7 @@ export default function Notice(){
           <label className="flex mb-4">
             <input 
               className="mb-6" 
-              name="friendly" 
+              name="checkThree" 
               type="checkbox" 
               value={checkThree}
               onChange={()=>{
@@ -93,7 +121,7 @@ export default function Notice(){
           <label className="flex mb-4">
             <input 
               className="mb-6" 
-              name="friendly" 
+              name="checkFour" 
               type="checkbox" 
               value={checkFour}
               onChange={()=>{
@@ -110,7 +138,7 @@ export default function Notice(){
           <label className="flex">
             <input 
               className="mb-6" 
-              name="friendly" 
+              name="checkFive" 
               type="checkbox" 
               value={checkFive}
               onChange={()=>{
@@ -124,25 +152,9 @@ export default function Notice(){
               }}/>
             <h1 className="pl-2">Mi negocio es incluyente y no discrimina a  ningún miembro de la comunidad LGBTIQ+</h1>
           </label>
-        </form>
         <section className="flex grid-rows-2 ml-7 ">
-{/*         <article>
-          <Input
-            label="Ingresa EL ID de certificacíón LGBTIQ+ Bussines"
-            style="w-[263px]"
-            type="text"
-            placeholder="ID">
-          </Input>
-        </article>
-        <article>
-          <Input
-            label="Ingresa la fecha de expiración DEL CERTIFICADO"
-            style="w-[263px]"
-            type="date">
-          </Input>
-        </article> */}
         </section>
-        <form className="p-8 text-justify text-[10px] text-blue-gray-700 font-montserrat" method="get" action="">
+        <section className="p-8 text-justify text-[10px] text-blue-gray-700 font-montserrat">
           <label className="flex mb-5">
             <input 
               className="mb-[80px]" 
@@ -158,24 +170,32 @@ export default function Notice(){
               }}/>
             <h1 className="pl-2">Haz click aquí para verificar. Certifico que estas respuestas se basan en el compromiso ético y moral de mi negocio que promueve la igualdad así como un mayor respeto por los derechos de las personas LGBTIQ+ y sus identidades. Manifiesto de forma clara y contundente mi oposición contra quienes abusan de las personas del colectivo así como no permanecer impasible si sucede algún acontecimiento que atente contra ellas en mi establecimiento. Es un compromiso ético y personal con las personas LGBTIQ+ más allá del rédito económico que pueda obtener por la prestación de servicios de bee you.</h1>
           </label>
-        </form>
-        <article className="-mt-8 flex justify-around">
-          <Button
+          <article className="-mt-8 flex justify-around">
+          <button
             label='CANCELAR'
-            isSubmit
-            style={clsx(
-              "border-2 border-purple-700 rounded-lg w-[250px] text-[#1F2124]")}>
-          </Button>
-          <Button
-            onClick={() => {
-              setValidation(validation)
-            }}
+            className={clsx(
+              "border-2 border-purple-700 rounded-lg w-[250px] text-[#1F2124]",
+              "text-center font-bold font-montserrat",
+              "w-[300px] h-[50px]",
+              "hover:bg-gradient-to-r from-teal-400 to-[#249F95]/80",
+              "focus:outline-none focus:shadow-outline",
+              )}>CANCELAR
+          </button>
+          <button
             label='CONTINUAR'
-            isSubmit
-            style={clsx(
-              "lgbtiq-grad-bg rounded-lg w-[250px]")}>   
-          </Button>
+            type="submit"
+            className={clsx(
+              "lgbtiq-grad-bg rounded-lg w-[250px]",
+              "py-2 px-4",
+              "text-white text-center font-bold",
+              "w-40",
+              "hover:bg-sky-900",
+              "focus:outline-none focus:shadow-outline",
+              )}>CONTINUAR
+          </button>
         </article>
+        </section>
+        </form>
       </section>
     </>
   )
