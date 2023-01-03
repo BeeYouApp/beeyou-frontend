@@ -4,7 +4,6 @@ import { AddressAutofill, AddressMinimap, useConfirmAddress, config } from '@map
 import { useRouter } from "next/router"
 import { useForm } from "react-hook-form"
 import Input from "./Input"
-import dynamic from "next/dynamic"
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
 import { updateCompany } from "../services/company"
@@ -28,10 +27,7 @@ const companyFormSchema = yup.object({
   postalCode: yup.string().required("Requerido"),
 }).required();
 
-
-const DynamicComponent = dynamic(() => import('./AutofillMap'), {
-    ssr: false,
-});
+const MAPBOXTOKEN = process.env.MAPBOXTOKEN;
 
 export default function BussinesForm() {
   const [messageError, setMessageError] = useState("")
@@ -86,7 +82,7 @@ export default function BussinesForm() {
     const [newCoordinates, setNewCoordinates] = useState([]);
 
     useEffect(() => { //Mapbox
-        const accessToken = "pk.eyJ1IjoiYWJ5YmxhY2ttb3V0aCIsImEiOiJjbGFodTBobmowODIwM3hvYmxva20zYWQ4In0.GWgmsYW9P5xUKzxDGliiVg";
+        const accessToken = MAPBOXTOKEN;
         setToken(accessToken)
         config.accessToken = accessToken;
     }, [])
