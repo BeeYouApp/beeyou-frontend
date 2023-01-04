@@ -2,7 +2,7 @@ import Image from "next/image";
 import { images } from "../lib/images";
 import clsx from "clsx";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 
 const MobileSidebar = ({ closeSidebar, logout }) => {
